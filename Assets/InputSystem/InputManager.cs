@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,13 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
+    public delegate void TouchTapEvent();
+    public event TouchTapEvent OnTouchTap;
+    public delegate void TouchHoldEvent();
+    public event TouchHoldEvent OnTouchHold;
+    public delegate void TouchPressEvent();
+    public event TouchPressEvent OnTouchPress;
+
     PlayerInputActions playerInputActions; 
 
     private void Awake()
