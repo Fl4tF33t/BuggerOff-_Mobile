@@ -6,37 +6,40 @@ using UnityEngine.EventSystems;
 public class UIButtonManager : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler, IPointerMoveHandler, IPointerEnterHandler
 {
     //instead of game object, this will be the scriptable object taht shows all the info of that frog
-    public FrogSO frogSO;
+    [SerializeField] 
+    protected FrogSO frogSO;
 
+    //variables used to show info when holding down on a button fro a specified time
     private bool isPointerDown;
     private Coroutine holdDownCoroutine;
     [SerializeField]
     private float holdTimeDelay;
 
-    public void OnPointerClick(PointerEventData eventData)
+    public virtual void OnPointerClick(PointerEventData eventData)
     {
         //This method is used to select a UI element
         //This method is where you implement the functionalionality of the button
         Debug.Log("Click");
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    public virtual void OnPointerDown(PointerEventData eventData)
     {
         //This method is used when the user presses down on the UI element
         //You can use a form of TimeScale to determine what is shown after the user presses down
         Debug.Log("Down");
 
+        //Clears out any pre-existing coroutine
         if(holdDownCoroutine != null)
         {
             StopCoroutine(holdDownCoroutine);
         }
 
+        //Sets the hold down is true, and starts a new coroutine
         isPointerDown = true;
-
         holdDownCoroutine = StartCoroutine(HoldDownDuration());
     }
 
-    public void OnPointerUp(PointerEventData eventData)
+    public virtual void OnPointerUp(PointerEventData eventData)
     {
         //This method is used when the user releases the UI element
         //You can use this method to reset the Ui element to its original state
@@ -45,21 +48,23 @@ public class UIButtonManager : MonoBehaviour, IPointerClickHandler, IPointerDown
         isPointerDown = false;
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    public virtual void OnPointerEnter(PointerEventData eventData)
     {
         //This method is used when the user enters the UI element
         //You can use this on PC when a mouse hovers over the UI element
         Debug.Log("Enter");
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    public virtual void OnPointerExit(PointerEventData eventData)
     {
         //This method is used when the user exits the UI element
         //You can use this method to reset the Ui element to its original state
         Debug.Log("Exit");
+
+        isPointerDown = false;
     }
 
-    public void OnPointerMove(PointerEventData eventData)
+    public virtual void OnPointerMove(PointerEventData eventData)
     {
         //This method is used when the user moves the mouse over the UI element
         //You can use this method to implement a drag and drop functionality
@@ -69,9 +74,11 @@ public class UIButtonManager : MonoBehaviour, IPointerClickHandler, IPointerDown
     private IEnumerator HoldDownDuration()
     {
         yield return new WaitForSeconds(holdTimeDelay);
-        if(isPointerDown)
+        while(isPointerDown)
         {
-            Debug.Log("show hold down info");
+            Debug.Log(frogSO.UIShopTextInfo);
+            yield return null;
         }
+        //what to do when it is no longer true, here you can turn the visibility off
     }
 }

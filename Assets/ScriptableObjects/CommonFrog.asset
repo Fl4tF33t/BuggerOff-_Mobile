@@ -30,6 +30,8 @@ MonoBehaviour:
     attack: {fileID: 0}
     lure: {fileID: 0}
   UISprite: {fileID: 0}
+  UIShopTextInfo: This is a Common Frog, The common frog is the stardanrd looking
+    frog that does this attack.
   baseAudio:
     idle: {fileID: 0}
     jump: {fileID: 0}

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -203,7 +203,6 @@ GameObject:
   - component: {fileID: 451033682}
   - component: {fileID: 451033681}
   - component: {fileID: 451033680}
-  - component: {fileID: 451033683}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -313,20 +312,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 451033678}
   m_CullTransparentMesh: 1
---- !u!114 &451033683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 451033678}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 585cf1e55d2992a4e905b2f7196062ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  frogSO: {fileID: 11400000, guid: 2bca43d88c4e7914f8b58d50912cf994, type: 2}
-  holdTimeDelay: 2
 --- !u!1 &556629385
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,7 +759,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1410668063}
-  - component: {fileID: 1410668064}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -797,20 +781,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1410668064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1410668062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 585cf1e55d2992a4e905b2f7196062ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  frogSO: {fileID: 0}
-  holdTimeDelay: 0
 --- !u!1 &1723557217
 GameObject:
   m_ObjectHideFlags: 0

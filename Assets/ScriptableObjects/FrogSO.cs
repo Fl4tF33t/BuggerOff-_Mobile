@@ -17,6 +17,7 @@ public class FrogSO : ScriptableObject
     public Animator animatorController;
     public BaseAudioVisual<Animation> baseAnimation;
     public Sprite UISprite;
+    public string UIShopTextInfo;
 
     [Header("AUDIO")]
     public BaseAudioVisual<AudioClip> baseAudio;
