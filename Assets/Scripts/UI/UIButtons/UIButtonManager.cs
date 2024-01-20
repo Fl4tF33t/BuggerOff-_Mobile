@@ -76,7 +76,7 @@ public class UIButtonManager : MonoBehaviour, IPointerClickHandler, IPointerDown
         yield return new WaitForSeconds(holdTimeDelay);
         while(isPointerDown)
         {
-            Debug.Log(frogSO.UIShopTextInfo);
+            Debug.Log(frogSO.visualSO.userInterface.UIShopTextInfo);
             yield return null;
         }
         //what to do when it is no longer true, here you can turn the visibility off

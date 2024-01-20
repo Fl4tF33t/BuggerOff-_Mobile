@@ -13,7 +13,7 @@ public class InputManager : Singleton<InputManager>
     public delegate void TouchPressEvent();
     public event TouchPressEvent OnTouchPress;
 
-    PlayerInputActions playerInputActions; 
+    PlayerInputActions playerInputActions;
 
     private void Awake()
     {
