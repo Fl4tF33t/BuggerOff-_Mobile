@@ -10,10 +10,10 @@ public class UIButtonManager : MonoBehaviour, IPointerClickHandler, IPointerDown
     protected FrogSO frogSO;
 
     //variables used to show info when holding down on a button fro a specified time
-    private bool isPointerDown;
+    protected bool isPointerDown;
     private Coroutine holdDownCoroutine;
     [SerializeField]
-    private float holdTimeDelay;
+    protected float holdTimeDelay;
 
     public virtual void OnPointerClick(PointerEventData eventData)
     {
@@ -71,7 +71,7 @@ public class UIButtonManager : MonoBehaviour, IPointerClickHandler, IPointerDown
         Debug.Log("Move");
     }
 
-    private IEnumerator HoldDownDuration()
+    protected virtual IEnumerator HoldDownDuration()
     {
         yield return new WaitForSeconds(holdTimeDelay);
         while(isPointerDown)

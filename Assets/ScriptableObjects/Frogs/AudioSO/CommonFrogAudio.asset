@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idle:
     sound: {fileID: 0}
-    volume: 0.554
+    volume: 0.602
   jump:
     sound: {fileID: 0}
     volume: 0.316

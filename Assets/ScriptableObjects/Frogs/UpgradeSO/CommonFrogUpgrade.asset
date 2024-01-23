@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CommonFrogUpgrade
   m_EditorClassIdentifier: 
   discipline:
-    max: 0
+    max: 54
     amount: 0
     increment: 2
   damage:

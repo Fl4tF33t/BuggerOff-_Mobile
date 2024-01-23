@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frogName: Common Frog
   cost: 50
-  discipline: 2
+  discipline: 0
   damage: 5
   range: 1
   attackSpeed: 0.5
