@@ -10,6 +10,7 @@ public class UIDragAndDrop : MonoBehaviour, IDropHandler
         if(eventData.pointerDrag != null)
         {
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            UIDragAndDropManager.Instance.rectTransform = null;
         }
     }
 }

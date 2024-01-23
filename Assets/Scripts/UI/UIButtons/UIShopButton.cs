@@ -38,8 +38,10 @@ public class UIShopButton : UIButtonManager
 
     public override void OnBeginDrag(PointerEventData eventData)
     {
+        UIDragAndDropManager.Instance.rectTransform = rectTransform;
         canvasGroup.alpha = .6f;
         canvasGroup.blocksRaycasts = false;
+        Debug.Log("begin drag");    
     }
     public override void OnDrag(PointerEventData eventData)
     {
