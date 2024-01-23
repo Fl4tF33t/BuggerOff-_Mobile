@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UIButtonManager : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler, IPointerMoveHandler, IPointerEnterHandler
+public class UIButtonManager : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler, IDragHandler, IEndDragHandler, IBeginDragHandler
 {
     //instead of game object, this will be the scriptable object taht shows all the info of that frog
     [SerializeField] 
@@ -48,13 +48,6 @@ public class UIButtonManager : MonoBehaviour, IPointerClickHandler, IPointerDown
         isPointerDown = false;
     }
 
-    public virtual void OnPointerEnter(PointerEventData eventData)
-    {
-        //This method is used when the user enters the UI element
-        //You can use this on PC when a mouse hovers over the UI element
-        Debug.Log("Enter");
-    }
-
     public virtual void OnPointerExit(PointerEventData eventData)
     {
         //This method is used when the user exits the UI element
@@ -62,13 +55,6 @@ public class UIButtonManager : MonoBehaviour, IPointerClickHandler, IPointerDown
         Debug.Log("Exit");
 
         isPointerDown = false;
-    }
-
-    public virtual void OnPointerMove(PointerEventData eventData)
-    {
-        //This method is used when the user moves the mouse over the UI element
-        //You can use this method to implement a drag and drop functionality
-        Debug.Log("Move");
     }
 
     private IEnumerator HoldDownDuration()
@@ -84,4 +70,11 @@ public class UIButtonManager : MonoBehaviour, IPointerClickHandler, IPointerDown
 
     protected virtual void ActivatedHoldDown() { }
     protected virtual void DeactivatedHoldDown() { }
+
+    public virtual void OnBeginDrag(PointerEventData eventData) { }
+
+    public virtual void OnDrag(PointerEventData eventData) { }
+
+    public virtual void OnEndDrag(PointerEventData eventData) { }
+
 }
