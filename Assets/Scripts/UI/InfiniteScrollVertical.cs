@@ -14,7 +14,7 @@ public class InfiniteScrollVertical : MonoBehaviour
     private Vector2 oldVelocity;    // Store the old velocity of the ScrollRect
     private bool isUpdated;         // Flag to check if the ScrollRect has been updated
 
-    private void Start()
+    private void OnEnable()
     {
         isUpdated = false;
         oldVelocity = Vector2.zero;
