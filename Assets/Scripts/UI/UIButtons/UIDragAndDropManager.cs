@@ -4,10 +4,11 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class UIDragAndDropManager : Singleton<UIDragAndDropManager>, IDragHandler, IPointerClickHandler
+public class UIDragAndDropManager : Singleton<UIDragAndDropManager>, IDragHandler, IPointerClickHandler, IBeginDragHandler, IEndDragHandler
 {
-    public RectTransform rectTransform;
+    internal UIShopButton uiShopButton;
     private Canvas canvas;
 
     protected override void Awake()
@@ -15,13 +16,34 @@ public class UIDragAndDropManager : Singleton<UIDragAndDropManager>, IDragHandle
         base.Awake();
         canvas = GetComponentInParent<Canvas>();
     }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        if (uiShopButton != null)
+        {
+            uiShopButton.canvasGroup.alpha = .6f;
+        }
+    }
     public void OnDrag(PointerEventData eventData)
     {
-        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        if (uiShopButton != null) 
+        {
+            uiShopButton.rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        }
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        if (uiShopButton != null)
+        {
+            uiShopButton.canvasGroup.alpha = 1f;
+            //need a way to implement the return of ui elemenets that arent being held ddown by the finger
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("Clicked");
     }
+   
 }

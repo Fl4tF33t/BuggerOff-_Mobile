@@ -6,17 +6,18 @@ using UnityEngine.InputSystem;
 
 public class InputManager : Singleton<InputManager>
 {
-    public delegate void TouchTapEvent();
-    public event TouchTapEvent OnTouchTap;
-    public delegate void TouchHoldEvent();
-    public event TouchHoldEvent OnTouchHold;
-    public delegate void TouchPressEvent();
-    public event TouchPressEvent OnTouchPress;
+    //public delegate void TouchTapEvent();
+    //public event TouchTapEvent OnTouchTap;
+    //public delegate void TouchHoldEvent();
+    //public event TouchHoldEvent OnTouchHold;
+    //public delegate void TouchPressEvent();
+    //public event TouchPressEvent OnTouchPress;
 
     PlayerInputActions playerInputActions;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         playerInputActions = new PlayerInputActions(); 
         playerInputActions.Player.Enable();
     }

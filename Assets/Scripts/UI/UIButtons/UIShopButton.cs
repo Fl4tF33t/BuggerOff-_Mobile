@@ -11,9 +11,9 @@ public class UIShopButton : UIButtonManager
     private TextMeshProUGUI text;
 
     //drag and drop
-    private RectTransform rectTransform;
+    internal RectTransform rectTransform;
     private Canvas canvas;
-    private CanvasGroup canvasGroup;
+    internal CanvasGroup canvasGroup;
 
 
     private void Awake()
@@ -38,7 +38,7 @@ public class UIShopButton : UIButtonManager
 
     public override void OnBeginDrag(PointerEventData eventData)
     {
-        UIDragAndDropManager.Instance.rectTransform = rectTransform;
+        UIDragAndDropManager.Instance.uiShopButton = this;
         canvasGroup.alpha = .6f;
         canvasGroup.blocksRaycasts = false;
         Debug.Log("begin drag");    
