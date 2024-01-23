@@ -10,10 +10,10 @@ public class UIButtonManager : MonoBehaviour, IPointerClickHandler, IPointerDown
     protected FrogSO frogSO;
 
     //variables used to show info when holding down on a button fro a specified time
-    protected bool isPointerDown;
+    private bool isPointerDown;
     private Coroutine holdDownCoroutine;
     [SerializeField]
-    protected float holdTimeDelay;
+    private float holdTimeDelay;
 
     public virtual void OnPointerClick(PointerEventData eventData)
     {
@@ -71,14 +71,17 @@ public class UIButtonManager : MonoBehaviour, IPointerClickHandler, IPointerDown
         Debug.Log("Move");
     }
 
-    protected virtual IEnumerator HoldDownDuration()
+    private IEnumerator HoldDownDuration()
     {
         yield return new WaitForSeconds(holdTimeDelay);
         while(isPointerDown)
         {
-            Debug.Log(frogSO.visualSO.userInterface.UIShopTextInfo);
+            ActivatedHoldDown();
             yield return null;
         }
-        //what to do when it is no longer true, here you can turn the visibility off
+        DeactivatedHoldDown();
     }
+
+    protected virtual void ActivatedHoldDown() { }
+    protected virtual void DeactivatedHoldDown() { }
 }

@@ -8,33 +8,35 @@ using TMPro;
 public class UIShopButton : UIButtonManager
 {
     private Image image;
-    //[SerializeField]
-    TextMeshProUGUI text;
+    private TextMeshProUGUI text;
 
     private void Awake()
     {
         //sets the image of the button to the frog sprite, according to the FrogSO that is attached to the button
         image = GetComponent<Image>();
         image.sprite = frogSO.visualSO.userInterface.UIShopSprite;
+        
+        //finds the text that is used to show the info of the frog
+        text = GameObject.Find("ShopUIHoldInfo").GetComponent<TextMeshProUGUI>();
+    }
 
-        //references the text component of the button
-        text = GetComponentInParent<TextMeshProUGUI>();
+    private void Start()
+    {
+        text.gameObject.SetActive(false);
     }
     public override void OnPointerClick(PointerEventData eventData)
     {
         //what to do when the button is clicked on the shop, i assume selection of that frog. Need to establish if not enough money, can you select a frog
     }
 
-    protected override IEnumerator HoldDownDuration()
+    protected override void ActivatedHoldDown()
     {
         text.text = frogSO.visualSO.userInterface.UIShopTextInfo;
-        yield return new WaitForSeconds(holdTimeDelay);
-        while (isPointerDown)
-        {
-            //what to do when the button is held down on the shop, i assume showing the stats of that frog
-            text.gameObject.SetActive(true);
-            yield return null;
-        }
+        text.gameObject.SetActive(true);
+    }
+    
+    protected override void DeactivatedHoldDown()
+    {
         text.gameObject.SetActive(false);
     }
 }
