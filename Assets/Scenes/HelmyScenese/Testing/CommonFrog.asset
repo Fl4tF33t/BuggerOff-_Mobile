@@ -1,5 +1,27 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8411004017356763473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3360a53f66a7ac344931703b7bd6e485, type: 3}
+  m_Name: ShootEnemy
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: ec51b40d00a8cd64fb763d1160ae698c
+  position: {x: 0, y: 0}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    colliders: []
+    timer: 10
+  description: 
+  drawGizmos: 0
 --- !u!114 &-7959581466356797825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +164,7 @@ MonoBehaviour:
   drawGizmos: 0
   children:
   - {fileID: 4957235561953700779}
+  - {fileID: 1051455855392458949}
   - {fileID: -2660970889129177931}
 --- !u!114 &-3568407658486204014
 MonoBehaviour:
@@ -209,7 +232,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 58aa0d5025a1fde41a6b7e4395b26527
-  position: {x: -568, y: 154.00003}
+  position: {x: -436.9001, y: 153.99998}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     colliders: []
@@ -307,6 +330,8 @@ MonoBehaviour:
   - {fileID: 4735188207481811079}
   - {fileID: -2694224307877224908}
   - {fileID: -1972061606723844869}
+  - {fileID: 1051455855392458949}
+  - {fileID: -8411004017356763473}
   blackboard:
     moveToPosition: {x: 5, y: 0, z: 0}
     colliders: []
@@ -334,6 +359,28 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   message: Cannot Attack
+--- !u!114 &1051455855392458949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34e2d748dc0e3454eb2cfa51feb49e87, type: 3}
+  m_Name: TrackEnemy
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: e1f51fe7812cdc449bd08bfb13364611
+  position: {x: -771.9002, y: 153.99998}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    colliders: []
+    timer: 10
+  description: 
+  drawGizmos: 0
 --- !u!114 &1212834892908534260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,7 +418,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: f6ba9fb13a46aa74ca9cd4f449669c8e
-  position: {x: -995, y: 313.00003}
+  position: {x: -1054.4095, y: 312.99997}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     colliders: []
@@ -418,7 +465,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 6c76808873e78a147a462917d1441622
-  position: {x: -859.9998, y: 154}
+  position: {x: -954.40955, y: 154.00003}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     colliders: []
@@ -559,7 +606,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: c7ee8d4b0bef13c4ca763ca16e6c2fcf
-  position: {x: -827.8126, y: 312.99997}
+  position: {x: -904.4095, y: 312.99997}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     colliders: []
