@@ -15,7 +15,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: ec51b40d00a8cd64fb763d1160ae698c
-  position: {x: 0, y: 0}
+  position: {x: -604.65, y: 154.00003}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     colliders: []
@@ -165,6 +165,7 @@ MonoBehaviour:
   children:
   - {fileID: 4957235561953700779}
   - {fileID: 1051455855392458949}
+  - {fileID: -8411004017356763473}
   - {fileID: -2660970889129177931}
 --- !u!114 &-3568407658486204014
 MonoBehaviour:
@@ -374,7 +375,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: e1f51fe7812cdc449bd08bfb13364611
-  position: {x: -771.9002, y: 153.99998}
+  position: {x: -763.95, y: 154}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     colliders: []
