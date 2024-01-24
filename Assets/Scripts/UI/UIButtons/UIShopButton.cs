@@ -27,7 +27,7 @@ public class UIShopButton : UIButtonManager
 
         //drag and drop
         rectTransform = GetComponent<RectTransform>();
-        canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+        canvas = GameObject.Find("MainCanvas").GetComponent<Canvas>();
         canvasGroup = GetComponent<CanvasGroup>();
     }
 
@@ -39,12 +39,14 @@ public class UIShopButton : UIButtonManager
     public override void OnBeginDrag(PointerEventData eventData)
     {
         UIDragAndDropManager.Instance.uiShopButton = this;
+        image.maskable = false;
         canvasGroup.alpha = .6f;
         canvasGroup.blocksRaycasts = false;
         Debug.Log("begin drag");    
     }
     public override void OnDrag(PointerEventData eventData)
     {
+        image.maskable = false;
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
 
