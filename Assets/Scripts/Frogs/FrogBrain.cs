@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(BehaviourTreeRunner))]
+[RequireComponent(typeof(NavMeshAgent))]
 public class FrogBrain : MonoBehaviour
 {
     public FrogSO frogSO;

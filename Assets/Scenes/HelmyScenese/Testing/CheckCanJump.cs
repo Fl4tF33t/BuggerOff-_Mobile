@@ -14,7 +14,7 @@ public class CheckCanJump : ActionNode
     protected override State OnUpdate() {
         if(blackboard.timer <= 0)
         {
-            blackboard.resetTimer = true;
+            blackboard.timer = 10;
             return State.Success;
         }
         return State.Failure;

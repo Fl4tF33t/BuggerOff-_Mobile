@@ -12,6 +12,5 @@ namespace TheKiwiCoder {
         public Vector3 moveToPosition;
         public Collider[] colliders;
         public float timer = 10f;
-        public bool resetTimer = false;
     }
 }

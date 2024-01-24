@@ -15,12 +15,11 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 5caab6fe26eef604b848dd017b6a6deb
-  position: {x: -45.00001, y: 344.99997}
+  position: {x: -153.93414, y: 369.00003}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     colliders: []
     timer: 10
-    resetTimer: 0
   description: 
   drawGizmos: 0
   chanceOfJump: 0.5
@@ -44,7 +43,6 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
     colliders: []
     timer: 10
-    resetTimer: 0
   description: Parallel Checks
   drawGizmos: 0
   children:
@@ -70,7 +68,6 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
     colliders: []
     timer: 10
-    resetTimer: 0
   description: Idle & Countdown Sequence
   drawGizmos: 0
   children:
@@ -97,7 +94,6 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
     colliders: []
     timer: 10
-    resetTimer: 0
   description: 
   drawGizmos: 0
 --- !u!114 &-5167772764107436902
@@ -120,7 +116,6 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
     colliders: []
     timer: 10
-    resetTimer: 0
   description: 
   drawGizmos: 0
 --- !u!114 &-5032812672587197468
@@ -143,7 +138,6 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
     colliders: []
     timer: 10
-    resetTimer: 0
   description: Attack Sequence
   drawGizmos: 0
   children:
@@ -169,12 +163,37 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
     colliders: []
     timer: 10
-    resetTimer: 0
   description: Jump Sequence
   drawGizmos: 0
   children:
   - {fileID: 4735188207481811079}
+  - {fileID: -2694224307877224908}
+  - {fileID: -1972061606723844869}
   - {fileID: 8589465920461781525}
+--- !u!114 &-2694224307877224908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0a055ff4bd9e6642b3f0dff32a86e1d, type: 3}
+  m_Name: RandomPosition
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 95cbae1452372384cb60bafbfca94b62
+  position: {x: -4.000046, y: 273.99997}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    colliders: []
+    timer: 10
+  description: 
+  drawGizmos: 0
+  min: {x: -10, y: -10}
+  max: {x: 10, y: 10}
 --- !u!114 &-2660970889129177931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,10 +214,36 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
     colliders: []
     timer: 10
-    resetTimer: 0
   description: 
   drawGizmos: 0
   message: Can Attack
+--- !u!114 &-1972061606723844869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4489e3e257543504c8fc9f891246af6c, type: 3}
+  m_Name: MoveToPosition
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 2d851a67ecac2b14ca9714345fa06d39
+  position: {x: 172.8559, y: 242.00003}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    colliders: []
+    timer: 10
+  description: 
+  drawGizmos: 0
+  speed: 5
+  stoppingDistance: 0.1
+  updateRotation: 1
+  acceleration: 40
+  tolerance: 1
 --- !u!114 &-202907832322253378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,7 +264,6 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
     colliders: []
     timer: 10
-    resetTimer: 0
   description: 
   drawGizmos: 0
   children:
@@ -261,11 +305,12 @@ MonoBehaviour:
   - {fileID: 8589465920461781525}
   - {fileID: -7959581466356797825}
   - {fileID: 4735188207481811079}
+  - {fileID: -2694224307877224908}
+  - {fileID: -1972061606723844869}
   blackboard:
     moveToPosition: {x: 5, y: 0, z: 0}
     colliders: []
     timer: 10
-    resetTimer: 0
 --- !u!114 &76652207958400974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,7 +331,6 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
     colliders: []
     timer: 10
-    resetTimer: 0
   description: 
   drawGizmos: 0
   message: Cannot Attack
@@ -310,7 +354,6 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
     colliders: []
     timer: 10
-    resetTimer: 0
   description: 
   drawGizmos: 0
 --- !u!114 &4446864221919766772
@@ -333,7 +376,6 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
     colliders: []
     timer: 10
-    resetTimer: 0
   description: 
   drawGizmos: 0
 --- !u!114 &4735188207481811079
@@ -351,12 +393,11 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: b0518c110b6ae3043ac62bee8b8669db
-  position: {x: -120.000175, y: 193.99997}
+  position: {x: -258.93414, y: 218}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     colliders: []
     timer: 10
-    resetTimer: 0
   description: Check if will Jump
   drawGizmos: 0
   children:
@@ -382,7 +423,6 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
     colliders: []
     timer: 10
-    resetTimer: 0
   description: Check If can Attack
   drawGizmos: 0
   children:
@@ -408,7 +448,6 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
     colliders: []
     timer: 10
-    resetTimer: 0
   description: 
   drawGizmos: 0
   child: {fileID: 8430027450953127779}
@@ -432,7 +471,6 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
     colliders: []
     timer: 10
-    resetTimer: 0
   description: 
   drawGizmos: 0
   child: {fileID: -7593146815105615789}
@@ -451,12 +489,11 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: c193ffa90179d9d4385d7129729e526f
-  position: {x: -224.99998, y: 344.99997}
+  position: {x: -333.93408, y: 369.00003}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     colliders: []
     timer: 10
-    resetTimer: 0
   description: 
   drawGizmos: 0
 --- !u!114 &8430027450953127779
@@ -479,7 +516,6 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
     colliders: []
     timer: 10
-    resetTimer: 0
   description: 
   drawGizmos: 0
   child: {fileID: -202907832322253378}
@@ -500,12 +536,11 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 23b0fd381a55baf48bdd4cb26fa7287a
-  position: {x: 104.99988, y: 218}
+  position: {x: 306.99988, y: 134.99997}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     colliders: []
     timer: 10
-    resetTimer: 0
   description: 
   drawGizmos: 0
   message: Can Jump
@@ -529,6 +564,5 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
     colliders: []
     timer: 10
-    resetTimer: 0
   description: 
   drawGizmos: 0
