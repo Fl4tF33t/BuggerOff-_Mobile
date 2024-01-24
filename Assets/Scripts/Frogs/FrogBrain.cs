@@ -1,8 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TheKiwiCoder;
 using UnityEngine;
+using UnityEngine.AI;
 
+[RequireComponent(typeof(BehaviourTreeRunner))]
 public class FrogBrain : MonoBehaviour
 {
     public FrogSO frogSO;
