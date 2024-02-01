@@ -27,6 +27,8 @@ public class BugMovement : MonoBehaviour
         agent.acceleration = bugSO.acceleration;
         agent.stoppingDistance = bugSO.stoppingDistance;
         agent.autoBraking = bugSO.autoBraking;
+
+        agent.avoidancePriority = Random.Range(0, 100);
     }
 
     private void Start()
@@ -54,9 +56,10 @@ public class BugMovement : MonoBehaviour
         if (currentWaypointIndex >= PathManager.Instance.waypoints.Count)
         {
             // If so, destroy the bug or trigger game over
-            Destroy(gameObject);
+            //Destroy(gameObject);
             // You can add game over logic here
-            return;
+            //return;
+            currentWaypointIndex = 0;
         }
 
         // Set the next waypoint as the destination
