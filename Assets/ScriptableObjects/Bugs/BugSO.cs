@@ -12,6 +12,7 @@ public class BugSO : ScriptableObject
     public int damageToPlayer;
 
     //All these variable are for the bug's movement with the use of NavMeshAgent
+    [Header("Agent Movement Porperties")]
     public float speed;
     public float angularSpeed;
     public float acceleration;

@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEditor;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,21 +9,15 @@ public class BugMovement : MonoBehaviour
     private BugBrain bugBrain;
     private NavMeshAgent agent;
     private int currentWaypointIndex = 0;
-    
 
-    void Awake()
+    private void Awake()
     {
         bugBrain = GetComponent<BugBrain>();
         agent = GetComponent<NavMeshAgent>();
         InitializeBugMovement(bugBrain.bugSO);
     }
 
-    private void Start()
-    {
-        agent.destination = PathManager.Instance.waypoints[currentWaypointIndex].position;   
-    }
-
-    void InitializeBugMovement(BugSO bugSO)
+    private void InitializeBugMovement(BugSO bugSO)
     {
         //The agentType and the BaseOffset should be already set in the inspector
 
@@ -34,6 +29,12 @@ public class BugMovement : MonoBehaviour
         agent.autoBraking = bugSO.autoBraking;
     }
 
+    private void Start()
+    {
+        agent.destination = PathManager.Instance.waypoints[currentWaypointIndex].position;   
+    }
+
+
     private void Update()
     {
         // Check if the bug has reached the current waypoint
@@ -44,7 +45,7 @@ public class BugMovement : MonoBehaviour
         }
     }
 
-    void SetNextWaypoint()
+    private void SetNextWaypoint()
     {
         // Increment the waypoint index
         currentWaypointIndex++;
