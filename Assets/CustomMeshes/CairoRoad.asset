@@ -6,7 +6,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mesh #573434757
+  m_Name: CairoRoad
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
