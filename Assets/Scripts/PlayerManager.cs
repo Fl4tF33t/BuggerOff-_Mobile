@@ -6,11 +6,11 @@ using System;
 
 public class PlayerManager : Singleton<PlayerManager>
 {
-    public FrogBrain selectedFrog = null;
+    FrogBrain selectedFrog = null;
 
     //Variables for UI elements
-    public Canvas canvas = null;
     LayerMask frogLayer;
+    [HideInInspector]
     public bool isOnUI = false;
 
     private void Start()
@@ -26,9 +26,12 @@ public class PlayerManager : Singleton<PlayerManager>
 
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, frogLayer))
         {
+            if(selectedFrog != null)
+            {
+                selectedFrog.UpgradeUI(false);
+            }
             selectedFrog = hit.transform.GetComponent<FrogBrain>();
             selectedFrog.UpgradeUI(true);
-            //canvas.transform.gameObject.SetActive(true);
         }
         else if (!isOnUI)
         {
