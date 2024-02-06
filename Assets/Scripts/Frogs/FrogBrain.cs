@@ -7,6 +7,8 @@ using UnityEngine.AI;
 
 [RequireComponent(typeof(BehaviourTreeRunner))]
 [RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(SphereCollider))]
+
 public class FrogBrain : MonoBehaviour
 {
     public FrogSO frogSO;

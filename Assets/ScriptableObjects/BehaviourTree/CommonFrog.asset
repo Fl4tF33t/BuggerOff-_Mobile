@@ -163,8 +163,7 @@ MonoBehaviour:
   description: Attack Sequence
   drawGizmos: 0
   children:
-  - {fileID: 4446864221919766772}
-  - {fileID: 9054009172299466801}
+  - {fileID: 4957235561953700779}
   - {fileID: 1051455855392458949}
   - {fileID: -8411004017356763473}
   - {fileID: -2660970889129177931}
@@ -465,7 +464,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: f6ba9fb13a46aa74ca9cd4f449669c8e
-  position: {x: -1174.9293, y: 153.00002}
+  position: {x: -1157.0688, y: 412}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     colliders: []
@@ -512,14 +511,16 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 6c76808873e78a147a462917d1441622
-  position: {x: -1136.505, y: -247.99998}
+  position: {x: -1082, y: 174.00002}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     colliders: []
     timer: 10
   description: Check If can Attack
   drawGizmos: 0
-  children: []
+  children:
+  - {fileID: 4446864221919766772}
+  - {fileID: 9054009172299466801}
 --- !u!114 &4979886775550339937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -651,7 +652,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: c7ee8d4b0bef13c4ca763ca16e6c2fcf
-  position: {x: -948.775, y: 153.00003}
+  position: {x: -957.7451, y: 387.99994}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
     colliders: []

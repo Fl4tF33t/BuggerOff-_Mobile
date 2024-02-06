@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 [RequireComponent(typeof(BugMovement))]
 [RequireComponent(typeof(NavMeshAgent))]
-[RequireComponent(typeof(Rigidbody))]
+//[RequireComponent(typeof(Rigidbody))]
 
 public class BugBrain : MonoBehaviour, ITakeDamage
 {

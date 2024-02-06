@@ -44,12 +44,12 @@ public class UIUpgradeCanvasPointToMiddle : MonoBehaviour
         float angle = Mathf.Atan2(directionToCenter.y, directionToCenter.x) * Mathf.Rad2Deg;
 
         // Apply the rotation to the UI element
-        rectTransform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle + -45f));
+        rectTransform.rotation = Quaternion.Euler(new Vector3(90f, 0f, angle + -45f));
 
         //keep the text and the images of the UI static and not moving
         foreach (RectTransform t in fixedRectTransform)
         {
-            t.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
+            t.rotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
         }
     }
 }
