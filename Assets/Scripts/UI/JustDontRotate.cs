@@ -12,6 +12,6 @@ public class JustDontRotate : MonoBehaviour
     }
     void Update()
     {
-        uiElement.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
+        //uiElement.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
     }
 }
