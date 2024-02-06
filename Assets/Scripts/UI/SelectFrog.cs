@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class SelectFrog : MonoBehaviour
 {
+    public LayerMask layerMask;
     public Canvas upgrade;
     private void Update()
     {
@@ -20,15 +21,15 @@ public class SelectFrog : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit) && hit.collider.gameObject.tag == "Frog")
+        if (Physics.Raycast(ray, hit, 100f, layerMask)
         {
 
             upgrade.gameObject.SetActive(true);
         }
-        else
-        {
+        //else
+        //{
 
-            upgrade.gameObject.SetActive(false);
-        }
+        //    upgrade.gameObject.SetActive(false);
+        //}
     }
 }
