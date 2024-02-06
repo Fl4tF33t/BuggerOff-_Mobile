@@ -8,6 +8,17 @@ public class SelectFrog : MonoBehaviour
     public LayerMask layerMask;
     public LayerMask UI;
     public Canvas upgrade;
+
+    private void Start()
+    {
+        InputManager.Instance.OnTouchTap += Instance_OnTouchTap;
+    }
+
+    private void Instance_OnTouchTap(object sender, System.EventArgs e)
+    {
+        Debug.Log("HIT SCREEN");
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))

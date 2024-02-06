@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 
 public class InputManager : Singleton<InputManager>
 {
+    public event EventHandler OnTouchTap;
+
     //public delegate void TouchTapEvent();
     //public event TouchTapEvent OnTouchTap;
     //public delegate void TouchHoldEvent();
@@ -60,5 +62,6 @@ public class InputManager : Singleton<InputManager>
     private void TouchTap_performed(InputAction.CallbackContext obj)
     {
         Debug.Log("Tap " + obj.phase);
+        OnTouchTap?.Invoke(this, EventArgs.Empty);
     }
 }
