@@ -16,19 +16,6 @@ public class SelectFrog : MonoBehaviour
 
     private void Instance_OnTouchTap(object sender, System.EventArgs e)
     {
-        Debug.Log("HIT SCREEN");
-    }
-
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Select();
-        }
-    }
-
-    private void Select()
-    {
         Vector3 mousePosition = Input.mousePosition;
         Ray ray = Camera.main.ScreenPointToRay(mousePosition);
         RaycastHit hit;
@@ -37,13 +24,24 @@ public class SelectFrog : MonoBehaviour
         {
             upgrade.gameObject.SetActive(true);
         }
-        else if(Physics.Raycast(ray, out hit, 100f, UI))
+        else if (Physics.Raycast(ray, out hit, 100f, UI))
         {
             Debug.Log("ön ui");
         }
-        //else
-        //{
-        //    upgrade.gameObject.SetActive(false);
-        //}
+        else
+        {
+           upgrade.gameObject.SetActive(false);
+        }
+    }
+
+    private void Update()
+    {
+        
+    }
+
+    private void Select()
+    {
+        
+        
     }
 }
