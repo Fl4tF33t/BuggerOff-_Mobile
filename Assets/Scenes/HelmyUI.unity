@@ -304,15 +304,15 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!224 &526412912 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7231670148390573628, guid: 3a010b6f0b7d99d47addfbe13ee0bd95,
+--- !u!1 &526412911 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5735506468041725709, guid: 3a010b6f0b7d99d47addfbe13ee0bd95,
     type: 3}
   m_PrefabInstance: {fileID: 4773967277179260221}
   m_PrefabAsset: {fileID: 0}
---- !u!223 &526412915 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 6695670796910367986, guid: 3a010b6f0b7d99d47addfbe13ee0bd95,
+--- !u!224 &526412912 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7231670148390573628, guid: 3a010b6f0b7d99d47addfbe13ee0bd95,
     type: 3}
   m_PrefabInstance: {fileID: 4773967277179260221}
   m_PrefabAsset: {fileID: 0}
@@ -326,8 +326,9 @@ GameObject:
   m_Component:
   - component: {fileID: 869954120}
   - component: {fileID: 869954119}
+  - component: {fileID: 869954121}
   m_Layer: 0
-  m_Name: InputManager
+  m_Name: PlayerManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -360,6 +361,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &869954121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869954118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4ad9a7cf9dbc0a49b3fc86a55a9e214, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedFrog: {fileID: 0}
+  canvas: {fileID: 0}
+  isOnUI: 0
 --- !u!1 &892945291
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,6 +583,9 @@ GameObject:
   - component: {fileID: 1195701630}
   - component: {fileID: 1195701629}
   - component: {fileID: 1195701628}
+  - component: {fileID: 1195701634}
+  - component: {fileID: 1195701633}
+  - component: {fileID: 1195701632}
   m_Layer: 3
   m_Name: Frog
   m_TagString: Frog
@@ -661,57 +680,61 @@ Transform:
   - {fileID: 526412912}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1695136727
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1695136729}
-  - component: {fileID: 1695136730}
-  m_Layer: 0
-  m_Name: Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1695136729
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1695136727}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1086.9933, y: 430.73444, z: -9.477499}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1695136730
+--- !u!114 &1195701632
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1695136727}
+  m_GameObject: {fileID: 1195701627}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fcc0e04f518cff47a5358031bb6fb2d, type: 3}
+  m_Script: {fileID: 11500000, guid: a5ec12a277eae8f41bb5dd145480f1f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 8
-  UI:
-    serializedVersion: 2
-    m_Bits: 0
-  upgrade: {fileID: 526412915}
+  frogSO: {fileID: 11400000, guid: bcfcc51544396e846b4e974dec1e6b6b, type: 2}
+  frog:
+    frogName: 
+    discipline: 0
+    damage: 0
+    range: 0
+    attackSpeed: 0
+  canvas: {fileID: 526412911}
+--- !u!195 &1195701633
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195701627}
+  m_Enabled: 0
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &1195701634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195701627}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58c6f9b140a52a14881ec09eaebb66eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tree: {fileID: 11400000, guid: f366fcfe91bb1e4418c43e1668ba4e02, type: 2}
 --- !u!1001 &4773967277179260221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -724,6 +747,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UpgradeCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735506468041725709, guid: 3a010b6f0b7d99d47addfbe13ee0bd95,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5943021913724738228, guid: 3a010b6f0b7d99d47addfbe13ee0bd95,
         type: 3}
@@ -849,5 +877,4 @@ SceneRoots:
   - {fileID: 1195701631}
   - {fileID: 1101381104}
   - {fileID: 125386784}
-  - {fileID: 1695136729}
   - {fileID: 869954120}

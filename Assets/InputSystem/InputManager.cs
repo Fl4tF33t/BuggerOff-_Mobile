@@ -2,11 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class InputManager : Singleton<InputManager>
 {
-    public event EventHandler OnTouchTap;
+    public event EventHandler<OnTouchTapEventArgs> OnTouchTap;
+    public class OnTouchTapEventArgs : EventArgs
+    {
+        public Vector2 screenPosition;
+    }
 
     //public delegate void TouchTapEvent();
     //public event TouchTapEvent OnTouchTap;
@@ -62,6 +67,9 @@ public class InputManager : Singleton<InputManager>
     private void TouchTap_performed(InputAction.CallbackContext obj)
     {
         Debug.Log("Tap " + obj.phase);
-        OnTouchTap?.Invoke(this, EventArgs.Empty);
+        OnTouchTap?.Invoke(this, new OnTouchTapEventArgs
+        {
+            screenPosition = playerInputActions.Player.TouchPosition.ReadValue<Vector2>()
+        });
     }
 }

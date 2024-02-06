@@ -27,7 +27,6 @@ public class UIButtonManager : MonoBehaviour, IPointerClickHandler, IPointerDown
         //This method is used when the user presses down on the UI element
         //You can use a form of TimeScale to determine what is shown after the user presses down
         Debug.Log("Down");
-        TrySelecting.onUI = true;
         //Clears out any pre-existing coroutine
         if(holdDownCoroutine != null)
         {
@@ -44,8 +43,6 @@ public class UIButtonManager : MonoBehaviour, IPointerClickHandler, IPointerDown
         //This method is used when the user releases the UI element
         //You can use this method to reset the Ui element to its original state
         Debug.Log("Up");
-        TrySelecting.onUI = false;
-
         isPointerDown = false;
     }
 

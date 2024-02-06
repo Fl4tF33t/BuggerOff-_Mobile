@@ -30,12 +30,16 @@ public class TrySelecting : MonoBehaviour
         {
             upgrade.gameObject.SetActive(false);
         }
+        
+
+        
     }
 
     private void Update()
     {
 
     }
+
 
     private void Select()
     {

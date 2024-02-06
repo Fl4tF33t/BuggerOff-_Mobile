@@ -22,8 +22,17 @@ public class FrogBrain : MonoBehaviour
         public float attackSpeed;
     }
 
+    //UpgradeUI variables 
+    [SerializeField]
+    GameObject canvas;
+
     private void Awake()
     {
         frogSO.InitGameObject(frog);
+    }
+
+    public void UpgradeUI(bool arg)
+    {
+        canvas.SetActive(arg);
     }
 }

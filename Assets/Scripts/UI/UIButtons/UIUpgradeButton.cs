@@ -11,6 +11,18 @@ public class UIUpgradeButton : UIButtonManager
         Debug.Log("don't close please you vitun runkkari");
     }
 
+    public override void OnPointerDown(PointerEventData eventData)
+    {
+        PlayerManager.Instance.isOnUI = true;
+        base.OnPointerDown(eventData);
+    }
+
+    public override void OnPointerUp(PointerEventData eventData)
+    {
+        PlayerManager.Instance.isOnUI = false;
+        base.OnPointerExit(eventData);
+    }
+
     protected override void ActivatedHoldDown() 
     {
         Debug.Log("show Info");
