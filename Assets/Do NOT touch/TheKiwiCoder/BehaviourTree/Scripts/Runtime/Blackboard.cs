@@ -10,7 +10,9 @@ namespace TheKiwiCoder {
     [System.Serializable]
     public class Blackboard {
         public Vector3 moveToPosition;
-        public Collider[] colliders;
+        public List<Collider> collidersInLOS;
         public float timer = 10f;
+
+        public GameObject selectedTarget;
     }
 }

@@ -12,7 +12,6 @@ using UnityEngine.AI;
 public class FrogBrain : MonoBehaviour
 {
     public FrogSO frogSO;
-    
     public Frog frog = new Frog();
     [Serializable]
     public class Frog
@@ -22,11 +21,21 @@ public class FrogBrain : MonoBehaviour
         public int damage;
         public float range;
         public float attackSpeed;
+        public Target target;
     }
 
     //UpgradeUI variables 
     [SerializeField]
     GameObject canvas;
+
+    //Tracking and targeting variables
+    public enum Target
+    {
+        First,
+        Last,
+        Strongest,
+        Weakest
+    }
 
     private void Awake()
     {

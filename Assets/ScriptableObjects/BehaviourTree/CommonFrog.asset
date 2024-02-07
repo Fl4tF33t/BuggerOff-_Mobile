@@ -15,11 +15,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: ec51b40d00a8cd64fb763d1160ae698c
-  position: {x: -604.65, y: 154.00003}
+  position: {x: -617.9999, y: 208.99992}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-    colliders: []
+    collidersInLOS: []
     timer: 10
+    selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
 --- !u!114 &-7959581466356797825
@@ -40,8 +41,9 @@ MonoBehaviour:
   position: {x: -322.40692, y: 594.9999}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-    colliders: []
+    collidersInLOS: []
     timer: 10
+    selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
   chanceOfJump: 0.5
@@ -63,8 +65,9 @@ MonoBehaviour:
   position: {x: 559.80695, y: 287.99988}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-    colliders: []
+    collidersInLOS: []
     timer: 10
+    selectedTarget: {fileID: 0}
   description: Parallel Checks
   drawGizmos: 0
   children:
@@ -88,8 +91,9 @@ MonoBehaviour:
   position: {x: 899.0113, y: 18.99998}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-    colliders: []
+    collidersInLOS: []
     timer: 10
+    selectedTarget: {fileID: 0}
   description: Idle & Countdown Sequence
   drawGizmos: 0
   children:
@@ -114,8 +118,9 @@ MonoBehaviour:
   position: {x: 784.9999, y: 153.99998}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-    colliders: []
+    collidersInLOS: []
     timer: 10
+    selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
 --- !u!114 &-5167772764107436902
@@ -136,8 +141,32 @@ MonoBehaviour:
   position: {x: 457.80695, y: 420.99988}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-    colliders: []
+    collidersInLOS: []
     timer: 10
+    selectedTarget: {fileID: 0}
+  description: 
+  drawGizmos: 0
+--- !u!114 &-5078561988784354853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b16fca8106797b459c7af0def9366c2, type: 3}
+  m_Name: CheckEnemy
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: d5a43fa5320a09f46bcf9436f617c60a
+  position: {x: -958.7768, y: 152.99997}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    collidersInLOS: []
+    timer: 10
+    selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
 --- !u!114 &-5032812672587197468
@@ -158,14 +187,14 @@ MonoBehaviour:
   position: {x: -742, y: 24.771154}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-    colliders: []
+    collidersInLOS: []
     timer: 10
+    selectedTarget: {fileID: 0}
   description: Attack Sequence
   drawGizmos: 0
   children:
-  - {fileID: 4957235561953700779}
+  - {fileID: -5078561988784354853}
   - {fileID: 1051455855392458949}
-  - {fileID: -8411004017356763473}
   - {fileID: -2660970889129177931}
 --- !u!114 &-3568407658486204014
 MonoBehaviour:
@@ -185,8 +214,9 @@ MonoBehaviour:
   position: {x: 1.2908173, y: 196.99998}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-    colliders: []
+    collidersInLOS: []
     timer: 10
+    selectedTarget: {fileID: 0}
   description: Jump Sequence
   drawGizmos: 0
   children: []
@@ -208,8 +238,9 @@ MonoBehaviour:
   position: {x: -150.00014, y: 401.00003}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-    colliders: []
+    collidersInLOS: []
     timer: 10
+    selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
   min: {x: -10, y: -10}
@@ -232,8 +263,9 @@ MonoBehaviour:
   position: {x: -436.9001, y: 153.99998}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-    colliders: []
+    collidersInLOS: []
     timer: 10
+    selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
   message: Can Attack
@@ -255,8 +287,9 @@ MonoBehaviour:
   position: {x: 11.33078, y: 401.00003}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-    colliders: []
+    collidersInLOS: []
     timer: 10
+    selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
   speed: 5
@@ -282,8 +315,9 @@ MonoBehaviour:
   position: {x: -410.40695, y: 331.99988}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-    colliders: []
+    collidersInLOS: []
     timer: 10
+    selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
   child: {fileID: 4735188207481811079}
@@ -305,8 +339,9 @@ MonoBehaviour:
   position: {x: 0, y: -102}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-    colliders: []
+    collidersInLOS: []
     timer: 10
+    selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
   children:
@@ -332,15 +367,12 @@ MonoBehaviour:
   - {fileID: 8430027450953127779}
   - {fileID: -202907832322253378}
   - {fileID: -5032812672587197468}
-  - {fileID: 4446864221919766772}
   - {fileID: -2660970889129177931}
-  - {fileID: 9054009172299466801}
   - {fileID: -5349349756373352265}
   - {fileID: -5167772764107436902}
   - {fileID: 1212834892908534260}
   - {fileID: 76652207958400974}
   - {fileID: 6646164357094348539}
-  - {fileID: 4957235561953700779}
   - {fileID: -7593146815105615789}
   - {fileID: -5278449069860748975}
   - {fileID: -3568407658486204014}
@@ -354,10 +386,12 @@ MonoBehaviour:
   - {fileID: -8411004017356763473}
   - {fileID: -1696869344406797874}
   - {fileID: 58904742416265572}
+  - {fileID: -5078561988784354853}
   blackboard:
     moveToPosition: {x: 5, y: 0, z: 0}
-    colliders: []
+    collidersInLOS: []
     timer: 10
+    selectedTarget: {fileID: 0}
 --- !u!114 &58904742416265572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,8 +410,9 @@ MonoBehaviour:
   position: {x: 1400.4069, y: 18.999994}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-    colliders: []
+    collidersInLOS: []
     timer: 10
+    selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
   children: []
@@ -399,8 +434,9 @@ MonoBehaviour:
   position: {x: 990.5229, y: 153.00002}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-    colliders: []
+    collidersInLOS: []
     timer: 10
+    selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
   message: Cannot Attack
@@ -419,11 +455,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: e1f51fe7812cdc449bd08bfb13364611
-  position: {x: -763.95, y: 154}
+  position: {x: -767.9999, y: 164.99998}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-    colliders: []
+    collidersInLOS: []
     timer: 10
+    selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
   rotationThreshold: 1
@@ -445,30 +482,9 @@ MonoBehaviour:
   position: {x: 634.8069, y: 420.99988}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-    colliders: []
+    collidersInLOS: []
     timer: 10
-  description: 
-  drawGizmos: 0
---- !u!114 &4446864221919766772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f93891306064d4f4ca6506424e725d3d, type: 3}
-  m_Name: CheckEnemyInArea
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: f6ba9fb13a46aa74ca9cd4f449669c8e
-  position: {x: -1157.0688, y: 412}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    colliders: []
-    timer: 10
+    selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
 --- !u!114 &4735188207481811079
@@ -489,38 +505,14 @@ MonoBehaviour:
   position: {x: -410.40695, y: 443.9999}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-    colliders: []
+    collidersInLOS: []
     timer: 10
+    selectedTarget: {fileID: 0}
   description: Check if will Jump
   drawGizmos: 0
   children:
   - {fileID: 7138460831820033597}
   - {fileID: -7959581466356797825}
---- !u!114 &4957235561953700779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2932073b8a6c3b34391576c45d359457, type: 3}
-  m_Name: Parallel
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 6c76808873e78a147a462917d1441622
-  position: {x: -1082, y: 174.00002}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    colliders: []
-    timer: 10
-  description: Check If can Attack
-  drawGizmos: 0
-  children:
-  - {fileID: 4446864221919766772}
-  - {fileID: 9054009172299466801}
 --- !u!114 &4979886775550339937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -539,8 +531,9 @@ MonoBehaviour:
   position: {x: 0, y: -385.75998}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-    colliders: []
+    collidersInLOS: []
     timer: 10
+    selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
   child: {fileID: 8430027450953127779}
@@ -562,8 +555,9 @@ MonoBehaviour:
   position: {x: 559.80695, y: 152.99995}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-    colliders: []
+    collidersInLOS: []
     timer: 10
+    selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
   child: {fileID: -7593146815105615789}
@@ -585,8 +579,9 @@ MonoBehaviour:
   position: {x: -485.40698, y: 594.9999}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-    colliders: []
+    collidersInLOS: []
     timer: 10
+    selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
 --- !u!114 &8430027450953127779
@@ -607,8 +602,9 @@ MonoBehaviour:
   position: {x: 0, y: -248}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-    colliders: []
+    collidersInLOS: []
     timer: 10
+    selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
   child: {fileID: -202907832322253378}
@@ -632,30 +628,9 @@ MonoBehaviour:
   position: {x: 178.89746, y: 401.00012}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-    colliders: []
+    collidersInLOS: []
     timer: 10
+    selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
   message: Can Jump
---- !u!114 &9054009172299466801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4993a0d04387a4429a5f576057cfa43, type: 3}
-  m_Name: CheckEnemyInLOS
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: c7ee8d4b0bef13c4ca763ca16e6c2fcf
-  position: {x: -957.7451, y: 387.99994}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    colliders: []
-    timer: 10
-  description: 
-  drawGizmos: 0
