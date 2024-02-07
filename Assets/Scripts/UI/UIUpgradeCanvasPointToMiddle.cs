@@ -22,8 +22,8 @@ public class UIUpgradeCanvasPointToMiddle : MonoBehaviour
     private void Start()
     {
         // Get the center position of the screen in world space
-        centerScreen = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2f, Screen.height / 2f, Camera.main.nearClipPlane));
-
+        //centerScreen = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2f, Screen.height / 2f, Camera.main.nearClipPlane));
+        centerScreen = Vector3.zero;
         //make a private list of the same obj that have an image
         foreach (RectTransform t in rectTransforms)
         {
