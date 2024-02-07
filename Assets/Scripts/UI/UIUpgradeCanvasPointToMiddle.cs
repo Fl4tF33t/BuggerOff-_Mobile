@@ -6,7 +6,7 @@ using TMPro;
 
 public class UIUpgradeCanvasPointToMiddle : MonoBehaviour
 {
-    Vector3 centerScreen;
+    Vector3 centerScreen; 
     RectTransform rectTransform;
 
     RectTransform[] rectTransforms = null;
@@ -37,19 +37,21 @@ public class UIUpgradeCanvasPointToMiddle : MonoBehaviour
 
     private void Update()
     {
-        // Get the direction from the UI element to the center of the screen
-        Vector3 directionToCenter = centerScreen - rectTransform.position;
+        
+            // Get the direction from the UI element to the middle object
+            Vector3 directionToMiddle = centerScreen - rectTransform.position;
 
-        // Calculate the rotation angle in degrees
-        float angle = Mathf.Atan2(directionToCenter.y, directionToCenter.x) * Mathf.Rad2Deg;
+            // Calculate the rotation angle in degrees
+            float angle = Mathf.Atan2(directionToMiddle.y, directionToMiddle.x) * Mathf.Rad2Deg;
 
-        // Apply the rotation to the UI element
-        rectTransform.rotation = Quaternion.Euler(new Vector3(90f, 0f, angle + -45f));
+            // Apply the rotation to the UI element
+            rectTransform.rotation = Quaternion.Euler(new Vector3(90f, angle, 0f));
 
-        //keep the text and the images of the UI static and not moving
-        foreach (RectTransform t in fixedRectTransform)
-        {
-            t.rotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
-        }
+            // Keep the text and the images of the UI static and not moving
+            foreach (RectTransform t in fixedRectTransform)
+            {
+                t.rotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
+            }
+        
     }
 }
