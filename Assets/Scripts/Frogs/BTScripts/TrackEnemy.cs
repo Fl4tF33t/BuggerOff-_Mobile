@@ -14,7 +14,7 @@ public class TrackEnemy : ActionNode
         SelectTarget();
 
         //the timer should be set to the time it takes to shoot a target
-        timer = 5f;
+        timer = .5f;
     }
 
     protected override void OnStop() {
