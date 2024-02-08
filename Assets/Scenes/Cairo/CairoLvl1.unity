@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -357,7 +357,7 @@ PrefabInstance:
     - target: {fileID: 6499757465648109055, guid: 9a4f74a5e9faf7840968804b7684424a,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6544999956181228336, guid: 9a4f74a5e9faf7840968804b7684424a,
         type: 3}
@@ -1208,7 +1208,7 @@ PrefabInstance:
     - target: {fileID: 6499757465648109055, guid: 9a4f74a5e9faf7840968804b7684424a,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6544999956181228336, guid: 9a4f74a5e9faf7840968804b7684424a,
         type: 3}
@@ -3033,7 +3033,7 @@ PrefabInstance:
     - target: {fileID: 6499757465648109055, guid: 9a4f74a5e9faf7840968804b7684424a,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6544999956181228336, guid: 9a4f74a5e9faf7840968804b7684424a,
         type: 3}
@@ -3529,7 +3529,7 @@ PrefabInstance:
     - target: {fileID: 768280728825764585, guid: 5c7ec96d514b7e249bcbffa1a2f5bc50,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.46
+      value: -3.17
       objectReference: {fileID: 0}
     - target: {fileID: 768280728825764585, guid: 5c7ec96d514b7e249bcbffa1a2f5bc50,
         type: 3}
@@ -3539,7 +3539,7 @@ PrefabInstance:
     - target: {fileID: 768280728825764585, guid: 5c7ec96d514b7e249bcbffa1a2f5bc50,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.13
+      value: 1.95
       objectReference: {fileID: 0}
     - target: {fileID: 768280728825764585, guid: 5c7ec96d514b7e249bcbffa1a2f5bc50,
         type: 3}

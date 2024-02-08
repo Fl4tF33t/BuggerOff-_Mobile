@@ -18,6 +18,7 @@ MonoBehaviour:
   position: {x: -617.9999, y: 208.99992}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    col: []
     collidersInLOS: []
     timer: 10
     selectedTarget: {fileID: 0}
@@ -41,6 +42,7 @@ MonoBehaviour:
   position: {x: -322.40692, y: 594.9999}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    col: []
     collidersInLOS: []
     timer: 10
     selectedTarget: {fileID: 0}
@@ -65,6 +67,7 @@ MonoBehaviour:
   position: {x: 559.80695, y: 287.99988}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    col: []
     collidersInLOS: []
     timer: 10
     selectedTarget: {fileID: 0}
@@ -91,6 +94,7 @@ MonoBehaviour:
   position: {x: 899.0113, y: 18.99998}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    col: []
     collidersInLOS: []
     timer: 10
     selectedTarget: {fileID: 0}
@@ -118,6 +122,7 @@ MonoBehaviour:
   position: {x: 784.9999, y: 153.99998}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    col: []
     collidersInLOS: []
     timer: 10
     selectedTarget: {fileID: 0}
@@ -141,6 +146,7 @@ MonoBehaviour:
   position: {x: 457.80695, y: 420.99988}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    col: []
     collidersInLOS: []
     timer: 10
     selectedTarget: {fileID: 0}
@@ -161,9 +167,10 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: d5a43fa5320a09f46bcf9436f617c60a
-  position: {x: -958.7768, y: 152.99997}
+  position: {x: -1053.3063, y: 154.00003}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    col: []
     collidersInLOS: []
     timer: 10
     selectedTarget: {fileID: 0}
@@ -187,6 +194,7 @@ MonoBehaviour:
   position: {x: -742, y: 24.771154}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    col: []
     collidersInLOS: []
     timer: 10
     selectedTarget: {fileID: 0}
@@ -194,7 +202,6 @@ MonoBehaviour:
   drawGizmos: 0
   children:
   - {fileID: -5078561988784354853}
-  - {fileID: 1051455855392458949}
   - {fileID: -2660970889129177931}
 --- !u!114 &-3568407658486204014
 MonoBehaviour:
@@ -214,6 +221,7 @@ MonoBehaviour:
   position: {x: 1.2908173, y: 196.99998}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    col: []
     collidersInLOS: []
     timer: 10
     selectedTarget: {fileID: 0}
@@ -238,6 +246,7 @@ MonoBehaviour:
   position: {x: -150.00014, y: 401.00003}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    col: []
     collidersInLOS: []
     timer: 10
     selectedTarget: {fileID: 0}
@@ -263,6 +272,7 @@ MonoBehaviour:
   position: {x: -436.9001, y: 153.99998}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    col: []
     collidersInLOS: []
     timer: 10
     selectedTarget: {fileID: 0}
@@ -287,6 +297,7 @@ MonoBehaviour:
   position: {x: 11.33078, y: 401.00003}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    col: []
     collidersInLOS: []
     timer: 10
     selectedTarget: {fileID: 0}
@@ -315,6 +326,7 @@ MonoBehaviour:
   position: {x: -410.40695, y: 331.99988}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    col: []
     collidersInLOS: []
     timer: 10
     selectedTarget: {fileID: 0}
@@ -339,6 +351,7 @@ MonoBehaviour:
   position: {x: 0, y: -102}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    col: []
     collidersInLOS: []
     timer: 10
     selectedTarget: {fileID: 0}
@@ -389,6 +402,7 @@ MonoBehaviour:
   - {fileID: -5078561988784354853}
   blackboard:
     moveToPosition: {x: 5, y: 0, z: 0}
+    col: []
     collidersInLOS: []
     timer: 10
     selectedTarget: {fileID: 0}
@@ -410,6 +424,7 @@ MonoBehaviour:
   position: {x: 1400.4069, y: 18.999994}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    col: []
     collidersInLOS: []
     timer: 10
     selectedTarget: {fileID: 0}
@@ -434,6 +449,7 @@ MonoBehaviour:
   position: {x: 990.5229, y: 153.00002}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    col: []
     collidersInLOS: []
     timer: 10
     selectedTarget: {fileID: 0}
@@ -458,6 +474,7 @@ MonoBehaviour:
   position: {x: -767.9999, y: 164.99998}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    col: []
     collidersInLOS: []
     timer: 10
     selectedTarget: {fileID: 0}
@@ -482,6 +499,7 @@ MonoBehaviour:
   position: {x: 634.8069, y: 420.99988}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    col: []
     collidersInLOS: []
     timer: 10
     selectedTarget: {fileID: 0}
@@ -505,6 +523,7 @@ MonoBehaviour:
   position: {x: -410.40695, y: 443.9999}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    col: []
     collidersInLOS: []
     timer: 10
     selectedTarget: {fileID: 0}
@@ -531,6 +550,7 @@ MonoBehaviour:
   position: {x: 0, y: -385.75998}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    col: []
     collidersInLOS: []
     timer: 10
     selectedTarget: {fileID: 0}
@@ -555,6 +575,7 @@ MonoBehaviour:
   position: {x: 559.80695, y: 152.99995}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    col: []
     collidersInLOS: []
     timer: 10
     selectedTarget: {fileID: 0}
@@ -579,6 +600,7 @@ MonoBehaviour:
   position: {x: -485.40698, y: 594.9999}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    col: []
     collidersInLOS: []
     timer: 10
     selectedTarget: {fileID: 0}
@@ -602,6 +624,7 @@ MonoBehaviour:
   position: {x: 0, y: -248}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    col: []
     collidersInLOS: []
     timer: 10
     selectedTarget: {fileID: 0}
@@ -628,6 +651,7 @@ MonoBehaviour:
   position: {x: 178.89746, y: 401.00012}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+    col: []
     collidersInLOS: []
     timer: 10
     selectedTarget: {fileID: 0}
