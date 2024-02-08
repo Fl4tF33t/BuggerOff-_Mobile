@@ -36,7 +36,12 @@ public class CheckEnemy : ActionNode
                 //    blackboard.collidersInLOS.Remove(target);
                 //    break;
                 //}
-                Debug.Log(hit.collider.gameObject.name);
+                if (hit.collider.gameObject.layer == LayerMask.GetMask("Bug")) continue;
+                else
+                {
+                    blackboard.collidersInLOS.Remove(target);
+                    break;
+                }
             }
         }
         
