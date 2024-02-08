@@ -28,70 +28,76 @@ public class WheelManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         if (isDragging)
         {
             Vector2 delta = eventData.position - dragStartPos;
-            totalRotation -= delta.x/3; // Accumulate rotation (subtracting to correct direction)
-            transform.Rotate(Vector3.forward, -delta.x/3); // Rotate the wheel based on drag delta
+            totalRotation -= delta.x/10; // Accumulate rotation (subtracting to correct direction)
+            transform.Rotate(Vector3.forward, -delta.x/10); // Rotate the wheel based on drag delta
             dragStartPos = eventData.position; // Update drag start position
         }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        Debug.Log("enddrag");
         if (isDragging)
         {
+            Debug.Log("Does it check?");
+
+
             // Calculate the closest snap point and snap if necessary
             SnapToNearestSnapPoint();
-
-            // Add inertia rotation
-            float inertiaRotation = eventData.delta.x * 10f; // Adjust the multiplier as needed
-            totalRotation += inertiaRotation; // Update total rotation
-            transform.Rotate(Vector3.forward, inertiaRotation); // Apply inertia rotation
-
             isDragging = false;
         }
     }
 
+   
     void SnapToNearestSnapPoint()
     {
-        if (this.gameObject.GetComponent<RectTransform>().rotation.z < -22.5f && this.gameObject.GetComponent<RectTransform>().rotation.z >=22.5f)
+        Debug.Log(this.gameObject);
+        float rotationAngle = transform.eulerAngles.z;
+
+        if (rotationAngle >= 0 && rotationAngle < 22.5f)
         {
-            this.gameObject.GetComponent<RectTransform>().rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
+            transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
         }
-        else if (this.gameObject.GetComponent<RectTransform>().rotation.z < 22.5f && this.gameObject.GetComponent<RectTransform>().rotation.z >= 22.5f + 45f)
+        else if (rotationAngle >= 22.5f && rotationAngle < 67.5f)
         {
-            this.gameObject.GetComponent<RectTransform>().rotation = Quaternion.Euler(new Vector3(0f, 0f, 45f));
+            transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 45f));
         }
-        else if (this.gameObject.GetComponent<RectTransform>().rotation.z < 22.5f + 45f && this.gameObject.GetComponent<RectTransform>().rotation.z >= 22.5f + 90f)
+        else if (rotationAngle >= 67.5f && rotationAngle < 112.5f)
         {
-            this.gameObject.GetComponent<RectTransform>().rotation = Quaternion.Euler(new Vector3(0f, 0f, 90f));
+            transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 90f));
         }
-        else if (this.gameObject.GetComponent<RectTransform>().rotation.z < 22.5f + 90f && this.gameObject.GetComponent<RectTransform>().rotation.z >= 22.5f + 90f +45f)
+        else if (rotationAngle >= 112.5f && rotationAngle < 157.5f)
         {
-            this.gameObject.GetComponent<RectTransform>().rotation = Quaternion.Euler(new Vector3(0f, 0f, 135f));
+            transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 135f));
         }
-        else if (this.gameObject.GetComponent<RectTransform>().rotation.z < 22.5f + 90f + 45f && this.gameObject.GetComponent<RectTransform>().rotation.z >= 22.5f + 90f + 90f)
+        else if (rotationAngle >= 157.5f && rotationAngle < 202.5f)
         {
-            this.gameObject.GetComponent<RectTransform>().rotation = Quaternion.Euler(new Vector3(0f, 0f, 180f));
+            transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 180f));
         }
-        else if (this.gameObject.GetComponent<RectTransform>().rotation.z < 22.5f + 90f + 90f && this.gameObject.GetComponent<RectTransform>().rotation.z >= 22.5f + 90f + 90f +45f)
+        else if (rotationAngle >= 202.5f && rotationAngle < 247.5f)
         {
-            this.gameObject.GetComponent<RectTransform>().rotation = Quaternion.Euler(new Vector3(0f, 0f, 225f));
+            transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 225f));
         }
-        else if (this.gameObject.GetComponent<RectTransform>().rotation.z < 22.5f + 90f + 90f + 45f && this.gameObject.GetComponent<RectTransform>().rotation.z >= 22.5f + 90f + 90f + 90f)
+        else if (rotationAngle >= 247.5f && rotationAngle < 292.5f)
         {
-            this.gameObject.GetComponent<RectTransform>().rotation = Quaternion.Euler(new Vector3(0f, 0f, 270f));
+            transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 270f));
         }
-        else if (this.gameObject.GetComponent<RectTransform>().rotation.z < -22.5f + 90f + 90f + 90f && this.gameObject.GetComponent<RectTransform>().rotation.z >= 22.5f + 90f + 90f + 90f +45f)
+        else if (rotationAngle >= 292.5f && rotationAngle < 337.5f)
         {
-            this.gameObject.GetComponent<RectTransform>().rotation = Quaternion.Euler(new Vector3(0f, 0f, 315f));
+            transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 315f));
+        }
+        else if (rotationAngle >= 337.5f && rotationAngle < 360f)
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
         }
     }
 
-    void SnapTo(float targetAngle)
-    {
-        float deltaAngle = targetAngle - totalRotation; // Calculate the difference in angle
-        totalRotation += deltaAngle; // Update total rotation
-        transform.Rotate(Vector3.forward, deltaAngle); // Rotate the wheel to the snap point
-    }
+    //void SnapTo(float targetAngle)
+    //{
+    //    float deltaAngle = targetAngle - totalRotation; // Calculate the difference in angle
+    //    totalRotation += deltaAngle; // Update total rotation
+    //    transform.Rotate(Vector3.forward, deltaAngle); // Rotate the wheel to the snap point
+    //}
 
     // Helper method to check if the pointer is over the wheel UI
     bool IsPointerOverUIObject(Vector2 touchPosition)

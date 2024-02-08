@@ -479,6 +479,7 @@ MonoBehaviour:
     damage: 0
     range: 0
     attackSpeed: 0
+    target: 0
   canvas: {fileID: 92883101}
 --- !u!195 &223945848
 NavMeshAgent:
@@ -748,16 +749,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc0038b292146b941866543fe64e6199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapPoints:
-  - {fileID: 528537590}
-  - {fileID: 2110320500}
-  - {fileID: 1850188944}
-  - {fileID: 449585635}
-  - {fileID: 1047552221}
-  - {fileID: 2004964919}
-  - {fileID: 1405271129}
-  - {fileID: 158070382}
-  singularPoint: {fileID: 1830193209}
+  snapPoints: []
+  singularPoint: {fileID: 528537590}
   snapThreshold: 5
 --- !u!114 &429732361
 MonoBehaviour:
@@ -1203,6 +1196,7 @@ MonoBehaviour:
     damage: 0
     range: 0
     attackSpeed: 0
+    target: 0
   canvas: {fileID: 93943316}
 --- !u!195 &720126045
 NavMeshAgent:
@@ -1704,6 +1698,7 @@ MonoBehaviour:
     damage: 0
     range: 0
     attackSpeed: 0
+    target: 0
   canvas: {fileID: 387398368}
 --- !u!195 &1057519868
 NavMeshAgent:
@@ -2067,6 +2062,7 @@ MonoBehaviour:
     damage: 0
     range: 0
     attackSpeed: 0
+    target: 0
   canvas: {fileID: 526412911}
 --- !u!195 &1195701633
 NavMeshAgent:
