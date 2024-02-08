@@ -9,5 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/DextUI.unity
     guid: d5c81897d44abe54cab22718f68dff35
   m_configObjects:
+    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000,
+      guid: 40bac888308bb9047acf16af403d3500, type: 2}
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 9ae6446fb4fdaa348a82a675b8f16d89,
+      type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000,
+      guid: 11949b8edb257cd42ac64cdfb157014b, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
       guid: 99ae1cf506f28784684ada50f970d133, type: 2}
