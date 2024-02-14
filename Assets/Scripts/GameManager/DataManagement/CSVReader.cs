@@ -26,7 +26,7 @@ public class CSVReader : Singleton<CSVReader>
 
     public void ReadCSV(int index)
     {
-        string[] data = csvFile[index].text.Split(new string[] { ",", "\n" }, StringSplitOptions.None);
+        string[] data = csvFile[index].text.Split(new string[] { ";", "\n" }, StringSplitOptions.None);
         int columns = 4;
 
         tableSize = data.Length / columns - 1;

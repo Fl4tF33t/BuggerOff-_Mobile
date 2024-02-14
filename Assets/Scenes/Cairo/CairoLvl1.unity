@@ -2696,7 +2696,6 @@ GameObject:
   - component: {fileID: 1878051540}
   - component: {fileID: 1878051541}
   - component: {fileID: 1878051542}
-  - component: {fileID: 1878051544}
   - component: {fileID: 1878051543}
   - component: {fileID: 1878051545}
   m_Layer: 0
@@ -2733,8 +2732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ef0803b2d407646acf4439f0614fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  csvFile:
-  - {fileID: 4900000, guid: fe493a40d62d5c947a9a01b660fc7148, type: 3}
+  csvFile: []
   nodeDataArray: []
   tableSize: 0
 --- !u!114 &1878051542
@@ -2750,10 +2748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   separatedPooledObjects: []
-  objectsToPool:
-  - prefab: {fileID: 6499757465648109055, guid: 9a4f74a5e9faf7840968804b7684424a,
-      type: 3}
-    amount: 2
+  objectsToPool: []
 --- !u!114 &1878051543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2772,18 +2767,6 @@ MonoBehaviour:
   spawned: 0
   health: 0
   bugBits: 0
---- !u!114 &1878051544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1878051536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba4b310e1c748d240945323a2169ae4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1878051545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2796,11 +2779,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1c877ced6e0b064fa11f6726b1e6e70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnablePositions:
+  - {fileID: 0}
+  - {fileID: 0}
   currentWave: 0
-  waveLimit: 0
   index: 0
-  oldTimer: 0
-  newTimer: 0
   timer: 0
 --- !u!1 &1966473445
 GameObject:
