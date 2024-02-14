@@ -44,7 +44,7 @@ public class BugSpawner : MonoBehaviour
         int i;
         for (i = 0; i < e.amount; i++)
         {
-            GameObject bug = ObjectPool.SharedInstance.GetPooledObject(e.bugType);
+            GameObject bug = ObjectPool.Instance.GetPooledObject(e.bugType);
             if (bug != null)
             {
                 if(e.bugType == CSVReader.BugType.Centipede || e.bugType == CSVReader.BugType.GiantCentipede)
@@ -63,7 +63,7 @@ public class BugSpawner : MonoBehaviour
         {
             for (int j = 0; j < e.amount2; j++)
             {
-                GameObject bug = ObjectPool.SharedInstance.GetPooledObject(e.bugType2);
+                GameObject bug = ObjectPool.Instance.GetPooledObject(e.bugType2);
                 if (bug != null)
                 {
                     if (e.bugType2 == CSVReader.BugType.Centipede || e.bugType == CSVReader.BugType.GiantCentipede)

@@ -2962,6 +2962,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1878051540}
   - component: {fileID: 1878051541}
+  - component: {fileID: 1878051542}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2996,11 +2997,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ef0803b2d407646acf4439f0614fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  csvFile:
-  - {fileID: 4900000, guid: fe493a40d62d5c947a9a01b660fc7148, type: 3}
-  - {fileID: 4900000, guid: fe493a40d62d5c947a9a01b660fc7148, type: 3}
-  nodeDataArray: []
+  csvFile: []
+  nodeDataArray:
+  - time: 0
+    bugType: 0
+    amount: 0
+    path: 2
   tableSize: 0
+--- !u!114 &1878051542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878051536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67ea9567507b0e84e9b1b8ec069f0d5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  separatedPooledObjects: []
+  objectsToPool:
+  - prefab: {fileID: 6499757465648109055, guid: 9a4f74a5e9faf7840968804b7684424a,
+      type: 3}
+    amount: 2
 --- !u!1001 &1896689308
 PrefabInstance:
   m_ObjectHideFlags: 0

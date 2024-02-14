@@ -6,10 +6,10 @@ using UnityEngine;
 //This script is used to to create a pool of objects, having them ready to be used
 //Array of objects is created and filled with the prefabs that are set in the inspector
 //The objects will be set to inactive and will be activated from another script
-public class ObjectPool : MonoBehaviour
+public class ObjectPool : Singleton<ObjectPool>
 {
+    private const string PooledObjs = "PooledObjects";
     private Transform location;
-    public static ObjectPool SharedInstance;
 
     [Serializable]
     public class PooledObjects
@@ -26,14 +26,19 @@ public class ObjectPool : MonoBehaviour
     }
     public ObjectsToPool[] objectsToPool;
 
-    void Awake()
+    protected override void Awake()
     {
-        SharedInstance = this;
+        base.Awake();
+        // Create a new GameObject
+        GameObject newObject = new GameObject();
+
+        // Set the name of the GameObject
+        newObject.name = PooledObjs;
     }
 
     void Start()
     {
-        location = GameObject.Find("SpawnPoint").transform;
+        location = GameObject.Find(PooledObjs).transform;
 
         // Initialize the separate object pools based on defined objects and amounts
         separatedPooledObjects = new PooledObjects[objectsToPool.Length];
@@ -46,6 +51,7 @@ public class ObjectPool : MonoBehaviour
                 // Instantiate objects and add them to the pool
                 tmp = Instantiate(objectsToPool[typesOfObjects].prefab, location.position, Quaternion.identity);
                 tmp.SetActive(false);
+                tmp.transform.SetParent(location);
                 separatedPooledObjects[typesOfObjects].pooledObjects.Add(tmp);
             }
         }

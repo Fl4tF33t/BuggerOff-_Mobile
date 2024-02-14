@@ -41,9 +41,4 @@ public class CSVReader : MonoBehaviour
             nodeDataArray[i].path = int.Parse(data[columns * (i + 1) + 3]);
         }
     }
-
-    private void Start()
-    {
-        ReadCSV(0);
-    }
 }
