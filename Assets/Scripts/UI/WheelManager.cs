@@ -28,8 +28,8 @@ public class WheelManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         if (isDragging)
         {
             Vector2 delta = eventData.position - dragStartPos;
-            totalRotation -= delta.x/10; // Accumulate rotation (subtracting to correct direction)
-            transform.Rotate(Vector3.forward, -delta.x/10); // Rotate the wheel based on drag delta
+            totalRotation -= delta.x/3; // Accumulate rotation (subtracting to correct direction)
+            transform.Rotate(Vector3.forward, -delta.x/3); // Rotate the wheel based on drag delta
             dragStartPos = eventData.position; // Update drag start position
         }
     }
