@@ -1,0 +1,6 @@
+Time,BugType,Amount,Path
+1,Fly,2,1
+2,Beetle,2,2
+3,Fly,3,1
+4,Beetle,3,2
+5,Fly,2,1
