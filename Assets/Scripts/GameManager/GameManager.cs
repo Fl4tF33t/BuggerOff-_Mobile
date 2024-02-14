@@ -8,16 +8,15 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
-    private CSVReader csvReader;
-    private ObjectPool objPool;
+    //private CSVReader csvReader;
+    //private ObjectPool objPool;
 
     public event EventHandler <OnSpawnBugsEvenetArgs> OnSpawnBugs;
     public class OnSpawnBugsEvenetArgs : EventArgs
     {
         public int amount;
-        public int amount2;
         public CSVReader.BugType bugType;
-        public CSVReader.BugType bugType2;
+        public int path;
     }
 
     public event EventHandler OnLevelCompleted;
@@ -29,76 +28,68 @@ public class GameManager : Singleton<GameManager>
     //private Levels levels;
 
 
-    private int time;
+    public int timer;
     public int wave;
-    [SerializeField]
-    private int waveLimit;
-    private int spawned;
-    static int health;
-    static int bugBits = 200;
+    public int waveLimit;
+    public int spawned;
+    public int health;
+    public int bugBits;
 
-    public int GetWaveTotal()
-    {
-        return waveLimit;
-    }
-
-    public static int BugBits
-    {
-        get
-        {
-            return bugBits;
-        }
-    }
-    public static int Health
-    {
-        get
-        {
-            return health;
-        }
-    }
 
     protected override void Awake()
     {
         base.Awake();
-        
-        csvReader = GetComponent<CSVReader>();
-        objPool = GetComponent<ObjectPool>();
-
+        timer = 0;
+        wave = 0;
+        spawned = 0;
+        health = 0;
+        bugBits = 0;
     }
     private void Start()
     {
+
+        waveLimit = CSVReader.Instance.csvFile.Length;
         Time.timeScale = 1;
         health = 10;
         bugBits = 400;
         wave = 0;
-        csvReader.ReadCSV(wave);
+        CSVReader.Instance.ReadCSV(wave);
+
+        StartCoroutine(WaveSystem());
     }
 
+    IEnumerator WaveSystem()
+    {
+        while (true)
+        {
+
+        }
+    }
 
     private void WaveSpawnTimer()
     {
-        time++;
-        for (int i = 0; i < csvReader.nodeDataArray.Length; i++)
+        timer++;
+        for (int i = 0; i < CSVReader.Instance.nodeDataArray.Length; i++)
         {
-            if(time == csvReader.nodeDataArray[i].time)
+            if(timer == CSVReader.Instance.nodeDataArray[i].time)
             {
                 OnSpawnBugs?.Invoke(this, new OnSpawnBugsEvenetArgs
                 {
-                    amount = csvReader.nodeDataArray[i].amount,
-                    bugType = csvReader.nodeDataArray[i].bugType,
+                    amount = CSVReader.Instance.nodeDataArray[i].amount,
+                    bugType = CSVReader.Instance.nodeDataArray[i].bugType,
                 });
                 spawned++;
 
-                if (spawned == csvReader.tableSize)
+                if (spawned == CSVReader.Instance.tableSize)
                 {
                     CancelInvoke();
                     if (wave < waveLimit - 1)
                     {
                         wave++;
                         //levels.nextWave.gameObject.SetActive(true);
-                        time = 0;
+                        timer = 0;
                         spawned = 0;
-                        csvReader.ReadCSV(wave);
+                        CSVReader.Instance.ReadCSV(wave);
                         StartCoroutine("EndOfWaveCheck");
                     }
                     else if (wave ==  waveLimit - 1)
@@ -120,7 +111,7 @@ public class GameManager : Singleton<GameManager>
 
     private IEnumerator EndOfLevelCheck()
     {
-        while (objPool.AnyPooledObjectsActiveForAllTypes())
+        while (ObjectPool.Instance.AnyPooledObjectsActiveForAllTypes())
         {
             yield return null;
         }
@@ -129,7 +120,7 @@ public class GameManager : Singleton<GameManager>
 
     private IEnumerator EndOfWaveCheck()
     {
-        while (objPool.AnyPooledObjectsActiveForAllTypes())
+        while (ObjectPool.Instance.AnyPooledObjectsActiveForAllTypes())
         {
             yield return null;
         }
