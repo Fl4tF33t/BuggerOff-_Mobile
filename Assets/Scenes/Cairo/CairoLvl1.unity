@@ -1782,6 +1782,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 536778525}
     m_Modifications:
+    - target: {fileID: 4202115963057425361, guid: 3a010b6f0b7d99d47addfbe13ee0bd95,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202115963057425361, guid: 3a010b6f0b7d99d47addfbe13ee0bd95,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202115963057425361, guid: 3a010b6f0b7d99d47addfbe13ee0bd95,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1878051545}
+    - target: {fileID: 4202115963057425361, guid: 3a010b6f0b7d99d47addfbe13ee0bd95,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202115963057425361, guid: 3a010b6f0b7d99d47addfbe13ee0bd95,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: WaveButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202115963057425361, guid: 3a010b6f0b7d99d47addfbe13ee0bd95,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WaveSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202115963057425361, guid: 3a010b6f0b7d99d47addfbe13ee0bd95,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5735506468041725709, guid: 3a010b6f0b7d99d47addfbe13ee0bd95,
         type: 3}
       propertyPath: m_Name
@@ -2661,6 +2696,9 @@ GameObject:
   - component: {fileID: 1878051540}
   - component: {fileID: 1878051541}
   - component: {fileID: 1878051542}
+  - component: {fileID: 1878051544}
+  - component: {fileID: 1878051543}
+  - component: {fileID: 1878051545}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2695,12 +2733,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ef0803b2d407646acf4439f0614fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  csvFile: []
-  nodeDataArray:
-  - time: 0
-    bugType: 0
-    amount: 0
-    path: 2
+  csvFile:
+  - {fileID: 4900000, guid: fe493a40d62d5c947a9a01b660fc7148, type: 3}
+  nodeDataArray: []
   tableSize: 0
 --- !u!114 &1878051542
 MonoBehaviour:
@@ -2719,6 +2754,54 @@ MonoBehaviour:
   - prefab: {fileID: 6499757465648109055, guid: 9a4f74a5e9faf7840968804b7684424a,
       type: 3}
     amount: 2
+--- !u!114 &1878051543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878051536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76444bf777b2a9a42bd4d9ed6ee1e6b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0
+  wave: 0
+  waveLimit: 0
+  spawned: 0
+  health: 0
+  bugBits: 0
+--- !u!114 &1878051544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878051536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba4b310e1c748d240945323a2169ae4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1878051545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878051536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1c877ced6e0b064fa11f6726b1e6e70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWave: 0
+  waveLimit: 0
+  index: 0
+  oldTimer: 0
+  newTimer: 0
+  timer: 0
 --- !u!1 &1966473445
 GameObject:
   m_ObjectHideFlags: 0

@@ -35,16 +35,6 @@ public class GameManager : Singleton<GameManager>
     public int health;
     public int bugBits;
 
-
-    protected override void Awake()
-    {
-        base.Awake();
-        timer = 0;
-        wave = 0;
-        spawned = 0;
-        health = 0;
-        bugBits = 0;
-    }
     private void Start()
     {
 
@@ -55,7 +45,7 @@ public class GameManager : Singleton<GameManager>
         wave = 0;
         CSVReader.Instance.ReadCSV(wave);
 
-        StartCoroutine(WaveSystem());
+        //StartCoroutine(WaveSystem());
     }
 
     IEnumerator WaveSystem()
