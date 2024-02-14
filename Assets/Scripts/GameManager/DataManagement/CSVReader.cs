@@ -4,7 +4,7 @@ using System;
 //This script is used to extract data from the CSVfile set it into usable arrays
 //The data used is set on a time base of when the bugs are spawned and how many
 //The max amount of different prefabs that can be spawned at a given time is 2
-public class CSVReader : MonoBehaviour
+public class CSVReader : Singleton<CSVReader>
 {
     public TextAsset[] csvFile;
     public NodeData[] nodeDataArray;

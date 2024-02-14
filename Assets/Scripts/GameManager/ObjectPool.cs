@@ -9,8 +9,6 @@ using UnityEngine;
 public class ObjectPool : Singleton<ObjectPool>
 {
     private const string PooledObjs = "PooledObjects";
-    private Transform location;
-
     [Serializable]
     public class PooledObjects
     {
@@ -38,7 +36,7 @@ public class ObjectPool : Singleton<ObjectPool>
 
     void Start()
     {
-        location = GameObject.Find(PooledObjs).transform;
+        Transform location = GameObject.Find(PooledObjs).transform;
 
         // Initialize the separate object pools based on defined objects and amounts
         separatedPooledObjects = new PooledObjects[objectsToPool.Length];

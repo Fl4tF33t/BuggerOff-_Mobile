@@ -981,7 +981,7 @@ GameObject:
   - component: {fileID: 1752875002450028115}
   - component: {fileID: 1752875002450028112}
   m_Layer: 0
-  m_Name: Frog_Common_Visuals
+  m_Name: Frog_Common_Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
