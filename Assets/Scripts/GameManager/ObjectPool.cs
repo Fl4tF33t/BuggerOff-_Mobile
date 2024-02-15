@@ -72,20 +72,29 @@ public class ObjectPool : Singleton<ObjectPool>
                         return separatedPooledObjects[i].pooledObjects[j];
                     }
                 }
-            }
-            
+            }  
         }
         return null;
     }
 
     // Check if any objects are currently active in the pool for a specific bug type
-    public bool AnyPooledObjectsActive(CSVReader.BugType type)
+    public bool AnyPooledObjectsActive(string type)
     {
-        for (int i = 0; i < separatedPooledObjects[(int)type].pooledObjects.Count; i++)
+        for (int i = 0; i < separatedPooledObjects.Length; i++)
         {
-            if (separatedPooledObjects[(int)type].pooledObjects[i].activeInHierarchy)
+            if (!separatedPooledObjects[i].pooledObjects[0].name.Contains(type))
             {
-                return true;
+                continue;
+            }
+            else if (separatedPooledObjects[i].pooledObjects[0].name.Contains(type))
+            {
+                for (int j = 0; j < separatedPooledObjects[i].pooledObjects.Count; j++)
+                {
+                    if (separatedPooledObjects[i].pooledObjects[j].activeInHierarchy)
+                    {
+                        return true;
+                    }
+                }
             }
         }
         return false;
@@ -94,13 +103,13 @@ public class ObjectPool : Singleton<ObjectPool>
     // Check if any objects are currently active in the pool for all bug types
     public bool AnyPooledObjectsActiveForAllTypes()
     {
-        foreach (CSVReader.BugType type in Enum.GetValues(typeof(CSVReader.BugType)))
+        foreach (PooledObjects type in separatedPooledObjects)
         {
-            if (AnyPooledObjectsActive(type))
+            if (AnyPooledObjectsActive(type.pooledObjects[0].name))
             {
-                return true; 
+                return true;
             }
         }
-        return false; 
+        return false;
     }
 }

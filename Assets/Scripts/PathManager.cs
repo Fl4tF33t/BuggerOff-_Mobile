@@ -9,6 +9,9 @@ public class PathManager : Singleton<PathManager>
     //This is a list of all the waypoints in the scene, have them public for the ai to reference
     private Transform[] transformArray;
     [HideInInspector]
+    public List<Transform> waypointsPath1 = new List<Transform>();
+
+    [HideInInspector]
     public List<Transform> waypoints = new List<Transform>();
 
     protected override void Awake()
