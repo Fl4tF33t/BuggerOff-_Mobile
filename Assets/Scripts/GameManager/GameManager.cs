@@ -7,9 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : Singleton<GameManager>
 {
 
-    public event EventHandler OnLevelCompleted;
-
-    public event EventHandler OnWaveCompleted;
+    
 
     public event EventHandler OnNextWave;
 
@@ -28,25 +26,10 @@ public class GameManager : Singleton<GameManager>
 
     }
 
-  
 
-    private IEnumerator EndOfLevelCheck()
-    {
-        while (ObjectPool.Instance.AnyPooledObjectsActiveForAllTypes())
-        {
-            yield return null;
-        }
-        OnLevelCompleted?.Invoke(this, EventArgs.Empty);
-    }
+   
 
-    private IEnumerator EndOfWaveCheck()
-    {
-        while (ObjectPool.Instance.AnyPooledObjectsActiveForAllTypes())
-        {
-            yield return null;
-        }
-        OnWaveCompleted?.Invoke(this, EventArgs.Empty);
-    }
+    
 
     public void HealthChange(int amount)
     {
