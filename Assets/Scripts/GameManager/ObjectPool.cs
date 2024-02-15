@@ -56,14 +56,24 @@ public class ObjectPool : Singleton<ObjectPool>
     }
 
     // Retrieve an inactive object from the pool based on bug type
-    public GameObject GetPooledObject(CSVReader.BugType type)
+    public GameObject GetPooledObject(string type)
     {
-        for (int i = 0; i < separatedPooledObjects[(int)type].pooledObjects.Count; i++)
+        for (int i = 0; i < separatedPooledObjects.Length; i++)
         {
-            if (!separatedPooledObjects[(int)type].pooledObjects[i].activeInHierarchy)
+            if (!separatedPooledObjects[i].pooledObjects[0].name.Contains(type))
             {
-                return separatedPooledObjects[(int)type].pooledObjects[i];
+                continue;
+            }else if (separatedPooledObjects[i].pooledObjects[0].name.Contains(type))
+            {
+                for(int j = 0; j < separatedPooledObjects[i].pooledObjects.Count; j++)
+                {
+                    if (!separatedPooledObjects[i].pooledObjects[j].activeInHierarchy)
+                    {
+                        return separatedPooledObjects[i].pooledObjects[j];
+                    }
+                }
             }
+            
         }
         return null;
     }

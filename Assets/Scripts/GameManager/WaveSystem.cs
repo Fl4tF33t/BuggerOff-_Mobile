@@ -58,7 +58,7 @@ public class WaveSystem : Singleton<WaveSystem>
         index = 0;
     }
 
-    void SpawnBug(CSVReader.BugType bugType, int amount, int path)
+    void SpawnBug(string bugType, int amount, int path)
     {
         for (int i = 0; i < amount; i++)
         {

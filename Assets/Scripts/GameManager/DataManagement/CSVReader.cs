@@ -19,7 +19,7 @@ public class CSVReader : Singleton<CSVReader>
     public class NodeData
     {
         public int time;
-        public BugType bugType;
+        public string bugType;
         public int amount;
         public int path;
     }
@@ -36,7 +36,7 @@ public class CSVReader : Singleton<CSVReader>
         {
             nodeDataArray[i] = new NodeData();
             nodeDataArray[i].time = int.Parse(data[columns * (i + 1)]);
-            nodeDataArray[i].bugType = (BugType)Enum.Parse(typeof(BugType), data[columns * (i + 1) + 1]); 
+            nodeDataArray[i].bugType = data[columns * (i + 1) + 1]; 
             nodeDataArray[i].amount = int.Parse(data[columns * (i + 1) + 2]);
             nodeDataArray[i].path = int.Parse(data[columns * (i + 1) + 3]);
         }
