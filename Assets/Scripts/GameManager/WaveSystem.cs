@@ -6,7 +6,6 @@ using UnityEngine;
 public class WaveSystem : Singleton<WaveSystem>
 {
     public event EventHandler OnLevelCompleted;
-
     public event EventHandler OnWaveCompleted;
 
     [SerializeField]
