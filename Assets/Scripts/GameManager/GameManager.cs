@@ -32,6 +32,6 @@ public class GameManager : Singleton<GameManager>
 
     public void StartWaves()
     {
-        StartCoroutine(WaveSystem.Instance.Waves());
+        StartCoroutine(WaveSystem.Instance.Waves());    
     }
 }
