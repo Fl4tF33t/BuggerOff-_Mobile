@@ -6,7 +6,6 @@ using UnityEngine;
 public class WaveSystem : Singleton<WaveSystem>
 {
     public event EventHandler OnLevelCompleted;
-
     public event EventHandler OnWaveCompleted;
 
     [SerializeField]
@@ -38,7 +37,7 @@ public class WaveSystem : Singleton<WaveSystem>
 
         //Here the event is triggered to spawn the enemies
         Debug.Log("Testing");
-        SpawnBug(CSVReader.Instance.nodeDataArray[index].bugType, CSVReader.Instance.nodeDataArray[index].amount, CSVReader.Instance.nodeDataArray[index].path);
+        SpawnBug(CSVReader.Instance.nodeDataArray[index].bugType, CSVReader.Instance.nodeDataArray[index].amount, CSVReader.Instance.nodeDataArray[index].path -1);
 
 
         //increase the index and see if it is within the array for the next enemy within the wave

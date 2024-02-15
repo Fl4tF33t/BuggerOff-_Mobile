@@ -5,9 +5,7 @@ using System;
 using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
-{
-
-    
+{   
 
     public event EventHandler OnNextWave;
 
