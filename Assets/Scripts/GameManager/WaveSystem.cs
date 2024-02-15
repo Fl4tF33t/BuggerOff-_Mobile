@@ -11,25 +11,17 @@ public class WaveSystem : Singleton<WaveSystem>
     [SerializeField]
     private Transform[] spawnablePositions;
 
-    public int currentWave;
-    public int index;
-    public float timer;
+    [SerializeField]
+    private int currentWave;
+    private int index;
+    private float timer;
 
     private void Start()
     {
-        //Initialise the csv file that we are currently reading
-        CSVReader.Instance.ReadCSV(currentWave);
-
-        StartCoroutine(Waves());
+        ResetNewWave();
     }
 
-    public void StartWaveSystem()
-    {
-        StartCoroutine(Waves());
-
-    }
-
-    IEnumerator Waves()
+    public IEnumerator Waves()
     {
         //The countdown timer before the event is triggered
         timer = index == 0 ? timer = CSVReader.Instance.nodeDataArray[index].time : CSVReader.Instance.nodeDataArray[index].time - CSVReader.Instance.nodeDataArray[index - 1].time;

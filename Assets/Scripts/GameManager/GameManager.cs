@@ -11,23 +11,14 @@ public class GameManager : Singleton<GameManager>
 
     //private Levels levels;
 
-
-    public int spawned;
     public int health;
     public int bugBits;
  
     private void Start()
     {
-
         health = 10;
         bugBits = 400;
-
     }
-
-
-   
-
-    
 
     public void HealthChange(int amount)
     {
@@ -39,4 +30,8 @@ public class GameManager : Singleton<GameManager>
         bugBits += amount;
     }
 
+    public void StartWaves()
+    {
+        StartCoroutine(WaveSystem.Instance.Waves());
+    }
 }

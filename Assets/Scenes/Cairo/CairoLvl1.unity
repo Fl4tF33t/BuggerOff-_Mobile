@@ -3080,7 +3080,7 @@ PrefabInstance:
     - target: {fileID: 2336250670745263039, guid: c2416b263aa7731419a70f55d79b51b7,
         type: 3}
       propertyPath: spawnablePositions.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2336250670745263039, guid: c2416b263aa7731419a70f55d79b51b7,
         type: 3}
