@@ -57,7 +57,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 6499757465648109055}
   m_Enabled: 1
   m_AgentTypeID: -334000983
-  m_Radius: 0.5
+  m_Radius: 0.35
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -96,13 +96,13 @@ SphereCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 0.35
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2293940730569707074
 PrefabInstance:
@@ -225,7 +225,7 @@ PrefabInstance:
     - target: {fileID: 3993892216401502866, guid: 25f35e9b9fecd83498b0d2493286ef12,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.83
+      value: -0.728
       objectReference: {fileID: 0}
     - target: {fileID: 3993892216401502866, guid: 25f35e9b9fecd83498b0d2493286ef12,
         type: 3}
