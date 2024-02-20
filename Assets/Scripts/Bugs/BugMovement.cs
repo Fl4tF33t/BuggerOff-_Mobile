@@ -5,13 +5,14 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class BugMovement : MonoBehaviour
-{ // Destination the agent should reach
+{ 
+    // Destination the agent should reach
     private BugBrain bugBrain;
     private NavMeshAgent agent;
     private int currentWaypointIndex = 0;
 
     private void Awake()
-    {
+    {     
         bugBrain = GetComponent<BugBrain>();
         agent = GetComponent<NavMeshAgent>();
         InitializeBugMovement(bugBrain.bugSO);
@@ -32,11 +33,10 @@ public class BugMovement : MonoBehaviour
     }
 
     private void Start()
-    {
+    {            
         agent.destination = PathManager.Instance.waypoints[currentWaypointIndex].position;   
     }
-
-
+    
     private void Update()
     {
         // Check if the bug has reached the current waypoint
