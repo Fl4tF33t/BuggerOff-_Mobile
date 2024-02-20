@@ -88,6 +88,9 @@ TagManager:
   - name: ONLY_Sunglasses
     uniqueID: 2253254989
     locked: 0
+  - name: Weather
+    uniqueID: 1678877187
+    locked: 0
   - name: UI
     uniqueID: 3260148093
     locked: 0
