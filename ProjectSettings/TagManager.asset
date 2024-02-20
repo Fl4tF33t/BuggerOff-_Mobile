@@ -46,11 +46,50 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Bug_Beetle
+    uniqueID: 2584200537
+    locked: 0
+  - name: Bug_Cricket
+    uniqueID: 37760915
+    locked: 0
+  - name: Bug_Scarab
+    uniqueID: 160297673
+    locked: 0
+  - name: Bug_Fly
+    uniqueID: 1636730941
+    locked: 0
+  - name: Bug_Mosquito
+    uniqueID: 3841425813
+    locked: 0
+  - name: Bug_Boss
+    uniqueID: 2023343925
+    locked: 0
+  - name: Frog_Cannon
+    uniqueID: 3376805405
+    locked: 0
+  - name: Frog_Cannon
+    uniqueID: 156299963
+    locked: 0
+  - name: Frog_Common
+    uniqueID: 309069353
+    locked: 0
+  - name: Frog_DesertRain
+    uniqueID: 689300027
+    locked: 0
+  - name: Frog_Diver
+    uniqueID: 3618697819
+    locked: 0
+  - name: Frog_Samurai
+    uniqueID: 2222209127
+    locked: 0
+  - name: Frog_Sunglasses
+    uniqueID: 383690811
+    locked: 0
+  - name: ONLY_Sunglasses
+    uniqueID: 2253254989
+    locked: 0
   - name: UI
     uniqueID: 3260148093
-    locked: 0
-  - name: Frog
-    uniqueID: 3376805405
     locked: 0
   - name: WorldUI
     uniqueID: 2316796671
