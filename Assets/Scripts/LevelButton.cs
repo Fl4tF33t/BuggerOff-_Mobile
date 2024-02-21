@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class LevelButton : MonoBehaviour, IPointerDownHandler
 {
+    //ThreeStars isThreeStarred;
+
     Button easy;
     Button normal;
     Button hard;
@@ -20,6 +22,22 @@ public class LevelButton : MonoBehaviour, IPointerDownHandler
     {
         easy.gameObject.SetActive(true);
         normal.gameObject.SetActive(true);
+        if (easy.GetComponent<ThreeStars>().threeStarred)
+        {
+            normal.interactable = true;
+        }
+        else
+        {
+            normal.interactable = false;
+        }
         hard.gameObject.SetActive(true);
+        if (normal.GetComponent<ThreeStars>().threeStarred)
+        {
+            hard.interactable = true;
+        }
+        else
+        {
+            hard.interactable = false;
+        }
     }
 }
