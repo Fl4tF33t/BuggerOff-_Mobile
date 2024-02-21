@@ -21,10 +21,12 @@ public class InputManager : Singleton<InputManager>
     //public event TouchPressEvent OnTouchPress;
 
     PlayerInputActions playerInputActions;
+    EventSystem eventSystem;
 
     protected override void Awake()
     {
         base.Awake();
+        eventSystem = EventSystem.current;
         playerInputActions = new PlayerInputActions(); 
         playerInputActions.Player.Enable();
     }
@@ -46,30 +48,48 @@ public class InputManager : Singleton<InputManager>
 
     private void TouchPress_performed(InputAction.CallbackContext obj)
     {
-        Debug.Log("Press " + obj.phase);
+        //Debug.Log("Press " + obj.phase);
     }
 
     private void TouchPress_canceled(InputAction.CallbackContext obj)
     {
-        Debug.Log("Press " + obj.phase);
+        //Debug.Log("Press " + obj.phase);
     }
 
     private void TouchPress_started(InputAction.CallbackContext obj)
     {
-        Debug.Log("Press " + obj.phase);
+        //Debug.Log("Press " + obj.phase);
     }
 
     private void TouchHold_performed(InputAction.CallbackContext obj)
     {
-        Debug.Log("Hold " + obj.phase);
+        //Debug.Log("Hold " + obj.phase);
     }
 
     private void TouchTap_performed(InputAction.CallbackContext obj)
     {
-        Debug.Log("Tap " + obj.phase);
-        OnTouchTap?.Invoke(this, new OnTouchTapEventArgs
+        //Debug.Log("Tap " + obj.phase);
+
+        // Get the touch position
+        Vector2 touchPosition = playerInputActions.Player.TouchPosition.ReadValue<Vector2>();
+
+        // Perform a raycast from the touch position
+        PointerEventData eventData = new PointerEventData(eventSystem);
+        eventData.position = touchPosition;
+        List<RaycastResult> results = new List<RaycastResult>();
+        eventSystem.RaycastAll(eventData, results);
+
+        // Check if any UI element was hit by the raycast
+        bool isPointerOverUI = results.Count > 0;
+
+        // If not over a UI element, invoke the OnTouchTap event
+        if (!isPointerOverUI)
         {
-            screenPosition = playerInputActions.Player.TouchPosition.ReadValue<Vector2>()
-        });
+            Debug.Log("Tap performed");
+            OnTouchTap?.Invoke(this, new OnTouchTapEventArgs
+            {
+                screenPosition = touchPosition
+            });
+        }
     }
 }

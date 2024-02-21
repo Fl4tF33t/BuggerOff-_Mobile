@@ -1,44 +1,42 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using System;
+using UnityEngine.EventSystems;
 
 public class PlayerManager : Singleton<PlayerManager>
 {
-    FrogBrain selectedFrog = null;
-
-    //Variables for UI elements
     LayerMask frogLayer;
-    [HideInInspector]
-    public bool isOnUI = false;
+    FrogBrain frogBrain;
 
-    private void Start()
+    void Start()
     {
         frogLayer = LayerMask.GetMask("Frog");
         InputManager.Instance.OnTouchTap += InputManager_OnTouchTap;
     }
 
-    private void InputManager_OnTouchTap(object sender, InputManager.OnTouchTapEventArgs e)
+    void InputManager_OnTouchTap(object sender, InputManager.OnTouchTapEventArgs e)
     {
         Ray ray = Camera.main.ScreenPointToRay(e.screenPosition);
         RaycastHit hit;
 
+        // Check if the ray hits a frog GameObject
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, frogLayer))
         {
-            if(selectedFrog != null)
+            if (frogBrain != null)
             {
-                selectedFrog.OnUpgradeUI(false);
+                frogBrain.OnUpgradeUI(false);
+                frogBrain = hit.collider.gameObject.GetComponent<FrogBrain>();
+                frogBrain.OnUpgradeUI(true);
+                return;
             }
-            selectedFrog = hit.transform.GetComponent<FrogBrain>();
-            selectedFrog.OnUpgradeUI(true);
+            // Get the GameObject hit by the raycast
+            frogBrain = hit.collider.gameObject.GetComponent<FrogBrain>();
+            frogBrain.OnUpgradeUI(true);
         }
-        else if (!isOnUI)
+        else
         {
-            if(selectedFrog != null)
+            if(frogBrain != null)
             {
-                selectedFrog.OnUpgradeUI(false);
-                selectedFrog = null;
+                frogBrain.OnUpgradeUI(false);
+                frogBrain = null;
             }
         }
     }

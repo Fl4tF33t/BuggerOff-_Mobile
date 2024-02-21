@@ -54,4 +54,5 @@ public class FrogBrain : MonoBehaviour
     {
         OnUpgradeUI = (arg) => { canvas.gameObject.SetActive(arg); };
     }
+
 }

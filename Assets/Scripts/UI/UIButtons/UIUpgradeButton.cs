@@ -13,13 +13,13 @@ public class UIUpgradeButton : UIButtonManager
 
     public override void OnPointerDown(PointerEventData eventData)
     {
-        PlayerManager.Instance.isOnUI = true;
+        //PlayerManager.Instance.isOnUI = true;
         base.OnPointerDown(eventData);
     }
 
     public override void OnPointerUp(PointerEventData eventData)
     {
-        PlayerManager.Instance.isOnUI = false;
+        //PlayerManager.Instance.isOnUI = false;
         base.OnPointerExit(eventData);
     }
 
