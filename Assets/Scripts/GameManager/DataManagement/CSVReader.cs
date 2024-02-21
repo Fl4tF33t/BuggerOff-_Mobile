@@ -12,9 +12,6 @@ public class CSVReader : Singleton<CSVReader>
     [HideInInspector]
     public int tableSize;
 
-    //public enum BugType { Fly, Beetle, Cricket, Mosquito, Cockchafer, Scarab, DungBeetle, Centipede, GiantCentipede }
-
-
     [System.Serializable]
     public class NodeData
     {

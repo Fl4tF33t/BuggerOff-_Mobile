@@ -13,21 +13,23 @@ public class CheckEnemyInLOS : ActionNode
     }
 
     protected override State OnUpdate() {
-        //RaycastHit hit;
-        //foreach (Collider item in blackboard.colliders)
-        //{
-        //    if (Physics.Raycast(context.transform.position, item.transform.position - context.transform.position, out hit))
-        //    {
-        //        if (hit.collider == item)
-        //        {
-        //            return State.Success;
-        //        }else continue;
-        //    }
-        //    else
-        //    {
-        //        return State.Failure;
-        //    }
-        //}
+        RaycastHit hit;
+        foreach (Collider item in blackboard.collidersInArea)
+        {
+            if (Physics.Raycast(context.transform.position, item.transform.position - context.transform.position, out hit))
+            {
+                if (hit.collider == item)
+                {
+                    blackboard.collidersInLOS.Add(item);
+                    return State.Success;
+                }
+                else continue;
+            }
+            else
+            {
+                return State.Failure;
+            }
+        }
         return State.Failure;
     }
 }

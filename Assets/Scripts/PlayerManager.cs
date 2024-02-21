@@ -28,16 +28,16 @@ public class PlayerManager : Singleton<PlayerManager>
         {
             if(selectedFrog != null)
             {
-                selectedFrog.UpgradeUI(false);
+                selectedFrog.OnUpgradeUI(false);
             }
             selectedFrog = hit.transform.GetComponent<FrogBrain>();
-            selectedFrog.UpgradeUI(true);
+            selectedFrog.OnUpgradeUI(true);
         }
         else if (!isOnUI)
         {
             if(selectedFrog != null)
             {
-                selectedFrog.UpgradeUI(false);
+                selectedFrog.OnUpgradeUI(false);
                 selectedFrog = null;
             }
         }

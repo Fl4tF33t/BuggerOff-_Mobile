@@ -5,16 +5,16 @@ using UnityEngine.AI;
 
 [RequireComponent(typeof(BugMovement))]
 [RequireComponent(typeof(NavMeshAgent))]
-//[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody))]
 
-public class BugBrain : MonoBehaviour, ITakeDamage
+public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
 {
     public BugSO bugSO;
 
     private int health;
     private int sheild;
-
-    private void Awake()
+      
+    private void OnEnable()
     {
         InitializeBugLogic(bugSO);
     }
@@ -26,7 +26,7 @@ public class BugBrain : MonoBehaviour, ITakeDamage
         sheild = bugSO.sheild;
     }
 
-    public void TakeDamage(int damage)
+    public void BugTakeDamage(int damage)
     {
         //check if the bug has sheild
         if (sheild > 0)
@@ -50,7 +50,13 @@ public class BugBrain : MonoBehaviour, ITakeDamage
         if (health <= 0)
         {
             //if so, destroy the bug
-            Destroy(gameObject);
+            GameManager.Instance.OnBugBitsChange(bugSO.moneyDrop);
+            gameObject.SetActive(false);
         }
-    }   
+    }
+
+    public void PlayerTakeDamage(int damage)
+    {
+        GameManager.Instance.OnHealthChange(-bugSO.damageToPlayer);
+    }
 }

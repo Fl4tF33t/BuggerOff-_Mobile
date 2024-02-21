@@ -1,538 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8411004017356763473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3360a53f66a7ac344931703b7bd6e485, type: 3}
-  m_Name: ShootEnemy
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: ec51b40d00a8cd64fb763d1160ae698c
-  position: {x: -617.9999, y: 208.99992}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    col: []
-    collidersInLOS: []
-    timer: 10
-    selectedTarget: {fileID: 0}
-  description: 
-  drawGizmos: 0
---- !u!114 &-7959581466356797825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93abb4eeddc702349b748520c975c4c6, type: 3}
-  m_Name: CheckWillJump
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 5caab6fe26eef604b848dd017b6a6deb
-  position: {x: -322.40692, y: 594.9999}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    col: []
-    collidersInLOS: []
-    timer: 10
-    selectedTarget: {fileID: 0}
-  description: 
-  drawGizmos: 0
-  chanceOfJump: 0.5
---- !u!114 &-7593146815105615789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2932073b8a6c3b34391576c45d359457, type: 3}
-  m_Name: Parallel
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 4ddbf313cfadab3428f3f8e1f41c701b
-  position: {x: 559.80695, y: 287.99988}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    col: []
-    collidersInLOS: []
-    timer: 10
-    selectedTarget: {fileID: 0}
-  description: Parallel Checks
-  drawGizmos: 0
-  children:
-  - {fileID: -5167772764107436902}
-  - {fileID: 1212834892908534260}
---- !u!114 &-5349349756373352265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61431bba79d7d7843b82bf1de71703f5, type: 3}
-  m_Name: Sequencer
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: c87e5c1ca6170a6448d65160183b9330
-  position: {x: 899.0113, y: 18.99998}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    col: []
-    collidersInLOS: []
-    timer: 10
-    selectedTarget: {fileID: 0}
-  description: Idle & Countdown Sequence
-  drawGizmos: 0
-  children:
-  - {fileID: 6646164357094348539}
-  - {fileID: -5278449069860748975}
-  - {fileID: 76652207958400974}
---- !u!114 &-5278449069860748975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c87e942b23946549a16ccd4280f6052, type: 3}
-  m_Name: TimerCountdown
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: feddb49118d9b0849aab9cdf95317ac8
-  position: {x: 784.9999, y: 153.99998}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    col: []
-    collidersInLOS: []
-    timer: 10
-    selectedTarget: {fileID: 0}
-  description: 
-  drawGizmos: 0
---- !u!114 &-5167772764107436902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f93891306064d4f4ca6506424e725d3d, type: 3}
-  m_Name: CheckEnemyInArea
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 07dc6e28c15ad614c8e780f2d02c9362
-  position: {x: 457.80695, y: 420.99988}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    col: []
-    collidersInLOS: []
-    timer: 10
-    selectedTarget: {fileID: 0}
-  description: 
-  drawGizmos: 0
---- !u!114 &-5078561988784354853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b16fca8106797b459c7af0def9366c2, type: 3}
-  m_Name: CheckEnemy
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: d5a43fa5320a09f46bcf9436f617c60a
-  position: {x: -1053.3063, y: 154.00003}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    col: []
-    collidersInLOS: []
-    timer: 10
-    selectedTarget: {fileID: 0}
-  description: 
-  drawGizmos: 0
---- !u!114 &-5032812672587197468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61431bba79d7d7843b82bf1de71703f5, type: 3}
-  m_Name: Sequencer
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: d460d4c9da40e974996f621bf0b6ff2b
-  position: {x: -742, y: 24.771154}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    col: []
-    collidersInLOS: []
-    timer: 10
-    selectedTarget: {fileID: 0}
-  description: Attack Sequence
-  drawGizmos: 0
-  children:
-  - {fileID: -5078561988784354853}
-  - {fileID: -2660970889129177931}
---- !u!114 &-3568407658486204014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61431bba79d7d7843b82bf1de71703f5, type: 3}
-  m_Name: Sequencer
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 83bfc597cf72fa743bba66fe9993b0d8
-  position: {x: 1.2908173, y: 196.99998}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    col: []
-    collidersInLOS: []
-    timer: 10
-    selectedTarget: {fileID: 0}
-  description: Jump Sequence
-  drawGizmos: 0
-  children: []
---- !u!114 &-2694224307877224908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0a055ff4bd9e6642b3f0dff32a86e1d, type: 3}
-  m_Name: RandomPosition
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 95cbae1452372384cb60bafbfca94b62
-  position: {x: -150.00014, y: 401.00003}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    col: []
-    collidersInLOS: []
-    timer: 10
-    selectedTarget: {fileID: 0}
-  description: 
-  drawGizmos: 0
-  min: {x: -10, y: -10}
-  max: {x: 10, y: 10}
---- !u!114 &-2660970889129177931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df9e411f4095d0a44acd9a25323f5e73, type: 3}
-  m_Name: Log
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 58aa0d5025a1fde41a6b7e4395b26527
-  position: {x: -436.9001, y: 153.99998}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    col: []
-    collidersInLOS: []
-    timer: 10
-    selectedTarget: {fileID: 0}
-  description: 
-  drawGizmos: 0
-  message: Can Attack
---- !u!114 &-1972061606723844869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4489e3e257543504c8fc9f891246af6c, type: 3}
-  m_Name: MoveToPosition
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 2d851a67ecac2b14ca9714345fa06d39
-  position: {x: 11.33078, y: 401.00003}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    col: []
-    collidersInLOS: []
-    timer: 10
-    selectedTarget: {fileID: 0}
-  description: 
-  drawGizmos: 0
-  speed: 5
-  stoppingDistance: 0.1
-  updateRotation: 1
-  acceleration: 40
-  tolerance: 1
---- !u!114 &-1696869344406797874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e658b1bd308bc5c429f5a9b404a04943, type: 3}
-  m_Name: Inverter
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 3e4d0bf4f3f9f25428199412fac848fd
-  position: {x: -410.40695, y: 331.99988}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    col: []
-    collidersInLOS: []
-    timer: 10
-    selectedTarget: {fileID: 0}
-  description: 
-  drawGizmos: 0
-  child: {fileID: 4735188207481811079}
---- !u!114 &-202907832322253378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 460be9e34c566ea45b9e282b1adcb028, type: 3}
-  m_Name: Selector
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: f4a735e581c425f4ca1520f73fb14fcf
-  position: {x: 0, y: -102}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    col: []
-    collidersInLOS: []
-    timer: 10
-    selectedTarget: {fileID: 0}
-  description: 
-  drawGizmos: 0
-  children:
-  - {fileID: -5032812672587197468}
-  - {fileID: -5349349756373352265}
-  - {fileID: 58904742416265572}
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d285eb63c2cdd74180de7cfceaa96ad, type: 3}
-  m_Name: CommonFrog
-  m_EditorClassIdentifier: 
-  rootNode: {fileID: 4979886775550339937}
-  treeState: 0
-  nodes:
-  - {fileID: 4979886775550339937}
-  - {fileID: 8430027450953127779}
-  - {fileID: -202907832322253378}
-  - {fileID: -5032812672587197468}
-  - {fileID: -2660970889129177931}
-  - {fileID: -5349349756373352265}
-  - {fileID: -5167772764107436902}
-  - {fileID: 1212834892908534260}
-  - {fileID: 76652207958400974}
-  - {fileID: 6646164357094348539}
-  - {fileID: -7593146815105615789}
-  - {fileID: -5278449069860748975}
-  - {fileID: -3568407658486204014}
-  - {fileID: 7138460831820033597}
-  - {fileID: 8589465920461781525}
-  - {fileID: -7959581466356797825}
-  - {fileID: 4735188207481811079}
-  - {fileID: -2694224307877224908}
-  - {fileID: -1972061606723844869}
-  - {fileID: 1051455855392458949}
-  - {fileID: -8411004017356763473}
-  - {fileID: -1696869344406797874}
-  - {fileID: 58904742416265572}
-  - {fileID: -5078561988784354853}
-  blackboard:
-    moveToPosition: {x: 5, y: 0, z: 0}
-    col: []
-    collidersInLOS: []
-    timer: 10
-    selectedTarget: {fileID: 0}
---- !u!114 &58904742416265572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61431bba79d7d7843b82bf1de71703f5, type: 3}
-  m_Name: Sequencer
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 39ed1d6649afbbf4fa7bed8f38f356b9
-  position: {x: 1400.4069, y: 18.999994}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    col: []
-    collidersInLOS: []
-    timer: 10
-    selectedTarget: {fileID: 0}
-  description: 
-  drawGizmos: 0
-  children: []
---- !u!114 &76652207958400974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df9e411f4095d0a44acd9a25323f5e73, type: 3}
-  m_Name: Log
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: ba78b02ab1b4687459d765cee67c0d04
-  position: {x: 990.5229, y: 153.00002}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    col: []
-    collidersInLOS: []
-    timer: 10
-    selectedTarget: {fileID: 0}
-  description: 
-  drawGizmos: 0
-  message: Cannot Attack
---- !u!114 &1051455855392458949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34e2d748dc0e3454eb2cfa51feb49e87, type: 3}
-  m_Name: TrackEnemy
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: e1f51fe7812cdc449bd08bfb13364611
-  position: {x: -767.9999, y: 164.99998}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    col: []
-    collidersInLOS: []
-    timer: 10
-    selectedTarget: {fileID: 0}
-  description: 
-  drawGizmos: 0
-  rotationThreshold: 1
---- !u!114 &1212834892908534260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4993a0d04387a4429a5f576057cfa43, type: 3}
-  m_Name: CheckEnemyInLOS
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 73ee5dffa39df5746bf0491935538d9b
-  position: {x: 634.8069, y: 420.99988}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    col: []
-    collidersInLOS: []
-    timer: 10
-    selectedTarget: {fileID: 0}
-  description: 
-  drawGizmos: 0
---- !u!114 &4735188207481811079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2932073b8a6c3b34391576c45d359457, type: 3}
-  m_Name: Parallel
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: b0518c110b6ae3043ac62bee8b8669db
-  position: {x: -410.40695, y: 443.9999}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    col: []
-    collidersInLOS: []
-    timer: 10
-    selectedTarget: {fileID: 0}
-  description: Check if will Jump
-  drawGizmos: 0
-  children:
-  - {fileID: 7138460831820033597}
-  - {fileID: -7959581466356797825}
---- !u!114 &4979886775550339937
+--- !u!114 &-7532456759450479525
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -546,67 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: 2eeea6033d830b748a9d19ff8d125f5b
-  position: {x: 0, y: -385.75998}
+  guid: 98de73b43c47cbb48a25a9a917dd8da4
+  position: {x: 0, y: 0}
   blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    col: []
+    collidersInArea: []
     collidersInLOS: []
+    moveToPosition: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
-  child: {fileID: 8430027450953127779}
---- !u!114 &6646164357094348539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e658b1bd308bc5c429f5a9b404a04943, type: 3}
-  m_Name: Inverter
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: a7df17d11ee7c2d44be99097de37de6e
-  position: {x: 559.80695, y: 152.99995}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    col: []
-    collidersInLOS: []
-    timer: 10
-    selectedTarget: {fileID: 0}
-  description: 
-  drawGizmos: 0
-  child: {fileID: -7593146815105615789}
---- !u!114 &7138460831820033597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 775bf857d06b9a748a3434658d02cb36, type: 3}
-  m_Name: CheckCanJump
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: c193ffa90179d9d4385d7129729e526f
-  position: {x: -485.40698, y: 594.9999}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    col: []
-    collidersInLOS: []
-    timer: 10
-    selectedTarget: {fileID: 0}
-  description: 
-  drawGizmos: 0
---- !u!114 &8430027450953127779
+  child: {fileID: -2485463782044171677}
+--- !u!114 &-2485463782044171677
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -620,20 +39,155 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: adeaf700ebbe14e418c5a4f3ed4b3efa
-  position: {x: 0, y: -248}
+  guid: 2829835041132b24a8ad222ab514ed1a
+  position: {x: -0.00002002716, y: 127.811134}
   blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    col: []
+    collidersInArea: []
     collidersInLOS: []
+    moveToPosition: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
-  child: {fileID: -202907832322253378}
+  child: {fileID: 943579512590623417}
   restartOnSuccess: 1
-  restartOnFailure: 0
---- !u!114 &8589465920461781525
+  restartOnFailure: 1
+--- !u!114 &-1177603185501942491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61431bba79d7d7843b82bf1de71703f5, type: 3}
+  m_Name: Sequencer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: e7281764b65e82f48b4d240de4edd7f0
+  position: {x: -821.8115, y: 487.6814}
+  blackboard:
+    collidersInArea: []
+    collidersInLOS: []
+    moveToPosition: {x: 0, y: 0, z: 0}
+    timer: 10
+    selectedTarget: {fileID: 0}
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: 6508661393271016318}
+  - {fileID: 809144045634074967}
+  - {fileID: 7766405370766829711}
+  - {fileID: -696209742677213488}
+  - {fileID: 3309491027592584105}
+--- !u!114 &-696209742677213488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a5134d9de14153468b48928d3e7359a, type: 3}
+  m_Name: Wait
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 0fa8a7ec58bbfe84eb515b61c276a382
+  position: {x: -451.81152, y: 623.6814}
+  blackboard:
+    collidersInArea: []
+    collidersInLOS: []
+    moveToPosition: {x: 0, y: 0, z: 0}
+    timer: 10
+    selectedTarget: {fileID: 0}
+  description: 
+  drawGizmos: 0
+  duration: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d285eb63c2cdd74180de7cfceaa96ad, type: 3}
+  m_Name: CommonFrog
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: -7532456759450479525}
+  treeState: 0
+  nodes:
+  - {fileID: -7532456759450479525}
+  - {fileID: -2485463782044171677}
+  - {fileID: 943579512590623417}
+  - {fileID: -1177603185501942491}
+  - {fileID: 6508661393271016318}
+  - {fileID: 809144045634074967}
+  - {fileID: 7766405370766829711}
+  - {fileID: -696209742677213488}
+  - {fileID: 3309491027592584105}
+  blackboard:
+    collidersInArea: []
+    collidersInLOS: []
+    moveToPosition: {x: 0, y: 0, z: 0}
+    timer: 10
+    selectedTarget: {fileID: 0}
+--- !u!114 &809144045634074967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4993a0d04387a4429a5f576057cfa43, type: 3}
+  m_Name: CheckEnemyInLOS
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 102771f5b0ca03740a05475754516e31
+  position: {x: -838.8115, y: 623.6814}
+  blackboard:
+    collidersInArea: []
+    collidersInLOS: []
+    moveToPosition: {x: 0, y: 0, z: 0}
+    timer: 10
+    selectedTarget: {fileID: 0}
+  description: 
+  drawGizmos: 0
+--- !u!114 &943579512590623417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460be9e34c566ea45b9e282b1adcb028, type: 3}
+  m_Name: Selector
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 3ca2d7f81d0a7fd4d934ca1df0a782f0
+  position: {x: -0.00006484985, y: 279.49896}
+  blackboard:
+    collidersInArea: []
+    collidersInLOS: []
+    moveToPosition: {x: 0, y: 0, z: 0}
+    timer: 10
+    selectedTarget: {fileID: 0}
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: -1177603185501942491}
+--- !u!114 &3309491027592584105
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -647,14 +201,62 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: 23b0fd381a55baf48bdd4cb26fa7287a
-  position: {x: 178.89746, y: 401.00012}
+  guid: a0c685755f45b914f88e66620aa29dcc
+  position: {x: -275.44714, y: 624}
   blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    col: []
+    collidersInArea: []
     collidersInLOS: []
+    moveToPosition: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
-  message: Can Jump
+  message: 
+--- !u!114 &6508661393271016318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f93891306064d4f4ca6506424e725d3d, type: 3}
+  m_Name: CheckEnemyInArea
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: edeaa6e63ad75ee41a2235959a5465ba
+  position: {x: -1052.8115, y: 623.6814}
+  blackboard:
+    collidersInArea: []
+    collidersInLOS: []
+    moveToPosition: {x: 0, y: 0, z: 0}
+    timer: 10
+    selectedTarget: {fileID: 0}
+  description: 
+  drawGizmos: 0
+--- !u!114 &7766405370766829711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3360a53f66a7ac344931703b7bd6e485, type: 3}
+  m_Name: ShootEnemy
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: f44da2ad0b2b0ce4dbaeebe7ddc7a6f5
+  position: {x: -671.9999, y: 624}
+  blackboard:
+    collidersInArea: []
+    collidersInLOS: []
+    moveToPosition: {x: 0, y: 0, z: 0}
+    timer: 10
+    selectedTarget: {fileID: 0}
+  description: 
+  drawGizmos: 0

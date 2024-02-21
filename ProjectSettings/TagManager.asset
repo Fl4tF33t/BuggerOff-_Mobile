@@ -8,7 +8,6 @@ TagManager:
   - Frog
   - Waypoint2
   - Waypoint1
-  - Waypoint
   layers:
   - Default
   - TransparentFX

@@ -11,6 +11,9 @@ public class BugMovement : MonoBehaviour
     private NavMeshAgent agent;
     private int currentWaypointIndex = 0;
 
+    [HideInInspector]
+    public int pathIndex;
+
     private void Awake()
     {     
         bugBrain = GetComponent<BugBrain>();
@@ -33,8 +36,8 @@ public class BugMovement : MonoBehaviour
     }
 
     private void Start()
-    {            
-        agent.destination = PathManager.Instance.waypoints[currentWaypointIndex].position;   
+    {
+        agent.destination = PathManager.Instance.paths[pathIndex].waypoints[currentWaypointIndex].position;  
     }
     
     private void Update()
@@ -53,7 +56,7 @@ public class BugMovement : MonoBehaviour
         currentWaypointIndex++;
 
         // Check if the bug reached the last waypoint
-        if (currentWaypointIndex >= PathManager.Instance.waypoints.Count)
+        if (currentWaypointIndex >= PathManager.Instance.paths[pathIndex].waypoints.Count)
         {
             // If so, destroy the bug or trigger game over
             //Destroy(gameObject);
@@ -63,7 +66,7 @@ public class BugMovement : MonoBehaviour
         }
 
         // Set the next waypoint as the destination
-        agent.SetDestination(PathManager.Instance.waypoints[currentWaypointIndex].position);
+        agent.SetDestination(PathManager.Instance.paths[pathIndex].waypoints[currentWaypointIndex].position);
     }
 
 }

@@ -9,9 +9,14 @@ namespace TheKiwiCoder {
     // Add other properties here that make sense for your specific use case.
     [System.Serializable]
     public class Blackboard {
-        public Vector3 moveToPosition;
-        public Collider[] col;
+
+        //Checking VARIABLES
+        public Collider[] collidersInArea;
         public List<Collider> collidersInLOS;
+
+
+        public Vector3 moveToPosition;
+        
         public float timer = 10f;
 
         public GameObject selectedTarget;

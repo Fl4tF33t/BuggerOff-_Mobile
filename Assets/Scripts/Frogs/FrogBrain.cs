@@ -11,6 +11,8 @@ using UnityEngine.AI;
 
 public class FrogBrain : MonoBehaviour
 {
+    public Action<bool> OnUpgradeUI;
+
     public FrogSO frogSO;
     public Frog frog = new Frog();
     [Serializable]
@@ -25,8 +27,7 @@ public class FrogBrain : MonoBehaviour
     }
 
     //UpgradeUI variables 
-    [SerializeField]
-    GameObject canvas;
+    Transform canvas;
 
     //Tracking and targeting variables
     public enum Target
@@ -40,10 +41,17 @@ public class FrogBrain : MonoBehaviour
     private void Awake()
     {
         frogSO.InitGameObject(frog);
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            if(transform.GetChild(i).gameObject.name == "UpgradeCanvas")
+            {
+                canvas = transform.GetChild(i);
+            }
+        }
     }
 
-    public void UpgradeUI(bool arg)
+    private void Start()
     {
-        canvas.SetActive(arg);
+        OnUpgradeUI = (arg) => { canvas.gameObject.SetActive(arg); };
     }
 }
