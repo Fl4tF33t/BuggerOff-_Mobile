@@ -17,6 +17,7 @@ public class EndPoint : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("dsfj");
         other.gameObject.SetActive(false);
         if (other.GetComponent<IPlayerTakeDamage>() != null)
         {

@@ -5,6 +5,4 @@ using UnityEngine;
 public interface IPlayerTakeDamage 
 {
     public void PlayerTakeDamage(int damage);
-
-
 }

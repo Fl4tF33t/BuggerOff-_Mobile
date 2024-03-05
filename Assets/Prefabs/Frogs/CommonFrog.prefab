@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c6f9b140a52a14881ec09eaebb66eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tree: {fileID: 11400000, guid: f366fcfe91bb1e4418c43e1668ba4e02, type: 2}
+  tree: {fileID: 11400000, guid: 2b3e4125127d24b48a8e8f001851a72a, type: 2}
 --- !u!195 &1384167459590466341
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -92,7 +92,6 @@ MonoBehaviour:
     range: 0
     attackSpeed: 0
     target: 0
-  canvas: {fileID: 1849085963836022511}
 --- !u!135 &6162405890025491135
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -255,7 +254,7 @@ PrefabInstance:
     - target: {fileID: 5735506468041725709, guid: 3a010b6f0b7d99d47addfbe13ee0bd95,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5943021913724738228, guid: 3a010b6f0b7d99d47addfbe13ee0bd95,
         type: 3}
@@ -377,12 +376,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a010b6f0b7d99d47addfbe13ee0bd95, type: 3}
---- !u!1 &1849085963836022511 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5735506468041725709, guid: 3a010b6f0b7d99d47addfbe13ee0bd95,
-    type: 3}
-  m_PrefabInstance: {fileID: 6210984356774562274}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &3633794613771476958 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7231670148390573628, guid: 3a010b6f0b7d99d47addfbe13ee0bd95,

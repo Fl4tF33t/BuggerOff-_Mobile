@@ -13,23 +13,42 @@ public class CheckEnemyInLOS : ActionNode
     }
 
     protected override State OnUpdate() {
-        RaycastHit hit;
+        //RaycastHit hit;
+        //foreach (Collider item in blackboard.collidersInArea)
+        //{
+        //    if (Physics.Raycast(context.transform.position, item.transform.position - context.transform.position, out hit))
+        //    {
+        //        if (hit.collider == item)
+        //        {
+        //            blackboard.collidersInLOS.Add(item);
+        //            //return State.Success;
+        //        }
+        //        else continue;
+        //    }
+        //    else
+        //    {
+        //        return State.Failure;
+        //    }
+        //}
+        //return State.Failure;
+        
+
+        blackboard.collidersInLOS.Clear();
         foreach (Collider item in blackboard.collidersInArea)
         {
-            if (Physics.Raycast(context.transform.position, item.transform.position - context.transform.position, out hit))
+            if (Physics.Linecast(context.transform.position, item.transform.position, LayerMask.GetMask("BlockLOS")))
             {
-                if (hit.collider == item)
-                {
-                    blackboard.collidersInLOS.Add(item);
-                    return State.Success;
-                }
-                else continue;
+                continue;
             }
             else
             {
-                return State.Failure;
+                blackboard.collidersInLOS.Add(item);
             }
         }
-        return State.Failure;
+        if(blackboard.collidersInLOS.Count > 0)
+        {
+            return State.Success;
+        }
+        else return State.Failure;
     }
 }
