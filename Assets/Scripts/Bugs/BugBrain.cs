@@ -29,6 +29,8 @@ public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
     {
         //check if the bug has sheild
         if (sheild > 0)
+
+
         {
             //if so, reduce the sheild
             sheild -= damage;
