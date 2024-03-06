@@ -15,7 +15,7 @@ public class FrogShopData : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         //change the image of the shop icon
-        ShopManager.Instance.OnShopIconChange(frogSO.visualSO.userInterface.UIShopSprite);
+        ShopManager.Instance.OnFrogChange(frogSO);
     }
 
     private void Awake()

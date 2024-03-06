@@ -5,42 +5,63 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ShopManager : Singleton<ShopManager>, IPointerDownHandler
+public class ShopManager : Singleton<ShopManager>, IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    public Action<Sprite> OnShopIconChange;
+    public Action<FrogSO> OnFrogChange;
+    private Canvas canvas;
+    private Image image;
+    private bool isBeingDragged;
+
+    private GameObject selectedFrogPrefab;
     [SerializeField]
     private GameObject wheel;
-    [SerializeField]
-    private Sprite shopIcon;
-    private Image image;
+    
 
     protected override void Awake()
     {
         base.Awake();
+        canvas = GetComponentInParent<Canvas>();
         image = GetComponent<Image>();
-        InputManager.Instance.OnTouchTap += Instance_OnTouchTap;
-    }
-
-    private void Instance_OnTouchTap(object sender, InputManager.OnTouchTapEventArgs e)
-    {
-        wheel.SetActive(false);
-        OnShopIconChange(shopIcon);
     }
 
     private void Start()
     {
-        OnShopIconChange = (sprite) => { image.sprite = sprite; };
-        OnShopIconChange(shopIcon);
+        InputManager.Instance.OnTouchTap += Instance_OnTouchTap;
+        OnFrogChange = SetFrog;
     }
-    public void OnPointerDown(PointerEventData eventData)
+    private void Instance_OnTouchTap(object sender, InputManager.OnTouchTapEventArgs e)
     {
-        if (wheel.activeSelf)
+        wheel.SetActive(false);
+    }
+
+    private void SetFrog(FrogSO frogSO) 
+    {
+        image.sprite = frogSO.visualSO.userInterface.UIShopSprite;
+        selectedFrogPrefab = frogSO.prefab;
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (!isBeingDragged)
         {
-            wheel.SetActive(false);
+            wheel.SetActive(!wheel.activeSelf); 
         }
-        else
-        {
-            wheel.SetActive(true);
-        }
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        isBeingDragged = true;
+        wheel.SetActive(false);
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        image.rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        //check if can place. otherwise it stays
     }
 }

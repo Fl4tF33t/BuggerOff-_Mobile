@@ -8,6 +8,7 @@ using UnityEngine;
 public class VisualSO : ScriptableObject
 {
     //This scriptable object is in charge for everything visual related to the frogSO
+
     [Header("Visual")]
     public UI userInterface;
     //public AnimatorController animatorController;
