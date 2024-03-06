@@ -64,4 +64,4 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler, IBeginD
     {
         //check if can place. otherwise it stays
     }
-}
+} 

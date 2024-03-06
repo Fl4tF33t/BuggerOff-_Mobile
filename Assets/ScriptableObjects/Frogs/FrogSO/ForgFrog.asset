@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c84c1618c4472b4a944efc90296d6e7, type: 3}
+  m_Name: ForgFrog
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 7529113000352471415, guid: 5c7ec96d514b7e249bcbffa1a2f5bc50, type: 3}
+  logicSO: {fileID: 11400000, guid: c6dfd22f04c76964ea55f8e06173a87e, type: 2}
+  upgradeSO: {fileID: 11400000, guid: 0178e0c0ce7f28a429ffb2311f0a1c03, type: 2}
+  visualSO: {fileID: 11400000, guid: 270e4245d26e58a4286e40671568757f, type: 2}
+  audioSO: {fileID: 11400000, guid: aeaaccc71dc98784b8e7a2e9e4b3c36b, type: 2}
