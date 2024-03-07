@@ -29,7 +29,7 @@ public class WheelLogic : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             frogShopData[i].OnSetImage();
         }
         //ShopManager.Instance.OnFrogChange(frogPool[1]);
-        transform.localScale = Vector3.zero;
+        //transform.localScale = Vector3.zero;
     }
 
     public void OnBeginDrag(PointerEventData eventData)

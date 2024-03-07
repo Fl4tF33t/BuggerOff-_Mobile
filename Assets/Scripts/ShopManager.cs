@@ -52,9 +52,9 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler//, IBegi
     }
     private void Instance_OnTouchTap(object sender, InputManager.OnTouchTapEventArgs e)
     {
-        //wheel.SetActive(false);
+        wheel.SetActive(false);
 
-        StartCoroutine(ScaleOverTime(wheel.transform, 0f, 0.3f));
+        //StartCoroutine(ScaleOverTime(wheel.transform, 0f, 0.3f));
         SetShopOnOff(true);
     }
 
@@ -71,8 +71,8 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler//, IBegi
         //    wheel.SetActive(!wheel.activeSelf); 
         //}
         //wheel.SetActive(!wheel.activeSelf);
-        StartCoroutine(ScaleOverTime(wheel.transform, 1f, 0.3f));
-        //wheel.SetActive(true);
+        //StartCoroutine(ScaleOverTime(wheel.transform, 1f, 0.3f));
+        wheel.SetActive(true);
         SetShopOnOff(false);
     }
 
@@ -93,24 +93,24 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler//, IBegi
     //    //check if can place. otherwise it stays
     //}
 
-    public IEnumerator ScaleOverTime(Transform targetTransform, float targetScale, float duration)
-    {
-        Vector3 originalScale = transform.localScale;
-        Vector3 targetScaleVector = new Vector3(targetScale, targetScale, targetScale);
+    //public IEnumerator ScaleOverTime(Transform targetTransform, float targetScale, float duration)
+    //{
+    //    Vector3 originalScale = transform.localScale;
+    //    Vector3 targetScaleVector = new Vector3(targetScale, targetScale, targetScale);
 
-        float currentTime = 0f;
+    //    float currentTime = 0f;
 
-        while (currentTime <= duration)
-        {
-            float t = currentTime / duration;
-            targetTransform.localScale = Vector3.Lerp(originalScale, targetScaleVector, t);
-            currentTime += Time.deltaTime;
-            yield return null;
-        }
-        if (image.raycastTarget == true)
-        {
-            //ShopManager.Instance.OnFrogChange(frogSO);
-        }
-        targetTransform.localScale = targetScaleVector;
-    }
+    //    while (currentTime <= duration)
+    //    {
+    //        float t = currentTime / duration;
+    //        targetTransform.localScale = Vector3.Lerp(originalScale, targetScaleVector, t);
+    //        currentTime += Time.deltaTime;
+    //        yield return null;
+    //    }
+    //    if (image.raycastTarget == true)
+    //    {
+    //        //ShopManager.Instance.OnFrogChange(frogSO);
+    //    }
+    //    targetTransform.localScale = targetScaleVector;
+    //}
 } 
