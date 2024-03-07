@@ -17,7 +17,6 @@ public class WheelLogic : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     //Visuals of the buttons
     [SerializeField]
     private FrogSO[] frogPool = new FrogSO[8];
-    [SerializeField]
     private Image[] buttonIcons = new Image[3];
     private FrogShopData[] frogShopData = new FrogShopData[3];
 
@@ -29,6 +28,8 @@ public class WheelLogic : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             frogShopData[i].frogSO = frogPool[i];
             frogShopData[i].OnSetImage();
         }
+        //ShopManager.Instance.OnFrogChange(frogPool[1]);
+        transform.localScale = Vector3.zero;
     }
 
     public void OnBeginDrag(PointerEventData eventData)

@@ -18,7 +18,7 @@ public class FrogShopData : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         //change the image of the shop icon
-        ShopManager.Instance.OnFrogChange(frogSO);
+        //ShopManager.Instance.OnFrogChange(frogSO);
     }
 
     private void Awake()
@@ -66,7 +66,10 @@ public class FrogShopData : MonoBehaviour, IPointerClickHandler
             currentTime += Time.deltaTime;
             yield return null;
         }
-
+        if (image.raycastTarget == true)
+        {
+            //ShopManager.Instance.OnFrogChange(frogSO);
+        }
         transform.localScale = targetScaleVector;
     }
 }

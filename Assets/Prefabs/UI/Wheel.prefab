@@ -111,7 +111,6 @@ GameObject:
   - component: {fileID: 5849399332722360130}
   - component: {fileID: 2023431457032116834}
   - component: {fileID: 4591542467360550806}
-  - component: {fileID: 3704553529428224203}
   m_Layer: 5
   m_Name: LargeIcon
   m_TagString: Untagged
@@ -176,19 +175,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3704553529428224203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3373852554274978490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06ad2693784180549b11ba7c9261099e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  frogSO: {fileID: 11400000, guid: bcfcc51544396e846b4e974dec1e6b6b, type: 2}
 --- !u!1 &3541246784226453912
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,7 +186,6 @@ GameObject:
   - component: {fileID: 5642915388625582858}
   - component: {fileID: 2155287021492287276}
   - component: {fileID: 5350033582840137172}
-  - component: {fileID: 8995332062272465336}
   m_Layer: 5
   m_Name: SmallBottomIcon
   m_TagString: Untagged
@@ -265,19 +250,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8995332062272465336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3541246784226453912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06ad2693784180549b11ba7c9261099e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  frogSO: {fileID: 11400000, guid: bcfcc51544396e846b4e974dec1e6b6b, type: 2}
 --- !u!1 &4898546627169679866
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,7 +261,6 @@ GameObject:
   - component: {fileID: 9084747509128348842}
   - component: {fileID: 7045234461450140545}
   - component: {fileID: 4102540889533592592}
-  - component: {fileID: 2393826188980534505}
   m_Layer: 5
   m_Name: SmallTopIcon
   m_TagString: Untagged
@@ -354,16 +325,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2393826188980534505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4898546627169679866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06ad2693784180549b11ba7c9261099e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  frogSO: {fileID: 11400000, guid: bcfcc51544396e846b4e974dec1e6b6b, type: 2}
