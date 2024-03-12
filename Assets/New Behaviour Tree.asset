@@ -1,28 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d285eb63c2cdd74180de7cfceaa96ad, type: 3}
-  m_Name: New Behaviour Tree
-  m_EditorClassIdentifier: 
-  rootNode: {fileID: 8339622962953217915}
-  treeState: 0
-  nodes:
-  - {fileID: 8339622962953217915}
-  blackboard:
-    collidersInArea: []
-    collidersInLOS: []
-    moveToPosition: {x: 0, y: 0, z: 0}
-    timer: 10
-    selectedTarget: {fileID: 0}
---- !u!114 &8339622962953217915
+--- !u!114 &-5134233843038913566
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -36,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: ee7bc0dab16bc97419304816689328ee
+  guid: b7ac90fe770c1f34d82bcd05f72e44f8
   position: {x: 0, y: 0}
   blackboard:
     collidersInArea: []
@@ -47,3 +25,25 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   child: {fileID: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d285eb63c2cdd74180de7cfceaa96ad, type: 3}
+  m_Name: New Behaviour Tree
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: -5134233843038913566}
+  treeState: 0
+  nodes:
+  - {fileID: -5134233843038913566}
+  blackboard:
+    collidersInArea: []
+    collidersInLOS: []
+    moveToPosition: {x: 0, y: 0, z: 0}
+    timer: 10
+    selectedTarget: {fileID: 0}

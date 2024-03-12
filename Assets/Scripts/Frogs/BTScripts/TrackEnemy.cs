@@ -10,11 +10,8 @@ public class TrackEnemy : ActionNode
     private bool isRotationCorrect = false;
 
     protected override void OnStart() {
-        //here I need to implement the code that dictates which target the frog is following
-        SelectTarget();
-
         //the timer should be set to the time it takes to shoot a target
-        timer = .5f;
+        timer = 5f;
     }
 
     protected override void OnStop() {
@@ -38,14 +35,6 @@ public class TrackEnemy : ActionNode
             isRotationCorrect = (angleDifference <= rotationThreshold); 
         }
 
-        if(!blackboard.selectedTarget.activeSelf)
-        {
-            if (blackboard.collidersInLOS.Count == 0)
-            {
-                return State.Failure;
-            }else SelectTarget();
-        }
-
         if (timer < 0)
         {
             return State.Success;
@@ -53,22 +42,4 @@ public class TrackEnemy : ActionNode
         return State.Running;
     }
 
-    private void SelectTarget()
-    {
-        switch (context.frogBrain.frog.target)
-        {
-            case FrogBrain.Target.First:
-                blackboard.selectedTarget = blackboard.collidersInLOS[0].gameObject;
-                break;
-            case FrogBrain.Target.Last:
-                blackboard.selectedTarget = blackboard.collidersInLOS[blackboard.collidersInLOS.Count - 1].gameObject;
-                break;
-            case FrogBrain.Target.Strongest:
-                //foreach loop to see which has the highest health
-                break;
-            case FrogBrain.Target.Weakest:
-                //foreach loop to see which has the lowest health
-                break;
-        }
-    }
 }
