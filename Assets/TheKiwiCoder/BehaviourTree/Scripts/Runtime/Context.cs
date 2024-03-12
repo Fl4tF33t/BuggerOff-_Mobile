@@ -13,6 +13,7 @@ namespace TheKiwiCoder {
         public GameObject gameObject;
         public Transform transform;
         public Animator animator;
+        public AnimationEvents animationEvents;
         public Rigidbody physics;
         public NavMeshAgent agent;
         public SphereCollider sphereCollider;
@@ -28,6 +29,7 @@ namespace TheKiwiCoder {
             context.gameObject = gameObject;
             context.transform = gameObject.transform;
             context.animator = gameObject.GetComponentInChildren<Animator>();
+            context.animationEvents = gameObject.GetComponentInChildren<AnimationEvents>();
             context.physics = gameObject.GetComponent<Rigidbody>();
             context.agent = gameObject.GetComponent<NavMeshAgent>();
             context.sphereCollider = gameObject.GetComponent<SphereCollider>();

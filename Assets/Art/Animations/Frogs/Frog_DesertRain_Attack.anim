@@ -2714,9 +2714,9 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 1.25
-    functionName: EndOfForgAttackAnimation
+    functionName: OnEndAnimation
     data: 
-    objectReferenceParameter: {fileID: 3604148172508899545, guid: 320a1cccb0268ac44b705aa7edae0c8c, type: 3}
+    objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

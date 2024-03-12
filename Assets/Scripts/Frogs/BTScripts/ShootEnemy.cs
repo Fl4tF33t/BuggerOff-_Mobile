@@ -6,20 +6,33 @@ using UnityEditor;
 
 public class ShootEnemy : ActionNode
 {
+    bool isFinishedAnim;
+
     protected override void OnStart() {
         //here we trigger the event to attack a target
         //have the tree subscribe to an event and only have it suceed when the event is finished
         context.frogBrain.OnTriggerEvent("hello");
-        Debug.Log("Hit");
-        BugBrain bugBrain = blackboard.selectedTarget.GetComponent<BugBrain>();
-        bugBrain.BugTakeDamage(1);
         context.animator.SetTrigger("OnAttack");
+        context.animationEvents.OnEndAnim += AnimationEvents_OnEndAnim;
+    }
+
+    private void AnimationEvents_OnEndAnim()
+    {
+        IBugTakeDamage bugDamage = blackboard.selectedTarget.GetComponent<IBugTakeDamage>();
+        bugDamage.BugTakeDamage(context.frogBrain.frog.damage);
+        isFinishedAnim = true;
     }
 
     protected override void OnStop() {
+        context.animationEvents.OnEndAnim -= AnimationEvents_OnEndAnim;
+        isFinishedAnim = false;
     }
 
     protected override State OnUpdate() {
-        return State.Success;
+        if (isFinishedAnim)
+        {
+            return State.Success;
+        }
+        return State.Running;
     }
 }
