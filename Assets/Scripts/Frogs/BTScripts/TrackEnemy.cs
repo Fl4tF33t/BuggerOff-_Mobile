@@ -11,35 +11,39 @@ public class TrackEnemy : ActionNode
 
     protected override void OnStart() {
         //the timer should be set to the time it takes to shoot a target
-        timer = 5f;
+        if(blackboard.attackTimer < 0)
+        {
+            blackboard.attackTimer = 3f;
+        }
+        context.animator.SetTrigger("OnTracking");
     }
 
     protected override void OnStop() {
     }
 
     protected override State OnUpdate() {
-        timer -= Time.deltaTime;
+        blackboard.attackTimer -= Time.deltaTime;
         if (blackboard.selectedTarget != null)
         {
-            Vector3 targetDirection = blackboard.selectedTarget.transform.position - context.transform.position;
-            targetDirection.y = 0; // Restrict rotation to the XZ plane
-
-            // Calculate the desired rotation based on the direction
-            Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
-
-            // Apply the rotation only on the Y-axis
-            context.transform.rotation = Quaternion.RotateTowards(context.transform.rotation, targetRotation, rotationThreshold);
-
-            // Check if the rotation is correct
-            float angleDifference = Quaternion.Angle(context.transform.rotation, targetRotation);
-            isRotationCorrect = (angleDifference <= rotationThreshold); 
+            Track(blackboard.selectedTarget);
         }
+        return State.Success;
+    }
 
-        if (timer < 0)
-        {
-            return State.Success;
-        }
-        return State.Running;
+    private void Track(GameObject target)
+    {
+        Vector3 targetDirection = target.transform.position - context.transform.position;
+        targetDirection.y = 0; // Restrict rotation to the XZ plane
+
+        // Calculate the desired rotation based on the direction
+        Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+
+        // Apply the rotation only on the Y-axis
+        context.transform.rotation = Quaternion.RotateTowards(context.transform.rotation, targetRotation, rotationThreshold);
+
+        // Check if the rotation is correct
+        float angleDifference = Quaternion.Angle(context.transform.rotation, targetRotation);
+        isRotationCorrect = (angleDifference <= rotationThreshold);
     }
 
 }

@@ -14,6 +14,8 @@ namespace TheKiwiCoder {
         public Collider[] collidersInArea;
         public List<Collider> collidersInLOS;
 
+        //timer for when to attack
+        public float attackTimer;
 
         public Vector3 moveToPosition;
         

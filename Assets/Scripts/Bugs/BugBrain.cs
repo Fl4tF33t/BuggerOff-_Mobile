@@ -10,7 +10,7 @@ public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
 {
     public BugSO bugSO;
 
-    private int health;
+    public int health;
     private int sheild;
       
     private void OnEnable()

@@ -6,7 +6,7 @@ using TheKiwiCoder;
 public class EnemySelection : ActionNode
 {
     protected override void OnStart() {
-        SelectTarget();
+        blackboard.selectedTarget = SelectTarget();
     }
 
     protected override void OnStop() {
@@ -20,22 +20,55 @@ public class EnemySelection : ActionNode
         else return State.Failure;
     }
 
-    private void SelectTarget()
+    private GameObject SelectTarget()
     {
+        GameObject target = null;
+
         switch (context.frogBrain.frog.target)
         {
             case FrogBrain.Target.First:
-                blackboard.selectedTarget = blackboard.collidersInLOS[0].gameObject;
+                if (blackboard.collidersInLOS.Count > 0)
+                {
+                    target = blackboard.collidersInLOS[0].gameObject;
+                }
                 break;
+
             case FrogBrain.Target.Last:
-                blackboard.selectedTarget = blackboard.collidersInLOS[blackboard.collidersInLOS.Count - 1].gameObject;
+                int lastIndex = blackboard.collidersInLOS.Count - 1;
+                if (lastIndex >= 0)
+                {
+                    target = blackboard.collidersInLOS[lastIndex].gameObject;
+                }
                 break;
+
             case FrogBrain.Target.Strongest:
-                //foreach loop to see which has the highest health
+                float maxHealth = float.MinValue;
+                foreach (Collider col in blackboard.collidersInLOS)
+                {
+                    BugBrain bugBrain = col.GetComponent<BugBrain>();
+                    if (bugBrain != null && bugBrain.health > maxHealth)
+                    {
+                        maxHealth = bugBrain.health;
+                        target = col.gameObject;
+                    }
+                }
                 break;
+
             case FrogBrain.Target.Weakest:
-                //foreach loop to see which has the lowest health
+                float minHealth = float.MaxValue;
+                foreach (Collider col in blackboard.collidersInLOS)
+                {
+                    BugBrain bugBrain = col.GetComponent<BugBrain>();
+                    if (bugBrain != null && bugBrain.health < minHealth)
+                    {
+                        minHealth = bugBrain.health;
+                        target = col.gameObject;
+                    }
+                }
                 break;
         }
+
+        return target;
+
     }
 }

@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: DesertRainFrog
   m_EditorClassIdentifier: 
   userInterface:
+<<<<<<< Updated upstream
     UIShopSprite: {fileID: -1398408275430993788, guid: 5c337b7e0b74b154799470cf97eb27d5,
       type: 3}
+=======
+    UIShopSprite: {fileID: 21300000, guid: bcc995fbb6d15934a8ec2dc1fb5dba07, type: 3}
+>>>>>>> Stashed changes
     UIShopTextInfo: This frog is lit

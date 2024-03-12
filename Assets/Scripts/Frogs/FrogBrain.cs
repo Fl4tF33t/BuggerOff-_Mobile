@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TheKiwiCoder;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -11,7 +12,10 @@ using UnityEngine.AI;
 
 public class FrogBrain : MonoBehaviour
 {
+    public event Action<string> OnAnimationTrigger;
+
     public Action<bool> OnUpgradeUI;
+    public Action<string> OnTriggerEvent;
 
     public FrogSO frogSO;
     public Frog frog = new Frog();
@@ -53,6 +57,7 @@ public class FrogBrain : MonoBehaviour
     private void Start()
     {
         OnUpgradeUI = (arg) => { canvas.gameObject.SetActive(arg); };
+        OnTriggerEvent = (arg) => { OnAnimationTrigger?.Invoke(arg); };
     }
 
 }
