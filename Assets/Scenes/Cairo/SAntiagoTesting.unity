@@ -20366,6 +20366,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Frog_Ninja_Bone_Left_Leg_Solver
       objectReference: {fileID: 0}
+    - target: {fileID: 2221168411744798329, guid: fb6cbe31d030abb41baf6bce48f86b10,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2305376684119526054, guid: fb6cbe31d030abb41baf6bce48f86b10,
         type: 3}
       propertyPath: m_LocalRotation.w
