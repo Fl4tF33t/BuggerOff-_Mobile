@@ -14,8 +14,10 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler//, IBegi
     //private bool isBeingDragged;
 
     //private GameObject selectedFrogPrefab;
-    //[SerializeField]
+    [SerializeField]
     private GameObject wheel;
+    private Animator wheelAnimator;
+
     
 
     protected override void Awake()
@@ -23,12 +25,14 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler//, IBegi
         base.Awake();
     //    canvas = GetComponentInParent<Canvas>();
         image = GetComponent<Image>();
-        wheel = transform.GetChild(0).gameObject;
+        //wheel = transform.GetChild(0).gameObject;
+       wheelAnimator = wheel.GetComponentInParent<Animator>();
     }
 
     private void Start()
     {
         InputManager.Instance.OnTouchTap += Instance_OnTouchTap;
+        
         //OnSetShopIcon = SetShopOnOff;
     }
 
@@ -40,19 +44,23 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler//, IBegi
             //change the visibility of the button
             col.a = 0f;
             image.color = col;
+            wheelAnimator.SetBool("OnStoreClick", state);
+
         }
         else
         {
             //change the visibility of the button
             col.a = 1f;
             image.color = col;
+            wheelAnimator.SetBool("OnStoreClick", state);
+
         }
 
         image.raycastTarget = state;
     }
     private void Instance_OnTouchTap(object sender, InputManager.OnTouchTapEventArgs e)
     {
-        wheel.SetActive(false);
+        //wheel.SetActive(false);
 
         //StartCoroutine(ScaleOverTime(wheel.transform, 0f, 0.3f));
         SetShopOnOff(true);
@@ -72,7 +80,7 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler//, IBegi
         //}
         //wheel.SetActive(!wheel.activeSelf);
         //StartCoroutine(ScaleOverTime(wheel.transform, 1f, 0.3f));
-        wheel.SetActive(true);
+        //wheel.SetActive(true);
         SetShopOnOff(false);
     }
 

@@ -15,11 +15,11 @@ public class CameraSizeAdjustment : MonoBehaviour
 
         if(screenRatio <= targetRatio)
         {
-            cam.orthographicSize = 5.1f;
+            cam.orthographicSize = 5.24f;
         }
         else
         {
-            heightAdjusted = 9 / ((float)Screen.width / (float)Screen.height);
+            heightAdjusted = 9.5f / ((float)Screen.width / (float)Screen.height);
             cam.orthographicSize = heightAdjusted;
         }
     }
