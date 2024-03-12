@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: DesertRainFrog
   m_EditorClassIdentifier: 
   userInterface:
-    UIShopSprite: {fileID: 21300000, guid: 2f6f326a5f7aa844c9557230ffa64bab, type: 3}
+    UIShopSprite: {fileID: -1398408275430993788, guid: 5c337b7e0b74b154799470cf97eb27d5,
+      type: 3}
     UIShopTextInfo: This frog is lit

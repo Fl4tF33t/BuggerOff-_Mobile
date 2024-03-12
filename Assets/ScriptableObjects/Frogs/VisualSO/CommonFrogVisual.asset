@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: CommonFrogVisual
   m_EditorClassIdentifier: 
   userInterface:
-    UIShopSprite: {fileID: 21300000, guid: 2f6f326a5f7aa844c9557230ffa64bab, type: 3}
+    UIShopSprite: {fileID: -5048824776085999985, guid: 0d348c00129615240adb8b8a3893427f,
+      type: 3}
     UIShopTextInfo: This frog is lit
