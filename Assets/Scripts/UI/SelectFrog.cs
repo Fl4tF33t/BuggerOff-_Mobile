@@ -14,7 +14,7 @@ public class SelectFrog : MonoBehaviour
         InputManager.Instance.OnTouchTap += Instance_OnTouchTap;
     }
 
-    private void Instance_OnTouchTap(object sender, System.EventArgs e)
+    private void Instance_OnTouchTap(Vector2 obj)
     {
         Vector3 mousePosition = Input.mousePosition;
         Ray ray = Camera.main.ScreenPointToRay(mousePosition);

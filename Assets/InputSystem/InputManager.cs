@@ -7,11 +7,9 @@ using UnityEngine.InputSystem;
 
 public class InputManager : Singleton<InputManager>
 {
-    public event EventHandler<OnTouchTapEventArgs> OnTouchTap;
-    public class OnTouchTapEventArgs : EventArgs
-    {
-        public Vector2 screenPosition;
-    }
+    public event Action<Vector2> OnTouchTap;
+    public event Action<Vector2> OnTouchInput;
+    public event Action<Vector2> OnTouchPressCanceled;
 
     //public delegate void TouchTapEvent();
     //public event TouchTapEvent OnTouchTap;
@@ -35,7 +33,7 @@ public class InputManager : Singleton<InputManager>
     {
         playerInputActions.Player.TouchTap.performed += TouchTap_performed;
         //playerInputActions.Player.TouchHold.performed += TouchHold_performed;
-        //playerInputActions.Player.TouchInput.performed += TouchInput_performed;
+        playerInputActions.Player.TouchInput.performed += TouchInput_performed;
         playerInputActions.Player.TouchPress.started += TouchPress_started;
         playerInputActions.Player.TouchPress.performed += TouchPress_performed;
         playerInputActions.Player.TouchPress.canceled += TouchPress_canceled;
@@ -43,17 +41,24 @@ public class InputManager : Singleton<InputManager>
 
     private void TouchInput_performed(InputAction.CallbackContext obj)
     {
-        Debug.Log("Touch input performed");
+        //Debug.Log("Touch input performed");
+        Vector2 touchPosition = playerInputActions.Player.TouchPosition.ReadValue<Vector2>();
+        //Debug.Log(touchPosition);
+        OnTouchInput?.Invoke(touchPosition);
     }
 
     private void TouchPress_performed(InputAction.CallbackContext obj)
     {
+        //Vector2 touchPosition = playerInputActions.Player.TouchPosition.ReadValue<Vector2>();
         //Debug.Log("Press " + obj.phase);
+        //OnTouchPress?.Invoke(touchPosition);
     }
 
     private void TouchPress_canceled(InputAction.CallbackContext obj)
     {
-        //Debug.Log("Press " + obj.phase);
+        Vector2 touchPosition = playerInputActions.Player.TouchPosition.ReadValue<Vector2>();
+        //Debug.Log("Canel;e");
+        OnTouchPressCanceled?.Invoke(touchPosition);
     }
 
     private void TouchPress_started(InputAction.CallbackContext obj)
@@ -86,10 +91,7 @@ public class InputManager : Singleton<InputManager>
         if (!isPointerOverUI)
         {
             Debug.Log("Tap performed");
-            OnTouchTap?.Invoke(this, new OnTouchTapEventArgs
-            {
-                screenPosition = touchPosition
-            });
+            OnTouchTap?.Invoke(touchPosition);
         }
     }
 }

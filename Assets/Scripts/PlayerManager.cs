@@ -12,9 +12,9 @@ public class PlayerManager : Singleton<PlayerManager>
         InputManager.Instance.OnTouchTap += InputManager_OnTouchTap;
     }
 
-    void InputManager_OnTouchTap(object sender, InputManager.OnTouchTapEventArgs e)
+    void InputManager_OnTouchTap(Vector2 obj)
     {
-        Ray ray = Camera.main.ScreenPointToRay(e.screenPosition);
+        Ray ray = Camera.main.ScreenPointToRay(obj);
         RaycastHit hit;
 
         // Check if the ray hits a frog GameObject

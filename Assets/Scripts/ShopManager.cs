@@ -1,39 +1,32 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ShopManager : Singleton<ShopManager>, IPointerClickHandler//, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
 {
-    //public Action<FrogSO> OnFrogChange;
-    //private Canvas canvas;
-    //public Action<bool> OnSetShopIcon;
     private Image image;
-    //private bool isBeingDragged;
-
-    //private GameObject selectedFrogPrefab;
+    private GameObject selectedFrogPrefab;
     [SerializeField]
     private GameObject wheel;
-    private Animator wheelAnimator;
-
-    
+    private Animator animator;
 
     protected override void Awake()
     {
         base.Awake();
-    //    canvas = GetComponentInParent<Canvas>();
         image = GetComponent<Image>();
-        //wheel = transform.GetChild(0).gameObject;
-       wheelAnimator = wheel.GetComponentInParent<Animator>();
+        animator = GetComponentInParent<Animator>();
     }
 
     private void Start()
     {
-        InputManager.Instance.OnTouchTap += Instance_OnTouchTap;
-        
-        //OnSetShopIcon = SetShopOnOff;
+        InputManager.Instance.OnTouchTap += (obj) => { SetShopOnOff(true); };
+        InputManager.Instance.OnTouchPressCanceled += Instance_OnTouchPressCanceled;
+        wheel.GetComponentInChildren<WheelLogic>().OnPlaceFrog += ShopManager_OnPlaceFrog;
     }
 
     public void SetShopOnOff(bool state)
@@ -44,7 +37,7 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler//, IBegi
             //change the visibility of the button
             col.a = 0f;
             image.color = col;
-            wheelAnimator.SetBool("OnStoreClick", state);
+            animator.SetBool("OnStoreClick", state);
 
         }
         else
@@ -52,73 +45,53 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler//, IBegi
             //change the visibility of the button
             col.a = 1f;
             image.color = col;
-            wheelAnimator.SetBool("OnStoreClick", state);
+            animator.SetBool("OnStoreClick", state);
 
         }
-
         image.raycastTarget = state;
     }
-    private void Instance_OnTouchTap(object sender, InputManager.OnTouchTapEventArgs e)
-    {
-        //wheel.SetActive(false);
 
-        //StartCoroutine(ScaleOverTime(wheel.transform, 0f, 0.3f));
+    private void ShopManager_OnPlaceFrog(FrogSO obj)
+    {
         SetShopOnOff(true);
+        selectedFrogPrefab = Instantiate(obj.prefab, new Vector3 (6.2f, 0, -2.5f), Quaternion.identity);
+
+        InputManager.Instance.OnTouchInput += Instance_OnTouchInput;
     }
 
-    //private void SetFrog(FrogSO frogSO) 
-    //{
-    //    image.sprite = frogSO.visualSO.userInterface.UIShopSprite;
-    //    selectedFrogPrefab = frogSO.prefab;
-    //}
+    private void Instance_OnTouchInput(Vector2 obj)
+    {
+        // Convert screen position to world position
+        Vector3 targetWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(obj.x, obj.y, 10f));
+        selectedFrogPrefab.transform.position = targetWorldPosition;
+    }
+    private void Instance_OnTouchPressCanceled(Vector2 obj)
+    {
+        if(selectedFrogPrefab != null)
+        {
+            // Raycast from mouse position to the ground to get the point where the object is released
+            Ray ray = Camera.main.ScreenPointToRay(new Vector3(obj.x, obj.y, 10f));
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, LayerMask.GetMask("Ground")))
+            {
+                // Check if there is NavMesh at the point where the object is released
+                NavMeshHit navHit;
+                if (NavMesh.SamplePosition(hit.point, out navHit, 0.1f, NavMesh.AllAreas))
+                {
+                    Debug.Log("NavMesh available at point: " + navHit.position);
+                    // Do something if NavMesh is available
+                }
+                else
+                {
+                    Debug.Log("No NavMesh available at point");
+                    // Do something if NavMesh is not available
+                }
+            }
+        }
+    }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        //if (!isBeingDragged)
-        //{
-        //    wheel.SetActive(!wheel.activeSelf); 
-        //}
-        //wheel.SetActive(!wheel.activeSelf);
-        //StartCoroutine(ScaleOverTime(wheel.transform, 1f, 0.3f));
-        //wheel.SetActive(true);
         SetShopOnOff(false);
     }
-
-    //public void OnBeginDrag(PointerEventData eventData)
-    //{
-    //    isBeingDragged = true;
-    //    wheel.SetActive(false);
-    //}
-
-    //public void OnDrag(PointerEventData eventData)
-    //{
-    //    image.rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
-
-    //}
-
-    //public void OnEndDrag(PointerEventData eventData)
-    //{
-    //    //check if can place. otherwise it stays
-    //}
-
-    //public IEnumerator ScaleOverTime(Transform targetTransform, float targetScale, float duration)
-    //{
-    //    Vector3 originalScale = transform.localScale;
-    //    Vector3 targetScaleVector = new Vector3(targetScale, targetScale, targetScale);
-
-    //    float currentTime = 0f;
-
-    //    while (currentTime <= duration)
-    //    {
-    //        float t = currentTime / duration;
-    //        targetTransform.localScale = Vector3.Lerp(originalScale, targetScaleVector, t);
-    //        currentTime += Time.deltaTime;
-    //        yield return null;
-    //    }
-    //    if (image.raycastTarget == true)
-    //    {
-    //        //ShopManager.Instance.OnFrogChange(frogSO);
-    //    }
-    //    targetTransform.localScale = targetScaleVector;
-    //}
 } 

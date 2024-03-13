@@ -19,7 +19,7 @@ public class CameraSizeAdjustment : MonoBehaviour
         }
         else
         {
-            heightAdjusted = 9.5f / ((float)Screen.width / (float)Screen.height);
+            heightAdjusted = 9.3f / ((float)Screen.width / (float)Screen.height);
             cam.orthographicSize = heightAdjusted;
         }
     }

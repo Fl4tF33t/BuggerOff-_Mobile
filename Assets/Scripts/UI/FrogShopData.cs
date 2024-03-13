@@ -6,44 +6,33 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 
-public class FrogShopData : MonoBehaviour, IPointerClickHandler
+public class FrogShopData : MonoBehaviour
 {
     private WheelLogic wheelLogic;
     public float scaleSpeed = .3f;
-    [HideInInspector]
-    public FrogSO frogSO;
-    private Image image;
-    public Action OnSetImage;
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        //change the image of the shop icon
-        //ShopManager.Instance.OnFrogChange(frogSO);
-    }
+    //Initializtion of the frog information
+    private FrogSO frogSO;
+    private Image image;
+    public Action<FrogSO> OnSetFrogSO;
 
     private void Awake()
     {
         wheelLogic = GetComponentInParent<WheelLogic>();
         image = GetComponent<Image>();
 
-        OnSetImage = () => { image.sprite = frogSO.visualSO.userInterface.UIShopSprite; };
-        //InitializeShopUI();
+        OnSetFrogSO = SetFrogSO;
     }
 
     private void Start()
     {
-        wheelLogic.OnWheelIconChange += WheelLogic_OnWheelIconChange;
-        wheelLogic.OnButtonScroll += WheelLogic_OnButtonScroll;
+        wheelLogic.OnWheelIconChange += (scale) => { StartCoroutine(ScaleOverTime(scale, scaleSpeed)); };
+        wheelLogic.OnButtonScroll += () => { StartCoroutine(ShrinkAndEnlarge()); };
     }
-
-    private void WheelLogic_OnButtonScroll()
+    private void SetFrogSO(FrogSO data)
     {
-        StartCoroutine(ShrinkAndEnlarge());
-    }
-
-    private void WheelLogic_OnWheelIconChange(float scale)
-    {
-        StartCoroutine(ScaleOverTime(scale, scaleSpeed));
+        frogSO = data;
+        image.sprite = frogSO.visualSO.userInterface.UIShopSprite;
     }
 
     private IEnumerator ShrinkAndEnlarge()
@@ -65,10 +54,6 @@ public class FrogShopData : MonoBehaviour, IPointerClickHandler
             transform.localScale = Vector3.Lerp(originalScale, targetScaleVector, t);
             currentTime += Time.deltaTime;
             yield return null;
-        }
-        if (image.raycastTarget == true)
-        {
-            //ShopManager.Instance.OnFrogChange(frogSO);
         }
         transform.localScale = targetScaleVector;
     }
