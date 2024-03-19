@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
@@ -11,17 +12,30 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
     private GameObject selectedFrogPrefab;
     private Vector3 prefabPos;
 
+    private Camera cam;
+    private Vector2 touchPos;
+
     [SerializeField]
     private GameObject wheel;
     private Animator animator;
 
+    private Coroutine placeFrogCoroutine;
+
     private void Start()
     {
+        cam = Camera.main;
         animator = GetComponentInParent<Animator>();
         wheel.GetComponentInChildren<WheelLogic>().OnPlaceFrog += ShopManager_OnPlaceFrog;
 
-        OnSetShopOnOff = (state) => { animator.SetBool("OnStoreClick", state); };
+        OnSetShopOnOff = state => { animator.SetBool("OnStoreClick", state); };
 
+        InputManager.Instance.OnTouchInput += pos => 
+        {
+            if (frogSO != null)
+            {
+                touchPos = pos;
+            }
+        };
         InputManager.Instance.OnTouchTap += (obj) => { OnSetShopOnOff(true); };
         InputManager.Instance.OnTouchPressStarted += Instance_OnTouchPressStarted;
         InputManager.Instance.OnTouchPressCanceled += Instance_OnTouchPressCanceled;
@@ -34,57 +48,64 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
         frogSO = obj;
         selectedFrogPrefab = Instantiate(obj.prefab, new Vector3(6.2f, 0, -2.5f), Quaternion.identity);
 
-        InputManager.Instance.OnTouchInput += Instance_OnTouchInput;
+        StopCoroutineTarget(placeFrogCoroutine);
+        placeFrogCoroutine = StartCoroutine(PlaceFrog());
+    }
+
+    private IEnumerator PlaceFrog()
+    {
+        while (selectedFrogPrefab != null)
+        {
+            Vector3 targetWorldPosition = cam.ScreenToWorldPoint(new Vector3(touchPos.x, touchPos.y, 10f));
+            selectedFrogPrefab.transform.position = targetWorldPosition + prefabPos;
+
+            Color col = IsPlacable(selectedFrogPrefab.transform.position) ? Color.green : Color.red;
+            selectedFrogPrefab.GetComponent<FrogBrain>().ChangeColor(col);
+            yield return null;
+        }
     }
 
     private void Instance_OnTouchPressStarted(Vector2 obj)
     {
         if (selectedFrogPrefab != null)
         {
-            //set the position of the prefab gameobject
-            Vector3 targetWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(obj.x, obj.y, 10f));
+            Vector3 targetWorldPosition = cam.ScreenToWorldPoint(new Vector3(obj.x, obj.y, 10f));
             prefabPos -= targetWorldPosition;
-            selectedFrogPrefab.transform.position = targetWorldPosition + prefabPos;
-            selectedFrogPrefab.GetComponent<FrogBrain>().ChangeColor(Color.red);
-        }
-    }
-
-    private void Instance_OnTouchInput(Vector2 obj)
-    {
-        // Convert screen position to world position
-        if (selectedFrogPrefab != null)
-        { 
-            //set the position of the prefab gameobject
-            Vector3 targetWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(obj.x, obj.y, 10f));
-            selectedFrogPrefab.transform.position = targetWorldPosition + prefabPos;
-
-            //set the color of the prefab game object
-            Color col = IsPlacable(selectedFrogPrefab.transform.position) ? Color.green : Color.red;
-            selectedFrogPrefab.GetComponent<FrogBrain>().ChangeColor(col);
+            StopCoroutineTarget(placeFrogCoroutine);
+            placeFrogCoroutine = StartCoroutine(PlaceFrog());
         }
     }
     private void Instance_OnTouchPressCanceled(Vector2 obj)
     {
         if(selectedFrogPrefab != null)
         {
-            Vector3 targetWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(obj.x, obj.y, 10f));
-            selectedFrogPrefab.transform.position = targetWorldPosition + prefabPos;
             prefabPos = selectedFrogPrefab.transform.position;
-            if (IsPlacable(prefabPos))
+            StopCoroutineTarget(placeFrogCoroutine);
+            if (IsPlacable(selectedFrogPrefab.transform.position))
             {
                 selectedFrogPrefab.GetComponent<FrogBrain>().SpawnFrog();
                 frogSO = null;
                 selectedFrogPrefab = null;
                 prefabPos = Vector3.zero;
-
-                InputManager.Instance.OnTouchInput -= Instance_OnTouchInput;
             }
         }
     }
-    private bool IsPlacable(/*Vector2 obj, */Vector3 pos)
+
+    public void OnPointerClick(PointerEventData eventData)
     {
-        //locate the postion in world space
-        //Vector3 point = Camera.main.ScreenToWorldPoint(new Vector3(obj.x, obj.y, 10f));
+        OnSetShopOnOff(false);
+        if(selectedFrogPrefab != null)
+        {
+            StopCoroutineTarget(placeFrogCoroutine);
+            Destroy(selectedFrogPrefab);
+            selectedFrogPrefab = null;
+            frogSO = null;
+            prefabPos = Vector3.zero;
+        }
+    }
+
+    private bool IsPlacable(Vector3 pos)
+    {
         NavMeshHit navHit;
 
         //check if it is in a navmesh area
@@ -114,15 +135,11 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
         return false;
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    private void StopCoroutineTarget(Coroutine target)
     {
-        OnSetShopOnOff(false);
-        if(selectedFrogPrefab != null)
+        if (target != null)
         {
-            Destroy(selectedFrogPrefab);
-            selectedFrogPrefab = null;
-            prefabPos = Vector3.zero;
-            InputManager.Instance.OnTouchInput -= Instance_OnTouchInput;
+            StopCoroutine(target);
         }
     }
 } 
