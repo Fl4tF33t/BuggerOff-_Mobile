@@ -60,4 +60,11 @@ public class FrogBrain : MonoBehaviour
         OnTriggerEvent = (arg) => { OnAnimationTrigger?.Invoke(arg); };
     }
 
+    public void SpawnFrog()
+    {
+        GetComponent<BehaviourTreeRunner>().enabled = true;
+        GetComponent<NavMeshAgent>().enabled = true;
+        GetComponent<SphereCollider>().enabled = true;
+    }
+
 }

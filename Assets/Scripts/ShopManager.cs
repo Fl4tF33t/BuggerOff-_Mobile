@@ -9,17 +9,21 @@ using UnityEngine.UI;
 
 public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
 {
+    FrogSO frogso;
+
     private Image image;
-    private GameObject selectedFrogPrefab;
+    public GameObject selectedFrogPrefab;
     [SerializeField]
     private GameObject wheel;
     private Animator animator;
+
 
     protected override void Awake()
     {
         base.Awake();
         image = GetComponent<Image>();
         animator = GetComponentInParent<Animator>();
+        //frogso.visualSO.userInterface.
     }
 
     private void Start()
@@ -31,29 +35,14 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
 
     public void SetShopOnOff(bool state)
     {
-        Color col = image.color;
-        if(!state)
-        {
-            //change the visibility of the button
-            col.a = 0f;
-            image.color = col;
-            animator.SetBool("OnStoreClick", state);
-
-        }
-        else
-        {
-            //change the visibility of the button
-            col.a = 1f;
-            image.color = col;
-            animator.SetBool("OnStoreClick", state);
-
-        }
+        animator.SetBool("OnStoreClick", state);
         image.raycastTarget = state;
     }
 
     private void ShopManager_OnPlaceFrog(FrogSO obj)
     {
         SetShopOnOff(true);
+        frogso = obj;
         selectedFrogPrefab = Instantiate(obj.prefab, new Vector3 (6.2f, 0, -2.5f), Quaternion.identity);
 
         InputManager.Instance.OnTouchInput += Instance_OnTouchInput;
@@ -62,30 +51,51 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
     private void Instance_OnTouchInput(Vector2 obj)
     {
         // Convert screen position to world position
-        Vector3 targetWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(obj.x, obj.y, 10f));
-        selectedFrogPrefab.transform.position = targetWorldPosition;
+        if (selectedFrogPrefab != null)
+        {
+            Vector3 targetWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(obj.x, obj.y, 10f));
+            selectedFrogPrefab.transform.position = targetWorldPosition; 
+        }
     }
     private void Instance_OnTouchPressCanceled(Vector2 obj)
     {
         if(selectedFrogPrefab != null)
         {
-            // Raycast from mouse position to the ground to get the point where the object is released
-            Ray ray = Camera.main.ScreenPointToRay(new Vector3(obj.x, obj.y, 10f));
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, LayerMask.GetMask("Ground")))
+            Vector3 point = Camera.main.ScreenToWorldPoint(new Vector3(obj.x, obj.y, 10f));
+            NavMeshHit navHit;
+            if (NavMesh.SamplePosition(point, out navHit, 0.1f, NavMesh.AllAreas))
             {
-                // Check if there is NavMesh at the point where the object is released
-                NavMeshHit navHit;
-                if (NavMesh.SamplePosition(hit.point, out navHit, 0.1f, NavMesh.AllAreas))
+                Debug.Log("Testing");
+                switch (navHit.mask)
                 {
-                    Debug.Log("NavMesh available at point: " + navHit.position);
-                    // Do something if NavMesh is available
+                    case 1:
+                        //ground frogs
+                        if (!frogso.logicSO.isWaterFrog)
+                        {                            
+                            selectedFrogPrefab.GetComponent<FrogBrain>().SpawnFrog();
+                            selectedFrogPrefab = null;
+                            Debug.Log("Place Ground frog");
+                        }
+                        break;
+                    case 8:
+                        //path for bugs
+                        break;
+                    case 16:
+                        //water frogs
+                        if (frogso.logicSO.isWaterFrog)
+                        {                            
+                            selectedFrogPrefab.GetComponent<FrogBrain>().SpawnFrog();
+                            selectedFrogPrefab = null;
+                            Debug.Log("Place Water frog");
+                        }
+                        break;
+                    default:
+                        break;
                 }
-                else
-                {
-                    Debug.Log("No NavMesh available at point");
-                    // Do something if NavMesh is not available
-                }
+            }
+            else
+            {
+                Debug.Log("No NavMesh available at point");
             }
         }
     }
