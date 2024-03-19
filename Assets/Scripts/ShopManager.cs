@@ -1,11 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
 {
@@ -13,6 +9,7 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
 
     private FrogSO frogSO;
     private GameObject selectedFrogPrefab;
+    private Vector3 prefabPos;
 
     [SerializeField]
     private GameObject wheel;
@@ -32,8 +29,9 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
     private void ShopManager_OnPlaceFrog(FrogSO obj)
     {
         OnSetShopOnOff(true);
+
         frogSO = obj;
-        selectedFrogPrefab = Instantiate(obj.prefab, new Vector3 (6.2f, 0, -2.5f), Quaternion.identity);
+        selectedFrogPrefab = Instantiate(obj.prefab, new Vector3(6.2f, 0, -2.5f), Quaternion.identity);
 
         InputManager.Instance.OnTouchInput += Instance_OnTouchInput;
     }
@@ -45,7 +43,7 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
         { 
             //set the position of the prefab gameobject
             Vector3 targetWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(obj.x, obj.y, 10f));
-            selectedFrogPrefab.transform.position = targetWorldPosition;
+            selectedFrogPrefab.transform.position = targetWorldPosition + prefabPos;
 
             //set the color of the prefab game object
             Color col = IsPlacable(obj) ? Color.green : Color.red;
@@ -56,11 +54,13 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
     {
         if(selectedFrogPrefab != null)
         {
+            prefabPos = selectedFrogPrefab.transform.position;
             if (IsPlacable(obj))
             {
                 selectedFrogPrefab.GetComponent<FrogBrain>().SpawnFrog();
                 frogSO = null;
                 selectedFrogPrefab = null;
+
                 InputManager.Instance.OnTouchInput -= Instance_OnTouchInput;
             }
         }
@@ -82,14 +82,14 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
             {
                 case 1:
                     //ground frogs
-                    res = !frogSO.logicSO.isWaterFrog && colliders.Length == 0 ? true : false;
+                    res = !frogSO.logicSO.isWaterFrog && colliders.Length == 0;
                     return res;
                 case 8:
                     //path for bugs
                     return false;
                 case 16:
                     //water frogs
-                    res = frogSO.logicSO.isWaterFrog && colliders.Length == 0 ? true : false;
+                    res = frogSO.logicSO.isWaterFrog && colliders.Length == 0;
                     return res;
                 default:
                     return false;
@@ -101,5 +101,11 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         OnSetShopOnOff(false);
+        if(selectedFrogPrefab != null)
+        {
+            Destroy(selectedFrogPrefab);
+            selectedFrogPrefab = null;
+            InputManager.Instance.OnTouchInput -= Instance_OnTouchInput;
+        }
     }
 } 

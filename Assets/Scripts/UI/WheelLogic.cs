@@ -1,22 +1,21 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class WheelLogic : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     //Movement of the wheel
     public event Action<float> OnWheelIconChange;
     public event Action<FrogSO> OnPlaceFrog;
+
     public event Action OnButtonScroll;
-    private int index;
 
     //Visuals of the buttons
     [SerializeField]
     private FrogSO[] frogPool = new FrogSO[8];
-    private FrogShopData[] frogShopData = new FrogShopData[3];
+    private FrogShopData[] frogShopData;
+    private int frogPoolIndex;
 
     //EventSystem of the UI
     private EventSystem eventSystem;
@@ -25,12 +24,11 @@ public class WheelLogic : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
     private void Awake()
     {
         eventSystem = EventSystem.current;
-        frogShopData = GetComponentsInChildren<FrogShopData>();
 
         //Initialize the shop icons
+        frogShopData = GetComponentsInChildren<FrogShopData>();
         for (int i = 0; i < frogShopData.Length;  i++)
         {
-            frogShopData[i] = transform.GetChild(i).transform.GetChild(0).GetComponent<FrogShopData>();
             frogShopData[i].OnSetFrogSO(frogPool[i]);
         }
     }
@@ -41,15 +39,13 @@ public class WheelLogic : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
         eventSystem.RaycastAll(eventData, results);
         switch (results.Count)
         {
-            case 0:
-                break;
             case 1:                
                 isSpinning = true;
                 OnWheelIconChange?.Invoke(0.5f);
                 break;
             case 2:
-                int frogPoolIndex = (index + 1) % frogPool.Length;
                 isSpinning = false;
+                int frogPoolIndex = (this.frogPoolIndex + 1) % frogPool.Length;
                 OnPlaceFrog?.Invoke(frogPool[frogPoolIndex]);
                 break;
             default:
@@ -64,38 +60,34 @@ public class WheelLogic : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
     {
         if (isSpinning)
         {
-            bool isSwipeUp = eventData.delta.x > 0 || eventData.delta.y > 0 ? true : false;
-            int currentIndex;
-
+            bool isSwipeUp = eventData.delta.y > 0;
             if (isSwipeUp)
             {
-                index++;
-                index = index % frogPool.Length;
-                currentIndex = index;
-                for (int i = 0; i < frogShopData.Length; i++)
-                {
-                    frogShopData[i].OnSetFrogSO(frogPool[currentIndex]);
-                    currentIndex++;
-                    currentIndex = currentIndex % frogPool.Length;
-                }
+                frogPoolIndex++;
+                frogPoolIndex = frogPoolIndex % frogPool.Length;
+                SetFrogShopData();
             }
             else
             {
-                index--;
-                if (index < 0)
+                frogPoolIndex--;
+                if (frogPoolIndex < 0)
                 {
-                    index = frogPool.Length - 1;
+                    frogPoolIndex = frogPool.Length - 1;
                 }
-                currentIndex = index;
-                for (int i = 0; i < frogShopData.Length; i++)
-                {
-                    frogShopData[i].OnSetFrogSO(frogPool[currentIndex]);
-                    currentIndex++;
-                    currentIndex = currentIndex % frogPool.Length;
-                }
+                SetFrogShopData();
             }
             OnWheelIconChange?.Invoke(1f);
-            //isSpinning = false;
+        }
+    }
+
+    private void SetFrogShopData()
+    {
+        int currentIndex = frogPoolIndex;
+        for (int i = 0; i < frogShopData.Length; i++)
+        {
+            frogShopData[i].OnSetFrogSO(frogPool[currentIndex]);
+            currentIndex++;
+            currentIndex = currentIndex % frogPool.Length;
         }
     }
 
@@ -103,16 +95,10 @@ public class WheelLogic : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
     {
         OnButtonScroll?.Invoke();
 
-        int currentIndex;
-        index++;
-        index = index % frogPool.Length;
-        currentIndex = index;
-        for (int i = 0; i < frogShopData.Length; i++)
-        {
-            frogShopData[i].OnSetFrogSO(frogPool[currentIndex]);
-            currentIndex++;
-            currentIndex = currentIndex % frogPool.Length;
-        }
+        frogPoolIndex++;
+        frogPoolIndex = frogPoolIndex % frogPool.Length;
+
+        SetFrogShopData();
     }
 
     public void OnScrollDown()
@@ -120,19 +106,12 @@ public class WheelLogic : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
         //Here for the animations!
         OnButtonScroll?.Invoke();
 
-        int currentIndex;
-        index--;
-        if (index < 0)
+        frogPoolIndex--;
+        if (frogPoolIndex < 0)
         {
-            index = frogPool.Length - 1;
+            frogPoolIndex = frogPool.Length - 1;
         }
-        currentIndex = index;
-        for (int i = 0; i < frogShopData.Length; i++)
-        {
-            frogShopData[i].OnSetFrogSO(frogPool[currentIndex]);
-            currentIndex++;
-            currentIndex = currentIndex % frogPool.Length;
-        }
+        SetFrogShopData();
     }
 
 }

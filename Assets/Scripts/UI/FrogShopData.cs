@@ -12,7 +12,6 @@ public class FrogShopData : MonoBehaviour
     public float scaleSpeed = .3f;
 
     //Initializtion of the frog information
-    private FrogSO frogSO;
     private Image image;
     public Action<FrogSO> OnSetFrogSO;
 
@@ -31,8 +30,7 @@ public class FrogShopData : MonoBehaviour
     }
     private void SetFrogSO(FrogSO data)
     {
-        frogSO = data;
-        image.sprite = frogSO.visualSO.userInterface.UIShopSprite;
+        image.sprite = data.visualSO.userInterface.UIShopSprite;
     }
 
     private IEnumerator ShrinkAndEnlarge()
