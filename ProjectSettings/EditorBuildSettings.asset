@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Cairo/DexterCairo 1.unity
+    path: Assets/Scenes/Cairo/SantiagoAnimatinUI.unity
     guid: 901b620c3baba8c4492c0d37fcb568b4
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000,
