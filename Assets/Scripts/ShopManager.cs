@@ -30,7 +30,7 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
     {
         //InputManager.Instance.OnTouchTap += (obj) => { SetShopOnOff(true); };
         InputManager.Instance.OnTouchTap += Instance_OnTouchTap;
-        InputManager.Instance.OnTouchPressCanceled += Instance_OnTouchPressCanceled;
+        //InputManager.Instance.OnTouchPressCanceled += Instance_OnTouchPressCanceled;
         wheel.GetComponentInChildren<WheelLogic>().OnPlaceFrog += ShopManager_OnPlaceFrog;
     }
 
@@ -38,24 +38,18 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
     {
         SetShopOnOff(true);
         // Raycast from mouse position to the ground to get the point where the object is released
-        Ray ray = Camera.main.ScreenPointToRay(new Vector3(obj.x, obj.y, 10f));
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+        Vector3 point = Camera.main.ScreenToWorldPoint(new Vector3(obj.x, obj.y, 10f));
+        NavMeshHit navHit;
+        if (NavMesh.SamplePosition(point, out navHit, 0.1f, NavMesh.AllAreas))
         {
-            Debug.Log("Testing");
-            // Check if there is NavMesh at the point where the object is released
-            NavMeshHit navHit;
-            if (NavMesh.SamplePosition(hit.point, out navHit, 0.1f, 1))
-            {
-                Debug.Log("NavMesh available at point: " + navHit.position);
-                Debug.Log(navHit.mask);
-                // Do something if NavMesh is available
-            }
-            else
-            {
-                Debug.Log("No NavMesh available at point");
-                // Do something if NavMesh is not available
-            }
+            Debug.Log("NavMesh available at point: " + navHit.position);
+            Debug.Log(navHit.mask);
+            // Do something if NavMesh is available
+        }
+        else
+        {
+            Debug.Log("No NavMesh available at point");
+            // Do something if NavMesh is not available
         }
     }
 
