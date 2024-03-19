@@ -22,5 +22,5 @@ public class LogicSO : ScriptableObject
     [Min(0.5f)]
     public float attackSpeed;
     public LayerMask targetLayer;
-
+    public bool isWaterFrog;
 }
