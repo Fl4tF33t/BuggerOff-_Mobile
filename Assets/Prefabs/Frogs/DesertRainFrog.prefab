@@ -59,7 +59,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 7529113000352471415}
   m_Enabled: 0
   m_AgentTypeID: -1923039037
-  m_Radius: 0.4
+  m_Radius: 0.28
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -84,6 +84,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5ec12a277eae8f41bb5dd145480f1f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 132820273647635895}
+  - {fileID: 307961305817884400}
+  - {fileID: 3990647448418073958}
+  - {fileID: 851855328813834986}
+  - {fileID: 5243359645676583673}
   frogSO: {fileID: 11400000, guid: 628b852a61e50294e9fd56cb98dae23a, type: 2}
   frog:
     frogName: 
@@ -181,6 +187,36 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 384a1cf06876a1843b36ee3dbd6cbf6d, type: 3}
+--- !u!212 &132820273647635895 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2208649037476764362, guid: 384a1cf06876a1843b36ee3dbd6cbf6d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2265712813940103037}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &307961305817884400 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1961164675683217805, guid: 384a1cf06876a1843b36ee3dbd6cbf6d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2265712813940103037}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &851855328813834986 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1487041253950076311, guid: 384a1cf06876a1843b36ee3dbd6cbf6d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2265712813940103037}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &3990647448418073958 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2887033288490510875, guid: 384a1cf06876a1843b36ee3dbd6cbf6d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2265712813940103037}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &5243359645676583673 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6320039144724163972, guid: 384a1cf06876a1843b36ee3dbd6cbf6d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2265712813940103037}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5777450025060869848 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5718672112535761317, guid: 384a1cf06876a1843b36ee3dbd6cbf6d,

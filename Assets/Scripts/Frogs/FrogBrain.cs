@@ -17,6 +17,9 @@ public class FrogBrain : MonoBehaviour
     public Action<bool> OnUpgradeUI;
     public Action<string> OnTriggerEvent;
 
+    [SerializeField]
+    private SpriteRenderer[] sprites;
+
     public FrogSO frogSO;
     public Frog frog = new Frog();
     [Serializable]
@@ -67,4 +70,11 @@ public class FrogBrain : MonoBehaviour
         GetComponent<SphereCollider>().enabled = true;
     }
 
+    public void ChangeColor(Color color)
+    {
+        foreach(SpriteRenderer sprite in sprites)
+        {
+            sprite.color = color;
+        }
+    }
 }

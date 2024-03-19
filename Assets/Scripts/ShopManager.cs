@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
 {
-    FrogSO frogso;
+    private FrogSO frogso;
 
     private Image image;
     public GameObject selectedFrogPrefab;
@@ -23,7 +23,6 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
         base.Awake();
         image = GetComponent<Image>();
         animator = GetComponentInParent<Animator>();
-        //frogso.visualSO.userInterface.
     }
 
     private void Start()
@@ -52,9 +51,52 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
     {
         // Convert screen position to world position
         if (selectedFrogPrefab != null)
-        {
+        { 
+
             Vector3 targetWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(obj.x, obj.y, 10f));
-            selectedFrogPrefab.transform.position = targetWorldPosition; 
+            selectedFrogPrefab.transform.position = targetWorldPosition;
+
+            Vector3 point = Camera.main.ScreenToWorldPoint(new Vector3(obj.x, obj.y, 10f));
+            NavMeshHit navHit;
+            if (NavMesh.SamplePosition(point, out navHit, 0.1f, NavMesh.AllAreas))
+            {
+
+                Collider[] colliders = Physics.OverlapSphere(navHit.position, 0.2f);
+
+                switch (navHit.mask)
+                {
+                    case 1:
+                        //ground frogs
+                        
+                        if (!frogso.logicSO.isWaterFrog)
+                        {
+                            if(colliders.Length == 0)
+                            {
+                                selectedFrogPrefab.GetComponent<FrogBrain>().ChangeColor(Color.green);
+                            }else selectedFrogPrefab.GetComponent<FrogBrain>().ChangeColor(Color.red);
+                        }
+                        else selectedFrogPrefab.GetComponent<FrogBrain>().ChangeColor(Color.red);
+
+                        break;
+                    case 8:
+                        //path for bugs
+                        selectedFrogPrefab.GetComponent<FrogBrain>().ChangeColor(Color.red);
+
+                        break;
+                    case 16:
+                        //water frogs
+                        if (frogso.logicSO.isWaterFrog)
+                        {
+                            selectedFrogPrefab.GetComponent<FrogBrain>().ChangeColor(Color.green);
+                        }else selectedFrogPrefab.GetComponent<FrogBrain>().ChangeColor(Color.red);
+                        break;
+                    default:
+                        selectedFrogPrefab.GetComponent<FrogBrain>().ChangeColor(Color.red);
+
+                        break;
+                }
+            }
+            else selectedFrogPrefab.GetComponent<FrogBrain>().ChangeColor(Color.red);
         }
     }
     private void Instance_OnTouchPressCanceled(Vector2 obj)
@@ -65,16 +107,20 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
             NavMeshHit navHit;
             if (NavMesh.SamplePosition(point, out navHit, 0.1f, NavMesh.AllAreas))
             {
-                Debug.Log("Testing");
+                Collider[] colliders = Physics.OverlapSphere(navHit.position, 0.2f);
+
                 switch (navHit.mask)
                 {
                     case 1:
                         //ground frogs
                         if (!frogso.logicSO.isWaterFrog)
-                        {                            
-                            selectedFrogPrefab.GetComponent<FrogBrain>().SpawnFrog();
-                            selectedFrogPrefab = null;
-                            Debug.Log("Place Ground frog");
+                        {
+                            if (colliders.Length == 0)
+                            {
+                                selectedFrogPrefab.GetComponent<FrogBrain>().ChangeColor(Color.white);
+                                selectedFrogPrefab.GetComponent<FrogBrain>().SpawnFrog();
+                                selectedFrogPrefab = null; 
+                            }
                         }
                         break;
                     case 8:
@@ -83,10 +129,13 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
                     case 16:
                         //water frogs
                         if (frogso.logicSO.isWaterFrog)
-                        {                            
-                            selectedFrogPrefab.GetComponent<FrogBrain>().SpawnFrog();
-                            selectedFrogPrefab = null;
-                            Debug.Log("Place Water frog");
+                        {
+                            if (colliders.Length == 0)
+                            {
+                                selectedFrogPrefab.GetComponent<FrogBrain>().ChangeColor(Color.white);
+                                selectedFrogPrefab.GetComponent<FrogBrain>().SpawnFrog();
+                                selectedFrogPrefab = null; 
+                            }
                         }
                         break;
                     default:
