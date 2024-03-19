@@ -41,7 +41,6 @@ public class WaveSystem : Singleton<WaveSystem>
         yield return new WaitForSeconds(timer);
 
         // Trigger event to spawn enemies
-        Debug.Log("Testing");
         SpawnBug(CSVReader.Instance.nodeDataArray[index].bugType, CSVReader.Instance.nodeDataArray[index].amount, CSVReader.Instance.nodeDataArray[index].path - 1);
 
         // Move to the next enemy in the wave
