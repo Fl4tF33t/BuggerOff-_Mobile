@@ -9,6 +9,8 @@ public class InputManager : Singleton<InputManager>
 {
     public event Action<Vector2> OnTouchTap;
     public event Action<Vector2> OnTouchInput;
+
+    public event Action<Vector2> OnTouchPressStarted;
     public event Action<Vector2> OnTouchPressCanceled;
 
     //public delegate void TouchTapEvent();
@@ -63,7 +65,9 @@ public class InputManager : Singleton<InputManager>
 
     private void TouchPress_started(InputAction.CallbackContext obj)
     {
-        //Debug.Log("Press " + obj.phase);
+        Vector2 touchPosition = playerInputActions.Player.TouchPosition.ReadValue<Vector2>();
+        //Debug.Log(touchPosition);
+        OnTouchPressStarted?.Invoke(touchPosition);
     }
 
     private void TouchHold_performed(InputAction.CallbackContext obj)

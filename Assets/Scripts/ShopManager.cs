@@ -20,10 +20,11 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
         animator = GetComponentInParent<Animator>();
         wheel.GetComponentInChildren<WheelLogic>().OnPlaceFrog += ShopManager_OnPlaceFrog;
 
-        InputManager.Instance.OnTouchTap += (obj) => { OnSetShopOnOff(true); };
-        InputManager.Instance.OnTouchPressCanceled += Instance_OnTouchPressCanceled;
-
         OnSetShopOnOff = (state) => { animator.SetBool("OnStoreClick", state); };
+
+        InputManager.Instance.OnTouchTap += (obj) => { OnSetShopOnOff(true); };
+        InputManager.Instance.OnTouchPressStarted += Instance_OnTouchPressStarted;
+        InputManager.Instance.OnTouchPressCanceled += Instance_OnTouchPressCanceled;
     }
 
     private void ShopManager_OnPlaceFrog(FrogSO obj)
@@ -36,6 +37,18 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
         InputManager.Instance.OnTouchInput += Instance_OnTouchInput;
     }
 
+    private void Instance_OnTouchPressStarted(Vector2 obj)
+    {
+        if (selectedFrogPrefab != null)
+        {
+            //set the position of the prefab gameobject
+            Vector3 targetWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(obj.x, obj.y, 10f));
+            prefabPos -= targetWorldPosition;
+            selectedFrogPrefab.transform.position = targetWorldPosition + prefabPos;
+            selectedFrogPrefab.GetComponent<FrogBrain>().ChangeColor(Color.red);
+        }
+    }
+
     private void Instance_OnTouchInput(Vector2 obj)
     {
         // Convert screen position to world position
@@ -46,7 +59,7 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
             selectedFrogPrefab.transform.position = targetWorldPosition + prefabPos;
 
             //set the color of the prefab game object
-            Color col = IsPlacable(obj) ? Color.green : Color.red;
+            Color col = IsPlacable(selectedFrogPrefab.transform.position) ? Color.green : Color.red;
             selectedFrogPrefab.GetComponent<FrogBrain>().ChangeColor(col);
         }
     }
@@ -54,25 +67,28 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
     {
         if(selectedFrogPrefab != null)
         {
+            Vector3 targetWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(obj.x, obj.y, 10f));
+            selectedFrogPrefab.transform.position = targetWorldPosition + prefabPos;
             prefabPos = selectedFrogPrefab.transform.position;
-            if (IsPlacable(obj))
+            if (IsPlacable(prefabPos))
             {
                 selectedFrogPrefab.GetComponent<FrogBrain>().SpawnFrog();
                 frogSO = null;
                 selectedFrogPrefab = null;
+                prefabPos = Vector3.zero;
 
                 InputManager.Instance.OnTouchInput -= Instance_OnTouchInput;
             }
         }
     }
-    private bool IsPlacable(Vector2 obj)
+    private bool IsPlacable(/*Vector2 obj, */Vector3 pos)
     {
         //locate the postion in world space
-        Vector3 point = Camera.main.ScreenToWorldPoint(new Vector3(obj.x, obj.y, 10f));
+        //Vector3 point = Camera.main.ScreenToWorldPoint(new Vector3(obj.x, obj.y, 10f));
         NavMeshHit navHit;
 
         //check if it is in a navmesh area
-        if (NavMesh.SamplePosition(point, out navHit, 0.1f, NavMesh.AllAreas))
+        if (NavMesh.SamplePosition(pos, out navHit, 0.1f, NavMesh.AllAreas))
         {
             //check if there are other game objects that would collide withion the same area
             Collider[] colliders = Physics.OverlapSphere(navHit.position, 0.2f);
@@ -105,6 +121,7 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
         {
             Destroy(selectedFrogPrefab);
             selectedFrogPrefab = null;
+            prefabPos = Vector3.zero;
             InputManager.Instance.OnTouchInput -= Instance_OnTouchInput;
         }
     }
