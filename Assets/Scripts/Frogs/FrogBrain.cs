@@ -68,6 +68,7 @@ public class FrogBrain : MonoBehaviour
         GetComponent<BehaviourTreeRunner>().enabled = true;
         GetComponent<NavMeshAgent>().enabled = true;
         GetComponent<SphereCollider>().enabled = true;
+        ChangeColor(Color.white);
     }
 
     public void ChangeColor(Color color)

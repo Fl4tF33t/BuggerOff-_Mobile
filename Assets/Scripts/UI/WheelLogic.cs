@@ -16,7 +16,6 @@ public class WheelLogic : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
     //Visuals of the buttons
     [SerializeField]
     private FrogSO[] frogPool = new FrogSO[8];
-    private Image[] buttonIcons = new Image[3];
     private FrogShopData[] frogShopData = new FrogShopData[3];
 
     //EventSystem of the UI
@@ -26,9 +25,10 @@ public class WheelLogic : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
     private void Awake()
     {
         eventSystem = EventSystem.current;
+        frogShopData = GetComponentsInChildren<FrogShopData>();
 
         //Initialize the shop icons
-        for (int i = 0; i < buttonIcons.Length;  i++)
+        for (int i = 0; i < frogShopData.Length;  i++)
         {
             frogShopData[i] = transform.GetChild(i).transform.GetChild(0).GetComponent<FrogShopData>();
             frogShopData[i].OnSetFrogSO(frogPool[i]);
@@ -72,7 +72,7 @@ public class WheelLogic : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
                 index++;
                 index = index % frogPool.Length;
                 currentIndex = index;
-                for (int i = 0; i < buttonIcons.Length; i++)
+                for (int i = 0; i < frogShopData.Length; i++)
                 {
                     frogShopData[i].OnSetFrogSO(frogPool[currentIndex]);
                     currentIndex++;
@@ -87,7 +87,7 @@ public class WheelLogic : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
                     index = frogPool.Length - 1;
                 }
                 currentIndex = index;
-                for (int i = 0; i < buttonIcons.Length; i++)
+                for (int i = 0; i < frogShopData.Length; i++)
                 {
                     frogShopData[i].OnSetFrogSO(frogPool[currentIndex]);
                     currentIndex++;
@@ -107,7 +107,7 @@ public class WheelLogic : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
         index++;
         index = index % frogPool.Length;
         currentIndex = index;
-        for (int i = 0; i < buttonIcons.Length; i++)
+        for (int i = 0; i < frogShopData.Length; i++)
         {
             frogShopData[i].OnSetFrogSO(frogPool[currentIndex]);
             currentIndex++;
@@ -127,7 +127,7 @@ public class WheelLogic : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
             index = frogPool.Length - 1;
         }
         currentIndex = index;
-        for (int i = 0; i < buttonIcons.Length; i++)
+        for (int i = 0; i < frogShopData.Length; i++)
         {
             frogShopData[i].OnSetFrogSO(frogPool[currentIndex]);
             currentIndex++;

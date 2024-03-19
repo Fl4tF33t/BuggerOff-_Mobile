@@ -9,39 +9,30 @@ using UnityEngine.UI;
 
 public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
 {
-    private FrogSO frogso;
+    public Action<bool> OnSetShopOnOff;
 
-    private Image image;
-    public GameObject selectedFrogPrefab;
+    private FrogSO frogSO;
+    private GameObject selectedFrogPrefab;
+
     [SerializeField]
     private GameObject wheel;
     private Animator animator;
 
-
-    protected override void Awake()
-    {
-        base.Awake();
-        image = GetComponent<Image>();
-        animator = GetComponentInParent<Animator>();
-    }
-
     private void Start()
     {
-        InputManager.Instance.OnTouchTap += (obj) => { SetShopOnOff(true); };
-        InputManager.Instance.OnTouchPressCanceled += Instance_OnTouchPressCanceled;
+        animator = GetComponentInParent<Animator>();
         wheel.GetComponentInChildren<WheelLogic>().OnPlaceFrog += ShopManager_OnPlaceFrog;
-    }
 
-    public void SetShopOnOff(bool state)
-    {
-        animator.SetBool("OnStoreClick", state);
-        image.raycastTarget = state;
+        InputManager.Instance.OnTouchTap += (obj) => { OnSetShopOnOff(true); };
+        InputManager.Instance.OnTouchPressCanceled += Instance_OnTouchPressCanceled;
+
+        OnSetShopOnOff = (state) => { animator.SetBool("OnStoreClick", state); };
     }
 
     private void ShopManager_OnPlaceFrog(FrogSO obj)
     {
-        SetShopOnOff(true);
-        frogso = obj;
+        OnSetShopOnOff(true);
+        frogSO = obj;
         selectedFrogPrefab = Instantiate(obj.prefab, new Vector3 (6.2f, 0, -2.5f), Quaternion.identity);
 
         InputManager.Instance.OnTouchInput += Instance_OnTouchInput;
@@ -52,105 +43,63 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
         // Convert screen position to world position
         if (selectedFrogPrefab != null)
         { 
-
+            //set the position of the prefab gameobject
             Vector3 targetWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(obj.x, obj.y, 10f));
             selectedFrogPrefab.transform.position = targetWorldPosition;
 
-            Vector3 point = Camera.main.ScreenToWorldPoint(new Vector3(obj.x, obj.y, 10f));
-            NavMeshHit navHit;
-            if (NavMesh.SamplePosition(point, out navHit, 0.1f, NavMesh.AllAreas))
-            {
-
-                Collider[] colliders = Physics.OverlapSphere(navHit.position, 0.2f);
-
-                switch (navHit.mask)
-                {
-                    case 1:
-                        //ground frogs
-                        
-                        if (!frogso.logicSO.isWaterFrog)
-                        {
-                            if(colliders.Length == 0)
-                            {
-                                selectedFrogPrefab.GetComponent<FrogBrain>().ChangeColor(Color.green);
-                            }else selectedFrogPrefab.GetComponent<FrogBrain>().ChangeColor(Color.red);
-                        }
-                        else selectedFrogPrefab.GetComponent<FrogBrain>().ChangeColor(Color.red);
-
-                        break;
-                    case 8:
-                        //path for bugs
-                        selectedFrogPrefab.GetComponent<FrogBrain>().ChangeColor(Color.red);
-
-                        break;
-                    case 16:
-                        //water frogs
-                        if (frogso.logicSO.isWaterFrog)
-                        {
-                            selectedFrogPrefab.GetComponent<FrogBrain>().ChangeColor(Color.green);
-                        }else selectedFrogPrefab.GetComponent<FrogBrain>().ChangeColor(Color.red);
-                        break;
-                    default:
-                        selectedFrogPrefab.GetComponent<FrogBrain>().ChangeColor(Color.red);
-
-                        break;
-                }
-            }
-            else selectedFrogPrefab.GetComponent<FrogBrain>().ChangeColor(Color.red);
+            //set the color of the prefab game object
+            Color col = IsPlacable(obj) ? Color.green : Color.red;
+            selectedFrogPrefab.GetComponent<FrogBrain>().ChangeColor(col);
         }
     }
     private void Instance_OnTouchPressCanceled(Vector2 obj)
     {
         if(selectedFrogPrefab != null)
         {
-            Vector3 point = Camera.main.ScreenToWorldPoint(new Vector3(obj.x, obj.y, 10f));
-            NavMeshHit navHit;
-            if (NavMesh.SamplePosition(point, out navHit, 0.1f, NavMesh.AllAreas))
+            if (IsPlacable(obj))
             {
-                Collider[] colliders = Physics.OverlapSphere(navHit.position, 0.2f);
-
-                switch (navHit.mask)
-                {
-                    case 1:
-                        //ground frogs
-                        if (!frogso.logicSO.isWaterFrog)
-                        {
-                            if (colliders.Length == 0)
-                            {
-                                selectedFrogPrefab.GetComponent<FrogBrain>().ChangeColor(Color.white);
-                                selectedFrogPrefab.GetComponent<FrogBrain>().SpawnFrog();
-                                selectedFrogPrefab = null; 
-                            }
-                        }
-                        break;
-                    case 8:
-                        //path for bugs
-                        break;
-                    case 16:
-                        //water frogs
-                        if (frogso.logicSO.isWaterFrog)
-                        {
-                            if (colliders.Length == 0)
-                            {
-                                selectedFrogPrefab.GetComponent<FrogBrain>().ChangeColor(Color.white);
-                                selectedFrogPrefab.GetComponent<FrogBrain>().SpawnFrog();
-                                selectedFrogPrefab = null; 
-                            }
-                        }
-                        break;
-                    default:
-                        break;
-                }
-            }
-            else
-            {
-                Debug.Log("No NavMesh available at point");
+                selectedFrogPrefab.GetComponent<FrogBrain>().SpawnFrog();
+                frogSO = null;
+                selectedFrogPrefab = null;
+                InputManager.Instance.OnTouchInput -= Instance_OnTouchInput;
             }
         }
+    }
+    private bool IsPlacable(Vector2 obj)
+    {
+        //locate the postion in world space
+        Vector3 point = Camera.main.ScreenToWorldPoint(new Vector3(obj.x, obj.y, 10f));
+        NavMeshHit navHit;
+
+        //check if it is in a navmesh area
+        if (NavMesh.SamplePosition(point, out navHit, 0.1f, NavMesh.AllAreas))
+        {
+            //check if there are other game objects that would collide withion the same area
+            Collider[] colliders = Physics.OverlapSphere(navHit.position, 0.2f);
+            bool res;
+
+            switch (navHit.mask)
+            {
+                case 1:
+                    //ground frogs
+                    res = !frogSO.logicSO.isWaterFrog && colliders.Length == 0 ? true : false;
+                    return res;
+                case 8:
+                    //path for bugs
+                    return false;
+                case 16:
+                    //water frogs
+                    res = frogSO.logicSO.isWaterFrog && colliders.Length == 0 ? true : false;
+                    return res;
+                default:
+                    return false;
+            }
+        }
+        return false;
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        SetShopOnOff(false);
+        OnSetShopOnOff(false);
     }
 } 
