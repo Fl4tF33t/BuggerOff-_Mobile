@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/Cairo/DexterCairo 1.unity
+  - enabled: 0
+    path: Assets/Scenes/Cairo/SantiagoAnimatinUI.unity
     guid: 901b620c3baba8c4492c0d37fcb568b4
+  - enabled: 1
+    path: Assets/Scenes/Cairo/SAntiagoTesting.unity
+    guid: fc225758b9c767448b1ccf273b5033b0
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000,
       guid: 101f97e1b8cc36a4ab02c05d08701e3a, type: 2}
