@@ -17,6 +17,8 @@ public class FrogBrain : MonoBehaviour
     public Action<bool> OnUpgradeUI;
     public Action<string> OnTriggerEvent;
 
+    public Action OnSpawnFrog;
+
     public FrogSO frogSO;
     public Frog frog = new Frog();
     [Serializable]
@@ -58,6 +60,14 @@ public class FrogBrain : MonoBehaviour
     {
         OnUpgradeUI = (arg) => { canvas.gameObject.SetActive(arg); };
         OnTriggerEvent = (arg) => { OnAnimationTrigger?.Invoke(arg); };
+        OnSpawnFrog = SpawnFrog;
+    }
+
+    private void SpawnFrog()
+    {
+        GetComponent<BehaviourTreeRunner>().enabled = true;
+        GetComponent<NavMeshAgent>().enabled = true;
+        GetComponent<SphereCollider>().enabled = true;
     }
 
 }

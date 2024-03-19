@@ -9,45 +9,55 @@ using UnityEngine.UI;
 
 public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
 {
+    FrogSO frogso;
+
     private Image image;
     private GameObject selectedFrogPrefab;
     [SerializeField]
     private GameObject wheel;
     private Animator animator;
 
+
     protected override void Awake()
     {
         base.Awake();
         image = GetComponent<Image>();
         animator = GetComponentInParent<Animator>();
+        //frogso.visualSO.userInterface.
     }
 
     private void Start()
     {
-        InputManager.Instance.OnTouchTap += (obj) => { SetShopOnOff(true); };
-        InputManager.Instance.OnTouchPressCanceled += Instance_OnTouchPressCanceled;
+        //InputManager.Instance.OnTouchTap += (obj) => { SetShopOnOff(true); };
+        InputManager.Instance.OnTouchTap += Instance_OnTouchTap;
+        //InputManager.Instance.OnTouchPressCanceled += Instance_OnTouchPressCanceled;
         wheel.GetComponentInChildren<WheelLogic>().OnPlaceFrog += ShopManager_OnPlaceFrog;
     }
 
-    public void SetShopOnOff(bool state)
+    private void Instance_OnTouchTap(Vector2 obj)
     {
-        Color col = image.color;
-        if(!state)
+        SetShopOnOff(true);
+        // Raycast from mouse position to the ground to get the point where the object is released
+        Vector3 point = Camera.main.ScreenToWorldPoint(new Vector3(obj.x, obj.y, 10f));
+        NavMeshHit navHit;
+        if (NavMesh.SamplePosition(point, out navHit, 0.1f, NavMesh.AllAreas))
         {
-            //change the visibility of the button
-            col.a = 0f;
-            image.color = col;
-            animator.SetBool("OnStoreClick", state);
-
+            Debug.Log("NavMesh available at point: " + navHit.position);
+            Debug.Log(navHit.mask);
+            // Do something if NavMesh is available
         }
         else
         {
-            //change the visibility of the button
-            col.a = 1f;
-            image.color = col;
-            animator.SetBool("OnStoreClick", state);
-
+            Debug.Log("No NavMesh available at point");
+            // Do something if NavMesh is not available
         }
+    }
+
+    
+
+    public void SetShopOnOff(bool state)
+    {
+        animator.SetBool("OnStoreClick", state);
         image.raycastTarget = state;
     }
 
@@ -68,17 +78,19 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
     private void Instance_OnTouchPressCanceled(Vector2 obj)
     {
         if(selectedFrogPrefab != null)
-        {
+        {           
             // Raycast from mouse position to the ground to get the point where the object is released
             Ray ray = Camera.main.ScreenPointToRay(new Vector3(obj.x, obj.y, 10f));
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, LayerMask.GetMask("Ground")))
             {
+                Debug.Log("Testing");
                 // Check if there is NavMesh at the point where the object is released
                 NavMeshHit navHit;
                 if (NavMesh.SamplePosition(hit.point, out navHit, 0.1f, NavMesh.AllAreas))
                 {
                     Debug.Log("NavMesh available at point: " + navHit.position);
+                    Debug.Log("NavMesh area mask: " + navHit.mask);
                     // Do something if NavMesh is available
                 }
                 else
