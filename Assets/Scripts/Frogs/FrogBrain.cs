@@ -35,6 +35,12 @@ public class FrogBrain : MonoBehaviour
     //UpgradeUI variables 
     Transform canvas;
 
+    //Attacking variables
+    [SerializeField]
+    Transform projectilePos;
+    [SerializeField]
+    private GameObject projectile;
+
     //Tracking and targeting variables
     public enum Target
     {
@@ -77,6 +83,15 @@ public class FrogBrain : MonoBehaviour
         foreach(SpriteRenderer sprite in sprites)
         {
             sprite.color = color;
+        }
+    }
+
+    public void ShootProjectile()
+    {
+        Debug.Log("Shoot");
+        if(projectilePos != null)
+        {
+            GameObject prefab = Instantiate(projectile, projectilePos.position, Quaternion.identity);
         }
     }
 }

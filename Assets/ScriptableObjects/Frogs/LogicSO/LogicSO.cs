@@ -13,7 +13,7 @@ public class LogicSO : ScriptableObject
     public string frogName;
     [Min(50)]
     public int cost;
-    [Range(0, 6)]
+    [Range(0, 5)]
     public int discipline;
     [Min(5)]
     public int damage;
