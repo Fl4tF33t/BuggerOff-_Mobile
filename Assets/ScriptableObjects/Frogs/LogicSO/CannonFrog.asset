@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26edbd5c9da1059458ca2ae32fef5b40, type: 3}
-  m_Name: CommonFrogLogic 2
+  m_Name: CannonFrog
   m_EditorClassIdentifier: 
-  frogName: Common Frog
-  cost: 50
-  discipline: 0
-  damage: 5
-  range: 4
+  frogName: Cannon frog
+  cost: 175
+  discipline: 2
+  damage: 10
+  range: 3
   attackSpeed: 0.5
   targetLayer:
     serializedVersion: 2
     m_Bits: 64
+  isWaterFrog: 0
