@@ -172,16 +172,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1994856084836046489, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: m_CullTransparentMesh
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2234589842995046711, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2376881010715996261, guid: 76823026be0a6a94ba9c50965933d117,
         type: 3}
       propertyPath: m_Pivot.x
@@ -282,65 +272,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3938966820616952589, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: m_RaycastPadding.y
-      value: 24.69
-      objectReference: {fileID: 0}
-    - target: {fileID: 3938966820616952589, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: m_RaycastPadding.z
-      value: 19.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 4010485126457054747, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4741992301733692584, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4741992301733692584, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4741992301733692584, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6301541040676943671, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: m_Maskable
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6301541040676943671, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7056515173114240147, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8750685763672450503, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: selectedFrogUI
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 9071711674606379729, guid: 76823026be0a6a94ba9c50965933d117,
         type: 3}
       propertyPath: m_Name
       value: ShopCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 9179764866028041074, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: navMeshAreaMask.m_Bits
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2719,26 +2654,6 @@ PrefabInstance:
     - target: {fileID: 6375921032163765699, guid: a30f355317602d64f9fd00416033ee50,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8570101117673575446, guid: a30f355317602d64f9fd00416033ee50,
-        type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8650266004502641191, guid: a30f355317602d64f9fd00416033ee50,
-        type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8674703983700831574, guid: a30f355317602d64f9fd00416033ee50,
-        type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8952805021542350609, guid: a30f355317602d64f9fd00416033ee50,
-        type: 3}
-      propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
