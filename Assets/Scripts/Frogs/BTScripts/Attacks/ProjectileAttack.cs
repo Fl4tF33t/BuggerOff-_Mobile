@@ -25,7 +25,9 @@ public class ProjectileAttack : ActionNode
 
     private void AnimationEvents_OnEndAnim()
     {
-        //do damage to the effected area
+        //shoot projectile
+        context.frogBrain.ShootProjectile();
+        Debug.Log("Shoot");
         endAnim = true;
     }
 
