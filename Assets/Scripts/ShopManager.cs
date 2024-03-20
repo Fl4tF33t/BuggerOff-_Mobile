@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 
 public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
 {
+    public FrogSO[] frogPool = new FrogSO[8];
+
     public Action<bool> OnSetShopOnOff;
 
     private FrogSO frogSO;
@@ -15,8 +17,6 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
     private Camera cam;
     private Vector2 touchPos;
 
-    [SerializeField]
-    private GameObject wheel;
     private Animator animator;
 
     private Coroutine placeFrogCoroutine;
@@ -25,7 +25,7 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
     {
         cam = Camera.main;
         animator = GetComponentInParent<Animator>();
-        wheel.GetComponentInChildren<WheelLogic>().OnPlaceFrog += ShopManager_OnPlaceFrog;
+        GetComponentInChildren<WheelLogic>().OnPlaceFrog += ShopManager_OnPlaceFrog;
 
         OnSetShopOnOff = state => { animator.SetBool("OnStoreClick", state); };
 

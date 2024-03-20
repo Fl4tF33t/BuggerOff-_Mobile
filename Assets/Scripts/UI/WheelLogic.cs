@@ -8,14 +8,13 @@ using UnityEngine.EventSystems;
 public class WheelLogic : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     //Movement of the wheel
-    public event Action<float> OnWheelIconChange;
+    public event Action<int> OnWheelIconChange;
     public event Action<FrogSO> OnPlaceFrog;
 
     public event Action OnButtonScroll;
 
     //Visuals of the buttons
-    [SerializeField]
-    private FrogSO[] frogPool = new FrogSO[8];
+    public FrogSO[] frogPool;
     private FrogShopData[] frogShopData;
     private int frogPoolIndex;
     private TextMeshProUGUI priceText;
@@ -31,6 +30,8 @@ public class WheelLogic : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
         priceText = GetComponentInChildren<TextMeshProUGUI>();
         animator = GetComponentInParent<Animator>();
 
+        frogPool = ShopManager.Instance.frogPool;
+
         //Initialize the shop icons
         frogShopData = GetComponentsInChildren<FrogShopData>();
         for (int i = 0; i < frogShopData.Length; i++)
@@ -43,6 +44,7 @@ public class WheelLogic : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
         eventSystem = EventSystem.current;
     }
 
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         List<RaycastResult> results = new List<RaycastResult>();
@@ -51,7 +53,6 @@ public class WheelLogic : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
         {
             case 1:                
                 isSpinning = true;
-                OnWheelIconChange?.Invoke(0.5f);
                 break;
             case 2:
                 isSpinning = false;
@@ -88,7 +89,8 @@ public class WheelLogic : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
                 SetPriceText(frogPoolIndex);
                 SetFrogShopData();
             }
-            OnWheelIconChange?.Invoke(1f);
+
+            OnWheelIconChange?.Invoke(frogPoolIndex);
         }
     }
 
@@ -119,6 +121,7 @@ public class WheelLogic : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
 
         SetPriceText(frogPoolIndex);
         SetFrogShopData();
+        OnWheelIconChange?.Invoke(frogPoolIndex);
     }
 
     public void OnScrollDown()
@@ -134,6 +137,7 @@ public class WheelLogic : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
 
         SetPriceText(frogPoolIndex);
         SetFrogShopData();
+        OnWheelIconChange?.Invoke(frogPoolIndex);
     }
 
 }
