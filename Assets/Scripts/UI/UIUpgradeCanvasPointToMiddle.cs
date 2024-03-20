@@ -11,7 +11,11 @@ public class UIUpgradeCanvasPointToMiddle : MonoBehaviour
 
     RectTransform[] rectTransforms = null;
     List<RectTransform> fixedRectTransform = new List<RectTransform>();
-    
+
+    [SerializeField] Button leftArrow;
+    [SerializeField] Button rightArrow;
+    [SerializeField] TextMeshProUGUI Targeting;
+    List<string> waysToTarget = new List<string>();
 
     private void Awake()
     {
@@ -33,6 +37,13 @@ public class UIUpgradeCanvasPointToMiddle : MonoBehaviour
                 fixedRectTransform.Add(t);
             }
         }
+        waysToTarget.Add("First");
+        waysToTarget.Add("Last");
+        waysToTarget.Add("Strongest");
+        waysToTarget.Add("Weakest");
+        waysToTarget.Add("Shield");
+
+        Targeting.text = waysToTarget[0];
     }
 
     private void Update()
@@ -50,6 +61,48 @@ public class UIUpgradeCanvasPointToMiddle : MonoBehaviour
         foreach (RectTransform t in fixedRectTransform)
         {
             t.rotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
+        }
+    }
+
+    public void LeftArrow()
+    {
+        if (Targeting.text==waysToTarget[0])
+        {
+            Targeting.text = waysToTarget[waysToTarget.Count-1];
+        }
+        else
+        {
+            int num = 0;
+            for (int i = 0; i < waysToTarget.Count; i++)
+            {
+                
+                if (Targeting.text == waysToTarget[i])
+                {
+                    num = i;
+                }
+            }
+            Targeting.text = waysToTarget[num - 1];
+        }
+    }
+
+    public void RightArrow()
+    {
+        if (Targeting.text == waysToTarget[waysToTarget.Count-1])
+        {
+            Targeting.text = waysToTarget[0];
+        }
+        else
+        {
+            int num = 0;
+            for (int i = 0; i < waysToTarget.Count; i++)
+            {
+
+                if (Targeting.text == waysToTarget[i])
+                {
+                    num = i;
+                }
+            }
+            Targeting.text = waysToTarget[num + 1];
         }
     }
 }
