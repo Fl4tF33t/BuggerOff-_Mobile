@@ -100,7 +100,6 @@ GameObject:
   - component: {fileID: 6962335835782625276}
   - component: {fileID: 1166527546936241830}
   - component: {fileID: 1021499723711654648}
-  - component: {fileID: 4316706799393713843}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -165,19 +164,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4316706799393713843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1166229809386599077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06ad2693784180549b11ba7c9261099e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scaleSpeed: 0.3
 --- !u!1 &1672683486268777843
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,7 +175,6 @@ GameObject:
   - component: {fileID: 7456065592689663597}
   - component: {fileID: 3590666675672251109}
   - component: {fileID: 1383688612396767627}
-  - component: {fileID: 2885325750461983309}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -254,19 +239,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2885325750461983309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1672683486268777843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06ad2693784180549b11ba7c9261099e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scaleSpeed: 0.3
 --- !u!1 &2234589842995046711
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,7 +580,6 @@ GameObject:
   - component: {fileID: 5661206735796095324}
   - component: {fileID: 6825720599082154875}
   - component: {fileID: 4011842628634780701}
-  - component: {fileID: 7388052250274713000}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -657,7 +628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 24.69, z: 19.12, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -673,19 +644,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7388052250274713000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5172337394134889504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06ad2693784180549b11ba7c9261099e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scaleSpeed: 0.3
 --- !u!1 &5360451428170228547
 GameObject:
   m_ObjectHideFlags: 0
@@ -1242,7 +1200,6 @@ GameObject:
   - component: {fileID: 2913991003947601193}
   - component: {fileID: 5268357067505395985}
   - component: {fileID: 3050231321991465759}
-  - component: {fileID: 5807022576883732518}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -1307,19 +1264,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5807022576883732518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9054223964313050787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06ad2693784180549b11ba7c9261099e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scaleSpeed: 0.3
 --- !u!1 &9071711674606379729
 GameObject:
   m_ObjectHideFlags: 0
@@ -1811,7 +1755,9 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 342
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3346936436107110967, guid: a737501df87e9044a9a4f53a1e67028e, type: 3}
+    - {fileID: 183846649150574466, guid: a737501df87e9044a9a4f53a1e67028e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2222157801151832524, guid: a737501df87e9044a9a4f53a1e67028e,

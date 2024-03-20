@@ -7,11 +7,16 @@ using UnityEngine;
 public class ProjectileLogic : MonoBehaviour
 {
     public float speed = 10f;
+    Rigidbody rb;
 
     void Start()
     {
-        Rigidbody rb = GetComponent<Rigidbody>();
-        rb.velocity = transform.forward * speed;
+        rb = GetComponent<Rigidbody>();
+    }
+
+    private void Update()
+    {       
+        rb.velocity = transform.forward * speed * Time.deltaTime;
     }
 
     void OnCollisionEnter(Collision collision)

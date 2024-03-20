@@ -24,9 +24,12 @@ public class WheelLogic : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
     private EventSystem eventSystem;
     private bool isSpinning;
 
+    private Animator animator;
+
     private void Awake()
     {
         priceText = GetComponentInChildren<TextMeshProUGUI>();
+        animator = GetComponentInParent<Animator>();
 
         //Initialize the shop icons
         frogShopData = GetComponentsInChildren<FrogShopData>();
@@ -108,7 +111,8 @@ public class WheelLogic : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
 
     public void OnScrollUp()
     {
-        OnButtonScroll?.Invoke();
+        //OnButtonScroll?.Invoke();
+        animator.SetTrigger("OnStoreMovingUp");
 
         frogPoolIndex++;
         frogPoolIndex = frogPoolIndex % frogPool.Length;

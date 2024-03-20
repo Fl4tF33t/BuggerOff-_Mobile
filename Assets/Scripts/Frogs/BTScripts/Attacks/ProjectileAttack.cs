@@ -27,7 +27,6 @@ public class ProjectileAttack : ActionNode
     {
         //shoot projectile
         context.frogBrain.ShootProjectile();
-        Debug.Log("Shoot");
         endAnim = true;
     }
 
