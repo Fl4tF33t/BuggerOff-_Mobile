@@ -26,10 +26,7 @@ public class GameManager : Singleton<GameManager>
             StartCoroutine(WaveSystem.Instance.Waves());
             waveButton.gameObject.SetActive(false);
         });
-        WaveSystem.Instance.OnWaveCompleted = () => 
-        { 
-            waveButton.gameObject.SetActive(true); 
-        };
+        WaveSystem.Instance.OnWaveCompleted = () => { waveButton.gameObject.SetActive(true); };
     }
 
     private void Start()

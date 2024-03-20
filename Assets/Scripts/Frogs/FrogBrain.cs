@@ -17,7 +17,6 @@ public class FrogBrain : MonoBehaviour
     public Action<bool> OnUpgradeUI;
     public Action<string> OnTriggerEvent;
 
-    [SerializeField]
     private SpriteRenderer[] sprites;
 
     public FrogSO frogSO;
@@ -55,6 +54,8 @@ public class FrogBrain : MonoBehaviour
                 canvas = transform.GetChild(i);
             }
         }
+
+        sprites = GetComponentsInChildren<SpriteRenderer>();
     }
 
     private void Start()

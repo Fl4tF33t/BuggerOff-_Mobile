@@ -5,15 +5,14 @@ using TheKiwiCoder;
 
 public class TrackEnemy : ActionNode
 {
-    float timer = 5;
     public float rotationThreshold = 1.0f; // The threshold angle for considering the rotation as correct
     private bool isRotationCorrect = false;
 
     protected override void OnStart() {
         //the timer should be set to the time it takes to shoot a target
-        if(blackboard.attackTimer < 0)
+        if(blackboard.attackTimer <= 0)
         {
-            blackboard.attackTimer = 3f;
+            blackboard.attackTimer = 1f /context.frogBrain.frogSO.logicSO.attackSpeed;
         }
         context.animator.SetTrigger("OnTracking");
     }

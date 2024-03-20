@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c84c1618c4472b4a944efc90296d6e7, type: 3}
   m_Name: DiverFrog
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7529113000352471415, guid: 5c7ec96d514b7e249bcbffa1a2f5bc50, type: 3}
+  prefab: {fileID: 7529113000352471415, guid: 3feda4a17952ee441b542696354d64bd, type: 3}
   logicSO: {fileID: 11400000, guid: 7df72b8089400b9438fd2374be15ccc0, type: 2}
   upgradeSO: {fileID: 11400000, guid: 0178e0c0ce7f28a429ffb2311f0a1c03, type: 2}
   visualSO: {fileID: 11400000, guid: 270e4245d26e58a4286e40671568757f, type: 2}

@@ -51,6 +51,31 @@ MonoBehaviour:
     selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
+--- !u!114 &-5615797396717701861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 177e70e4277e811438db0aceb7139383, type: 3}
+  m_Name: ProjectileAttack
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: eb37ade2b328c7b41bc17ebc42469a9d
+  position: {x: -180.92934, y: 494.99985}
+  blackboard:
+    collidersInArea: []
+    collidersInLOS: []
+    attackTimer: 0
+    moveToPosition: {x: 0, y: 0, z: 0}
+    timer: 10
+    selectedTarget: {fileID: 0}
+  description: 
+  drawGizmos: 0
 --- !u!114 &-4769391222104139426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,7 +195,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d285eb63c2cdd74180de7cfceaa96ad, type: 3}
-  m_Name: CommonFrog
+  m_Name: DiverFrog
   m_EditorClassIdentifier: 
   rootNode: {fileID: -7532456759450479525}
   treeState: 0
@@ -190,7 +215,7 @@ MonoBehaviour:
   - {fileID: -4769391222104139426}
   - {fileID: -3475597867808046368}
   - {fileID: 3845520762088469379}
-  - {fileID: 1344569985370239430}
+  - {fileID: -5615797396717701861}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
@@ -224,31 +249,6 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   children: []
---- !u!114 &1344569985370239430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93f6f57250a2d5a4090f753e969e4afc, type: 3}
-  m_Name: AOEAttack
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 538a58d25ff5f1a4f84f9dec523abef8
-  position: {x: -213.05753, y: 494.99988}
-  blackboard:
-    collidersInArea: []
-    collidersInLOS: []
-    attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
-    timer: 10
-    selectedTarget: {fileID: 0}
-  description: 
-  drawGizmos: 0
 --- !u!114 &1594750733927073886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,4 +462,4 @@ MonoBehaviour:
   children:
   - {fileID: -3475597867808046368}
   - {fileID: 3845520762088469379}
-  - {fileID: 1344569985370239430}
+  - {fileID: -5615797396717701861}
