@@ -24,6 +24,17 @@ public class AOEAttack : ActionNode
     private void AnimationEvents_OnEndAnim()
     {
         //do damage to the effected area
+        RaycastHit[] hits = Physics.SphereCastAll(context.transform.position, 0.4f, context.transform.forward, context.frogBrain.frogSO.logicSO.range, LayerMask.GetMask("Bug"));
+
+        // Iterate through the hits array to process each hit
+        foreach (RaycastHit hit in hits)
+        {
+            if(hit.transform.TryGetComponent(out IBugTakeDamage obj))
+            {
+                obj.BugTakeDamage(context.frogBrain.frog.damage);
+            }
+        }
+
         endAnim = true;
     }
 
