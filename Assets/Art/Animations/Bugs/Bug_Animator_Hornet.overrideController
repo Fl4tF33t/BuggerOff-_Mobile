@@ -7,5 +7,7 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Bug_Animator_Hornet
-  m_Controller: {fileID: 0}
-  m_Clips: []
+  m_Controller: {fileID: 9100000, guid: 5b841d63ea6445345b4bc17c65772a69, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: f36e04cd2f30fb243b9cb97bbf900f2d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4ae4cf6cade0bb04ab7be60f5de2590b, type: 2}
