@@ -92,6 +92,8 @@ MonoBehaviour:
     range: 0
     attackSpeed: 0
     target: 0
+  projectilePos: {fileID: 0}
+  projectile: {fileID: 0}
 --- !u!135 &6162405890025491135
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -363,12 +365,12 @@ PrefabInstance:
     - target: {fileID: 7231670148390573628, guid: 3a010b6f0b7d99d47addfbe13ee0bd95,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 3
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 7231670148390573628, guid: 3a010b6f0b7d99d47addfbe13ee0bd95,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 3
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 7231670148390573628, guid: 3a010b6f0b7d99d47addfbe13ee0bd95,
         type: 3}
