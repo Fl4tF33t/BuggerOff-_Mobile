@@ -6,27 +6,34 @@ public class WheelAnimation : MonoBehaviour
 {
     private Animator animator;
 
-    [SerializeField]
-    private WheelLogic wheel;
     public FrogShopData[] frogShopData;
-    int index;
+    private int currentIndex;
 
-    public GameObject wheelChild;
+    private Transform wheelChild;
 
     // Start is called before the first frame update
     private void Awake()
     {
+        wheelChild = transform.GetChild(0);
         animator = GetComponentInParent<Animator>();
-        wheel.OnWheelAnim += Wheel_OnWheelAnim;
+        WheelManager.Instance.OnWheelAnim += Wheel_OnWheelAnim;
+
+        //frogShopData = GetComponentsInChildren<FrogShopData>();
     }
 
-    private void Wheel_OnWheelAnim(string obj)
+
+    private void Wheel_OnWheelAnim(string obj, int index)
     {
-        wheelChild.SetActive(true);
+        wheelChild.gameObject.SetActive(true);
+        currentIndex = index - 1;
+        if (currentIndex < 0)
+        {
+            currentIndex = ShopManager.Instance.frogPool.Length - 1;
+        }
         for (int i = 0; i < frogShopData.Length; i++)
         {
-            frogShopData[i].OnSetFrogSO(ShopManager.Instance.frogPool[index]);
-            index++;
+            frogShopData[i].OnSetFrogSO(ShopManager.Instance.frogPool[currentIndex]);
+            currentIndex = (currentIndex + 1) % ShopManager.Instance.frogPool.Length;
         }
         if (obj == "Down")
         {
@@ -35,17 +42,4 @@ public class WheelAnimation : MonoBehaviour
         else animator.SetTrigger("OnStoreMovingUp");
     }
 
-    private void Wheel_OnWheelIconChange(int index)
-    {
-        //foreach (var sprite in sprites)
-        //{
-        //    sprite
-        //}
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

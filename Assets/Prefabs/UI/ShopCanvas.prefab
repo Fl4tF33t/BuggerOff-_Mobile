@@ -1259,6 +1259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wheel: {fileID: 8750685763672450503}
   frogShopData: []
+  wheelChild: {fileID: 0}
 --- !u!1 &8873326701176188243
 GameObject:
   m_ObjectHideFlags: 0
@@ -1977,7 +1978,7 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2222157801151832524, guid: a737501df87e9044a9a4f53a1e67028e,
         type: 3}
-      insertIndex: 1
+      insertIndex: 0
       addedObject: {fileID: 3203859296622765606}
     - targetCorrespondingSourceObject: {fileID: 2222157801151832524, guid: a737501df87e9044a9a4f53a1e67028e,
         type: 3}

@@ -14,9 +14,6 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
     private GameObject selectedFrogPrefab;
     private Vector3 prefabPos;
 
-    [SerializeField]
-    private WheelLogic wheelLogic;
-
     private Camera cam;
     private Vector2 touchPos;
 
@@ -31,7 +28,7 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
 
         cam = Camera.main;
 
-        wheelLogic.OnPlaceFrog += ShopManager_OnPlaceFrog;
+        WheelManager.Instance.OnPlaceFrog += ShopManager_OnPlaceFrog;
 
         InputManager.Instance.OnTouchInput += pos =>
         {

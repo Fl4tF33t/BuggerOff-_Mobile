@@ -1,70 +1,139 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class WheelManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class WheelManager : Singleton<WheelManager>, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
-    private Vector2 dragStartPos;
-    private bool isDragging = false;
+    //Movement of the wheel
+    //public event Action<int> OnWheelIconChange;
+    public event Action<FrogSO> OnPlaceFrog;
+
+    //public event Action OnButtonScroll;
+    public event Action<string, int> OnWheelAnim;
+
+    //Visuals of the buttons
+    private FrogSO[] frogPool;
+    private FrogShopData[] frogShopData;
+    private int frogPoolIndex;
+    private TextMeshProUGUI priceText;
+
+    //EventSystem of the UI
+    private EventSystem eventSystem;
+    private bool isSpinning;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        priceText = GetComponentInChildren<TextMeshProUGUI>();
+        frogShopData = GetComponentsInChildren<FrogShopData>();
+
+        eventSystem = EventSystem.current;
+    }
+    private void Start()
+    {
+        frogPool = ShopManager.Instance.frogPool;
+        for (int i = 0; i < frogShopData.Length; i++)
+        {
+            frogShopData[i].OnSetFrogSO(frogPool[i]);
+        }
+
+        SetPriceText(frogPoolIndex);
+    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        // Check if the drag starts within the bounds of the wheel
-        if (IsPointerOverUIObject(eventData.position))
+        List<RaycastResult> results = new List<RaycastResult>();
+        eventSystem.RaycastAll(eventData, results);
+        switch (results.Count)
         {
-            dragStartPos = eventData.position;
-            isDragging = true;
+            case 1:                
+                isSpinning = true;
+                break;
+            case 2:
+                isSpinning = false;
+                int frogPoolIndex = (this.frogPoolIndex + 1) % frogPool.Length;
+                OnPlaceFrog?.Invoke(frogPool[frogPoolIndex]);
+                break;
+            default:
+                break;
         }
     }
 
-    public void OnDrag(PointerEventData eventData)
-    {
-        if (isDragging)
-        {
-            Vector2 delta = eventData.position - dragStartPos;
-            transform.Rotate(Vector3.forward, -delta.x/3); // Rotate the wheel based on drag delta
-            dragStartPos = eventData.position; // Update drag start position
-        }
-    }
+    //need to have the I drag even though it is empty to make the drag start/end to work
+    public void OnDrag(PointerEventData eventData) { }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (isDragging)
+        if (isSpinning)
         {
-            // Calculate the closest snap point and snap if necessary
-            SnapToNearestSnapPoint();
-            isDragging = false;
-        }
-    }
-
-   
-    void SnapToNearestSnapPoint()
-    {
-        float snapInterval = 45f; // The interval between snap points
-
-        float rotationAngle = transform.eulerAngles.z;
-        float snappedRotation = Mathf.Round(rotationAngle / snapInterval) * snapInterval;
-
-        transform.rotation = Quaternion.Euler(0f, 0f, snappedRotation);
-    }
-
-    // Helper method to check if the pointer is over the wheel UI
-    bool IsPointerOverUIObject(Vector2 touchPosition)
-    {
-        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
-        eventDataCurrentPosition.position = touchPosition;
-
-        var results = new List<RaycastResult>();
-        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
-
-        foreach (RaycastResult result in results)
-        {
-            if (result.gameObject == gameObject)
+            bool isSwipeUp = eventData.delta.y > 0;
+            if (isSwipeUp)
             {
-                return true;
+                frogPoolIndex = (frogPoolIndex + 1) % frogPool.Length;
+                SetPriceText(frogPoolIndex);
+                SetFrogShopData();
             }
+            else
+            {
+                frogPoolIndex--;
+                if (frogPoolIndex < 0)
+                {
+                    frogPoolIndex = frogPool.Length - 1;                    
+                }
+                SetPriceText(frogPoolIndex);
+                SetFrogShopData();
+            }
+
+            //OnWheelIconChange?.Invoke(frogPoolIndex);
         }
-        return false;
     }
+
+    private void SetFrogShopData()
+    {
+        int currentIndex = frogPoolIndex;
+        for (int i = 0; i < frogShopData.Length; i++)
+        {
+            frogShopData[i].OnSetFrogSO(frogPool[currentIndex]);
+            currentIndex++;
+            currentIndex = currentIndex % frogPool.Length;
+        }
+    }
+
+    private void SetPriceText(int index)
+    {
+        int priceTextIndex = index++ % frogShopData.Length;
+        priceText.text = frogPool[priceTextIndex].logicSO.cost.ToString();
+    }
+
+    public void OnScrollUp()
+    {
+        //OnButtonScroll?.Invoke();
+        OnWheelAnim?.Invoke("Up", frogPoolIndex);
+
+        frogPoolIndex = (frogPoolIndex + 1) % frogPool.Length;
+
+        SetPriceText(frogPoolIndex);
+        SetFrogShopData();
+        //OnWheelIconChange?.Invoke(frogPoolIndex);
+    }
+
+    public void OnScrollDown()
+    {
+        //Here for the animations!
+        OnWheelAnim?.Invoke("Down", frogPoolIndex);
+
+        frogPoolIndex--;
+        if (frogPoolIndex < 0)
+        {
+            frogPoolIndex = frogPool.Length - 1;
+        }
+
+        SetPriceText(frogPoolIndex);
+        SetFrogShopData();
+        //OnWheelIconChange?.Invoke(frogPoolIndex);
+    }
+
 }
