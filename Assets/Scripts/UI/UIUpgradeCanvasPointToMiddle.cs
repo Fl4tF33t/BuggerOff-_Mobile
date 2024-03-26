@@ -32,7 +32,7 @@ public class UIUpgradeCanvasPointToMiddle : MonoBehaviour
         foreach (RectTransform t in rectTransforms)
         {
             //use a try get component to make a specific transform in the array rotate
-            if (t.TryGetComponent(out Image image))
+            if (t.TryGetComponent(out Image image) && t.name != "Background")
             {
                 fixedRectTransform.Add(t);
             }
@@ -60,7 +60,14 @@ public class UIUpgradeCanvasPointToMiddle : MonoBehaviour
         // Keep the text and the images of the UI static and not moving
         foreach (RectTransform t in fixedRectTransform)
         {
-            t.rotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
+            if (t.name == "ArrowRight")
+            {
+                t.rotation = Quaternion.Euler(new Vector3(90f, 0f, 180f));
+            }
+            else
+            {
+                t.rotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
+            }
         }
     }
 
