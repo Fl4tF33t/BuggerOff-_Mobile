@@ -9,17 +9,25 @@ public class WheelAnimation : MonoBehaviour
     [SerializeField]
     private WheelLogic wheel;
     public FrogShopData[] frogShopData;
+    int index;
+
+    public GameObject wheelChild;
 
     // Start is called before the first frame update
     private void Awake()
     {
         animator = GetComponentInParent<Animator>();
-        frogShopData = GetComponentsInChildren<FrogShopData>();
         wheel.OnWheelAnim += Wheel_OnWheelAnim;
     }
 
     private void Wheel_OnWheelAnim(string obj)
     {
+        wheelChild.SetActive(true);
+        for (int i = 0; i < frogShopData.Length; i++)
+        {
+            frogShopData[i].OnSetFrogSO(ShopManager.Instance.frogPool[index]);
+            index++;
+        }
         if (obj == "Down")
         {
             animator.SetTrigger("OnStoreMovingDown");
