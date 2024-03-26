@@ -12,9 +12,10 @@ public class WheelLogic : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
     public event Action<FrogSO> OnPlaceFrog;
 
     public event Action OnButtonScroll;
+    public event Action<string> OnWheelAnim;
 
     //Visuals of the buttons
-    public FrogSO[] frogPool;
+    private FrogSO[] frogPool;
     private FrogShopData[] frogShopData;
     private int frogPoolIndex;
     private TextMeshProUGUI priceText;
@@ -23,27 +24,23 @@ public class WheelLogic : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
     private EventSystem eventSystem;
     private bool isSpinning;
 
-    private Animator animator;
-
     private void Awake()
     {
         priceText = GetComponentInChildren<TextMeshProUGUI>();
-        animator = GetComponentInParent<Animator>();
-
-        frogPool = ShopManager.Instance.frogPool;
-
-        //Initialize the shop icons
         frogShopData = GetComponentsInChildren<FrogShopData>();
+
+        eventSystem = EventSystem.current;
+    }
+    private void Start()
+    {
+        frogPool = ShopManager.Instance.frogPool;
         for (int i = 0; i < frogShopData.Length; i++)
         {
             frogShopData[i].OnSetFrogSO(frogPool[i]);
         }
 
         SetPriceText(frogPoolIndex);
-
-        eventSystem = EventSystem.current;
     }
-
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -114,7 +111,7 @@ public class WheelLogic : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
     public void OnScrollUp()
     {
         //OnButtonScroll?.Invoke();
-        animator.SetTrigger("OnStoreMovingUp");
+        OnWheelAnim?.Invoke("Up");
 
         frogPoolIndex++;
         frogPoolIndex = frogPoolIndex % frogPool.Length;
@@ -127,7 +124,7 @@ public class WheelLogic : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
     public void OnScrollDown()
     {
         //Here for the animations!
-        OnButtonScroll?.Invoke();
+        OnWheelAnim?.Invoke("Down");
 
         frogPoolIndex--;
         if (frogPoolIndex < 0)
