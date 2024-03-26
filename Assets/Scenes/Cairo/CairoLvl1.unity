@@ -172,6 +172,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 534220059710539906, guid: 76823026be0a6a94ba9c50965933d117,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145402824425074607, guid: 76823026be0a6a94ba9c50965933d117,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145402824425074607, guid: 76823026be0a6a94ba9c50965933d117,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145402824425074607, guid: 76823026be0a6a94ba9c50965933d117,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2376881010715996261, guid: 76823026be0a6a94ba9c50965933d117,
         type: 3}
       propertyPath: m_Pivot.x
@@ -272,13 +292,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8659441186237412213, guid: 76823026be0a6a94ba9c50965933d117,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9071711674606379729, guid: 76823026be0a6a94ba9c50965933d117,
         type: 3}
       propertyPath: m_Name
       value: ShopCanvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5898672769906783311, guid: 76823026be0a6a94ba9c50965933d117, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76823026be0a6a94ba9c50965933d117, type: 3}
