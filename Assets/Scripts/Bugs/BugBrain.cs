@@ -12,7 +12,16 @@ public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
 
     public int health;
     private int sheild;
-      
+
+    private SpriteRenderer[] sprites;
+
+    private Coroutine colorDamage;
+
+    private void Awake()
+    {
+        sprites = GetComponentsInChildren<SpriteRenderer>();
+    }
+
     private void OnEnable()
     {
         InitializeBugLogic(bugSO);
@@ -21,12 +30,19 @@ public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
     private void InitializeBugLogic(BugSO bugSO)
     {
         //set the original values from the SO
+        ChangeColor(Color.white);
         health = bugSO.health;
         sheild = bugSO.sheild;
     }
 
     public void BugTakeDamage(int damage)
     {
+        if(colorDamage != null)
+        {
+            StopCoroutine(colorDamage);
+        }
+        colorDamage = StartCoroutine(TakeDamage());
+
         //check if the bug has sheild
         if (sheild > 0)
 
@@ -53,6 +69,21 @@ public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
             //if so, destroy the bug
             GameManager.Instance.OnBugBitsChange(bugSO.moneyDrop);
             gameObject.SetActive(false);
+        }
+    }
+
+    private IEnumerator TakeDamage()
+    {
+        ChangeColor(Color.red);
+        yield return new WaitForSeconds(1);
+        ChangeColor(Color.white);
+    }
+
+    private void ChangeColor(Color color)
+    {
+        foreach (SpriteRenderer sprite in sprites)
+        {
+            sprite.color = color;
         }
     }
 
