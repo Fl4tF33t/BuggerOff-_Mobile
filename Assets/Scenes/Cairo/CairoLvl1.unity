@@ -272,72 +272,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8750685763672450503, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: frogPool.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9071711674606379729, guid: 76823026be0a6a94ba9c50965933d117,
         type: 3}
       propertyPath: m_Name
       value: ShopCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 9179764866028041074, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: frogPool.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: f084229400f1b4843b7d8748150ac242,
-        type: 2}
-    - target: {fileID: 9179764866028041074, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: frogPool.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: bcfcc51544396e846b4e974dec1e6b6b,
-        type: 2}
-    - target: {fileID: 9179764866028041074, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: frogPool.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 628b852a61e50294e9fd56cb98dae23a,
-        type: 2}
-    - target: {fileID: 9179764866028041074, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: frogPool.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: 30979b85c26a4684297b09cdc9d55a92,
-        type: 2}
-    - target: {fileID: 9179764866028041074, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: frogPool.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: cee48bd8f77dae245bcc039c77518fe3,
-        type: 2}
-    - target: {fileID: 9179764866028041074, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: frogPool.Array.data[5]
-      value: 
-      objectReference: {fileID: 11400000, guid: 7ec828c757acad0468cedf72ffd9147f,
-        type: 2}
-    - target: {fileID: 9179764866028041074, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: frogPool.Array.data[6]
-      value: 
-      objectReference: {fileID: 11400000, guid: 159da7eb29041cf42bcda3bc5cffbbb7,
-        type: 2}
-    - target: {fileID: 9179764866028041074, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: frogPool.Array.data[7]
-      value: 
-      objectReference: {fileID: 11400000, guid: 30979b85c26a4684297b09cdc9d55a92,
-        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 534220059710539906, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 330614419}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76823026be0a6a94ba9c50965933d117, type: 3}
 --- !u!1 &217934713
 GameObject:
@@ -684,30 +627,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319725989}
   m_Mesh: {fileID: 4300000, guid: f7740c5af84be4b46b49eff73d46e6e9, type: 2}
---- !u!1 &330614414 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 534220059710539906, guid: 76823026be0a6a94ba9c50965933d117,
-    type: 3}
-  m_PrefabInstance: {fileID: 178207872}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &330614419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330614414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dbc09a463af8694c91b7e9a6b4d6e45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!4 &386967071 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4886824056178830893, guid: 25c4f195e530cea48b7c91349952e042,

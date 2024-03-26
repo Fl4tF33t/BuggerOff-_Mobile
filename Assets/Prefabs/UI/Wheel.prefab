@@ -91,15 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0505dcf0c7005824da621ca54f651e00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frogPool:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  frogPool: []
 --- !u!1 &3373852554274978490
 GameObject:
   m_ObjectHideFlags: 0

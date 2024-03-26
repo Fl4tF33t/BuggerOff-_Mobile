@@ -14,6 +14,9 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
     private GameObject selectedFrogPrefab;
     private Vector3 prefabPos;
 
+    [SerializeField]
+    private WheelLogic wheelLogic;
+
     private Camera cam;
     private Vector2 touchPos;
 
@@ -21,15 +24,16 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
 
     private Coroutine placeFrogCoroutine;
 
-    private void Start()
+    protected override void Awake()
     {
-        cam = Camera.main;
+        base.Awake();
         animator = GetComponentInParent<Animator>();
-        GetComponentInChildren<WheelLogic>().OnPlaceFrog += ShopManager_OnPlaceFrog;
 
-        OnSetShopOnOff = state => { animator.SetBool("OnStoreClick", state); };
+        cam = Camera.main;
 
-        InputManager.Instance.OnTouchInput += pos => 
+        wheelLogic.OnPlaceFrog += ShopManager_OnPlaceFrog;
+
+        InputManager.Instance.OnTouchInput += pos =>
         {
             if (frogSO != null)
             {
@@ -39,6 +43,8 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
         InputManager.Instance.OnTouchTap += (obj) => { OnSetShopOnOff(true); };
         InputManager.Instance.OnTouchPressStarted += Instance_OnTouchPressStarted;
         InputManager.Instance.OnTouchPressCanceled += Instance_OnTouchPressCanceled;
+
+        OnSetShopOnOff = state => { animator.SetBool("OnStoreClick", state); };
     }
 
     private void ShopManager_OnPlaceFrog(FrogSO obj)
