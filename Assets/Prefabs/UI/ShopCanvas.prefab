@@ -1012,6 +1012,7 @@ GameObject:
   - component: {fileID: 8775221151386576288}
   - component: {fileID: 7242059995101662012}
   - component: {fileID: 5572076038585456781}
+  - component: {fileID: 8320269582330582064}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -1076,6 +1077,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8320269582330582064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7844469564851147930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06ad2693784180549b11ba7c9261099e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7925278583035264743
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,8 +1209,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8750685763672450503}
-        m_TargetAssemblyTypeName: WheelLogic, Assembly-CSharp
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: WheelManager, Assembly-CSharp
         m_MethodName: OnScrollDown
         m_Mode: 1
         m_Arguments:
@@ -1257,9 +1270,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dbc09a463af8694c91b7e9a6b4d6e45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wheel: {fileID: 8750685763672450503}
-  frogShopData: []
-  wheelChild: {fileID: 0}
+  frogShopData:
+  - {fileID: 8320269582330582064}
+  - {fileID: 1742143479331197111}
+  - {fileID: 6888338740535541796}
+  - {fileID: 6359931963319512827}
+  - {fileID: 6406029032361465}
 --- !u!1 &8873326701176188243
 GameObject:
   m_ObjectHideFlags: 0
@@ -1380,8 +1396,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8750685763672450503}
-        m_TargetAssemblyTypeName: WheelLogic, Assembly-CSharp
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: WheelManager, Assembly-CSharp
         m_MethodName: OnScrollUp
         m_Mode: 1
         m_Arguments:
@@ -1675,7 +1691,7 @@ PrefabInstance:
     - target: {fileID: 322392683455842017, guid: a737501df87e9044a9a4f53a1e67028e,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2222157801151832524, guid: a737501df87e9044a9a4f53a1e67028e,
         type: 3}
@@ -1720,17 +1736,17 @@ PrefabInstance:
     - target: {fileID: 2222157801151832524, guid: a737501df87e9044a9a4f53a1e67028e,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2222157801151832524, guid: a737501df87e9044a9a4f53a1e67028e,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2222157801151832524, guid: a737501df87e9044a9a4f53a1e67028e,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2222157801151832524, guid: a737501df87e9044a9a4f53a1e67028e,
         type: 3}
@@ -2179,7 +2195,7 @@ PrefabInstance:
         type: 3}
       propertyPath: wheelLogic
       value: 
-      objectReference: {fileID: 8750685763672450503}
+      objectReference: {fileID: 0}
     - target: {fileID: 4954780274129534649, guid: a5312b4912d7d4342a973e579e8cabe4,
         type: 3}
       propertyPath: frogPool.Array.data[0]
@@ -2625,7 +2641,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 645437431508352367}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 322392683455842017, guid: a737501df87e9044a9a4f53a1e67028e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1194466059546018276}
   m_SourcePrefab: {fileID: 100100000, guid: a737501df87e9044a9a4f53a1e67028e, type: 3}
 --- !u!224 &427288234208423663 stripped
 RectTransform:
@@ -2651,15 +2671,21 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 8934448811125221957}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8750685763672450503 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 183846649150574466, guid: a737501df87e9044a9a4f53a1e67028e,
+--- !u!1 &9188706310463794340 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 322392683455842017, guid: a737501df87e9044a9a4f53a1e67028e,
     type: 3}
   m_PrefabInstance: {fileID: 8934448811125221957}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+--- !u!114 &1194466059546018276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9188706310463794340}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0505dcf0c7005824da621ca54f651e00, type: 3}
+  m_Script: {fileID: 11500000, guid: 6cdee5fe1c2e44c418417e5391f1844f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -23,6 +23,7 @@ public class WheelManager : Singleton<WheelManager>, IBeginDragHandler, IEndDrag
     //EventSystem of the UI
     private EventSystem eventSystem;
     private bool isSpinning;
+    private Vector2 pos;
 
     protected override void Awake()
     {
@@ -51,6 +52,7 @@ public class WheelManager : Singleton<WheelManager>, IBeginDragHandler, IEndDrag
         {
             case 1:                
                 isSpinning = true;
+                pos = eventData.position;
                 break;
             case 2:
                 isSpinning = false;
@@ -69,15 +71,21 @@ public class WheelManager : Singleton<WheelManager>, IBeginDragHandler, IEndDrag
     {
         if (isSpinning)
         {
-            bool isSwipeUp = eventData.delta.y > 0;
+            bool isSwipeUp = pos.y < eventData.position.y;
+
             if (isSwipeUp)
             {
+                OnWheelAnim?.Invoke("Up", frogPoolIndex);
+
                 frogPoolIndex = (frogPoolIndex + 1) % frogPool.Length;
                 SetPriceText(frogPoolIndex);
                 SetFrogShopData();
+                
             }
             else
             {
+                OnWheelAnim?.Invoke("Down", frogPoolIndex);
+
                 frogPoolIndex--;
                 if (frogPoolIndex < 0)
                 {
@@ -86,8 +94,6 @@ public class WheelManager : Singleton<WheelManager>, IBeginDragHandler, IEndDrag
                 SetPriceText(frogPoolIndex);
                 SetFrogShopData();
             }
-
-            //OnWheelIconChange?.Invoke(frogPoolIndex);
         }
     }
 
@@ -117,7 +123,6 @@ public class WheelManager : Singleton<WheelManager>, IBeginDragHandler, IEndDrag
 
         SetPriceText(frogPoolIndex);
         SetFrogShopData();
-        //OnWheelIconChange?.Invoke(frogPoolIndex);
     }
 
     public void OnScrollDown()
@@ -133,7 +138,6 @@ public class WheelManager : Singleton<WheelManager>, IBeginDragHandler, IEndDrag
 
         SetPriceText(frogPoolIndex);
         SetFrogShopData();
-        //OnWheelIconChange?.Invoke(frogPoolIndex);
     }
 
 }
