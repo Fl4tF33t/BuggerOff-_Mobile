@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ImageScrollChange : MonoBehaviour
+public class WheelAnimation : MonoBehaviour
 {
+    private Animator animator;
+
     [SerializeField]
     private WheelLogic wheel;
     public FrogShopData[] frogShopData;
@@ -11,9 +13,18 @@ public class ImageScrollChange : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        //wheel = GetComponentInParent<WheelLogic>();
-        frogShopData = GetComponentsInChildren<FrogShopData>(); 
-        wheel.OnWheelIconChange += Wheel_OnWheelIconChange;
+        animator = GetComponentInParent<Animator>();
+        frogShopData = GetComponentsInChildren<FrogShopData>();
+        wheel.OnWheelAnim += Wheel_OnWheelAnim;
+    }
+
+    private void Wheel_OnWheelAnim(string obj)
+    {
+        if (obj == "Down")
+        {
+            animator.SetTrigger("OnStoreMovingDown");
+        }
+        else animator.SetTrigger("OnStoreMovingUp");
     }
 
     private void Wheel_OnWheelIconChange(int index)
@@ -27,6 +38,6 @@ public class ImageScrollChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

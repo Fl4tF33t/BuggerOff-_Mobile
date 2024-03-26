@@ -1217,14 +1217,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7207203878092715234}
-  - component: {fileID: 7211350719196584927}
+  - component: {fileID: 7536560629860268028}
   m_Layer: 5
   m_Name: WheelBalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7207203878092715234
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1245,7 +1245,7 @@ RectTransform:
   m_AnchoredPosition: {x: 117.1, y: -94.6}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &7211350719196584927
+--- !u!114 &7536560629860268028
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
