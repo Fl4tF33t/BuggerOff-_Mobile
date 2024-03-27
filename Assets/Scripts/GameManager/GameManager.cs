@@ -13,7 +13,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     private int health;
     [SerializeField]
-    private int bugBits;
+    public int bugBits;
 
     public Action<int> OnHealthChange;
     public Action<int> OnBugBitsChange;
@@ -21,6 +21,7 @@ public class GameManager : Singleton<GameManager>
     protected override void Awake()
     {
         base.Awake();
+        bugBits = 100000000;
         waveButton.onClick.AddListener(() =>
         {
             StartCoroutine(WaveSystem.Instance.Waves());

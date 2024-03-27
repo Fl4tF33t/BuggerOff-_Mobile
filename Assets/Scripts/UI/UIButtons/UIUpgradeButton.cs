@@ -7,16 +7,45 @@ using UnityEngine.UI;
 public class UIUpgradeButton : UIButtonManager
 {
     FrogBrain frogBrain;
-    Image image;
+    Image upgradeSprite;
     Sprite[] sprites;
 
-    int level;
 
     private void Awake()
     {
-        image = GetComponent<Image>();
         frogBrain = GetComponentInParent<FrogBrain>();
+        upgradeSprite = GetComponent<Image>();
         sprites = frogBrain.frogSO.visualSO.userInterface.UIUpgradeButtons;
+    }
+    private void Start()
+    {
+        if (this.gameObject.name=="Discipline")
+        {
+            frogBrain.frogUpgrade.disciplineLevel = frogBrain.frog.discipline;
+            switch (frogBrain.frogUpgrade.disciplineLevel)
+            {
+                case 1:
+                    upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.disciplineLevel];
+                    break;
+                case 2:
+                    upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.disciplineLevel];
+                    break;
+                case 3:
+                    upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.disciplineLevel];
+                    break;
+                case 4:
+                    upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.disciplineLevel];
+                    break;
+                case 5:
+                    upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.disciplineLevel];
+                    break;
+            }
+            if (frogBrain.frogUpgrade.disciplineLevel == 5)
+            {
+                //can also make the button itself non-interactable..if using button, dont need the onpointer click interface
+                upgradeSprite.raycastTarget = false;
+            }
+        }
     }
 
     public override void OnPointerClick(PointerEventData eventData)
@@ -25,52 +54,133 @@ public class UIUpgradeButton : UIButtonManager
         switch (this.gameObject.name)
         {
             case "Damage":
-                level = ++frogBrain.frogUpgrade.damageLevel;
-                frogBrain.frog.damage += frogBrain.frogSO.upgradeSO.damage.amount;
+                if (frogBrain.frogUpgrade.damageLevel >= 0 && frogBrain.frogUpgrade.damageLevel <= 5 && (GameManager.Instance.bugBits-frogBrain.frogSO.upgradeSO.damage.price)>=0)
+                {
+                    
+                    frogBrain.frogUpgrade.damageLevel++;
+                    switch (frogBrain.frogUpgrade.damageLevel)
+                    {
+                        case 0:
+                            break;
+                        case 1:
+                            upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.damageLevel];
+                            break;
+                        case 2:
+                            upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.damageLevel];
+                            break;
+                        case 3:
+                            upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.damageLevel];
+                            break;
+                        case 4:
+                            upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.damageLevel];
+                            break;
+                        case 5:
+                            upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.damageLevel];
+                            break;
+                    }
+                    frogBrain.frog.damage += frogBrain.frogSO.upgradeSO.damage.amount;
+                    if (frogBrain.frogUpgrade.damageLevel == 5)
+                    {
+                        //can also make the button itself non-interactable..if using button, dont need the onpointer click interface
+                        upgradeSprite.raycastTarget = false;
+                    }
+                }                
                 break;
             case "Attack Speed":
-                level = ++frogBrain.frogUpgrade.attackSpeedLevel;
-                frogBrain.frog.attackSpeed += frogBrain.frogSO.upgradeSO.attackSpeed.amount;
+                if (frogBrain.frogUpgrade.attackSpeedLevel >= 0 && frogBrain.frogUpgrade.attackSpeedLevel <= 5 && (GameManager.Instance.bugBits - frogBrain.frogSO.upgradeSO.attackSpeed.price) >= 0)
+                {
+                    
+                    frogBrain.frogUpgrade.attackSpeedLevel++;
+                    switch (frogBrain.frogUpgrade.attackSpeedLevel)
+                    {
+                        case 1:
+                            upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.attackSpeedLevel];
+                            break;
+                        case 2:
+                            upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.attackSpeedLevel];
+                            break;
+                        case 3:
+                            upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.attackSpeedLevel];
+                            break;
+                        case 4:
+                            upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.attackSpeedLevel];
+                            break;
+                        case 5:
+                            upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.attackSpeedLevel];
+                            break;
+                    }
+                    frogBrain.frog.attackSpeed += frogBrain.frogSO.upgradeSO.attackSpeed.amount;
+                    if (frogBrain.frogUpgrade.attackSpeedLevel == 5)
+                    {
+                        //can also make the button itself non-interactable..if using button, dont need the onpointer click interface
+                        upgradeSprite.raycastTarget = false;
+                    }
+                }
+   
                 break;
             case "Discipline":
-                level = ++frogBrain.frogUpgrade.disciplineLevel;
-                frogBrain.frog.discipline += frogBrain.frogSO.upgradeSO.discipline.amount;
+                if (frogBrain.frogUpgrade.disciplineLevel >= 0 && frogBrain.frogUpgrade.disciplineLevel <= 5 && (GameManager.Instance.bugBits - frogBrain.frogSO.upgradeSO.discipline.price) >= 0)
+                {
+                    
+                    frogBrain.frogUpgrade.disciplineLevel++;
+                    switch (frogBrain.frogUpgrade.disciplineLevel)
+                    {
+                        case 1:
+                            upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.disciplineLevel];
+                            break;
+                        case 2:
+                            upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.disciplineLevel];
+                            break;
+                        case 3:
+                            upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.disciplineLevel];
+                            break;
+                        case 4:
+                            upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.disciplineLevel];
+                            break;
+                        case 5:
+                            upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.disciplineLevel];
+                            break;
+                    }
+                    frogBrain.frog.discipline += frogBrain.frogSO.upgradeSO.discipline.amount;
+                    if (frogBrain.frogUpgrade.disciplineLevel == 5)
+                    {
+                        //can also make the button itself non-interactable..if using button, dont need the onpointer click interface
+                        upgradeSprite.raycastTarget = false;
+                    }
+                }
+                
                 break;
             case "Range":
-                level = ++frogBrain.frogUpgrade.rangeLevel;
-                frogBrain.frog.range += frogBrain.frogSO.upgradeSO.range.amount;
+                if (frogBrain.frogUpgrade.rangeLevel >= 0 && frogBrain.frogUpgrade.rangeLevel <= 5 && (GameManager.Instance.bugBits - frogBrain.frogSO.upgradeSO.range.price) >= 0)
+                {
+                    
+                    frogBrain.frogUpgrade.rangeLevel++;
+                    switch (frogBrain.frogUpgrade.rangeLevel)
+                    {
+                        case 1:
+                            upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.rangeLevel];
+                            break;
+                        case 2:
+                            upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.rangeLevel];
+                            break;
+                        case 3:
+                            upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.rangeLevel];
+                            break;
+                        case 4:
+                            upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.rangeLevel];
+                            break;
+                        case 5:
+                            upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.rangeLevel];
+                            break;
+                    }
+                    frogBrain.frog.range += frogBrain.frogSO.upgradeSO.range.amount;
+                    if (frogBrain.frogUpgrade.rangeLevel == 5)
+                    {
+                        //can also make the button itself non-interactable..if using button, dont need the onpointer click interface
+                        upgradeSprite.raycastTarget = false;
+                    }
+                }                
                 break;
         }
-
-        if (level > 0 && level <= 5)
-        {
-            image.sprite = sprites[level];
-            if(level == 5)
-            {
-                //can also make the button itself non-interactable..if using button, dont need the onpointer click interface
-                image.raycastTarget = false;
-            }
-        }
-    }
-
-    public override void OnPointerDown(PointerEventData eventData)
-    {
-        //PlayerManager.Instance.isOnUI = true;
-        base.OnPointerDown(eventData);
-    }
-
-    public override void OnPointerUp(PointerEventData eventData)
-    {
-        //PlayerManager.Instance.isOnUI = false;
-        base.OnPointerExit(eventData);
-    }
-
-    protected override void ActivatedHoldDown() 
-    {
-        Debug.Log("show Info");
-    }
-    protected override void DeactivatedHoldDown() 
-    {
-        Debug.Log("Hide the body");
     }
 }

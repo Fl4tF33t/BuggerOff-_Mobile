@@ -18,6 +18,8 @@ public class UpgradeSO : ScriptableObject
     {
         [Min(0)]
         public T amount;
+        [Min(0)]
+        public T price;
     }
 
 }
