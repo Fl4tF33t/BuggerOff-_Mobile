@@ -13,16 +13,11 @@ public class UpgradeSO : ScriptableObject
     public Upgrade<float> range;
     public Upgrade<float> attackSpeed;
 
-    public enum UpgradeAmount { Zero, One, Two, Three, Four, Five }
-
     [Serializable]
     public struct Upgrade<T>
     {
         [Min(0)]
-        public T max;
-        [Min(0)]
         public T amount;
-        public UpgradeAmount increment;
     }
 
 }

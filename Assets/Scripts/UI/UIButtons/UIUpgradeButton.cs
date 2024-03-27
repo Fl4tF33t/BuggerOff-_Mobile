@@ -26,15 +26,19 @@ public class UIUpgradeButton : UIButtonManager
         {
             case "Damage":
                 level = ++frogBrain.frogUpgrade.damageLevel;
+                frogBrain.frog.damage += frogBrain.frogSO.upgradeSO.damage.amount;
                 break;
             case "Attack Speed":
                 level = ++frogBrain.frogUpgrade.attackSpeedLevel;
+                frogBrain.frog.attackSpeed += frogBrain.frogSO.upgradeSO.attackSpeed.amount;
                 break;
             case "Discipline":
                 level = ++frogBrain.frogUpgrade.disciplineLevel;
+                frogBrain.frog.discipline += frogBrain.frogSO.upgradeSO.discipline.amount;
                 break;
             case "Range":
                 level = ++frogBrain.frogUpgrade.rangeLevel;
+                frogBrain.frog.range += frogBrain.frogSO.upgradeSO.range.amount;
                 break;
         }
 

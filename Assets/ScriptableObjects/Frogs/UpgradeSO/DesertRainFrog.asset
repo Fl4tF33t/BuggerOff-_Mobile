@@ -13,18 +13,10 @@ MonoBehaviour:
   m_Name: DesertRainFrog
   m_EditorClassIdentifier: 
   discipline:
-    max: 54
-    amount: 0
-    increment: 2
+    amount: 1
   damage:
-    max: 44
-    amount: 0
-    increment: 2
+    amount: 5
   range:
-    max: 59.1
-    amount: 0
-    increment: 3
+    amount: 25
   attackSpeed:
-    max: 75.3
-    amount: 0
-    increment: 3
+    amount: 5
