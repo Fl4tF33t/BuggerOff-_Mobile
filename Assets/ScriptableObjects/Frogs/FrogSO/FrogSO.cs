@@ -13,7 +13,6 @@ public class FrogSO : ScriptableObject
 
     [Header("LOGIC & UPGRADE")]
     public LogicSO logicSO;
-    public UpgradeSO upgradeSO;
 
     [Header("VISUAL & AUDIO")]
     public VisualSO visualSO;

@@ -23,4 +23,20 @@ public class LogicSO : ScriptableObject
     public float attackSpeed;
     public LayerMask targetLayer;
     public bool isWaterFrog;
+
+    [Header("Upgrade")]
+
+    public Upgrade<int> upgradeDiscipline;
+    public Upgrade<int> upgradeDamage;
+    public Upgrade<float> upgradeRange;
+    public Upgrade<float> upgradeAttackSpeed;
+
+    [Serializable]
+    public struct Upgrade<T>
+    {
+        [Min(0)]
+        public T amount;
+        [Min(0)]
+        public T price;
+    }
 }

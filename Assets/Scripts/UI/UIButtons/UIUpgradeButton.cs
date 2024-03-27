@@ -10,7 +10,6 @@ public class UIUpgradeButton : UIButtonManager
     Image upgradeSprite;
     Sprite[] sprites;
 
-
     private void Awake()
     {
         frogBrain = GetComponentInParent<FrogBrain>();
@@ -54,7 +53,7 @@ public class UIUpgradeButton : UIButtonManager
         switch (this.gameObject.name)
         {
             case "Damage":
-                if (frogBrain.frogUpgrade.damageLevel >= 0 && frogBrain.frogUpgrade.damageLevel <= 5 && (GameManager.Instance.bugBits-frogBrain.frogSO.upgradeSO.damage.price)>=0)
+                if (frogBrain.frogUpgrade.damageLevel >= 0 && frogBrain.frogUpgrade.damageLevel <= 5 && (GameManager.Instance.bugBits-frogBrain.frogSO.logicSO.upgradeDamage.price)>=0)
                 {
                     
                     frogBrain.frogUpgrade.damageLevel++;
@@ -78,7 +77,7 @@ public class UIUpgradeButton : UIButtonManager
                             upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.damageLevel];
                             break;
                     }
-                    frogBrain.frog.damage += frogBrain.frogSO.upgradeSO.damage.amount;
+                    frogBrain.frog.damage += frogBrain.frogSO.logicSO.upgradeDamage.amount;
                     if (frogBrain.frogUpgrade.damageLevel == 5)
                     {
                         //can also make the button itself non-interactable..if using button, dont need the onpointer click interface
@@ -87,7 +86,7 @@ public class UIUpgradeButton : UIButtonManager
                 }                
                 break;
             case "Attack Speed":
-                if (frogBrain.frogUpgrade.attackSpeedLevel >= 0 && frogBrain.frogUpgrade.attackSpeedLevel <= 5 && (GameManager.Instance.bugBits - frogBrain.frogSO.upgradeSO.attackSpeed.price) >= 0)
+                if (frogBrain.frogUpgrade.attackSpeedLevel >= 0 && frogBrain.frogUpgrade.attackSpeedLevel <= 5 && (GameManager.Instance.bugBits - frogBrain.frogSO.logicSO.upgradeAttackSpeed.price) >= 0)
                 {
                     
                     frogBrain.frogUpgrade.attackSpeedLevel++;
@@ -109,7 +108,7 @@ public class UIUpgradeButton : UIButtonManager
                             upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.attackSpeedLevel];
                             break;
                     }
-                    frogBrain.frog.attackSpeed += frogBrain.frogSO.upgradeSO.attackSpeed.amount;
+                    frogBrain.frog.attackSpeed += frogBrain.frogSO.logicSO.upgradeAttackSpeed.amount;
                     if (frogBrain.frogUpgrade.attackSpeedLevel == 5)
                     {
                         //can also make the button itself non-interactable..if using button, dont need the onpointer click interface
@@ -119,7 +118,7 @@ public class UIUpgradeButton : UIButtonManager
    
                 break;
             case "Discipline":
-                if (frogBrain.frogUpgrade.disciplineLevel >= 0 && frogBrain.frogUpgrade.disciplineLevel <= 5 && (GameManager.Instance.bugBits - frogBrain.frogSO.upgradeSO.discipline.price) >= 0)
+                if (frogBrain.frogUpgrade.disciplineLevel >= 0 && frogBrain.frogUpgrade.disciplineLevel <= 5 && (GameManager.Instance.bugBits - frogBrain.frogSO.logicSO.upgradeDiscipline.price) >= 0)
                 {
                     
                     frogBrain.frogUpgrade.disciplineLevel++;
@@ -141,7 +140,7 @@ public class UIUpgradeButton : UIButtonManager
                             upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.disciplineLevel];
                             break;
                     }
-                    frogBrain.frog.discipline += frogBrain.frogSO.upgradeSO.discipline.amount;
+                    frogBrain.frog.discipline += frogBrain.frogSO.logicSO.upgradeDiscipline.amount;
                     if (frogBrain.frogUpgrade.disciplineLevel == 5)
                     {
                         //can also make the button itself non-interactable..if using button, dont need the onpointer click interface
@@ -151,7 +150,7 @@ public class UIUpgradeButton : UIButtonManager
                 
                 break;
             case "Range":
-                if (frogBrain.frogUpgrade.rangeLevel >= 0 && frogBrain.frogUpgrade.rangeLevel <= 5 && (GameManager.Instance.bugBits - frogBrain.frogSO.upgradeSO.range.price) >= 0)
+                if (frogBrain.frogUpgrade.rangeLevel >= 0 && frogBrain.frogUpgrade.rangeLevel <= 5 && (GameManager.Instance.bugBits - frogBrain.frogSO.logicSO.upgradeRange.price) >= 0)
                 {
                     
                     frogBrain.frogUpgrade.rangeLevel++;
@@ -173,7 +172,7 @@ public class UIUpgradeButton : UIButtonManager
                             upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.rangeLevel];
                             break;
                     }
-                    frogBrain.frog.range += frogBrain.frogSO.upgradeSO.range.amount;
+                    frogBrain.frog.range += frogBrain.frogSO.logicSO.upgradeRange.amount;
                     if (frogBrain.frogUpgrade.rangeLevel == 5)
                     {
                         //can also make the button itself non-interactable..if using button, dont need the onpointer click interface

@@ -116,6 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5ec12a277eae8f41bb5dd145480f1f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprites: []
   frogSO: {fileID: 11400000, guid: 30979b85c26a4684297b09cdc9d55a92, type: 2}
   frog:
     frogName: 
@@ -171,6 +172,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.1718978
+      objectReference: {fileID: 0}
+    - target: {fileID: 2405346622050305348, guid: b1e7130c73d9d4443996592a3577eb05,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2405346622315878342, guid: b1e7130c73d9d4443996592a3577eb05,
         type: 3}
@@ -356,7 +362,7 @@ PrefabInstance:
     - target: {fileID: 5735506468041725709, guid: 3a010b6f0b7d99d47addfbe13ee0bd95,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5943021913724738228, guid: 3a010b6f0b7d99d47addfbe13ee0bd95,
         type: 3}
