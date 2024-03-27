@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -172,16 +172,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2298596457966249784, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1413778090}
-    - target: {fileID: 2298596457966249784, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnScrollDown
-      objectReference: {fileID: 0}
     - target: {fileID: 2376881010715996261, guid: 76823026be0a6a94ba9c50965933d117,
         type: 3}
       propertyPath: m_Pivot.x
@@ -281,16 +271,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8929017154042119070, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1413778090}
-    - target: {fileID: 8929017154042119070, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnScrollUp
       objectReference: {fileID: 0}
     - target: {fileID: 9071711674606379729, guid: 76823026be0a6a94ba9c50965933d117,
         type: 3}
@@ -2199,18 +2179,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1412636608}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1413778090 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1194466059546018276, guid: 76823026be0a6a94ba9c50965933d117,
-    type: 3}
-  m_PrefabInstance: {fileID: 178207872}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cdee5fe1c2e44c418417e5391f1844f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1423293248
 GameObject:
   m_ObjectHideFlags: 0

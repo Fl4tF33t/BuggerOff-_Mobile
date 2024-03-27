@@ -1209,7 +1209,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3833029299724487851}
         m_TargetAssemblyTypeName: WheelManager, Assembly-CSharp
         m_MethodName: OnScrollDown
         m_Mode: 1
@@ -1396,7 +1396,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3833029299724487851}
         m_TargetAssemblyTypeName: WheelManager, Assembly-CSharp
         m_MethodName: OnScrollUp
         m_Mode: 1
@@ -1535,7 +1535,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 8.32, y: 0}
+  m_AnchoredPosition: {x: 8.319946, y: 0}
   m_SizeDelta: {x: 2048, y: 1536}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5270859610080187132
@@ -2645,7 +2645,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 322392683455842017, guid: a737501df87e9044a9a4f53a1e67028e,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1194466059546018276}
+      addedObject: {fileID: 3833029299724487851}
   m_SourcePrefab: {fileID: 100100000, guid: a737501df87e9044a9a4f53a1e67028e, type: 3}
 --- !u!224 &427288234208423663 stripped
 RectTransform:
@@ -2677,7 +2677,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8934448811125221957}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1194466059546018276
+--- !u!114 &3833029299724487851
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
