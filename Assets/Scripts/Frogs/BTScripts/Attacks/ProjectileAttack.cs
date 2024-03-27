@@ -10,29 +10,43 @@ public class ProjectileAttack : ActionNode
     protected override void OnStart()
     {
         endAnim = false;
-        context.animationEvents.OnEndAnim += AnimationEvents_OnEndAnim;
 
-        //here we perform the visual attack, dont have an effect on the bugs until after trigger
-        context.animator.SetTrigger("OnAttack");
-
+        if (context.frogBrain.attackType == FrogBrain.AttackType.Projectile)
+        {
+            context.animationEvents.OnEndAnim += AnimationEvents_OnEndAnim;
+            context.animationEvents.OnDamageLogic += AnimationEvents_OnDamageLogic;
+            context.animator.SetTrigger("OnAttack"); 
+        }
     }
 
-    protected override void OnStop()
+    private void AnimationEvents_OnDamageLogic()
     {
-        endAnim = false;
-        context.animationEvents.OnEndAnim -= AnimationEvents_OnEndAnim;
+        GameObject prefab = Instantiate(context.frogBrain.projectile, context.frogBrain.projectilePos.position, context.transform.rotation);
+        prefab.GetComponent<ProjectileLogic>().damage = context.frogBrain.frog.damage;
     }
 
     private void AnimationEvents_OnEndAnim()
     {
         //shoot projectile
-        context.frogBrain.ShootProjectile();
         endAnim = true;
+    }
+    protected override void OnStop()
+    {
+        endAnim = false;
+        if (context.frogBrain.attackType == FrogBrain.AttackType.Projectile)
+        {
+            context.animationEvents.OnEndAnim -= AnimationEvents_OnEndAnim;
+            context.animationEvents.OnDamageLogic -= AnimationEvents_OnDamageLogic;
+        }
     }
 
     protected override State OnUpdate()
     {
         //here, keep checking for when the visual is finally done then perform the logic of removing health
+        if(context.frogBrain.attackType != FrogBrain.AttackType.Projectile)
+        {
+            return State.Failure;
+        }
         if (!endAnim)
         {
             return State.Running;

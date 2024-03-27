@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ForgFrog
   m_EditorClassIdentifier: 
   userInterface:
-    UIShopSprite: {fileID: 21300000, guid: 2f6f326a5f7aa844c9557230ffa64bab, type: 3}
+    UIShopSprite: {fileID: 21300000, guid: e5c8d52f3a0ec1a468d3f9256c9d2c9b, type: 3}
     UIShopTextInfo: This frog is lit
     UIUpgradeButtons:
     - {fileID: 21300000, guid: 654c00b69fddb5a4ea90ac6a2e611dd1, type: 3}

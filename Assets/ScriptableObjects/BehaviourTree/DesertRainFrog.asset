@@ -41,7 +41,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 6fc1fccfddac78742aaba9f5b34f9cc9
-  position: {x: -643, y: 610}
+  position: {x: -901.5486, y: 599}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
@@ -66,7 +66,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: d6d799bb498ff6d4084f17de907fc2a8
-  position: {x: -492.99988, y: 609.9999}
+  position: {x: -751.54865, y: 599}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
@@ -77,6 +77,31 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   rotationThreshold: 1
+--- !u!114 &-4310596956678784257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 177e70e4277e811438db0aceb7139383, type: 3}
+  m_Name: ProjectileAttack
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 72a5ac45ea19a3942ba55c395f51d7d4
+  position: {x: -334, y: 640}
+  blackboard:
+    collidersInArea: []
+    collidersInLOS: []
+    attackTimer: 0
+    moveToPosition: {x: 0, y: 0, z: 0}
+    timer: 10
+    selectedTarget: {fileID: 0}
+  description: 
+  drawGizmos: 0
 --- !u!114 &-3737940388298789610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,7 +117,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 45e9c1372fcbc344a9e5d5828b039c9e
-  position: {x: -188.41008, y: 494.9999}
+  position: {x: -522, y: 640}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
@@ -117,7 +142,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 94ab0a162589b3b4d8b4753921b0760a
-  position: {x: -749, y: 471}
+  position: {x: -1007.5486, y: 460.00003}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
@@ -160,6 +185,34 @@ MonoBehaviour:
   child: {fileID: 7073280049748170634}
   restartOnSuccess: 1
   restartOnFailure: 1
+--- !u!114 &-3236570895780854316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460be9e34c566ea45b9e282b1adcb028, type: 3}
+  m_Name: Selector
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 1769a306a828a6247a86c02ef1f734a6
+  position: {x: -421, y: 495}
+  blackboard:
+    collidersInArea: []
+    collidersInLOS: []
+    attackTimer: 0
+    moveToPosition: {x: 0, y: 0, z: 0}
+    timer: 10
+    selectedTarget: {fileID: 0}
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: -3737940388298789610}
+  - {fileID: -4310596956678784257}
 --- !u!114 &-540773036039327127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,7 +228,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 6f46878f09a423749b1c14aa32a54446
-  position: {x: -943, y: 610}
+  position: {x: -1201.5486, y: 599}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
@@ -216,6 +269,8 @@ MonoBehaviour:
   - {fileID: -3475597867808046368}
   - {fileID: 3845520762088469379}
   - {fileID: -3737940388298789610}
+  - {fileID: -3236570895780854316}
+  - {fileID: -4310596956678784257}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
@@ -264,7 +319,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: ba6ba4ba7c8c00a4fa68fa3e93f6cefd
-  position: {x: -792.99976, y: 609.9999}
+  position: {x: -1051.5487, y: 599}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
@@ -314,7 +369,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 0fd65d25db01dad4dadeeba45cae691d
-  position: {x: -386.9998, y: 494.9999}
+  position: {x: -645.54865, y: 484.00003}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
@@ -449,7 +504,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 76b1963451c39c9438cf7fad50548305
-  position: {x: -312.30762, y: 337.6975}
+  position: {x: -570.54865, y: 327}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
@@ -462,4 +517,4 @@ MonoBehaviour:
   children:
   - {fileID: -3475597867808046368}
   - {fileID: 3845520762088469379}
-  - {fileID: -3737940388298789610}
+  - {fileID: -3236570895780854316}

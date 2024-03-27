@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c6f9b140a52a14881ec09eaebb66eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tree: {fileID: 11400000, guid: a7922916420ba3147a75ed1fac47382c, type: 2}
+  tree: {fileID: 11400000, guid: 86fe2f12ed9877b49aa8ef4baba11a16, type: 2}
 --- !u!195 &1384167459590466341
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5ec12a277eae8f41bb5dd145480f1f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frogSO: {fileID: 11400000, guid: 628b852a61e50294e9fd56cb98dae23a, type: 2}
+  frogSO: {fileID: 11400000, guid: 30979b85c26a4684297b09cdc9d55a92, type: 2}
   frog:
     frogName: 
     discipline: 0
@@ -124,6 +124,12 @@ MonoBehaviour:
     range: 0
     attackSpeed: 0
     target: 0
+  frogUpgrade:
+    disciplineLevel: 0
+    damageLevel: 0
+    rangeLevel: 0
+    attackSpeedLevel: 0
+  attackType: 1
   projectilePos: {fileID: 6184422106820322311}
   projectile: {fileID: 3574751824793291468, guid: f2661493193cd484c859cea558627d69,
     type: 3}
@@ -350,7 +356,7 @@ PrefabInstance:
     - target: {fileID: 5735506468041725709, guid: 3a010b6f0b7d99d47addfbe13ee0bd95,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5943021913724738228, guid: 3a010b6f0b7d99d47addfbe13ee0bd95,
         type: 3}

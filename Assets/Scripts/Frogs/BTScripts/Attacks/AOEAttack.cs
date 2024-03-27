@@ -9,12 +9,15 @@ public class AOEAttack : ActionNode
 
     protected override void OnStart() {
         endAnim = false;
-        context.animationEvents.OnEndAnim += AnimationEvents_OnEndAnim;
-        context.animationEvents.OnDamageLogic += AnimationEvents_OnDamageLogic;
 
-        //here we perform the visual attack, dont have an effect on the bugs until after trigger
-        context.animator.SetTrigger("OnAttack");
+        if (context.frogBrain.attackType == FrogBrain.AttackType.AOE)
+        {
+            context.animationEvents.OnEndAnim += AnimationEvents_OnEndAnim;
+            context.animationEvents.OnDamageLogic += AnimationEvents_OnDamageLogic;
 
+            //here we perform the visual attack, dont have an effect on the bugs until after trigger
+            context.animator.SetTrigger("OnAttack");
+        }
     }
 
     private void AnimationEvents_OnDamageLogic()
@@ -38,12 +41,20 @@ public class AOEAttack : ActionNode
     protected override void OnStop()
     {
         endAnim = false;
-        context.animationEvents.OnEndAnim -= AnimationEvents_OnEndAnim;
-        context.animationEvents.OnDamageLogic -= AnimationEvents_OnDamageLogic;
+
+        if (context.frogBrain.attackType == FrogBrain.AttackType.AOE)
+        {
+            context.animationEvents.OnEndAnim -= AnimationEvents_OnEndAnim;
+            context.animationEvents.OnDamageLogic -= AnimationEvents_OnDamageLogic; 
+        }
     }
 
     protected override State OnUpdate() {
         //here, keep checking for when the visual is finally done then perform the logic of removing health
+        if(context.frogBrain.attackType != FrogBrain.AttackType.AOE)
+        {
+            return State.Failure;
+        }
         if(!endAnim)
         {
             return State.Running;

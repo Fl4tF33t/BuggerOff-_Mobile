@@ -92,6 +92,12 @@ MonoBehaviour:
     range: 0
     attackSpeed: 0
     target: 0
+  frogUpgrade:
+    disciplineLevel: 0
+    damageLevel: 0
+    rangeLevel: 0
+    attackSpeedLevel: 0
+  attackType: 0
   projectilePos: {fileID: 0}
   projectile: {fileID: 0}
 --- !u!135 &6162405890025491135

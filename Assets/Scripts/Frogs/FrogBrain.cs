@@ -45,12 +45,14 @@ public class FrogBrain : MonoBehaviour
     Transform canvas;
 
     //Attacking variables
-    [SerializeField]
-    Transform projectilePos;
-    [SerializeField]
-    private GameObject projectile;
+    public AttackType attackType;
+    [HideInInspector]
+    public Transform projectilePos;
+    [HideInInspector]
+    public GameObject projectile;
 
     //Tracking and targeting variables
+    [Serializable]
     public enum Target
     {
         First,
@@ -59,6 +61,14 @@ public class FrogBrain : MonoBehaviour
         Weakest
     }
 
+    [Serializable]
+    public enum AttackType
+    {
+        AOE,
+        Projectile,
+        Single,
+        Other,
+    }
     private void Awake()
     {
         frogSO.InitGameObject(frog);
@@ -92,15 +102,6 @@ public class FrogBrain : MonoBehaviour
         foreach(SpriteRenderer sprite in sprites)
         {
             sprite.color = color;
-        }
-    }
-
-    public void ShootProjectile()
-    {
-        Debug.Log("Shoot");
-        if(projectilePos != null)
-        {
-            GameObject prefab = Instantiate(projectile, projectilePos.position, Quaternion.identity);
         }
     }
 }

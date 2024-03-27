@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c84c1618c4472b4a944efc90296d6e7, type: 3}
   m_Name: ForgFrog
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7529113000352471415, guid: 5c7ec96d514b7e249bcbffa1a2f5bc50, type: 3}
+  prefab: {fileID: 7529113000352471415, guid: a908ab9c40805af44af6a589d3e6cacb, type: 3}
   logicSO: {fileID: 11400000, guid: cc5fc923c3193544bb0d865855ad24d5, type: 2}
   upgradeSO: {fileID: 11400000, guid: 0178e0c0ce7f28a429ffb2311f0a1c03, type: 2}
   visualSO: {fileID: 11400000, guid: f37a8bbc3e4124d429149ad2fb9fb533, type: 2}
