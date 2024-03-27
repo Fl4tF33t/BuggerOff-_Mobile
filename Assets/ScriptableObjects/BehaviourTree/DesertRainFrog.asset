@@ -1,5 +1,30 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7817915078697259097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04410ee3df0bdb846acb5374f92bfe7a, type: 3}
+  m_Name: Jump
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 9dacdf1ee64726d4084c1b6b2d303bbc
+  position: {x: 369, y: 527}
+  blackboard:
+    collidersInArea: []
+    collidersInLOS: []
+    attackTimer: 0
+    jumpLocation: {x: 0, y: 0, z: 0}
+    timer: 10
+    selectedTarget: {fileID: 0}
+  description: 
+  drawGizmos: 0
 --- !u!114 &-7532456759450479525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20,7 +45,7 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
@@ -46,7 +71,7 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
@@ -71,7 +96,7 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
@@ -97,7 +122,7 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
@@ -122,7 +147,7 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
@@ -147,7 +172,7 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
@@ -177,7 +202,7 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
@@ -205,7 +230,7 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
@@ -233,7 +258,7 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
@@ -261,7 +286,6 @@ MonoBehaviour:
   - {fileID: 5609345771389570946}
   - {fileID: 3947365158280735998}
   - {fileID: 2481188629270486234}
-  - {fileID: 4676959282646719139}
   - {fileID: 1594750733927073886}
   - {fileID: 28441547706448874}
   - {fileID: -5999040484573108933}
@@ -271,11 +295,14 @@ MonoBehaviour:
   - {fileID: -3737940388298789610}
   - {fileID: -3236570895780854316}
   - {fileID: -4310596956678784257}
+  - {fileID: 3764026675540130285}
+  - {fileID: 5050460265431591965}
+  - {fileID: -7817915078697259097}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 12.59
     selectedTarget: {fileID: 0}
 --- !u!114 &28441547706448874
@@ -298,7 +325,7 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
@@ -324,7 +351,7 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
@@ -344,16 +371,42 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 919a057379dc8984396c2f0dfa09bb03
-  position: {x: 75.81109, y: 608}
+  position: {x: -93.03836, y: 607.3333}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
+--- !u!114 &3764026675540130285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ae144bb10707f84a88ed6756febaa80, type: 3}
+  m_Name: CheckTimer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 7fc57fbb3c6d28c408a3795eaf37c310
+  position: {x: 57, y: 527}
+  blackboard:
+    collidersInArea: []
+    collidersInLOS: []
+    attackTimer: 0
+    jumpLocation: {x: 0, y: 0, z: 0}
+    timer: 10
+    selectedTarget: {fileID: 0}
+  description: 
+  drawGizmos: 0
+  timer: 0
 --- !u!114 &3845520762088469379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,7 +427,7 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
@@ -395,18 +448,18 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 26f733ecd325ce14782d6aefc8aea1dc
-  position: {x: 75.81109, y: 471}
+  position: {x: -93.03836, y: 471.3334}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
   child: {fileID: 2481188629270486234}
---- !u!114 &4676959282646719139
+--- !u!114 &5050460265431591965
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -415,23 +468,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df9e411f4095d0a44acd9a25323f5e73, type: 3}
-  m_Name: Log
+  m_Script: {fileID: 11500000, guid: c8e3d3558d9f0c74fae548b051a47133, type: 3}
+  m_Name: FindJumpLocation
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: e071e6f041c7b1340945ce497a4445c1
-  position: {x: 241.60005, y: 495.00003}
+  guid: 148c2c37cd52653469dbc3eb2e1b0861
+  position: {x: 207, y: 527}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
-  message: no area
 --- !u!114 &5609345771389570946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,14 +504,15 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
   children:
   - {fileID: 3947365158280735998}
-  - {fileID: 4676959282646719139}
+  - {fileID: 5050460265431591965}
+  - {fileID: -7817915078697259097}
 --- !u!114 &7073280049748170634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,7 +533,7 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
@@ -509,7 +562,7 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 

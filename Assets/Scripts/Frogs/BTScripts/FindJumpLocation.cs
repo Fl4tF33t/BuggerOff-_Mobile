@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using TheKiwiCoder;
 
-public class TimerCountdown : ActionNode
+public class FindJumpLocation : ActionNode
 {
     protected override void OnStart() {
+        blackboard.jumpLocation = Vector3.zero;
     }
 
     protected override void OnStop() {
     }
 
     protected override State OnUpdate() {
-        blackboard.timer -= Time.deltaTime;
         return State.Success;
     }
 }
