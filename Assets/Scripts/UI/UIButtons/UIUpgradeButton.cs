@@ -7,107 +7,45 @@ using UnityEngine.UI;
 public class UIUpgradeButton : UIButtonManager
 {
     FrogBrain frogBrain;
-    Image upgradeSprite;
+    Image image;
     Sprite[] sprites;
+
+    int level;
 
     private void Awake()
     {
-        upgradeSprite = GetComponent<Image>();
+        image = GetComponent<Image>();
         frogBrain = GetComponentInParent<FrogBrain>();
         sprites = frogBrain.frogSO.visualSO.userInterface.UIUpgradeButtons;
     }
 
     public override void OnPointerClick(PointerEventData eventData)
     {
-        //what to do when the button is clicked on the upgrade, i assume opening anothger button to start the confirmation of upgrade. Need to establish if not enough money, can you still click the upgrade
+
         switch (this.gameObject.name)
         {
             case "Damage":
-                frogBrain.frogUpgrade.damageLevel++;
-                switch (frogBrain.frogUpgrade.damageLevel)
-                {
-                    case 0:
-                        break;
-                    case 1:
-                        upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.damageLevel];
-                        break;
-                    case 2:
-                        upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.damageLevel];
-                        break;
-                    case 3:
-                        upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.damageLevel];
-                        break;
-                    case 4:
-                        upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.damageLevel];
-                        break;
-                    case 5:
-                        upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.damageLevel];
-                        break;
-                }
+                level = ++frogBrain.frogUpgrade.damageLevel;
                 break;
             case "Attack Speed":
-                frogBrain.frogUpgrade.attackSpeedLevel++;
-                switch (frogBrain.frogUpgrade.attackSpeedLevel)
-                {
-                    case 1:
-                        upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.attackSpeedLevel];
-                        break;
-                    case 2:
-                        upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.attackSpeedLevel];
-                        break;
-                    case 3:
-                        upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.attackSpeedLevel];
-                        break;
-                    case 4:
-                        upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.attackSpeedLevel];
-                        break;
-                    case 5:
-                        upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.attackSpeedLevel];
-                        break;
-                }
+                level = ++frogBrain.frogUpgrade.attackSpeedLevel;
                 break;
             case "Discipline":
-                frogBrain.frogUpgrade.disciplineLevel++;
-                switch (frogBrain.frogUpgrade.disciplineLevel)
-                {
-                    case 1:
-                        upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.disciplineLevel];
-                        break;
-                    case 2:
-                        upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.disciplineLevel];
-                        break;
-                    case 3:
-                        upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.disciplineLevel];
-                        break;
-                    case 4:
-                        upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.disciplineLevel];
-                        break;
-                    case 5:
-                        upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.disciplineLevel];
-                        break;
-                }
+                level = ++frogBrain.frogUpgrade.disciplineLevel;
                 break;
             case "Range":
-                frogBrain.frogUpgrade.rangeLevel++;
-                switch (frogBrain.frogUpgrade.rangeLevel)
-                {
-                    case 1:
-                        upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.rangeLevel];
-                        break;
-                    case 2:
-                        upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.rangeLevel];
-                        break;
-                    case 3:
-                        upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.rangeLevel];
-                        break;
-                    case 4:
-                        upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.rangeLevel];
-                        break;
-                    case 5:
-                        upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.rangeLevel];
-                        break;
-                }
+                level = ++frogBrain.frogUpgrade.rangeLevel;
                 break;
+        }
+
+        if (level > 0 && level <= 5)
+        {
+            image.sprite = sprites[level];
+            if(level == 5)
+            {
+                //can also make the button itself non-interactable..if using button, dont need the onpointer click interface
+                image.raycastTarget = false;
+            }
         }
     }
 
