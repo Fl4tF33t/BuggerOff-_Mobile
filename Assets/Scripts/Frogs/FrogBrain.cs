@@ -21,6 +21,7 @@ public class FrogBrain : MonoBehaviour
 
     public FrogSO frogSO;
     public Frog frog = new Frog();
+    public FrogUpgrade frogUpgrade = new FrogUpgrade();
     [Serializable]
     public class Frog
     {
@@ -30,6 +31,14 @@ public class FrogBrain : MonoBehaviour
         public float range;
         public float attackSpeed;
         public Target target;
+    }
+    [Serializable]
+    public class FrogUpgrade
+    {
+        public int disciplineLevel;
+        public int damageLevel;
+        public int rangeLevel;
+        public int attackSpeedLevel;
     }
 
     //UpgradeUI variables 

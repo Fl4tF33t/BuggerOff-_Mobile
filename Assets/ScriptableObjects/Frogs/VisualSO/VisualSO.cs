@@ -19,6 +19,8 @@ public class VisualSO : ScriptableObject
         public Sprite UIShopSprite;
         [TextArea(3, 4)]
         public string UIShopTextInfo;
+
+        public Sprite[] UIUpgradeButtons; 
     }
     
 }
