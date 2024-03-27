@@ -11,7 +11,7 @@ public class ProjectileAttack : ActionNode
     {
         endAnim = false;
 
-        if (context.frogBrain.attackType == FrogBrain.AttackType.Projectile)
+        if (context.frogBrain.attackType == LogicSO.AttackType.Projectile)
         {
             context.animationEvents.OnEndAnim += AnimationEvents_OnEndAnim;
             context.animationEvents.OnDamageLogic += AnimationEvents_OnDamageLogic;
@@ -33,7 +33,7 @@ public class ProjectileAttack : ActionNode
     protected override void OnStop()
     {
         endAnim = false;
-        if (context.frogBrain.attackType == FrogBrain.AttackType.Projectile)
+        if (context.frogBrain.attackType == LogicSO.AttackType.Projectile)
         {
             context.animationEvents.OnEndAnim -= AnimationEvents_OnEndAnim;
             context.animationEvents.OnDamageLogic -= AnimationEvents_OnDamageLogic;
@@ -43,7 +43,7 @@ public class ProjectileAttack : ActionNode
     protected override State OnUpdate()
     {
         //here, keep checking for when the visual is finally done then perform the logic of removing health
-        if(context.frogBrain.attackType != FrogBrain.AttackType.Projectile)
+        if(context.frogBrain.attackType != LogicSO.AttackType.Projectile)
         {
             return State.Failure;
         }

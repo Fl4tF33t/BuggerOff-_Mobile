@@ -10,7 +10,7 @@ public class AOEAttack : ActionNode
     protected override void OnStart() {
         endAnim = false;
 
-        if (context.frogBrain.attackType == FrogBrain.AttackType.AOE)
+        if (context.frogBrain.attackType == LogicSO.AttackType.AOE)
         {
             context.animationEvents.OnEndAnim += AnimationEvents_OnEndAnim;
             context.animationEvents.OnDamageLogic += AnimationEvents_OnDamageLogic;
@@ -42,7 +42,7 @@ public class AOEAttack : ActionNode
     {
         endAnim = false;
 
-        if (context.frogBrain.attackType == FrogBrain.AttackType.AOE)
+        if (context.frogBrain.attackType == LogicSO.AttackType.AOE)
         {
             context.animationEvents.OnEndAnim -= AnimationEvents_OnEndAnim;
             context.animationEvents.OnDamageLogic -= AnimationEvents_OnDamageLogic; 
@@ -51,7 +51,7 @@ public class AOEAttack : ActionNode
 
     protected override State OnUpdate() {
         //here, keep checking for when the visual is finally done then perform the logic of removing health
-        if(context.frogBrain.attackType != FrogBrain.AttackType.AOE)
+        if(context.frogBrain.attackType != LogicSO.AttackType.AOE)
         {
             return State.Failure;
         }

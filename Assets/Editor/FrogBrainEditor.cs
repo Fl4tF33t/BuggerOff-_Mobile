@@ -12,7 +12,7 @@ public class FrogBrainEditor : Editor
         DrawDefaultInspector();
 
         // Show/hide variables based on enum value
-        if (script.attackType == FrogBrain.AttackType.Projectile)
+        if (script.attackType == LogicSO.AttackType.Projectile)
         {
             script.projectilePos = EditorGUILayout.ObjectField("Projectile Position", script.projectilePos, typeof(Transform), true) as Transform;
             script.projectile = EditorGUILayout.ObjectField("Projectile", script.projectile, typeof(GameObject), true) as GameObject;

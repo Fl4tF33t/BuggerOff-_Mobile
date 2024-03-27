@@ -39,4 +39,22 @@ public class LogicSO : ScriptableObject
         [Min(0)]
         public T price;
     }
+
+    [Serializable]
+    public enum Target
+    {
+        First,
+        Last,
+        Strongest,
+        Weakest
+    }
+
+    [Serializable]
+    public enum AttackType
+    {
+        AOE,
+        Projectile,
+        Single,
+        Other,
+    }
 }

@@ -26,14 +26,14 @@ public class EnemySelection : ActionNode
 
         switch (context.frogBrain.frog.target)
         {
-            case FrogBrain.Target.First:
+            case LogicSO.Target.First:
                 if (blackboard.collidersInLOS.Count > 0)
                 {
                     target = blackboard.collidersInLOS[0].gameObject;
                 }
                 break;
 
-            case FrogBrain.Target.Last:
+            case LogicSO.Target.Last:
                 int lastIndex = blackboard.collidersInLOS.Count - 1;
                 if (lastIndex >= 0)
                 {
@@ -41,7 +41,7 @@ public class EnemySelection : ActionNode
                 }
                 break;
 
-            case FrogBrain.Target.Strongest:
+            case LogicSO.Target.Strongest:
                 float maxHealth = float.MinValue;
                 foreach (Collider col in blackboard.collidersInLOS)
                 {
@@ -54,7 +54,7 @@ public class EnemySelection : ActionNode
                 }
                 break;
 
-            case FrogBrain.Target.Weakest:
+            case LogicSO.Target.Weakest:
                 float minHealth = float.MaxValue;
                 foreach (Collider col in blackboard.collidersInLOS)
                 {

@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TheKiwiCoder;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -17,7 +16,7 @@ public class FrogBrain : MonoBehaviour
     public Action<bool> OnUpgradeUI;
     public Action<string> OnTriggerEvent;
 
-    public SpriteRenderer[] sprites;
+    private SpriteRenderer[] sprites;
 
     public FrogSO frogSO;
     public Frog frog = new Frog();
@@ -30,7 +29,7 @@ public class FrogBrain : MonoBehaviour
         public int damage;
         public float range;
         public float attackSpeed;
-        public Target target;
+        public LogicSO.Target target;
     }
     [Serializable]
     public class FrogUpgrade
@@ -45,30 +44,14 @@ public class FrogBrain : MonoBehaviour
     Transform canvas;
 
     //Attacking variables
-    public AttackType attackType;
+    public LogicSO.AttackType attackType;
     [HideInInspector]
     public Transform projectilePos;
     [HideInInspector]
     public GameObject projectile;
 
     //Tracking and targeting variables
-    [Serializable]
-    public enum Target
-    {
-        First,
-        Last,
-        Strongest,
-        Weakest
-    }
-
-    [Serializable]
-    public enum AttackType
-    {
-        AOE,
-        Projectile,
-        Single,
-        Other,
-    }
+    
     private void Awake()
     {
         frogSO.InitGameObject(frog);
