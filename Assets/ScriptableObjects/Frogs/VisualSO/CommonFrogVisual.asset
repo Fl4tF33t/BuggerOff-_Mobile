@@ -16,3 +16,10 @@ MonoBehaviour:
     UIShopSprite: {fileID: -5048824776085999985, guid: 0d348c00129615240adb8b8a3893427f,
       type: 3}
     UIShopTextInfo: This frog is lit
+    UIUpgradeButtons:
+    - {fileID: 21300000, guid: 654c00b69fddb5a4ea90ac6a2e611dd1, type: 3}
+    - {fileID: 21300000, guid: e0e6f7b92fcab9743a70d90c09f81f4f, type: 3}
+    - {fileID: 21300000, guid: 9476296e0587ebc46933fb0b55cef777, type: 3}
+    - {fileID: 21300000, guid: 414b2c43768cd08428aea691f027d78c, type: 3}
+    - {fileID: 21300000, guid: 2769652a19f4d7849a249f10def8a4b9, type: 3}
+    - {fileID: 21300000, guid: 82904f1a04974e04a9372d8e58b7d6ff, type: 3}
