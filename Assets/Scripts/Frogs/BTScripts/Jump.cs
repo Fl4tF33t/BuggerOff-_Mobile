@@ -6,13 +6,17 @@ using TheKiwiCoder;
 public class Jump : ActionNode
 {
     public float rotationThreshold = 1.0f; // The threshold angle for considering the rotation as correct
-    private bool isRotationCorrect = false;
+    private bool isRotationCorrect;
 
     public float distanceThreshold = 0.05f;
     public float moveSpeed = 2f;
+
+    private bool isJumpAnimStart;
     protected override void OnStart() {
         context.agent.enabled = false;
-        Track(blackboard.jumpLocation);
+
+        isJumpAnimStart = false;
+        isRotationCorrect = false;
     }
 
     protected override void OnStop() {
@@ -42,6 +46,12 @@ public class Jump : ActionNode
             Track(blackboard.jumpLocation);
         }
 
+        if(!isJumpAnimStart && isRotationCorrect)
+        {
+            context.animator.SetBool("OnJump", true);
+            isJumpAnimStart = true;
+        }
+
         if (isRotationCorrect)
         {
             Vector3 direction = (blackboard.jumpLocation - context.transform.position).normalized;
@@ -55,6 +65,7 @@ public class Jump : ActionNode
             else
             {
                 // If the object is close enough to the target, consider it reached
+                context.animator.SetBool("OnJump", false);
                 return State.Success;
             }
         }

@@ -27,7 +27,7 @@ MonoBehaviour:
   drawGizmos: 0
   rotationThreshold: 1
   distanceThreshold: 0.05
-  moveSpeed: 5
+  moveSpeed: 3
 --- !u!114 &-7532456759450479525
 MonoBehaviour:
   m_ObjectHideFlags: 0
