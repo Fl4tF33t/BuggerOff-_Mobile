@@ -16,9 +16,18 @@ public class WheelAnimation : MonoBehaviour
     {
         wheelChild = transform.GetChild(0);
         animator = GetComponentInParent<Animator>();
-        WheelManager.Instance.OnWheelAnim += Wheel_OnWheelAnim;
 
         //frogShopData = GetComponentsInChildren<FrogShopData>();
+    }
+    private void Start()
+    {
+        WheelManager.Instance.OnWheelAnim += Wheel_OnWheelAnim;        
+    }
+
+    private void OnDisable()
+    {
+        WheelManager.Instance.OnWheelAnim -= Wheel_OnWheelAnim;
+
     }
 
 
