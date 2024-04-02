@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98defca155e9ba845af0ebf7660ea623, type: 3}
-  m_Name: CommonFrogVisual
+  m_Name: NinjaFrog
   m_EditorClassIdentifier: 
   userInterface:
-    UIShopSprite: {fileID: 21300000, guid: 0bb83caf7911b8443b67bba98b8c0cc7, type: 3}
+    UIShopSprite: {fileID: -4400477124287183033, guid: 4ead8978f58fffa4981229d88f39929a,
+      type: 3}
     UIShopTextInfo: This frog is lit
     UIUpgradeButtons:
     - {fileID: 21300000, guid: 654c00b69fddb5a4ea90ac6a2e611dd1, type: 3}
