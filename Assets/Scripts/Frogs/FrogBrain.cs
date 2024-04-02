@@ -16,7 +16,7 @@ public class FrogBrain : MonoBehaviour
     public Action<bool> OnUpgradeUI;
     public Action<string> OnTriggerEvent;
 
-    private SpriteRenderer[] sprites;
+    public SpriteRenderer[] sprites;
 
     public FrogSO frogSO;
     public Frog frog = new Frog();

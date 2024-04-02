@@ -21,9 +21,9 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
 
     private Coroutine placeFrogCoroutine;
 
-    protected override void Awake()
+    private void Start()
     {
-        base.Awake();
+        //base.Awake();
         animator = GetComponentInParent<Animator>();
 
         cam = Camera.main;
@@ -43,6 +43,7 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
 
         OnSetShopOnOff = state => { animator.SetBool("OnStoreClick", state); };
     }
+    
 
     private void ShopManager_OnPlaceFrog(FrogSO obj)
     {

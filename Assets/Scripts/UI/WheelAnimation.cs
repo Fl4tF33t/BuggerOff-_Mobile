@@ -24,12 +24,7 @@ public class WheelAnimation : MonoBehaviour
         WheelManager.Instance.OnWheelAnim += Wheel_OnWheelAnim;        
     }
 
-    private void OnDisable()
-    {
-        WheelManager.Instance.OnWheelAnim -= Wheel_OnWheelAnim;
-
-    }
-
+   
 
     private void Wheel_OnWheelAnim(string obj, int index)
     {
