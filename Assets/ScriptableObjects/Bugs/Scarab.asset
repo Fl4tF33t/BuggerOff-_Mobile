@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1ca1fec1bcf354438344c3b240db683, type: 3}
-  m_Name: Beetle
+  m_Name: Scarab
   m_EditorClassIdentifier: 
-  bugName: Beetle
-  health: 100
-  sheild: 20
-  moneyDrop: 20
-  damageToPlayer: 0
+  bugName: Scarab
+  health: 400
+  sheild: 40
+  moneyDrop: 50
+  damageToPlayer: 2
   speed: 0.3
   angularSpeed: 1000
   acceleration: 20
