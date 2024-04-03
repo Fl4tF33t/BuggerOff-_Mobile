@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(SphereCollider))]
+[RequireComponent(typeof(BoxCollider))]
 public class EndPoint : MonoBehaviour
 {
-    private SphereCollider sphereCollider;
+    private BoxCollider boxCollider;
 
     private void Awake()
     {
-        sphereCollider = GetComponent<SphereCollider>();
+        boxCollider = GetComponent<BoxCollider>();
     }
     private void Start()
     {
-        sphereCollider.isTrigger = true;
+        boxCollider.isTrigger = true;
     }
     private void OnTriggerEnter(Collider other)
     {
