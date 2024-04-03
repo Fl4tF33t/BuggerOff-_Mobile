@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TheKiwiCoder;
+using static UnityEditor.Progress;
 
 public class TrackEnemy : ActionNode
 {
@@ -26,7 +27,29 @@ public class TrackEnemy : ActionNode
         {
             Track(blackboard.selectedTarget);
         }
-        return State.Success;
+
+
+        if (blackboard.attackTimer <= 0)
+        {
+            return State.Success;
+        }
+
+        if(blackboard.selectedTarget == null)
+        {
+            return State.Failure;
+        }
+
+        float dist = Vector3.Distance(context.transform.position, blackboard.selectedTarget.transform.position);
+        if (dist > context.frogBrain.frog.range)
+        {
+            return State.Failure;
+        }
+
+        if (Physics.Linecast(context.transform.position, blackboard.selectedTarget.transform.position, LayerMask.GetMask("BlockLOS")))
+        {
+            return State.Failure;
+        }
+        return State.Running;
     }
 
     private void Track(GameObject target)

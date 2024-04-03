@@ -108,33 +108,6 @@ MonoBehaviour:
     selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
---- !u!114 &-4769391222104139426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34e2d748dc0e3454eb2cfa51feb49e87, type: 3}
-  m_Name: TrackEnemy
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: d6d799bb498ff6d4084f17de907fc2a8
-  position: {x: -1464, y: 610}
-  blackboard:
-    collidersInArea: []
-    collidersInLOS: []
-    attackTimer: 0
-    jumpTimer: 0
-    jumpLocation: {x: 0, y: 0, z: 0}
-    timer: 10
-    selectedTarget: {fileID: 0}
-  description: 
-  drawGizmos: 0
-  rotationThreshold: 1
 --- !u!114 &-4310596956678784257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,7 +190,6 @@ MonoBehaviour:
   - {fileID: -540773036039327127}
   - {fileID: 1594750733927073886}
   - {fileID: -5999040484573108933}
-  - {fileID: -4769391222104139426}
 --- !u!114 &-3323541991912468767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,9 +328,7 @@ MonoBehaviour:
   - {fileID: 1594750733927073886}
   - {fileID: 28441547706448874}
   - {fileID: -5999040484573108933}
-  - {fileID: -4769391222104139426}
   - {fileID: -3475597867808046368}
-  - {fileID: 3845520762088469379}
   - {fileID: -3737940388298789610}
   - {fileID: -3236570895780854316}
   - {fileID: -4310596956678784257}
@@ -368,6 +338,7 @@ MonoBehaviour:
   - {fileID: -8952682172769898321}
   - {fileID: 3231342102404308904}
   - {fileID: 4216728932079496763}
+  - {fileID: 818070018342520789}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
@@ -403,6 +374,33 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   children: []
+--- !u!114 &818070018342520789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34e2d748dc0e3454eb2cfa51feb49e87, type: 3}
+  m_Name: TrackEnemy
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: fe69419e19ef2394db1e468257099df5
+  position: {x: -1410.0004, y: 587}
+  blackboard:
+    collidersInArea: []
+    collidersInLOS: []
+    attackTimer: 0
+    jumpTimer: 10
+    jumpLocation: {x: 0, y: 0, z: 0}
+    timer: 10
+    selectedTarget: {fileID: 0}
+  description: 
+  drawGizmos: 0
+  rotationThreshold: 1
 --- !u!114 &1594750733927073886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -457,33 +455,6 @@ MonoBehaviour:
   drawGizmos: 0
   timer: 0
   randomNum: 0
---- !u!114 &3845520762088469379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ae144bb10707f84a88ed6756febaa80, type: 3}
-  m_Name: CheckTimer
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 0fd65d25db01dad4dadeeba45cae691d
-  position: {x: -1358, y: 495}
-  blackboard:
-    collidersInArea: []
-    collidersInLOS: []
-    attackTimer: 0
-    jumpTimer: 0
-    jumpLocation: {x: 0, y: 0, z: 0}
-    timer: 10
-    selectedTarget: {fileID: 0}
-  description: 
-  drawGizmos: 0
-  timer: 0
 --- !u!114 &3947365158280735998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -652,5 +623,5 @@ MonoBehaviour:
   drawGizmos: 0
   children:
   - {fileID: -3475597867808046368}
-  - {fileID: 3845520762088469379}
+  - {fileID: 818070018342520789}
   - {fileID: -3236570895780854316}

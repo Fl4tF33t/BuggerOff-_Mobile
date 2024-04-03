@@ -11,7 +11,7 @@ public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
     public BugSO bugSO;
 
     public int health;
-    private int sheild;
+    public int shield;
 
     private SpriteRenderer[] sprites;
 
@@ -32,7 +32,7 @@ public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
         //set the original values from the SO
         ChangeColor(Color.white);
         health = bugSO.health;
-        sheild = bugSO.sheild;
+        shield = bugSO.sheild;
     }
 
     public void BugTakeDamage(int damage)
@@ -44,15 +44,15 @@ public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
         colorDamage = StartCoroutine(TakeDamage());
 
         //check if the bug has sheild
-        if (sheild > 0)
+        if (shield > 0)
 
 
         {
             //if so, reduce the sheild
-            sheild -= damage;
+            shield -= damage;
             //if the sheild is less than 0, set it to 0
-            if (sheild < 0)
-                sheild = 0;
+            if (shield < 0)
+                shield = 0;
         }
         else
         {

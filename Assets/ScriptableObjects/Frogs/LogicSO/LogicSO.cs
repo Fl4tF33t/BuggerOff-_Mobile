@@ -46,7 +46,8 @@ public class LogicSO : ScriptableObject
         First,
         Last,
         Strongest,
-        Weakest
+        Weakest,
+        Shield
     }
 
     [Serializable]
@@ -55,6 +56,6 @@ public class LogicSO : ScriptableObject
         AOE,
         Projectile,
         Single,
-        Other,
+        Other
     }
 }
