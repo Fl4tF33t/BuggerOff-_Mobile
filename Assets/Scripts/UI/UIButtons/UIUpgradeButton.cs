@@ -7,8 +7,6 @@ using UnityEngine.UI;
 
 public class UIUpgradeButton : UIButtonManager
 {
-    public event Action OnUpgrade;
-
     FrogBrain frogBrain;
     Image upgradeSprite;
     Sprite[] sprites;
@@ -50,9 +48,17 @@ public class UIUpgradeButton : UIButtonManager
         }
     }
 
+    private void OnUpgrade()
+    {
+        frogBrain.frog.discipline = frogBrain.frogUpgrade.disciplineLevel;
+        frogBrain.frog.damage += (frogBrain.frogUpgrade.damageLevel * frogSO.logicSO.upgradeDamage.amount);
+        frogBrain.frog.range += (frogBrain.frogUpgrade.rangeLevel * frogSO.logicSO.upgradeRange.amount);
+        frogBrain.frog.attackSpeed += (frogBrain.frogUpgrade.attackSpeedLevel * frogSO.logicSO.upgradeAttackSpeed.amount);
+    }
+
     public override void OnPointerClick(PointerEventData eventData)
     {
-        OnUpgrade?.Invoke();
+        OnUpgrade();
         switch (this.gameObject.name)
         {
             case "Damage":
