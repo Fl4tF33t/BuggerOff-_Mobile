@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 3164970916738558149}
   serializedVersion: 2
   m_LocalRotation: {x: 0.69833344, y: 0.11104248, z: -0.11104248, w: 0.69833344}
-  m_LocalPosition: {x: -0.07, y: 0, z: -0.32}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1533770746211842976}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 1678877187
   m_SortingLayer: 15
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7844968084625336189, guid: 48c497ba8c14fb64882045127cc89827,
+  m_Sprite: {fileID: -326760083829496257, guid: 25ec4983f9bba6e4387901a5fdf5e99e,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -94,11 +94,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1533770746211842976}
-  - component: {fileID: 6327455286451632220}
   - component: {fileID: 761061272032584931}
   - component: {fileID: 6632476268450350716}
+  - component: {fileID: 7314570924665759394}
   m_Layer: 0
-  m_Name: sup
+  m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,27 +120,6 @@ Transform:
   - {fileID: 4061753052087161605}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &6327455286451632220
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3574751824793291468}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 192
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.10386746, y: 0.5, z: 0.1958802}
-  m_Center: {x: -0.06476654, y: 0, z: -0.17280363}
 --- !u!54 &761061272032584931
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -180,5 +159,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62e8f1ebfe5221945afae32748f2f58f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 600
+  speed: 1500
   damage: 0
+--- !u!135 &7314570924665759394
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3574751824793291468}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.13
+  m_Center: {x: 0, y: 0, z: 0}
