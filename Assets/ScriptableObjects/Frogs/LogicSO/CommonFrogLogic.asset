@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: CommonFrogLogic
   m_EditorClassIdentifier: 
   frogName: Common Frog
-  cost: 75
+  cost: 100
   discipline: 1
-  damage: 5
-  range: 3
+  damage: 10
+  range: 1.5
   attackSpeed: 1
   targetLayer:
     serializedVersion: 2
@@ -24,13 +24,13 @@ MonoBehaviour:
   isWaterFrog: 0
   upgradeDiscipline:
     amount: 1
-    price: 0
+    price: 90
   upgradeDamage:
-    amount: 3
-    price: 0
+    amount: 2
+    price: 70
   upgradeRange:
-    amount: 0
-    price: 0
+    amount: 0.3
+    price: 80
   upgradeAttackSpeed:
-    amount: 0.45
-    price: 0
+    amount: 0.2
+    price: 100

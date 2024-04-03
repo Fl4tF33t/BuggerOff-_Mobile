@@ -16,9 +16,21 @@ MonoBehaviour:
   cost: 175
   discipline: 2
   damage: 15
-  range: 4
+  range: 2
   attackSpeed: 0.5
   targetLayer:
     serializedVersion: 2
     m_Bits: 64
   isWaterFrog: 1
+  upgradeDiscipline:
+    amount: 1
+    price: 125
+  upgradeDamage:
+    amount: 6
+    price: 150
+  upgradeRange:
+    amount: 0.5
+    price: 130
+  upgradeAttackSpeed:
+    amount: 0.1
+    price: 90
