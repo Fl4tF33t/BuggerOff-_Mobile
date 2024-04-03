@@ -83,7 +83,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 750edfc3748a64f49b6a5297514e7615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bugSO: {fileID: 11400000, guid: e5e2ca7f90cf48e4aa3ac03c6a491992, type: 2}
+  bugSO: {fileID: 11400000, guid: bb23d04104fcf9749a74da4d2a0b362e, type: 2}
+  health: 0
 --- !u!135 &6076343633790359604
 SphereCollider:
   m_ObjectHideFlags: 0

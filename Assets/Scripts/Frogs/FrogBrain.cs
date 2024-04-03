@@ -64,6 +64,15 @@ public class FrogBrain : MonoBehaviour
         }
 
         sprites = GetComponentsInChildren<SpriteRenderer>();
+        GetComponentInChildren<UIUpgradeButton>().OnUpgrade += FrogBrain_OnUpgrade;
+    }
+
+    private void FrogBrain_OnUpgrade()
+    {
+        frog.discipline = frogUpgrade.disciplineLevel;
+        frog.damage += (frogUpgrade.damageLevel * frogSO.logicSO.upgradeDamage.amount);
+        frog.range += (frogUpgrade.rangeLevel * frogSO.logicSO.upgradeRange.amount);
+        frog.attackSpeed += (frogUpgrade.attackSpeedLevel * frogSO.logicSO.upgradeAttackSpeed.amount);
     }
 
     private void Start()

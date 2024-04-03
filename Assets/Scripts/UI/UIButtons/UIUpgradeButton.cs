@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,8 @@ using UnityEngine.UI;
 
 public class UIUpgradeButton : UIButtonManager
 {
+    public event Action OnUpgrade;
+
     FrogBrain frogBrain;
     Image upgradeSprite;
     Sprite[] sprites;
@@ -49,13 +52,12 @@ public class UIUpgradeButton : UIButtonManager
 
     public override void OnPointerClick(PointerEventData eventData)
     {
-
+        OnUpgrade?.Invoke();
         switch (this.gameObject.name)
         {
             case "Damage":
                 if (frogBrain.frogUpgrade.damageLevel >= 0 && frogBrain.frogUpgrade.damageLevel <= 5 && (GameManager.Instance.bugBits-frogBrain.frogSO.logicSO.upgradeDamage.price)>=0)
                 {
-                    
                     frogBrain.frogUpgrade.damageLevel++;
                     switch (frogBrain.frogUpgrade.damageLevel)
                     {
