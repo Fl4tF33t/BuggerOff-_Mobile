@@ -29,7 +29,7 @@ public class TrackEnemy : ActionNode
         }
 
 
-        if (blackboard.attackTimer <= 0)
+        if (blackboard.attackTimer <= 0 && isRotationCorrect)
         {
             return State.Success;
         }

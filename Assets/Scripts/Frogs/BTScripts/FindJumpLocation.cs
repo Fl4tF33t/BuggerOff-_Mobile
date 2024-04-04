@@ -10,11 +10,11 @@ public class FindJumpLocation : ActionNode
 
     private Vector3 jumpLocation;
     protected override void OnStart() {
-        jumpLocation = RandomPointOnCircleEdge(context.transform.position, context.frogBrain.frog.range);
+        jumpLocation = RandomPointOnCircleEdge(context.transform.position, 4f);
 
         while (!IsValidLocation(jumpLocation))
         {
-            jumpLocation = RandomPointOnCircleEdge(context.transform.position, context.frogBrain.frog.range);
+            jumpLocation = RandomPointOnCircleEdge(context.transform.position, 4f);
             if (IsValidLocation(jumpLocation))
             {
                 blackboard.jumpLocation = jumpLocation;
@@ -43,7 +43,7 @@ public class FindJumpLocation : ActionNode
     private bool IsValidLocation(Vector3 pos)
     {
         NavMeshHit navHit;
-        if (NavMesh.SamplePosition(pos, out navHit, 0.1f, NavMesh.AllAreas))
+        if (NavMesh.SamplePosition(pos, out navHit, 0.01f, NavMesh.AllAreas))
         {
             //check if there are other game objects that would collide withion the same area
             Collider[] colliders = Physics.OverlapSphere(navHit.position, 0.2f);

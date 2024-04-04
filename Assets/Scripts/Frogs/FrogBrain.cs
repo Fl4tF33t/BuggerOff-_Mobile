@@ -51,6 +51,8 @@ public class FrogBrain : MonoBehaviour
     public GameObject projectile;
 
     //Tracking and targeting variables
+    [HideInInspector]
+    public Transform singleAttack;
     
     private void Awake()
     {
@@ -87,4 +89,5 @@ public class FrogBrain : MonoBehaviour
             sprite.color = color;
         }
     }
+
 }
