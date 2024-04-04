@@ -9,6 +9,7 @@ using UnityEngine.AI;
 public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
 {
     public BugSO bugSO;
+    NavMeshAgent agent;
 
     public int health;
     public int shield;
@@ -16,10 +17,12 @@ public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
     private SpriteRenderer[] sprites;
 
     private Coroutine colorDamage;
+    private Coroutine speedDamage;
 
     private void Awake()
     {
         sprites = GetComponentsInChildren<SpriteRenderer>();
+        agent = GetComponent<NavMeshAgent>();
     }
 
     private void OnEnable()
@@ -37,11 +40,7 @@ public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
 
     public void BugTakeDamage(int damage)
     {
-        if(colorDamage != null)
-        {
-            StopCoroutine(colorDamage);
-        }
-        colorDamage = StartCoroutine(TakeDamage());
+        CoroutineStarter(colorDamage, "TakeDamage");
 
         //check if the bug has sheild
         if (shield > 0)
@@ -90,5 +89,26 @@ public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
     public void PlayerTakeDamage(int damage)
     {
         GameManager.Instance.OnHealthChange(-bugSO.damageToPlayer);
+    }
+
+    public void BugSlow()
+    {
+        CoroutineStarter(speedDamage, "SpeedDamage");
+    }
+
+    private IEnumerator SpeedDamage()
+    {
+        agent.speed *= .5f;
+        yield return new WaitForSeconds(1f);
+        agent.speed = bugSO.speed;
+    }
+
+    private void CoroutineStarter(Coroutine coroutine, string ieNum)
+    {
+        if (coroutine != null)
+        {
+            StopCoroutine(coroutine);
+        }
+        coroutine = StartCoroutine(ieNum);
     }
 }
