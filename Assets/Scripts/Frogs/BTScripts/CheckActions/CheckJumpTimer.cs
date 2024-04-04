@@ -5,13 +5,10 @@ using TheKiwiCoder;
 
 public class CheckJumpTimer : ActionNode
 {
-    public float timer;
-
     public int randomNum;
 
     protected override void OnStart()
     {
-        timer = blackboard.jumpTimer;
     }
 
     protected override void OnStop()
@@ -24,13 +21,10 @@ public class CheckJumpTimer : ActionNode
 
     protected override State OnUpdate()
     {
-        if (timer <= 0)
+        randomNum = Random.Range(0, 6);
+        if (randomNum > context.frogBrain.frog.discipline)
         {
-            randomNum = Random.Range(0, 6);
-            if(randomNum > context.frogBrain.frog.discipline)
-            {
-                return State.Success;
-            }
+            return State.Success;
         }
         return State.Failure;
     }

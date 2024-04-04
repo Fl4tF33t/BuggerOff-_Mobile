@@ -371,7 +371,7 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    jumpTimer: 0
+    jumpTimer: 10
     jumpLocation: {x: 0, y: 0, z: 0}
     timer: 12.59
     selectedTarget: {fileID: 0}
@@ -481,7 +481,6 @@ MonoBehaviour:
     selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
-  timer: 0
   randomNum: 0
 --- !u!114 &3947365158280735998
 MonoBehaviour:

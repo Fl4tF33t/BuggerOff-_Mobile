@@ -14,6 +14,10 @@ public class JumpTimer : ActionNode
 
     protected override State OnUpdate() {
         blackboard.jumpTimer -= Time.deltaTime;
-        return State.Success;
+        if(blackboard.jumpTimer < 0)
+        {
+            return State.Success;
+        }
+        return State.Failure;
     }
 }
