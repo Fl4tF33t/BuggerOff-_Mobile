@@ -26,7 +26,8 @@ MonoBehaviour:
     selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
-  children: []
+  children:
+  - {fileID: -3184859646545480050}
 --- !u!114 &-3184859646545480050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,7 +43,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 80584288135488246aa87339fece8968
-  position: {x: 0, y: 0}
+  position: {x: -323, y: -633}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
