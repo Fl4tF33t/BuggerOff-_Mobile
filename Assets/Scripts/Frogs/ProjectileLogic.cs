@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class ProjectileLogic : MonoBehaviour
 {
-    public float speed = 150f;
+    float speed = 5f;
     Rigidbody rb;
 
     public int damage;
@@ -25,9 +25,9 @@ public class ProjectileLogic : MonoBehaviour
         }else projectileType = Projectile.Cannon;
     }
 
-    private void Update()
+    private void Start()
     {       
-        rb.velocity = transform.forward * speed * Time.deltaTime;
+        rb.AddForce(transform.forward * speed, ForceMode.Impulse);
     }
 
     void OnCollisionEnter(Collision collision)
