@@ -60,7 +60,7 @@ public class TrackEnemy : ActionNode
         Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
 
         // Apply the rotation only on the Y-axis
-        context.transform.rotation = Quaternion.RotateTowards(context.transform.rotation, targetRotation, 100f * Time.deltaTime);
+        context.transform.rotation = Quaternion.RotateTowards(context.transform.rotation, targetRotation, 200f * Time.deltaTime);
 
         // Check if the rotation is correct
         float angleDifference = Quaternion.Angle(context.transform.rotation, targetRotation);
