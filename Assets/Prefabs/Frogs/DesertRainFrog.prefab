@@ -84,6 +84,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5ec12a277eae8f41bb5dd145480f1f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprites: []
   frogSO: {fileID: 11400000, guid: 628b852a61e50294e9fd56cb98dae23a, type: 2}
   frog:
     frogName: 
@@ -100,6 +101,7 @@ MonoBehaviour:
   attackType: 0
   projectilePos: {fileID: 0}
   projectile: {fileID: 0}
+  singleAttack: {fileID: 0}
 --- !u!135 &6162405890025491135
 SphereCollider:
   m_ObjectHideFlags: 0

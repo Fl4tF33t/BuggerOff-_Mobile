@@ -26,7 +26,29 @@ public class TrackEnemy : ActionNode
         {
             Track(blackboard.selectedTarget);
         }
-        return State.Success;
+
+
+        if (blackboard.attackTimer <= 0 && isRotationCorrect)
+        {
+            return State.Success;
+        }
+
+        if(blackboard.selectedTarget == null || blackboard.selectedTarget.activeSelf == false)
+        {
+            return State.Failure;
+        }
+
+        float dist = Vector3.Distance(context.transform.position, blackboard.selectedTarget.transform.position);
+        if (dist > context.frogBrain.frog.range)
+        {
+            return State.Failure;
+        }
+
+        if (Physics.Linecast(context.transform.position, blackboard.selectedTarget.transform.position, LayerMask.GetMask("BlockLOS")))
+        {
+            return State.Failure;
+        }
+        return State.Running;
     }
 
     private void Track(GameObject target)
@@ -38,7 +60,7 @@ public class TrackEnemy : ActionNode
         Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
 
         // Apply the rotation only on the Y-axis
-        context.transform.rotation = Quaternion.RotateTowards(context.transform.rotation, targetRotation, rotationThreshold);
+        context.transform.rotation = Quaternion.RotateTowards(context.transform.rotation, targetRotation, 200f * Time.deltaTime);
 
         // Check if the rotation is correct
         float angleDifference = Quaternion.Angle(context.transform.rotation, targetRotation);

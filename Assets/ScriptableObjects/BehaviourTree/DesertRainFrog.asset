@@ -1,5 +1,31 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8952682172769898321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06361b326a465dd418503dde8dfd7ec1, type: 3}
+  m_Name: JumpTimer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 1246501d213a1a749b09d01481c74795
+  position: {x: -415.0635, y: 687.3334}
+  blackboard:
+    collidersInArea: []
+    collidersInLOS: []
+    attackTimer: 0
+    jumpTimer: 0
+    jumpLocation: {x: 0, y: 0, z: 0}
+    timer: 10
+    selectedTarget: {fileID: 0}
+  description: 
+  drawGizmos: 0
 --- !u!114 &-7817915078697259097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,16 +41,20 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 9dacdf1ee64726d4084c1b6b2d303bbc
-  position: {x: 369, y: 527}
+  position: {x: 173.9551, y: 687.33325}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
+    jumpTimer: 0
     jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
+  rotationThreshold: 1
+  distanceThreshold: 0.05
+  moveSpeed: 3
 --- !u!114 &-7532456759450479525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45,6 +75,7 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
+    jumpTimer: 0
     jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
@@ -66,42 +97,17 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 6fc1fccfddac78742aaba9f5b34f9cc9
-  position: {x: -901.5486, y: 599}
+  position: {x: -1614, y: 610}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
+    jumpTimer: 0
     jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
---- !u!114 &-4769391222104139426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34e2d748dc0e3454eb2cfa51feb49e87, type: 3}
-  m_Name: TrackEnemy
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: d6d799bb498ff6d4084f17de907fc2a8
-  position: {x: -751.54865, y: 599}
-  blackboard:
-    collidersInArea: []
-    collidersInLOS: []
-    attackTimer: 0
-    jumpLocation: {x: 0, y: 0, z: 0}
-    timer: 10
-    selectedTarget: {fileID: 0}
-  description: 
-  drawGizmos: 0
-  rotationThreshold: 1
 --- !u!114 &-4310596956678784257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,11 +123,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 72a5ac45ea19a3942ba55c395f51d7d4
-  position: {x: -334, y: 640}
+  position: {x: -1084, y: 650}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
+    jumpTimer: 0
     jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
@@ -142,11 +149,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 45e9c1372fcbc344a9e5d5828b039c9e
-  position: {x: -522, y: 640}
+  position: {x: -1234, y: 651}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
+    jumpTimer: 0
     jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
@@ -167,11 +175,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 94ab0a162589b3b4d8b4753921b0760a
-  position: {x: -1007.5486, y: 460.00003}
+  position: {x: -1720, y: 471}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
+    jumpTimer: 0
     jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
@@ -181,7 +190,6 @@ MonoBehaviour:
   - {fileID: -540773036039327127}
   - {fileID: 1594750733927073886}
   - {fileID: -5999040484573108933}
-  - {fileID: -4769391222104139426}
 --- !u!114 &-3323541991912468767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,6 +210,7 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
+    jumpTimer: 0
     jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
@@ -225,11 +234,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 1769a306a828a6247a86c02ef1f734a6
-  position: {x: -421, y: 495}
+  position: {x: -1133, y: 506}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
+    jumpTimer: 0
     jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
@@ -238,6 +248,62 @@ MonoBehaviour:
   children:
   - {fileID: -3737940388298789610}
   - {fileID: -4310596956678784257}
+  - {fileID: -1990485935633568387}
+--- !u!114 &-1990485935633568387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9f7f0b3335213144aa6c34b5427174a, type: 3}
+  m_Name: SingleAttack
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 8d3938f3ba9a47d459e5c1906e74a878
+  position: {x: -918.6666, y: 651.3333}
+  blackboard:
+    collidersInArea: []
+    collidersInLOS: []
+    attackTimer: 0
+    jumpTimer: 10
+    jumpLocation: {x: 0, y: 0, z: 0}
+    timer: 10
+    selectedTarget: {fileID: 0}
+  description: 
+  drawGizmos: 0
+--- !u!114 &-553554939334048630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2932073b8a6c3b34391576c45d359457, type: 3}
+  m_Name: Parallel
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 57ab49017f540114ab0d6d1fbeeac7bd
+  position: {x: -490.3966, y: 516}
+  blackboard:
+    collidersInArea: []
+    collidersInLOS: []
+    attackTimer: 0
+    jumpTimer: 0
+    jumpLocation: {x: 0, y: 0, z: 0}
+    timer: 10
+    selectedTarget: {fileID: 0}
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: 3947365158280735998}
+  - {fileID: -8952682172769898321}
 --- !u!114 &-540773036039327127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,11 +319,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 6f46878f09a423749b1c14aa32a54446
-  position: {x: -1201.5486, y: 599}
+  position: {x: -1914, y: 610}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
+    jumpTimer: 0
     jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
@@ -285,23 +352,26 @@ MonoBehaviour:
   - {fileID: -540773036039327127}
   - {fileID: 5609345771389570946}
   - {fileID: 3947365158280735998}
-  - {fileID: 2481188629270486234}
   - {fileID: 1594750733927073886}
   - {fileID: 28441547706448874}
   - {fileID: -5999040484573108933}
-  - {fileID: -4769391222104139426}
   - {fileID: -3475597867808046368}
-  - {fileID: 3845520762088469379}
   - {fileID: -3737940388298789610}
   - {fileID: -3236570895780854316}
   - {fileID: -4310596956678784257}
-  - {fileID: 3764026675540130285}
   - {fileID: 5050460265431591965}
   - {fileID: -7817915078697259097}
+  - {fileID: -553554939334048630}
+  - {fileID: -8952682172769898321}
+  - {fileID: 3231342102404308904}
+  - {fileID: 4216728932079496763}
+  - {fileID: 818070018342520789}
+  - {fileID: -1990485935633568387}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
+    jumpTimer: 10
     jumpLocation: {x: 0, y: 0, z: 0}
     timer: 12.59
     selectedTarget: {fileID: 0}
@@ -325,12 +395,40 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
+    jumpTimer: 0
     jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
   children: []
+--- !u!114 &818070018342520789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34e2d748dc0e3454eb2cfa51feb49e87, type: 3}
+  m_Name: TrackEnemy
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: fe69419e19ef2394db1e468257099df5
+  position: {x: -1410.0004, y: 587}
+  blackboard:
+    collidersInArea: []
+    collidersInLOS: []
+    attackTimer: 0
+    jumpTimer: 10
+    jumpLocation: {x: 0, y: 0, z: 0}
+    timer: 10
+    selectedTarget: {fileID: 0}
+  description: 
+  drawGizmos: 0
+  rotationThreshold: 1
 --- !u!114 &1594750733927073886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,17 +444,18 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: ba6ba4ba7c8c00a4fa68fa3e93f6cefd
-  position: {x: -1051.5487, y: 599}
+  position: {x: -1764, y: 610}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
+    jumpTimer: 0
     jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
---- !u!114 &2481188629270486234
+--- !u!114 &3231342102404308904
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -365,74 +464,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f93891306064d4f4ca6506424e725d3d, type: 3}
-  m_Name: CheckEnemyInArea
+  m_Script: {fileID: 11500000, guid: 56049a5b39f74324d959ee65ae863a20, type: 3}
+  m_Name: CheckJumpTimer
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: 919a057379dc8984396c2f0dfa09bb03
-  position: {x: -93.03836, y: 607.3333}
+  guid: 4b3cbf6490d110e458eb8bc412a977c3
+  position: {x: -213.33325, y: 687.33325}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
+    jumpTimer: 0
     jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
---- !u!114 &3764026675540130285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ae144bb10707f84a88ed6756febaa80, type: 3}
-  m_Name: CheckTimer
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 7fc57fbb3c6d28c408a3795eaf37c310
-  position: {x: 57, y: 527}
-  blackboard:
-    collidersInArea: []
-    collidersInLOS: []
-    attackTimer: 0
-    jumpLocation: {x: 0, y: 0, z: 0}
-    timer: 10
-    selectedTarget: {fileID: 0}
-  description: 
-  drawGizmos: 0
-  timer: 0
---- !u!114 &3845520762088469379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ae144bb10707f84a88ed6756febaa80, type: 3}
-  m_Name: CheckTimer
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 0fd65d25db01dad4dadeeba45cae691d
-  position: {x: -645.54865, y: 484.00003}
-  blackboard:
-    collidersInArea: []
-    collidersInLOS: []
-    attackTimer: 0
-    jumpLocation: {x: 0, y: 0, z: 0}
-    timer: 10
-    selectedTarget: {fileID: 0}
-  description: 
-  drawGizmos: 0
-  timer: 0
+  randomNum: 0
 --- !u!114 &3947365158280735998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,17 +497,44 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 26f733ecd325ce14782d6aefc8aea1dc
-  position: {x: -93.03836, y: 471.3334}
+  position: {x: -640.39685, y: 646.6666}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
+    jumpTimer: 0
     jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
-  child: {fileID: 2481188629270486234}
+  child: {fileID: 4216728932079496763}
+--- !u!114 &4216728932079496763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4993a0d04387a4429a5f576057cfa43, type: 3}
+  m_Name: CheckEnemyInLOS
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: f6f765d8d99f26a4aa2554ebc36e3dcd
+  position: {x: -640.6666, y: 787.3333}
+  blackboard:
+    collidersInArea: []
+    collidersInLOS: []
+    attackTimer: 0
+    jumpTimer: 0
+    jumpLocation: {x: 0, y: 0, z: 0}
+    timer: 10
+    selectedTarget: {fileID: 0}
+  description: 
+  drawGizmos: 0
 --- !u!114 &5050460265431591965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -474,11 +550,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 148c2c37cd52653469dbc3eb2e1b0861
-  position: {x: 207, y: 527}
+  position: {x: -20.780235, y: 687.33325}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
+    jumpTimer: 0
     jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
@@ -499,18 +576,20 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: bd9ecb3935071184d84933b5e8c8e824
-  position: {x: 39.811073, y: 337.99997}
+  position: {x: -46.48835, y: 370.9999}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
+    jumpTimer: 0
     jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
   drawGizmos: 0
   children:
-  - {fileID: 3947365158280735998}
+  - {fileID: -553554939334048630}
+  - {fileID: 3231342102404308904}
   - {fileID: 5050460265431591965}
   - {fileID: -7817915078697259097}
 --- !u!114 &7073280049748170634
@@ -533,6 +612,7 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
+    jumpTimer: 0
     jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
@@ -557,11 +637,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 76b1963451c39c9438cf7fad50548305
-  position: {x: -570.54865, y: 327}
+  position: {x: -1283, y: 338}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
+    jumpTimer: 0
     jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
@@ -569,5 +650,5 @@ MonoBehaviour:
   drawGizmos: 0
   children:
   - {fileID: -3475597867808046368}
-  - {fileID: 3845520762088469379}
+  - {fileID: 818070018342520789}
   - {fileID: -3236570895780854316}

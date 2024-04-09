@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c84c1618c4472b4a944efc90296d6e7, type: 3}
   m_Name: SunglassesFrog
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7529113000352471415, guid: 5c7ec96d514b7e249bcbffa1a2f5bc50, type: 3}
+  prefab: {fileID: 7529113000352471415, guid: 42252e3e90be1d943a74b469f7b05f59, type: 3}
   logicSO: {fileID: 11400000, guid: 7ea89398a1f9dc742be96f6349ef6622, type: 2}
-  upgradeSO: {fileID: 11400000, guid: 0178e0c0ce7f28a429ffb2311f0a1c03, type: 2}
-  visualSO: {fileID: 11400000, guid: f37a8bbc3e4124d429149ad2fb9fb533, type: 2}
+  visualSO: {fileID: 11400000, guid: 0b983734630062f4da5f85243cafa50c, type: 2}
   audioSO: {fileID: 11400000, guid: aeaaccc71dc98784b8e7a2e9e4b3c36b, type: 2}

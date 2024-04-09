@@ -17,5 +17,9 @@ public class FrogBrainEditor : Editor
             script.projectilePos = EditorGUILayout.ObjectField("Projectile Position", script.projectilePos, typeof(Transform), true) as Transform;
             script.projectile = EditorGUILayout.ObjectField("Projectile", script.projectile, typeof(GameObject), true) as GameObject;
         }
+        if (script.attackType == LogicSO.AttackType.Single)
+        {
+            script.singleAttack = EditorGUILayout.ObjectField("Single Attack", script.singleAttack, typeof(Transform), true) as Transform;
+        }
     }
 }

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1ca1fec1bcf354438344c3b240db683, type: 3}
+  m_Name: Cockchafer
+  m_EditorClassIdentifier: 
+  bugName: Cockchafer
+  health: 5000
+  sheild: 50
+  moneyDrop: 1000
+  damageToPlayer: 10
+  speed: 0.1
+  angularSpeed: 1000
+  acceleration: 20
+  stoppingDistance: 0
+  autoBraking: 0

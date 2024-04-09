@@ -22,3 +22,15 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   isWaterFrog: 0
+  upgradeDiscipline:
+    amount: 1
+    price: 125
+  upgradeDamage:
+    amount: 5
+    price: 150
+  upgradeRange:
+    amount: 0.5
+    price: 160
+  upgradeAttackSpeed:
+    amount: 5
+    price: 150

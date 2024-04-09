@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Mosquito
   m_EditorClassIdentifier: 
   bugName: Mosquito
-  health: 1
-  sheild: 2
-  moneyDrop: 7
-  damageToPlayer: 8
-  speed: 1
+  health: 10
+  sheild: 0
+  moneyDrop: 10
+  damageToPlayer: 1
+  speed: 1.3
   angularSpeed: 1000
   acceleration: 20
   stoppingDistance: 0

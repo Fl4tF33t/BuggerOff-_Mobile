@@ -20,7 +20,8 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpTimer: 0
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
@@ -46,7 +47,8 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpTimer: 0
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
@@ -71,7 +73,8 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpTimer: 0
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
@@ -97,7 +100,8 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpTimer: 0
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
@@ -127,7 +131,8 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpTimer: 0
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
@@ -155,7 +160,8 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpTimer: 0
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
@@ -195,7 +201,8 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpTimer: 0
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 12.59
     selectedTarget: {fileID: 0}
 --- !u!114 &28441547706448874
@@ -218,7 +225,8 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpTimer: 0
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
@@ -244,7 +252,8 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpTimer: 0
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
@@ -269,7 +278,8 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpTimer: 0
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
@@ -294,7 +304,8 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpTimer: 0
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
@@ -319,7 +330,8 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpTimer: 0
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
@@ -345,7 +357,8 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpTimer: 0
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
@@ -371,7 +384,8 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpTimer: 0
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
@@ -397,7 +411,8 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpTimer: 0
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
@@ -425,7 +440,8 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpTimer: 0
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 
@@ -454,7 +470,8 @@ MonoBehaviour:
     collidersInArea: []
     collidersInLOS: []
     attackTimer: 0
-    moveToPosition: {x: 0, y: 0, z: 0}
+    jumpTimer: 0
+    jumpLocation: {x: 0, y: 0, z: 0}
     timer: 10
     selectedTarget: {fileID: 0}
   description: 

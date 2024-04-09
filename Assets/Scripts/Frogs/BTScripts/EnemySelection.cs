@@ -66,6 +66,20 @@ public class EnemySelection : ActionNode
                     }
                 }
                 break;
+
+            case LogicSO.Target.Shield:
+                float maxShield = float.MinValue;
+                foreach (Collider col in blackboard.collidersInLOS)
+                {
+                    BugBrain bugBrain = col.GetComponent<BugBrain>();
+                    if (bugBrain != null && bugBrain.shield > maxShield)
+                    {
+                        maxShield = bugBrain.shield;
+                        target = col.gameObject;
+                    }
+                }
+                break;
+
         }
 
         return target;

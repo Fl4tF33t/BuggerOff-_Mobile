@@ -13,12 +13,24 @@ MonoBehaviour:
   m_Name: CannonFrog
   m_EditorClassIdentifier: 
   frogName: Cannon frog
-  cost: 175
+  cost: 250
   discipline: 2
   damage: 10
-  range: 3
+  range: 1.5
   attackSpeed: 0.5
   targetLayer:
     serializedVersion: 2
     m_Bits: 64
   isWaterFrog: 0
+  upgradeDiscipline:
+    amount: 1
+    price: 100
+  upgradeDamage:
+    amount: 5
+    price: 150
+  upgradeRange:
+    amount: 0.5
+    price: 125
+  upgradeAttackSpeed:
+    amount: 0.2
+    price: 115

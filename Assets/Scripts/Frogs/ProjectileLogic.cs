@@ -5,30 +5,52 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class ProjectileLogic : MonoBehaviour
 {
-    public float speed = 150f;
+    float speed = 5f;
     Rigidbody rb;
 
     public int damage;
-
-    void Start()
+    Projectile projectileType;
+    enum Projectile
     {
-        rb = GetComponent<Rigidbody>();
+        Harpoon,
+        Cannon,
     }
 
-    private void Update()
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+        if (this.gameObject.name.Contains("Harpoon"))
+        {
+            projectileType = Projectile.Harpoon;
+        }else projectileType = Projectile.Cannon;
+    }
+
+    private void Start()
     {       
-        rb.velocity = transform.forward * speed * Time.deltaTime;
+        rb.AddForce(transform.forward * speed, ForceMode.Impulse);
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        // Perform actions when colliding with other objects
-        Debug.Log("Collision detected with: " + collision.gameObject.name);
-        if(collision.gameObject.TryGetComponent(out IBugTakeDamage bugDamage))
+        switch (projectileType)
         {
-            bugDamage.BugTakeDamage(damage);
+            case Projectile.Harpoon:
+                if (collision.gameObject.TryGetComponent(out IBugTakeDamage bugDamage))
+                {
+                    bugDamage.BugTakeDamage(damage);
+                }
+                break;
+            case Projectile.Cannon:
+                Collider[] cols = Physics.OverlapSphere(transform.position, 0.6f, LayerMask.GetMask("Bug"));
+                for (int i = 0; i < cols.Length; i++)
+                {
+                    if (cols[i].gameObject.TryGetComponent(out IBugTakeDamage AOEDamage))
+                    {
+                        AOEDamage.BugTakeDamage(damage);
+                    }
+                }
+                break;
         }
-
         // Destroy the projectile upon collision
         Destroy(gameObject);
     }

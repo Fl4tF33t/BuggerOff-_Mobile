@@ -9,17 +9,20 @@ using UnityEngine.AI;
 public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
 {
     public BugSO bugSO;
+    NavMeshAgent agent;
 
     public int health;
-    private int sheild;
+    public int shield;
 
     private SpriteRenderer[] sprites;
 
     private Coroutine colorDamage;
+    private Coroutine speedDamage;
 
     private void Awake()
     {
         sprites = GetComponentsInChildren<SpriteRenderer>();
+        agent = GetComponent<NavMeshAgent>();
     }
 
     private void OnEnable()
@@ -32,27 +35,23 @@ public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
         //set the original values from the SO
         ChangeColor(Color.white);
         health = bugSO.health;
-        sheild = bugSO.sheild;
+        shield = bugSO.sheild;
     }
 
     public void BugTakeDamage(int damage)
     {
-        if(colorDamage != null)
-        {
-            StopCoroutine(colorDamage);
-        }
-        colorDamage = StartCoroutine(TakeDamage());
+        CoroutineStarter(colorDamage, "TakeDamage");
 
         //check if the bug has sheild
-        if (sheild > 0)
+        if (shield > 0)
 
 
         {
             //if so, reduce the sheild
-            sheild -= damage;
+            shield -= damage;
             //if the sheild is less than 0, set it to 0
-            if (sheild < 0)
-                sheild = 0;
+            if (shield < 0)
+                shield = 0;
         }
         else
         {
@@ -90,5 +89,26 @@ public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
     public void PlayerTakeDamage(int damage)
     {
         GameManager.Instance.OnHealthChange(-bugSO.damageToPlayer);
+    }
+
+    public void BugSlow()
+    {
+        CoroutineStarter(speedDamage, "SpeedDamage");
+    }
+
+    private IEnumerator SpeedDamage()
+    {
+        agent.speed *= .5f;
+        yield return new WaitForSeconds(1f);
+        agent.speed = bugSO.speed;
+    }
+
+    private void CoroutineStarter(Coroutine coroutine, string ieNum)
+    {
+        if (coroutine != null)
+        {
+            StopCoroutine(coroutine);
+        }
+        coroutine = StartCoroutine(ieNum);
     }
 }

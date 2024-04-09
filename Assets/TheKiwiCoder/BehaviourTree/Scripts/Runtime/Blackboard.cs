@@ -16,6 +16,7 @@ namespace TheKiwiCoder {
 
         //timer for when to attack
         public float attackTimer;
+        public float jumpTimer = 10f;
 
         public Vector3 jumpLocation;
         

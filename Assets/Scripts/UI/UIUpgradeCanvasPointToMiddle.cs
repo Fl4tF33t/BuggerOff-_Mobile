@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class UIUpgradeCanvasPointToMiddle : MonoBehaviour
 {
@@ -15,12 +16,14 @@ public class UIUpgradeCanvasPointToMiddle : MonoBehaviour
     [SerializeField] Button leftArrow;
     [SerializeField] Button rightArrow;
     [SerializeField] TextMeshProUGUI Targeting;
-    List<string> waysToTarget = new List<string>();
+
+    FrogBrain frogBrain;
 
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         rectTransforms = GetComponentsInChildren<RectTransform>();
+        frogBrain = GetComponentInParent<FrogBrain>();
     }
 
     private void Start()
@@ -37,13 +40,8 @@ public class UIUpgradeCanvasPointToMiddle : MonoBehaviour
                 fixedRectTransform.Add(t);
             }
         }
-        waysToTarget.Add("First");
-        waysToTarget.Add("Last");
-        waysToTarget.Add("Strongest");
-        waysToTarget.Add("Weakest");
-        waysToTarget.Add("Shield");
 
-        Targeting.text = waysToTarget[0];
+        Targeting.text = frogBrain.frog.target.ToString();
     }
 
     private void Update()
@@ -73,43 +71,22 @@ public class UIUpgradeCanvasPointToMiddle : MonoBehaviour
 
     public void LeftArrow()
     {
-        if (Targeting.text==waysToTarget[0])
+        int currentEnum = (int)frogBrain.frog.target - 1;
+        Debug.Log(currentEnum);
+        if (currentEnum < 0)
         {
-            Targeting.text = waysToTarget[waysToTarget.Count-1];
+            currentEnum = Enum.GetValues(typeof(LogicSO.Target)).Length - 1;
         }
-        else
-        {
-            int num = 0;
-            for (int i = 0; i < waysToTarget.Count; i++)
-            {
-                
-                if (Targeting.text == waysToTarget[i])
-                {
-                    num = i;
-                }
-            }
-            Targeting.text = waysToTarget[num - 1];
-        }
+        frogBrain.frog.target = (LogicSO.Target)currentEnum;
+
+        Targeting.text = frogBrain.frog.target.ToString();
     }
 
     public void RightArrow()
     {
-        if (Targeting.text == waysToTarget[waysToTarget.Count-1])
-        {
-            Targeting.text = waysToTarget[0];
-        }
-        else
-        {
-            int num = 0;
-            for (int i = 0; i < waysToTarget.Count; i++)
-            {
+        int currentEnum = ((int)frogBrain.frog.target + 1) % Enum.GetValues(typeof(LogicSO.Target)).Length;
+        frogBrain.frog.target = (LogicSO.Target)currentEnum;
 
-                if (Targeting.text == waysToTarget[i])
-                {
-                    num = i;
-                }
-            }
-            Targeting.text = waysToTarget[num + 1];
-        }
+        Targeting.text = frogBrain.frog.target.ToString();
     }
 }

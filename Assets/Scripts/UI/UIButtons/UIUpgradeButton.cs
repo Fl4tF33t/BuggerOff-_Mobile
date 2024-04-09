@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -49,13 +50,11 @@ public class UIUpgradeButton : UIButtonManager
 
     public override void OnPointerClick(PointerEventData eventData)
     {
-
         switch (this.gameObject.name)
         {
             case "Damage":
                 if (frogBrain.frogUpgrade.damageLevel >= 0 && frogBrain.frogUpgrade.damageLevel <= 5 && (GameManager.Instance.bugBits-frogBrain.frogSO.logicSO.upgradeDamage.price)>=0)
                 {
-                    
                     frogBrain.frogUpgrade.damageLevel++;
                     switch (frogBrain.frogUpgrade.damageLevel)
                     {

@@ -116,6 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5ec12a277eae8f41bb5dd145480f1f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprites: []
   frogSO: {fileID: 11400000, guid: 30979b85c26a4684297b09cdc9d55a92, type: 2}
   frog:
     frogName: 
