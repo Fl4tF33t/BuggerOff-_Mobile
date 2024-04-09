@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEditor.PackageManager;
 
 public class WorldMapUIManager : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class WorldMapUIManager : MonoBehaviour
     [SerializeField] private Button _cairo;
     [SerializeField] private Button _kyoto;
 
-    [SerializeField] private Image _popUp;
+    [SerializeField] private Image _popUpCityInfo;
     [SerializeField] private WorldMapSO[] _citiesSO;
 
     private GameObject _citySelected = null;
@@ -20,52 +21,49 @@ public class WorldMapUIManager : MonoBehaviour
     private void Start()
     {
         _cancelPopUp.onClick.AddListener(() => OnClosePopUp());
-        _london.onClick.AddListener(() => OnClickedCity(_london));
-        _cairo.onClick.AddListener(() => OnClickedCity(_cairo));
-        _kyoto.onClick.AddListener(() => OnClickedCity(_kyoto));
+        _london.onClick.AddListener(() => OnClickedCity(_london, _citiesSO[0]));
+        _cairo.onClick.AddListener(() => OnClickedCity(_cairo, _citiesSO[1]));
+        _kyoto.onClick.AddListener(() => OnClickedCity(_kyoto, _citiesSO[2]));
     }
 
     private void OnClosePopUp()
     {
         _citySelected.gameObject.SetActive(false);
-        _popUp.gameObject.SetActive(false);
+        _popUpCityInfo.gameObject.SetActive(false);
     }
 
-    private void OnClickedCity(Button city) {
+    private void OnClickedCity(Button city, WorldMapSO cityInfo  ) {
         
         Debug.Log("City clicked: " + city.name);
         _citySelected = city.transform.parent.gameObject.transform.GetChild(0).gameObject;
         _citySelected.SetActive(true);
-        int cityIndex = GetCityIndex(city);
-        StartCoroutine(ShowPopUp(cityIndex));
+        StartCoroutine(ShowCityInfo(cityInfo));
     }
 
-    IEnumerator ShowPopUp(int cityIndex)
+    IEnumerator ShowCityInfo(WorldMapSO cityInfo)
     {
-        TextMeshProUGUI title = _popUp.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-        title.text = _citiesSO[cityIndex].GetCityTitle();
+        GetCityTitle(cityInfo);        
+        GetCityLevelImages(cityInfo);
+
         yield return new WaitForSeconds(1f);
-        _popUp.gameObject.SetActive(true);       
+        _popUpCityInfo.gameObject.SetActive(true);       
     }
-
-    private int GetCityIndex(Button city)
+    
+    private void GetCityTitle(WorldMapSO cityInfo)
     {
-        int index = 0;
-        switch (city.name)
+        TextMeshProUGUI title = _popUpCityInfo.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        title.text = cityInfo.GetCityTitle();
+    }
+    
+    private void GetCityLevelImages(WorldMapSO cityInfo)
+    {
+        Sprite[] currentCityLevels = cityInfo.GetCityLevelSprites();
+
+        Image[] cityLevelImages = { _popUpCityInfo.transform.GetChild(1).GetComponent<Image>(), _popUpCityInfo.transform.GetChild(2).GetComponent<Image>(), _popUpCityInfo.transform.GetChild(3).GetComponent<Image>() };
+
+        for (int i = 0; i < currentCityLevels.Length; i++)
         {
-            case "London_Btn":
-                index = 0;
-                break;
-            case "Cairo_Btn":
-                index = 1;
-                break;
-            case "Kyoto_Btn":
-                index = 2;
-                break;
-            default:
-                Debug.Log("No city found!!!!");
-                break;
-        }
-        return index;
+            cityLevelImages[i].sprite = currentCityLevels[i];
+        }        
     }
 }

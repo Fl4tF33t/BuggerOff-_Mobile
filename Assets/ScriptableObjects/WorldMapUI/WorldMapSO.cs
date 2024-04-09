@@ -14,7 +14,7 @@ public class WorldMapSO : ScriptableObject
         return _cityTitle;
     }
 
-    public Sprite[] GetLevels()
+    public Sprite[] GetCityLevelSprites()
     {
         return _levelSprites;
     }

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cityTitle: Cairo
   _levelSprites:
-  - {fileID: 21300000, guid: 2b4fe2a4917d2184184a02fa914e80c4, type: 3}
-  - {fileID: 21300000, guid: d7343f643d78dd54ba0f9e1fd22cbcd2, type: 3}
-  - {fileID: 21300000, guid: 6ac45d8214edeeb44a52a97122857f8b, type: 3}
+  - {fileID: 21300000, guid: 974cd5602ec485449a272254b21d5f22, type: 3}
+  - {fileID: 21300000, guid: f2936e1f7a5269d44b87e97f5e66efa0, type: 3}
+  - {fileID: 21300000, guid: 00bbf4d319d7c0f4f881d76185d254d3, type: 3}
