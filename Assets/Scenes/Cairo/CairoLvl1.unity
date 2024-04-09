@@ -2643,16 +2643,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3482678546032915246, guid: a30f355317602d64f9fd00416033ee50,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3482678546032915246, guid: a30f355317602d64f9fd00416033ee50,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 1143
-      objectReference: {fileID: 0}
     - target: {fileID: 3627876709669298032, guid: a30f355317602d64f9fd00416033ee50,
         type: 3}
       propertyPath: m_Name
@@ -3183,7 +3173,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1978170625
-  m_SortingLayer: 17
+  m_SortingLayer: 18
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4e7d488a7f1c43b499e8697189dc2193, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
