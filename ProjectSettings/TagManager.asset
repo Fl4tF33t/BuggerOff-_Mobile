@@ -8,6 +8,7 @@ TagManager:
   - Frog
   - Waypoint2
   - Waypoint1
+  - Waypoint
   layers:
   - Default
   - TransparentFX
@@ -59,6 +60,9 @@ TagManager:
     locked: 0
   - name: Bug_Mosquito
     uniqueID: 3841425813
+    locked: 0
+  - name: Bug_Hornet
+    uniqueID: 4278988743
     locked: 0
   - name: Bug_Boss
     uniqueID: 2023343925
