@@ -6,10 +6,10 @@ using UnityEngine;
 public class WaveSystem : Singleton<WaveSystem>
 {
     // Event triggered when a level is completed
-    public Action OnLevelCompleted;
+    public event Action OnLevelCompleted;
 
     // Event triggered when a wave is completed
-    public Action OnWaveCompleted;
+    public event Action OnWaveCompleted;
 
     [SerializeField]
     private Transform[] spawnablePositions; // Array of spawnable positions for enemies

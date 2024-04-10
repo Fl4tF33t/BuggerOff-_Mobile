@@ -22,7 +22,7 @@ public class AOEAttack : ActionNode
 
     private void AnimationEvents_OnDamageLogic()
     {
-        RaycastHit[] hits = Physics.SphereCastAll(context.transform.position, 0.4f, context.transform.forward, context.frogBrain.frogSO.logicSO.range, LayerMask.GetMask("Bug"));
+        RaycastHit[] hits = Physics.SphereCastAll(context.transform.position, 0.5f, context.transform.forward, context.frogBrain.frogSO.logicSO.range, LayerMask.GetMask("Bug"));
 
         // Iterate through the hits array to process each hit
         foreach (RaycastHit hit in hits)
