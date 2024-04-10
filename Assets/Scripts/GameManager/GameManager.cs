@@ -34,8 +34,13 @@ public class GameManager : Singleton<GameManager>
             StartCoroutine(WaveSystem.Instance.Waves());
             waveButton.gameObject.SetActive(false);
         });
-        WaveSystem.Instance.OnWaveCompleted += () => { waveButton.gameObject.SetActive(true); };
-        HealthChange = (amount) => { health += amount; OnUIChange?.Invoke(); };
+        WaveSystem.Instance.OnWaveCompleted += () => waveButton.gameObject.SetActive(true); 
+        WaveSystem.Instance.OnLevelCompleted += () => SceneManager.LoadScene("WorldLevel"); 
+
+        HealthChange = (amount) => { health += amount; OnUIChange?.Invoke();
+            if (health <= 0)
+            { SceneManager.LoadScene("WorldLevel"); }
+        };
         BugBitsChange = (amount) => { bugBits += amount; OnUIChange?.Invoke(); };
     }
 
