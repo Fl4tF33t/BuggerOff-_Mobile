@@ -134,6 +134,7 @@ MonoBehaviour:
   projectilePos: {fileID: 6184422106820322311}
   projectile: {fileID: 3574751824793291468, guid: f2661493193cd484c859cea558627d69,
     type: 3}
+  singleAttack: {fileID: 0}
 --- !u!135 &6162405890025491135
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -432,7 +433,7 @@ PrefabInstance:
     - target: {fileID: 7231670148390573628, guid: 3a010b6f0b7d99d47addfbe13ee0bd95,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.28
       objectReference: {fileID: 0}
     - target: {fileID: 7231670148390573628, guid: 3a010b6f0b7d99d47addfbe13ee0bd95,
         type: 3}
@@ -457,7 +458,7 @@ PrefabInstance:
     - target: {fileID: 7231670148390573628, guid: 3a010b6f0b7d99d47addfbe13ee0bd95,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 1.26
       objectReference: {fileID: 0}
     - target: {fileID: 7231670148390573628, guid: 3a010b6f0b7d99d47addfbe13ee0bd95,
         type: 3}

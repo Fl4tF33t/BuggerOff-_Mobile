@@ -101,6 +101,7 @@ MonoBehaviour:
   attackType: 3
   projectilePos: {fileID: 0}
   projectile: {fileID: 0}
+  singleAttack: {fileID: 0}
 --- !u!135 &6162405890025491135
 SphereCollider:
   m_ObjectHideFlags: 0
