@@ -66,7 +66,7 @@ public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
         if (health <= 0)
         {
             //if so, destroy the bug
-            GameManager.Instance.OnBugBitsChange(bugSO.moneyDrop);
+            GameManager.Instance.BugBitsChange(bugSO.moneyDrop);
             gameObject.SetActive(false);
         }
     }
@@ -88,7 +88,7 @@ public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
 
     public void PlayerTakeDamage(int damage)
     {
-        GameManager.Instance.OnHealthChange(-bugSO.damageToPlayer);
+        GameManager.Instance.HealthChange(-bugSO.damageToPlayer);
     }
 
     public void BugSlow()
