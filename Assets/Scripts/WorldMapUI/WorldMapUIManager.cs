@@ -55,13 +55,14 @@ public class WorldMapUIManager : MonoBehaviour
     {
         UnselectCities();
         _levelSelected = "";
+        DisableButtons(true);
 
         _citySelected.gameObject.SetActive(false);
         _popUpCityInfo.gameObject.SetActive(false);
     }
 
     private void OnClickedCity(Button city, WorldMapSO cityInfo  ) {
-        
+        DisableButtons(false);
         Debug.Log("City clicked: " + city.name);
         _citySelected = city.transform.parent.gameObject.transform.GetChild(0).gameObject;
         _citySelected.SetActive(true);
@@ -124,5 +125,12 @@ public class WorldMapUIManager : MonoBehaviour
         {
             city.SetActive(false);
         }
+    }
+
+    private void DisableButtons(bool dissableButton)
+    {
+        _londonButton.interactable = dissableButton;
+        _cairoButton.interactable = dissableButton;
+        _kyotoButton.interactable = dissableButton;
     }
 }

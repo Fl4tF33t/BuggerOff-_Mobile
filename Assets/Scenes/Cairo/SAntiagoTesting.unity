@@ -13207,7 +13207,8 @@ PrefabInstance:
       value: Frog_Samurai_Visuals
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6768806659106750077, guid: cac8bcb55332641439e8b785121dc93f, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cac8bcb55332641439e8b785121dc93f, type: 3}
