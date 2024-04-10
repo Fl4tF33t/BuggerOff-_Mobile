@@ -27,6 +27,7 @@ public class UIManager : MonoBehaviour
         nextWaveButton.onClick.AddListener(() => 
         { 
             StartCoroutine(WaveSystem.Instance.Waves());
+            SetUI();
             nextWaveButton.interactable = false;
         });
         WaveSystem.Instance.OnWaveCompleted += () => nextWaveButton.interactable = true;
@@ -49,7 +50,7 @@ public class UIManager : MonoBehaviour
         }
         char k = bugBits > 1000 ? 'K' : ' ';
         uiTexts[1].text = newBugBits.ToString() + k.ToString();
-        uiTexts[2].text = "Wave: 1 / " + CSVReader.Instance.csvFile.Length.ToString();
+        uiTexts[2].text = $"Wave: {WaveSystem.Instance.Wave + 1} /  {CSVReader.Instance.csvFile.Length}";
     }
 
 }

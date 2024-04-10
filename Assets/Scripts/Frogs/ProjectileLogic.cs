@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class ProjectileLogic : MonoBehaviour
 {
-    private float speed = 5f;
+    public float speed = 5f;
     private Rigidbody rb;
     private Animator animator;
 
@@ -31,8 +31,6 @@ public class ProjectileLogic : MonoBehaviour
     private void Start()
     {       
         rb.AddForce(transform.forward * speed, ForceMode.Impulse);
-
-        StartCoroutine(SelfDestruct());
     }
 
     void OnCollisionEnter(Collision collision)
@@ -44,6 +42,7 @@ public class ProjectileLogic : MonoBehaviour
                 {
                     bugDamage.BugTakeDamage(damage);
                 }
+                Destroy(gameObject);
                 break;
             case Projectile.Cannon:
                 Collider[] cols = Physics.OverlapSphere(transform.position, 0.6f, LayerMask.GetMask("Bug"));
@@ -61,14 +60,13 @@ public class ProjectileLogic : MonoBehaviour
         animator.SetTrigger("OnExplode");
     }
 
-    public void EndOfAnim()
+    private void OnBecameInvisible()
     {
         Destroy(gameObject);
     }
 
-    IEnumerator SelfDestruct()
+    public void EndOfAnim()
     {
-        yield return new WaitForSeconds(3f);
-        EndOfAnim();
+        Destroy(gameObject);
     }
 }
