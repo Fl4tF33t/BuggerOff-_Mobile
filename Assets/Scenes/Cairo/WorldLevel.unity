@@ -450,7 +450,7 @@ GameObject:
   - component: {fileID: 323683617}
   - component: {fileID: 323683616}
   m_Layer: 5
-  m_Name: Weather (1)
+  m_Name: Weather
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -806,7 +806,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &554843286
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1040,7 +1040,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c8def14ecf20a1042acb8414458cef21, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0dabab2f38b902643b8159441d8cca9a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1115,7 +1115,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8a05510d7fd75824b9c8c96f201acfa4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0dabab2f38b902643b8159441d8cca9a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1522,7 +1522,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8a05510d7fd75824b9c8c96f201acfa4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0dabab2f38b902643b8159441d8cca9a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1597,7 +1597,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c8def14ecf20a1042acb8414458cef21, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0dabab2f38b902643b8159441d8cca9a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2148,7 +2148,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8a05510d7fd75824b9c8c96f201acfa4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 83d3f3582109ac34eabea32fd1e580e8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2373,7 +2373,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8a05510d7fd75824b9c8c96f201acfa4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 83d3f3582109ac34eabea32fd1e580e8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2568,7 +2568,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8a05510d7fd75824b9c8c96f201acfa4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0dabab2f38b902643b8159441d8cca9a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2643,7 +2643,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c8def14ecf20a1042acb8414458cef21, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 83d3f3582109ac34eabea32fd1e580e8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3116,7 +3116,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8a05510d7fd75824b9c8c96f201acfa4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0dabab2f38b902643b8159441d8cca9a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3460,7 +3460,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1870567216}
   m_Layer: 5
-  m_Name: Stars (1)
+  m_Name: Stars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
