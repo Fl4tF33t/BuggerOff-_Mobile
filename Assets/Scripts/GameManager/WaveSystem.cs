@@ -19,6 +19,8 @@ public class WaveSystem : Singleton<WaveSystem>
     private int index; 
     private float timer;
 
+    public int Wave {  get { return currentWave; } }
+
     private void Start()
     {
         // Initialize the wave system for the first wave

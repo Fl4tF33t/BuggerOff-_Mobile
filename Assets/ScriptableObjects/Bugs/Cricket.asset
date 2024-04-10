@@ -17,7 +17,7 @@ MonoBehaviour:
   sheild: 0
   moneyDrop: 10
   damageToPlayer: 1
-  speed: 1
+  speed: 0.7
   angularSpeed: 1000
   acceleration: 20
   stoppingDistance: 0

@@ -143,7 +143,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ShopUI_MovingUp
-  m_Speed: 1.75
+  m_Speed: 2.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -92136330526750761}
@@ -297,7 +297,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ShopUI_MovingDown
-  m_Speed: 1.75
+  m_Speed: 2.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -5518470547018544184}

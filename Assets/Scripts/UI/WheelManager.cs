@@ -57,7 +57,10 @@ public class WheelManager : Singleton<WheelManager>, IBeginDragHandler, IEndDrag
             case 2:
                 isSpinning = false;
                 int frogPoolIndex = (this.frogPoolIndex + 1) % frogPool.Length;
-                OnPlaceFrog?.Invoke(frogPool[frogPoolIndex]);
+                if(GameManager.Instance.BugBits > frogPool[frogPoolIndex].logicSO.cost)
+                {
+                    OnPlaceFrog?.Invoke(frogPool[frogPoolIndex]);
+                }
                 break;
             default:
                 break;

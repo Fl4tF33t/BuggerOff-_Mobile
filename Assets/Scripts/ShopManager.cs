@@ -87,6 +87,7 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
             StopCoroutineTarget(placeFrogCoroutine);
             if (IsPlacable(selectedFrogPrefab.transform.position))
             {
+                GameManager.Instance.BugBitsChange(-frogSO.logicSO.cost);
                 selectedFrogPrefab.GetComponent<FrogBrain>().SpawnFrog();
                 frogSO = null;
                 selectedFrogPrefab = null;
