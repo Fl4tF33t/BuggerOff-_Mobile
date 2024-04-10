@@ -17,3 +17,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2e1e21cd6cf7ba7449f1505a4b0d3fd9, type: 3}
   - {fileID: 21300000, guid: bb904d79e358f4b4fb912e24537d6aa8, type: 3}
   - {fileID: 21300000, guid: d7343f643d78dd54ba0f9e1fd22cbcd2, type: 3}
+  _LevelOne: Kyoto_Level_1
+  _LevelTwo: Kyoto_Level_2
+  _LevelThree: Kyoto_Level_3

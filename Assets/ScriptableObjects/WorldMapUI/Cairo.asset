@@ -17,3 +17,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 974cd5602ec485449a272254b21d5f22, type: 3}
   - {fileID: 21300000, guid: f2936e1f7a5269d44b87e97f5e66efa0, type: 3}
   - {fileID: 21300000, guid: 00bbf4d319d7c0f4f881d76185d254d3, type: 3}
+  _LevelOne: Cairo_Level_1
+  _LevelTwo: Cairo_Level_2
+  _LevelThree: Cairo_Level_2

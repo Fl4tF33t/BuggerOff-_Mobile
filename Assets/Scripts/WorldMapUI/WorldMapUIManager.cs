@@ -17,6 +17,15 @@ public class WorldMapUIManager : MonoBehaviour
     [SerializeField] private WorldMapSO[] _citiesSO;
 
     private GameObject _citySelected = null;
+    private string _levelSelected ="";
+
+    private Button _cityLevelOneButton;
+    private Button _cityLevelTwoButton;
+    private Button _cityLevelThreeButton;
+
+    private GameObject[] _citiesSelected;
+
+
 
     private void Start()
     {
@@ -28,6 +37,8 @@ public class WorldMapUIManager : MonoBehaviour
 
     private void OnClosePopUp()
     {
+        UnselectCities();
+
         _citySelected.gameObject.SetActive(false);
         _popUpCityInfo.gameObject.SetActive(false);
     }
@@ -44,11 +55,35 @@ public class WorldMapUIManager : MonoBehaviour
     {
         GetCityTitle(cityInfo);        
         GetCityLevelImages(cityInfo);
+        GetCityLevelButtons(cityInfo);
 
         yield return new WaitForSeconds(1f);
         _popUpCityInfo.gameObject.SetActive(true);       
     }
-    
+
+    private void GetCityLevelButtons(WorldMapSO cityInfo)
+    {
+        _cityLevelOneButton = _popUpCityInfo.transform.GetChild(1).GetComponent<Button>();
+        _cityLevelTwoButton = _popUpCityInfo.transform.GetChild(2).GetComponent<Button>();
+        _cityLevelThreeButton = _popUpCityInfo.transform.GetChild(3).GetComponent<Button>();
+        _citiesSelected = new GameObject[] {_cityLevelOneButton.transform.GetChild(0).gameObject, _cityLevelTwoButton.transform.GetChild(0).gameObject, _cityLevelThreeButton.transform.GetChild(0).gameObject};
+
+        _cityLevelOneButton.onClick.AddListener(() => OnClickedLevel(cityInfo, 1));
+        _cityLevelTwoButton.onClick.AddListener(() => OnClickedLevel(cityInfo, 2));
+        _cityLevelThreeButton.onClick.AddListener(() => OnClickedLevel(cityInfo, 3));
+    }
+
+    private void OnClickedLevel(WorldMapSO cityInfo, int levelSelected)
+    {
+        UnselectCities();
+
+        _citiesSelected[levelSelected - 1].SetActive(true);
+        _levelSelected = cityInfo.GetLevel(levelSelected);
+
+
+        Debug.Log("Level selected: " + _levelSelected);
+    }
+
     private void GetCityTitle(WorldMapSO cityInfo)
     {
         TextMeshProUGUI title = _popUpCityInfo.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
@@ -65,5 +100,13 @@ public class WorldMapUIManager : MonoBehaviour
         {
             cityLevelImages[i].sprite = currentCityLevels[i];
         }        
+    }
+
+    private void UnselectCities()
+    {
+        foreach (GameObject city in _citiesSelected)
+        {
+            city.SetActive(false);
+        }
     }
 }
