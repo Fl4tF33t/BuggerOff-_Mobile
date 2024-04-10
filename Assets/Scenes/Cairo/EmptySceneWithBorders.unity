@@ -685,7 +685,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &554843286
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1860,10 +1860,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33ea1bb8b9d029648b5f13f5d7cfbd43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cancelPopUp: {fileID: 2063592699}
-  _london: {fileID: 747946982}
-  _cairo: {fileID: 2017067701}
-  _kyoto: {fileID: 1523967118}
+  _cancelButton: {fileID: 2063592699}
+  _londonButton: {fileID: 747946982}
+  _cairoButton: {fileID: 2017067701}
+  _kyotoButton: {fileID: 1523967118}
+  _confirmButton: {fileID: 1054590225}
   _popUpCityInfo: {fileID: 554843287}
   _citiesSO:
   - {fileID: 11400000, guid: cdd2bc75333a0384991c4c15fa017deb, type: 2}

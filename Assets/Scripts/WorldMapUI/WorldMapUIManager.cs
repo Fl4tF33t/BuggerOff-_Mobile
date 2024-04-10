@@ -5,13 +5,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEditor.PackageManager;
+using UnityEngine.SceneManagement;
 
 public class WorldMapUIManager : MonoBehaviour
 {
-    [SerializeField] private Button _cancelPopUp;
-    [SerializeField] private Button _london;
-    [SerializeField] private Button _cairo;
-    [SerializeField] private Button _kyoto;
+    [SerializeField] private Button _cancelButton;
+    [SerializeField] private Button _londonButton;
+    [SerializeField] private Button _cairoButton;
+    [SerializeField] private Button _kyotoButton;
+    [SerializeField] private Button _confirmButton;
 
     [SerializeField] private Image _popUpCityInfo;
     [SerializeField] private WorldMapSO[] _citiesSO;
@@ -29,15 +31,30 @@ public class WorldMapUIManager : MonoBehaviour
 
     private void Start()
     {
-        _cancelPopUp.onClick.AddListener(() => OnClosePopUp());
-        _london.onClick.AddListener(() => OnClickedCity(_london, _citiesSO[0]));
-        _cairo.onClick.AddListener(() => OnClickedCity(_cairo, _citiesSO[1]));
-        _kyoto.onClick.AddListener(() => OnClickedCity(_kyoto, _citiesSO[2]));
+        _cancelButton.onClick.AddListener(() => OnClosePopUp());
+        _londonButton.onClick.AddListener(() => OnClickedCity(_londonButton, _citiesSO[0]));
+        _cairoButton.onClick.AddListener(() => OnClickedCity(_cairoButton, _citiesSO[1]));
+        _kyotoButton.onClick.AddListener(() => OnClickedCity(_kyotoButton, _citiesSO[2]));
+
+        _confirmButton.onClick.AddListener(() => OnConfirmButton());
+    }
+
+    private void OnConfirmButton()
+    {
+        if (_levelSelected == "")
+        {
+            Debug.Log("Level selected: " + _levelSelected);
+        }
+        else
+        {
+            SceneManager.LoadScene(_levelSelected);
+        }
     }
 
     private void OnClosePopUp()
     {
         UnselectCities();
+        _levelSelected = "";
 
         _citySelected.gameObject.SetActive(false);
         _popUpCityInfo.gameObject.SetActive(false);
@@ -79,7 +96,6 @@ public class WorldMapUIManager : MonoBehaviour
 
         _citiesSelected[levelSelected - 1].SetActive(true);
         _levelSelected = cityInfo.GetLevel(levelSelected);
-
 
         Debug.Log("Level selected: " + _levelSelected);
     }
