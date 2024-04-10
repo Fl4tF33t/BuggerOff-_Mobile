@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEditor.PackageManager;
 using UnityEngine.SceneManagement;
 
 public class WorldMapUIManager : MonoBehaviour
@@ -47,7 +46,8 @@ public class WorldMapUIManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(_levelSelected);
+            //SceneManager.LoadScene(_levelSelected);
+            SceneManager.LoadScene("CairoLvl1");
         }
     }
 

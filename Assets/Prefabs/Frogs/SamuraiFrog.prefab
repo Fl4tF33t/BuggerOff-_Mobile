@@ -101,6 +101,7 @@ MonoBehaviour:
   attackType: 0
   projectilePos: {fileID: 0}
   projectile: {fileID: 0}
+  singleAttack: {fileID: 0}
 --- !u!135 &6162405890025491135
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -470,7 +471,8 @@ PrefabInstance:
       value: -0.00000017881388
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6768806659106750077, guid: cac8bcb55332641439e8b785121dc93f, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8250912061062190667, guid: cac8bcb55332641439e8b785121dc93f,
