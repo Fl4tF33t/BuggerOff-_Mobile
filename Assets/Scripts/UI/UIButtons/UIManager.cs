@@ -31,12 +31,19 @@ public class UIManager : MonoBehaviour
         });
         WaveSystem.Instance.OnWaveCompleted += () => nextWaveButton.interactable = true;
 
+        SetUI();
+
+        GameManager.Instance.OnUIChange += () => SetUI();
+    }
+
+    private void SetUI()
+    {
         //UIUtextLogic
         uiTexts[0].text = GameManager.Instance.Health.ToString();
         bugBits = GameManager.Instance.BugBits;
         float newBugBits = bugBits;
-        if(bugBits > 1000 ) 
-        { 
+        if (bugBits > 1000)
+        {
             newBugBits = (float)bugBits / 1000f;
             newBugBits = (float)Math.Round(newBugBits, 1);
         }
