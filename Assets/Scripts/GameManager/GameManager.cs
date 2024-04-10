@@ -28,7 +28,7 @@ public class GameManager : Singleton<GameManager>
     private void Start()
     {
         base.Awake();
-        bugBits = 906;
+        bugBits = 976;
         waveButton.onClick.AddListener(() =>
         {
             StartCoroutine(WaveSystem.Instance.Waves());

@@ -5,8 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class ProjectileLogic : MonoBehaviour
 {
-    float speed = 5f;
-    Rigidbody rb;
+    private float speed = 5f;
+    private Rigidbody rb;
+    private Animator animator;
 
     public int damage;
     Projectile projectileType;
@@ -19,15 +20,19 @@ public class ProjectileLogic : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        if (this.gameObject.name.Contains("Harpoon"))
+        if (this.gameObject.name.Contains("Cannon"))
         {
-            projectileType = Projectile.Harpoon;
-        }else projectileType = Projectile.Cannon;
+            projectileType = Projectile.Cannon;
+            animator = GetComponent<Animator>();
+        }else projectileType = Projectile.Harpoon;
+        
     }
-
+     
     private void Start()
     {       
         rb.AddForce(transform.forward * speed, ForceMode.Impulse);
+
+        StartCoroutine(SelfDestruct());
     }
 
     void OnCollisionEnter(Collision collision)
@@ -52,6 +57,18 @@ public class ProjectileLogic : MonoBehaviour
                 break;
         }
         // Destroy the projectile upon collision
+        rb.isKinematic = true;
+        animator.SetTrigger("OnExplode");
+    }
+
+    public void EndOfAnim()
+    {
         Destroy(gameObject);
+    }
+
+    IEnumerator SelfDestruct()
+    {
+        yield return new WaitForSeconds(3f);
+        EndOfAnim();
     }
 }
