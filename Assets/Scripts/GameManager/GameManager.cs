@@ -13,24 +13,27 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     private int health;
     [SerializeField]
-    public int bugBits;
+    private int bugBits;
 
     public Action<int> OnHealthChange;
     public Action<int> OnBugBitsChange;
 
+    public int Health { get { return health; } }
+    public int BugBits { get {  return bugBits; } }
+
     private void Start()
     {
         base.Awake();
-        bugBits = 100000000;
+        bugBits = 196;
         waveButton.onClick.AddListener(() =>
         {
             StartCoroutine(WaveSystem.Instance.Waves());
             waveButton.gameObject.SetActive(false);
         });
-        WaveSystem.Instance.OnWaveCompleted = () => { waveButton.gameObject.SetActive(true); };
+        WaveSystem.Instance.OnWaveCompleted += () => { waveButton.gameObject.SetActive(true); };
         OnHealthChange = (amount) => { health += amount; };
         OnBugBitsChange = (amount) => { bugBits += amount; };
-    }
 
+    }
 
 }

@@ -53,7 +53,7 @@ public class UIUpgradeButton : UIButtonManager
         switch (this.gameObject.name)
         {
             case "Damage":
-                if (frogBrain.frogUpgrade.damageLevel >= 0 && frogBrain.frogUpgrade.damageLevel <= 5 && (GameManager.Instance.bugBits-frogBrain.frogSO.logicSO.upgradeDamage.price)>=0)
+                if (frogBrain.frogUpgrade.damageLevel >= 0 && frogBrain.frogUpgrade.damageLevel <= 5 && (GameManager.Instance.BugBits-frogBrain.frogSO.logicSO.upgradeDamage.price)>=0)
                 {
                     frogBrain.frogUpgrade.damageLevel++;
                     switch (frogBrain.frogUpgrade.damageLevel)
@@ -85,7 +85,7 @@ public class UIUpgradeButton : UIButtonManager
                 }                
                 break;
             case "Attack Speed":
-                if (frogBrain.frogUpgrade.attackSpeedLevel >= 0 && frogBrain.frogUpgrade.attackSpeedLevel <= 5 && (GameManager.Instance.bugBits - frogBrain.frogSO.logicSO.upgradeAttackSpeed.price) >= 0)
+                if (frogBrain.frogUpgrade.attackSpeedLevel >= 0 && frogBrain.frogUpgrade.attackSpeedLevel <= 5 && (GameManager.Instance.BugBits - frogBrain.frogSO.logicSO.upgradeAttackSpeed.price) >= 0)
                 {
                     
                     frogBrain.frogUpgrade.attackSpeedLevel++;
@@ -117,7 +117,7 @@ public class UIUpgradeButton : UIButtonManager
    
                 break;
             case "Discipline":
-                if (frogBrain.frogUpgrade.disciplineLevel >= 0 && frogBrain.frogUpgrade.disciplineLevel <= 5 && (GameManager.Instance.bugBits - frogBrain.frogSO.logicSO.upgradeDiscipline.price) >= 0)
+                if (frogBrain.frogUpgrade.disciplineLevel >= 0 && frogBrain.frogUpgrade.disciplineLevel <= 5 && (GameManager.Instance.BugBits - frogBrain.frogSO.logicSO.upgradeDiscipline.price) >= 0)
                 {
                     
                     frogBrain.frogUpgrade.disciplineLevel++;
@@ -149,7 +149,7 @@ public class UIUpgradeButton : UIButtonManager
                 
                 break;
             case "Range":
-                if (frogBrain.frogUpgrade.rangeLevel >= 0 && frogBrain.frogUpgrade.rangeLevel <= 5 && (GameManager.Instance.bugBits - frogBrain.frogSO.logicSO.upgradeRange.price) >= 0)
+                if (frogBrain.frogUpgrade.rangeLevel >= 0 && frogBrain.frogUpgrade.rangeLevel <= 5 && (GameManager.Instance.BugBits - frogBrain.frogSO.logicSO.upgradeRange.price) >= 0)
                 {
                     
                     frogBrain.frogUpgrade.rangeLevel++;

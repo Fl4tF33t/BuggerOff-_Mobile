@@ -89,5 +89,4 @@ public class FrogBrain : MonoBehaviour
             sprite.color = color;
         }
     }
-
 }
