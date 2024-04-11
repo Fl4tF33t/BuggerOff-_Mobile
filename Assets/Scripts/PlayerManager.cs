@@ -35,6 +35,7 @@ public class PlayerManager : Singleton<PlayerManager>
         {
             if(frogBrain != null)
             {
+               
                 frogBrain.OnUpgradeUI(false);
                 frogBrain = null;
             }

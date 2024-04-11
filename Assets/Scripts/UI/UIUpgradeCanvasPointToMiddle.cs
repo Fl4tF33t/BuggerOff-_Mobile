@@ -67,6 +67,10 @@ public class UIUpgradeCanvasPointToMiddle : MonoBehaviour
                 t.rotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
             }
         }
+        transform.Find("DamageConfirm").GetComponent<RectTransform>().rotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
+        transform.Find("AttackSpeedConfirm").GetComponent<RectTransform>().rotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
+        transform.Find("RangeConfirm").GetComponent<RectTransform>().rotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
+        transform.Find("DisciplineConfirm").GetComponent<RectTransform>().rotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
     }
 
     public void LeftArrow()
