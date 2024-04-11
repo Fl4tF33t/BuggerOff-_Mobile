@@ -24,13 +24,14 @@ public class WheelManager : Singleton<WheelManager>, IBeginDragHandler, IEndDrag
     private EventSystem eventSystem;
     private bool isSpinning;
     private Vector2 pos;
+    private Animator animator;
 
     protected override void Awake()
     {
         base.Awake();
         priceText = GetComponentInChildren<TextMeshProUGUI>();
         frogShopData = GetComponentsInChildren<FrogShopData>();
-
+        animator = GetComponentInParent<Animator>();
         eventSystem = EventSystem.current;
     }
     private void Start()
@@ -48,8 +49,12 @@ public class WheelManager : Singleton<WheelManager>, IBeginDragHandler, IEndDrag
     {
         List<RaycastResult> results = new List<RaycastResult>();
         eventSystem.RaycastAll(eventData, results);
-        switch (results.Count)
+        bool animatorStateShopUP = animator.GetCurrentAnimatorStateInfo(0).IsTag("Open");
+        Debug.Log("Animator state: " + animatorStateShopUP);
+        if (!animatorStateShopUP)
         {
+            switch (results.Count)
+            {
             case 1:                
                 isSpinning = true;
                 pos = eventData.position;
@@ -64,7 +69,9 @@ public class WheelManager : Singleton<WheelManager>, IBeginDragHandler, IEndDrag
                 break;
             default:
                 break;
+            }
         }
+        else isSpinning = false;
     }
 
     //need to have the I drag even though it is empty to make the drag start/end to work
