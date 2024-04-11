@@ -20,6 +20,7 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
     private Animator animator;
 
     private Coroutine placeFrogCoroutine;
+    private int number;
 
     private void Start()
     {
@@ -45,8 +46,9 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
     }
     
 
-    private void ShopManager_OnPlaceFrog(FrogSO obj)
+    private void ShopManager_OnPlaceFrog(FrogSO obj, int num)
     {
+        number = num;
         OnSetShopOnOff(true);
 
         frogSO = obj;
@@ -87,11 +89,12 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
             StopCoroutineTarget(placeFrogCoroutine);
             if (IsPlacable(selectedFrogPrefab.transform.position))
             {
-                GameManager.Instance.BugBitsChange(-frogSO.logicSO.cost);
+                GameManager.Instance.BugBitsChange(-frogSO.logicSO.cost * number);
                 selectedFrogPrefab.GetComponent<FrogBrain>().SpawnFrog();
                 frogSO = null;
                 selectedFrogPrefab = null;
                 prefabPos = Vector3.zero;
+                WheelManager.Instance.SetPrice?.Invoke();
             }
         }
     }
