@@ -70,7 +70,12 @@ public class FrogBrain : MonoBehaviour
 
     private void Start()
     {
-        OnUpgradeUI = (arg) => { canvas.gameObject.SetActive(arg); };
+        OnUpgradeUI = (arg) => { canvas.gameObject.SetActive(arg);
+            canvas.transform.Find("DamageConfirm").gameObject.SetActive(false);
+            canvas.transform.Find("AttackSpeedConfirm").gameObject.SetActive(false);
+            canvas.transform.Find("RangeConfirm").gameObject.SetActive(false);
+            canvas.transform.Find("DisciplineConfirm").gameObject.SetActive(false);
+        };
         OnTriggerEvent = (arg) => { OnAnimationTrigger?.Invoke(arg); };
     }
 

@@ -12,6 +12,7 @@ public class SelectFrog : MonoBehaviour
     private void Start()
     {
         InputManager.Instance.OnTouchTap += Instance_OnTouchTap;
+        Debug.Log(this.gameObject.name);
     }
 
     private void Instance_OnTouchTap(Vector2 obj)
@@ -23,6 +24,10 @@ public class SelectFrog : MonoBehaviour
         if (Physics.Raycast(ray, out hit, 100f, layerMask))
         {
             upgrade.gameObject.SetActive(true);
+            upgrade.transform.Find("DamageConfirm").gameObject.SetActive(false);
+            upgrade.transform.Find("AttackSpeedConfirm").gameObject.SetActive(false);
+            upgrade.transform.Find("RangeConfirm").gameObject.SetActive(false);
+            upgrade.transform.Find("DisciplineConfirm").gameObject.SetActive(false);
         }
         else if (Physics.Raycast(ray, out hit, 100f, UI))
         {
@@ -30,13 +35,15 @@ public class SelectFrog : MonoBehaviour
         }
         else
         {
-           upgrade.gameObject.SetActive(false);
+            
+            
+            upgrade.gameObject.SetActive(false);
         }
     }
 
     private void Update()
     {
-        
+        Debug.Log(this.gameObject.name);
     }
 
     private void Select()

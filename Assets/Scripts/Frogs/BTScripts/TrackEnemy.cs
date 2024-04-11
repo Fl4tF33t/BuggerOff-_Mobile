@@ -14,7 +14,11 @@ public class TrackEnemy : ActionNode
         {
             blackboard.attackTimer = 1f /context.frogBrain.frogSO.logicSO.attackSpeed;
         }
-        context.animator.SetTrigger("OnTracking");
+        if (!context.animator.GetCurrentAnimatorStateInfo(0).IsName("OnTracking"))
+        {
+            context.animator.SetTrigger("OnTracking");
+        }
+        
     }
 
     protected override void OnStop() {
