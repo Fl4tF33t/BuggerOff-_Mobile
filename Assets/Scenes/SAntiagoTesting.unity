@@ -1364,7 +1364,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &284271455
 Transform:
   m_ObjectHideFlags: 0
@@ -2884,6 +2884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frogSO: {fileID: 11400000, guid: bcfcc51544396e846b4e974dec1e6b6b, type: 2}
   holdTimeDelay: 0
+  confirm: []
 --- !u!114 &737926111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3270,6 +3271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frogSO: {fileID: 11400000, guid: bcfcc51544396e846b4e974dec1e6b6b, type: 2}
   holdTimeDelay: 0
+  confirm: []
 --- !u!114 &866821255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16195,6 +16197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frogSO: {fileID: 11400000, guid: bcfcc51544396e846b4e974dec1e6b6b, type: 2}
   holdTimeDelay: 0
+  confirm: []
 --- !u!114 &1670953843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17826,6 +17829,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frogSO: {fileID: 11400000, guid: bcfcc51544396e846b4e974dec1e6b6b, type: 2}
   holdTimeDelay: 0
+  confirm: []
 --- !u!114 &2082218616
 MonoBehaviour:
   m_ObjectHideFlags: 0
