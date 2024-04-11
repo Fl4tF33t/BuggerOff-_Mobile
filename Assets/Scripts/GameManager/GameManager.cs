@@ -23,7 +23,7 @@ public class GameManager : Singleton<GameManager>
     private void Start()
     {
         base.Awake();
-        bugBits = 976000;
+        bugBits = 970;
 
         WaveSystem.Instance.OnLevelCompleted += () => SceneManager.LoadScene("WorldLevel"); 
 

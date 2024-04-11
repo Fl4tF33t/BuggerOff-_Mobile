@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -9,10 +10,12 @@ public class WheelManager : Singleton<WheelManager>, IBeginDragHandler, IEndDrag
 {
     //Movement of the wheel
     //public event Action<int> OnWheelIconChange;
-    public event Action<FrogSO> OnPlaceFrog;
+    public event Action<FrogSO, int> OnPlaceFrog;
 
     //public event Action OnButtonScroll;
     public event Action<string, int> OnWheelAnim;
+
+    public Action SetPrice;
 
     //Visuals of the buttons
     private FrogSO[] frogPool;
@@ -43,6 +46,7 @@ public class WheelManager : Singleton<WheelManager>, IBeginDragHandler, IEndDrag
         }
 
         SetPriceText(frogPoolIndex);
+        SetPrice = () => { SetPriceText(frogPoolIndex); };
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -55,20 +59,21 @@ public class WheelManager : Singleton<WheelManager>, IBeginDragHandler, IEndDrag
         {
             switch (results.Count)
             {
-            case 1:                
-                isSpinning = true;
-                pos = eventData.position;
-                break;
-            case 2:
-                isSpinning = false;
-                int frogPoolIndex = (this.frogPoolIndex + 1) % frogPool.Length;
-                if(GameManager.Instance.BugBits > frogPool[frogPoolIndex].logicSO.cost)
-                {
-                    OnPlaceFrog?.Invoke(frogPool[frogPoolIndex]);
-                }
-                break;
-            default:
-                break;
+                case 1:                
+                    isSpinning = true;
+                    pos = eventData.position;
+                    break;
+                case 2:
+                    isSpinning = false;
+                    int frogPoolIndex = (this.frogPoolIndex + 1) % frogPool.Length;
+                    
+                    if (GameManager.Instance.BugBits > frogPool[frogPoolIndex].logicSO.cost * NumberOfFrogs(frogPoolIndex))
+                    {
+                        OnPlaceFrog?.Invoke(frogPool[frogPoolIndex], NumberOfFrogs(frogPoolIndex));
+                    }
+                    break;
+                default:
+                    break;
             }
         }
         else isSpinning = false;
@@ -120,8 +125,22 @@ public class WheelManager : Singleton<WheelManager>, IBeginDragHandler, IEndDrag
 
     private void SetPriceText(int index)
     {
-        int priceTextIndex = index++ % frogShopData.Length;
-        priceText.text = frogPool[priceTextIndex].logicSO.cost.ToString();
+        int priceTextIndex = ++index % frogShopData.Length;
+        priceText.text = (frogPool[priceTextIndex].logicSO.cost * NumberOfFrogs(priceTextIndex)).ToString();
+    }
+    private int NumberOfFrogs(int index)
+    {
+        int num = 1;
+        FrogBrain[] objects = FindObjectsOfType<FrogBrain>(); // Find all GameObjects in the scene
+
+        foreach (FrogBrain obj in objects)
+        {
+            if (obj.frogSO.name == frogPool[index].name)
+            {
+                num++;
+            }
+        } 
+        return num;
     }
 
     public void OnScrollUp()
