@@ -37,7 +37,7 @@ public class LogicSO : ScriptableObject
         [Min(0)]
         public T amount;
         [Min(0)]
-        public T price;
+        public int price;
     }
 
     [Serializable]

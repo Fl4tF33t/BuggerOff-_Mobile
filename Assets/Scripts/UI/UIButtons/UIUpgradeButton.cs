@@ -55,6 +55,7 @@ public class UIUpgradeButton : UIButtonManager
             case "Damage":
                 if (frogBrain.frogUpgrade.damageLevel >= 0 && frogBrain.frogUpgrade.damageLevel <= 5 && (GameManager.Instance.BugBits-frogBrain.frogSO.logicSO.upgradeDamage.price)>=0)
                 {
+                    GameManager.Instance.BugBitsChange?.Invoke(frogBrain.frogSO.logicSO.upgradeDamage.price);
                     frogBrain.frogUpgrade.damageLevel++;
                     switch (frogBrain.frogUpgrade.damageLevel)
                     {
@@ -87,7 +88,7 @@ public class UIUpgradeButton : UIButtonManager
             case "Attack Speed":
                 if (frogBrain.frogUpgrade.attackSpeedLevel >= 0 && frogBrain.frogUpgrade.attackSpeedLevel <= 5 && (GameManager.Instance.BugBits - frogBrain.frogSO.logicSO.upgradeAttackSpeed.price) >= 0)
                 {
-                    
+                    GameManager.Instance.BugBitsChange?.Invoke(frogBrain.frogSO.logicSO.upgradeAttackSpeed.price);
                     frogBrain.frogUpgrade.attackSpeedLevel++;
                     switch (frogBrain.frogUpgrade.attackSpeedLevel)
                     {
@@ -119,7 +120,7 @@ public class UIUpgradeButton : UIButtonManager
             case "Discipline":
                 if (frogBrain.frogUpgrade.disciplineLevel >= 0 && frogBrain.frogUpgrade.disciplineLevel <= 5 && (GameManager.Instance.BugBits - frogBrain.frogSO.logicSO.upgradeDiscipline.price) >= 0)
                 {
-                    
+                    GameManager.Instance.BugBitsChange?.Invoke(frogBrain.frogSO.logicSO.upgradeDiscipline.price);
                     frogBrain.frogUpgrade.disciplineLevel++;
                     switch (frogBrain.frogUpgrade.disciplineLevel)
                     {
@@ -151,7 +152,7 @@ public class UIUpgradeButton : UIButtonManager
             case "Range":
                 if (frogBrain.frogUpgrade.rangeLevel >= 0 && frogBrain.frogUpgrade.rangeLevel <= 5 && (GameManager.Instance.BugBits - frogBrain.frogSO.logicSO.upgradeRange.price) >= 0)
                 {
-                    
+                    GameManager.Instance.BugBitsChange?.Invoke(frogBrain.frogSO.logicSO.upgradeRange.price);
                     frogBrain.frogUpgrade.rangeLevel++;
                     switch (frogBrain.frogUpgrade.rangeLevel)
                     {
