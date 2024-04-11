@@ -63,9 +63,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: OnTracking
     m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: OnIdling
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6328207693316882502}
   m_Solo: 0
