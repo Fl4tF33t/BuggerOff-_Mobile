@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Cairo/WorldLevel.unity
+    path: Assets/Scenes/Menus/WorldLevel.unity
     guid: a25abfae8443f3540a1aa98ae880ba36
   - enabled: 1
     path: Assets/Scenes/Cairo/CairoLvl1.unity
