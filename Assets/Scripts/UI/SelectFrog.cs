@@ -30,7 +30,11 @@ public class SelectFrog : MonoBehaviour
         }
         else
         {
-           upgrade.gameObject.SetActive(false);
+            upgrade.gameObject.SetActive(false);
+            upgrade.transform.Find("DamageConfirm").gameObject.SetActive(false);
+            upgrade.transform.Find("AttackSpeedConfirm").gameObject.SetActive(false);
+            upgrade.transform.Find("RangeConfirm").gameObject.SetActive(false);
+            upgrade.transform.Find("DisciplineConfirm").gameObject.SetActive(false);
         }
     }
 
