@@ -7,12 +7,22 @@ using UnityEngine.Rendering.Universal;
 public class GlobalLogic : MonoBehaviour
 {
     [SerializeField]
-    private UniversalRendererData universalRendererData;
+    private UniversalRendererData Frozen;
+    [SerializeField]
+    private GameObject Fog;
+    [SerializeField]
+    private GameObject Rain;
 
     private void Start()
     {
-        Debug.Log(universalRendererData.rendererFeatures);
-        universalRendererData.rendererFeatures[0].SetActive(true);
+        //    Debug.Log(Frozen.rendererFeatures);
+        //    Frozen.rendererFeatures[0].SetActive(true);
+
+        //switch (switch_on)
+        //{
+            
+        //}
     }
+
 
 }
