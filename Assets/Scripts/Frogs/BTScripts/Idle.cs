@@ -6,7 +6,11 @@ using TheKiwiCoder;
 public class Idle : ActionNode
 {
     protected override void OnStart() {
-        context.animator.SetBool("OnIdling", true);
+
+        if (!context.animator.GetCurrentAnimatorStateInfo(0).IsName("OnIdling"))
+        {
+            context.animator.SetTrigger("OnIdling");
+        }
     }
 
     protected override void OnStop() {
