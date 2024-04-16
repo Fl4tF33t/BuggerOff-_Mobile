@@ -11,7 +11,7 @@ public class BugMovement : MonoBehaviour
     private NavMeshAgent agent;
     private int currentWaypointIndex = 0;
 
-    [HideInInspector]
+    //[HideInInspector]
     public int pathIndex;
 
     private void Awake()
@@ -67,6 +67,6 @@ public class BugMovement : MonoBehaviour
 
         // Set the next waypoint as the destination
         agent.SetDestination(PathManager.Instance.paths[pathIndex].waypoints[currentWaypointIndex].position);
-    }
 
+    }
 }

@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Scarab
   m_EditorClassIdentifier: 
   bugName: Scarab
-  health: 400
-  sheild: 40
+  health: 500
+  sheild: 50
   moneyDrop: 50
   damageToPlayer: 2
-  speed: 0.3
+  speed: 0.5
   angularSpeed: 1000
   acceleration: 20
   stoppingDistance: 0

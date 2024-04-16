@@ -200,7 +200,7 @@ public class UIUpgradeButton : UIButtonManager
                         confirm[2].gameObject.SetActive(false);
                         if (frogBrain.frogUpgrade.rangeLevel >= 0 && frogBrain.frogUpgrade.rangeLevel <= 5 && (GameManager.Instance.BugBits - frogBrain.frogSO.logicSO.upgradeRange.price) >= 0)
                         {
-                            GameManager.Instance.BugBitsChange?.Invoke(frogBrain.frogSO.logicSO.upgradeRange.price);
+                            GameManager.Instance.BugBitsChange?.Invoke(-frogBrain.frogSO.logicSO.upgradeRange.price);
                             frogBrain.frogUpgrade.rangeLevel++;
                             switch (frogBrain.frogUpgrade.rangeLevel)
                             {

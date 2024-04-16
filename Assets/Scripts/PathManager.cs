@@ -8,6 +8,8 @@ public class PathManager : Singleton<PathManager>
     //This is a list of all the waypoints in the scene, have them public for the ai to reference
     private Transform[] transformArray;
 
+    private const string WAYPOINT = "Waypoint";
+
     [Serializable]
     public class WayPoints
     {
@@ -26,15 +28,15 @@ public class PathManager : Singleton<PathManager>
 
         //Add the waypoints to the correct list
         transformArray = GetComponentsInChildren<Transform>();
-        foreach (Transform transform in transformArray)
+
+        for (int i = 0; i < paths.Length; i++)
         {
-            if (transform.tag == "Waypoint1")
+            foreach (Transform t in transformArray)
             {
-                paths[0].waypoints.Add(transform);
-            }
-            else if (transform.tag == "Waypoint2")
-            {
-                paths[1].waypoints.Add(transform);
+                if (t.tag == $"{WAYPOINT}{i + 1}")
+                {
+                    paths[i].waypoints.Add(t);
+                } 
             }
         }
     }

@@ -18,6 +18,7 @@ public class WaveSystem : Singleton<WaveSystem>
     private int currentWave;
     private int index; 
     private float timer;
+    private int pathIndex;
 
     public int Wave {  get { return currentWave; } }
 
@@ -43,10 +44,13 @@ public class WaveSystem : Singleton<WaveSystem>
         yield return new WaitForSeconds(timer);
 
         // Trigger event to spawn enemies
-        SpawnBug(CSVReader.Instance.nodeDataArray[index].bugType, CSVReader.Instance.nodeDataArray[index].amount, CSVReader.Instance.nodeDataArray[index].path - 1);
+        SpawnBug(CSVReader.Instance.nodeDataArray[index].bugType, CSVReader.Instance.nodeDataArray[index].amount, pathIndex);
 
         // Move to the next enemy in the wave
         index++;
+
+        // switch between spawn points
+        pathIndex = (pathIndex + 1) % spawnablePositions.Length;
 
         // If there are more enemies in the wave, continue spawning
         if (index < CSVReader.Instance.nodeDataArray.Length)
@@ -79,6 +83,7 @@ public class WaveSystem : Singleton<WaveSystem>
             GameObject bug = ObjectPool.Instance.GetPooledObject(bugType); // Get a bug object from the object pool
             if (bug != null)
             {
+                path = (path + i) % spawnablePositions.Length;
                 bug.transform.position = spawnablePositions[path].position; // Set bug position
                 bug.transform.rotation = Quaternion.identity; // Reset bug rotation
                 bug.GetComponent<BugMovement>().pathIndex = path;
