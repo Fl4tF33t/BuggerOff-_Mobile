@@ -51,13 +51,13 @@ public class ProjectileLogic : MonoBehaviour
                     if (cols[i].gameObject.TryGetComponent(out IBugTakeDamage AOEDamage))
                     {
                         AOEDamage.BugTakeDamage(damage);
+                        animator.SetTrigger("OnExplode");
                     }
                 }
                 break;
         }
         // Destroy the projectile upon collision
         rb.isKinematic = true;
-        animator.SetTrigger("OnExplode");
     }
 
     private void OnBecameInvisible()
