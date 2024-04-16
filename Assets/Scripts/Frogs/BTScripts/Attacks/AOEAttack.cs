@@ -29,11 +29,16 @@ public class AOEAttack : ActionNode
         {
             if (hit.transform.TryGetComponent(out IBugTakeDamage obj))
             {
-                obj.BugTakeDamage(context.frogBrain.frog.damage);
                 if (context.gameObject.name.Contains("Desert"))
                 {
                     obj.BugSlow();
                 }
+                if (context.frogBrain.isBuffed)
+                {
+                    int damage = context.frogBrain.frog.damage + context.frogBrain.buffValue.damage;
+                    blackboard.selectedTarget.GetComponent<IBugTakeDamage>().BugTakeDamage(damage);
+                }
+                else obj.BugTakeDamage(context.frogBrain.frog.damage);
             }
         }
     }

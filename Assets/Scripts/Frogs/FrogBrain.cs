@@ -20,9 +20,11 @@ public class FrogBrain : MonoBehaviour
 
     public FrogSO frogSO;
     public Frog frog = new Frog();
+
     public FrogUpgrade frogUpgrade = new FrogUpgrade();
+    public BuffValue buffValue = new BuffValue();
     [Serializable]
-    public class Frog
+    public struct Frog
     {
         public string frogName;
         public int discipline;
@@ -32,13 +34,20 @@ public class FrogBrain : MonoBehaviour
         public LogicSO.Target target;
     }
     [Serializable]
-    public class FrogUpgrade
+    public struct FrogUpgrade
     {
         public int disciplineLevel;
         public int damageLevel;
         public int rangeLevel;
         public int attackSpeedLevel;
     }
+    [Serializable]
+    public struct BuffValue
+    {
+        public int damage;
+        public float range;
+        public float attackSpeed;
+    } 
 
     //UpgradeUI variables 
     Transform canvas;
@@ -53,6 +62,8 @@ public class FrogBrain : MonoBehaviour
     //Tracking and targeting variables
     [HideInInspector]
     public Transform singleAttack;
+    [HideInInspector]
+    public bool isBuffed;
     
     private void Awake()
     {
@@ -93,5 +104,17 @@ public class FrogBrain : MonoBehaviour
         {
             sprite.color = color;
         }
+    }
+
+    private void Update()
+    {
+        if(isBuffed)
+        {
+            ChangeColor(Color.magenta);
+            //frog.damage = frog.damage + buffValue.damage;
+            //frog.range = frog.range + buffValue.range;
+            //frog.attackSpeed = frog.attackSpeed + buffValue.attackSpeed;
+        }
+        else ChangeColor(Color.white);
     }
 }

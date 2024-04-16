@@ -57,8 +57,13 @@ public class SingleAttack : ActionNode
             context.frogBrain.singleAttack.localScale += Vector3.down * Time.deltaTime * scaleSpeed;
             yield return null;
         }
-        if(blackboard.selectedTarget != null)
+        if(blackboard.selectedTarget != null || blackboard.selectedTarget.activeSelf)
         {
+            if(context.frogBrain.isBuffed)
+            {
+                int damage = context.frogBrain.frog.damage + context.frogBrain.buffValue.damage;
+                blackboard.selectedTarget.GetComponent<IBugTakeDamage>().BugTakeDamage(damage);
+            }else
             blackboard.selectedTarget.GetComponent<IBugTakeDamage>().BugTakeDamage(context.frogBrain.frog.damage);
         }
         endAnim = true;

@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c6f9b140a52a14881ec09eaebb66eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tree: {fileID: 11400000, guid: 86fe2f12ed9877b49aa8ef4baba11a16, type: 2}
+  tree: {fileID: 11400000, guid: 3e235abaf7ed8b743917a17517283374, type: 2}
 --- !u!195 &1384167459590466341
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -102,6 +102,7 @@ MonoBehaviour:
   projectilePos: {fileID: 0}
   projectile: {fileID: 0}
   singleAttack: {fileID: 0}
+  isBuffed: 0
 --- !u!135 &6162405890025491135
 SphereCollider:
   m_ObjectHideFlags: 0
