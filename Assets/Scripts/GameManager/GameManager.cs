@@ -27,7 +27,7 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
-        bugBits = 970;
+        bugBits = 9000;
 
         WaveSystem.Instance.OnLevelCompleted += () => OnLevelCompleted(); 
 
