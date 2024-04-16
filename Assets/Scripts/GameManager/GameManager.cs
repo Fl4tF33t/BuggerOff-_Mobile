@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Diagnostics.CodeAnalysis;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -11,6 +12,10 @@ public class GameManager : Singleton<GameManager>
     private int health;
     [SerializeField]
     private int bugBits;
+
+    //Santiago
+    [SerializeField] private GameObject _levelEnd;
+    
 
     public Action<int> HealthChange;
     public Action<int> BugBitsChange;
@@ -22,16 +27,42 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
-        base.Awake();
         bugBits = 970;
 
-        WaveSystem.Instance.OnLevelCompleted += () => SceneManager.LoadScene("WorldLevel"); 
+        WaveSystem.Instance.OnLevelCompleted += () => OnLevelCompleted(); 
 
         HealthChange = (amount) => { health += amount; OnUIChange?.Invoke();
             if (health <= 0)
-            { SceneManager.LoadScene("WorldLevel"); }
+            { OnLevelLose(); }
         };
         BugBitsChange = (amount) => { bugBits += amount; OnUIChange?.Invoke(); };
+    }
+
+    public void OnLevelCompleted()
+    {
+        _levelEnd.SetActive(true);
+        LevelCompletion.Instance.Victory(GetAmountOfStars());
+    }
+
+    private int GetAmountOfStars()
+    {
+        if (health > 9)
+        {
+            return 3;
+        }
+        else if (health >= 6)
+        {
+            return 2;
+        }
+        else
+        {
+            return 1;
+        }        
+    }
+
+    public void OnLevelLose()
+    {
+        LevelCompletion.Instance.GameOver();
     }
 
 }
