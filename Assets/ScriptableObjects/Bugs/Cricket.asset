@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cricket
   m_EditorClassIdentifier: 
   bugName: Cricket
-  health: 30
+  health: 60
   sheild: 0
   moneyDrop: 10
   damageToPlayer: 1
