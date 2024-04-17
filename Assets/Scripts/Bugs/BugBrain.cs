@@ -28,6 +28,9 @@ public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
     private void OnEnable()
     {
         InitializeBugLogic(bugSO);
+        StopAllCoroutines();
+        ChangeColor(Color.white);   
+        agent.speed = bugSO.speed;
     }
 
     private void InitializeBugLogic(BugSO bugSO)
