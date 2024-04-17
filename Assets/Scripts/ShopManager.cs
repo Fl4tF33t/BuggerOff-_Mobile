@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
 {
@@ -22,6 +23,8 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
 
     private Coroutine placeFrogCoroutine;
     private int number;
+
+    public GameObject CancelPlaceingButton;
 
     private void Start()
     {
@@ -44,6 +47,11 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
         InputManager.Instance.OnTouchPressCanceled += Instance_OnTouchPressCanceled;
 
         OnSetShopOnOff = state => { animator.SetBool("OnStoreClick", state); };
+
+        CancelPlaceingButton.GetComponent<Button>().onClick.AddListener(() => {Destroy(selectedFrogPrefab);
+            selectedFrogPrefab = null;
+            CancelPlaceingButton.SetActive(false);
+        });
     }
     
 
@@ -55,6 +63,7 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
         frogSO = obj;
         selectedFrogPrefab = Instantiate(obj.prefab, new Vector3(6.2f, 0, -2.5f), Quaternion.identity);
 
+        CancelPlaceingButton.SetActive(true);
         StopCoroutineTarget(placeFrogCoroutine);
         placeFrogCoroutine = StartCoroutine(PlaceFrog());
     }
@@ -96,6 +105,7 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
                 selectedFrogPrefab = null;
                 prefabPos = Vector3.zero;
                 WheelManager.Instance.SetPrice?.Invoke();
+                CancelPlaceingButton.SetActive(false);
             }
         }
     }
@@ -111,6 +121,7 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
             Destroy(selectedFrogPrefab);
             selectedFrogPrefab = null;
             frogSO = null;
+            CancelPlaceingButton.SetActive(false);
             prefabPos = Vector3.zero;
         }
     }
