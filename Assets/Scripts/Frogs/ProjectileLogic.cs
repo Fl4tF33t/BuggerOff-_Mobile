@@ -51,9 +51,9 @@ public class ProjectileLogic : MonoBehaviour
                     if (cols[i].gameObject.TryGetComponent(out IBugTakeDamage AOEDamage))
                     {
                         AOEDamage.BugTakeDamage(damage);
-                        animator.SetTrigger("OnExplode");
                     }
                 }
+                animator.SetTrigger("OnExplode");
                 break;
         }
         // Destroy the projectile upon collision
