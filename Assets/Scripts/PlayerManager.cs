@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -10,6 +11,15 @@ public class PlayerManager : Singleton<PlayerManager>
     {
         frogLayer = LayerMask.GetMask("Frog");
         InputManager.Instance.OnTouchTap += InputManager_OnTouchTap;
+        ShopManager.Instance.OnShopOnOff += () => {
+            Debug.Log("Test");
+            if (frogBrain != null)
+            {
+
+                frogBrain.OnUpgradeUI(false);
+                frogBrain = null;
+            }
+        };
     }
 
     void InputManager_OnTouchTap(Vector2 obj)
@@ -30,6 +40,7 @@ public class PlayerManager : Singleton<PlayerManager>
             // Get the GameObject hit by the raycast
             frogBrain = hit.collider.gameObject.GetComponent<FrogBrain>();
             frogBrain.OnUpgradeUI(true);
+
         }
         else
         {

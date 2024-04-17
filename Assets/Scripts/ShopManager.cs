@@ -9,6 +9,7 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
     public FrogSO[] frogPool = new FrogSO[8];
 
     public Action<bool> OnSetShopOnOff;
+    public event Action OnShopOnOff;
 
     private FrogSO frogSO;
     private GameObject selectedFrogPrefab;
@@ -102,7 +103,9 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         OnSetShopOnOff(false);
-        if(selectedFrogPrefab != null)
+
+        OnShopOnOff?.Invoke();
+        if (selectedFrogPrefab != null)
         {
             StopCoroutineTarget(placeFrogCoroutine);
             Destroy(selectedFrogPrefab);
