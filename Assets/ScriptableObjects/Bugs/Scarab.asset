@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Scarab
   m_EditorClassIdentifier: 
   bugName: Scarab
-  health: 350
+  health: 400
   sheild: 50
   moneyDrop: 75
   damageToPlayer: 2

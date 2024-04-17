@@ -15,7 +15,7 @@ MonoBehaviour:
   bugName: Shield bug
   health: 10
   sheild: 100
-  moneyDrop: 15
+  moneyDrop: 20
   damageToPlayer: 1
   speed: 0.8
   angularSpeed: 1000

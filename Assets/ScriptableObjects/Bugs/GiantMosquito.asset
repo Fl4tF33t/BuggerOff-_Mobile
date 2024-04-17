@@ -15,7 +15,7 @@ MonoBehaviour:
   bugName: Giant mosquito
   health: 100
   sheild: 0
-  moneyDrop: 20
+  moneyDrop: 25
   damageToPlayer: 1
   speed: 1.2
   angularSpeed: 1000

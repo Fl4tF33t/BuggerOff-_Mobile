@@ -16,7 +16,7 @@ MonoBehaviour:
   cost: 69
   discipline: 1
   damage: 5
-  range: 1.5
+  range: 1.3
   attackSpeed: 2
   targetLayer:
     serializedVersion: 2
