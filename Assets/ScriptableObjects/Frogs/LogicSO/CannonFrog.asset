@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26edbd5c9da1059458ca2ae32fef5b40, type: 3}
   m_Name: CannonFrog
   m_EditorClassIdentifier: 
-  frogName: Cannon frog
+  frogName: Cannon
   cost: 250
   discipline: 2
   damage: 20
