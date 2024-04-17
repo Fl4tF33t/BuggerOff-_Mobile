@@ -45,7 +45,7 @@ public class UIUpgradeButton : UIButtonManager
                     case false:
                         confirm[0].gameObject.SetActive(true); confirm[1].gameObject.SetActive(false); confirm[2].gameObject.SetActive(false); confirm[3].gameObject.SetActive(false);
                         confirm[0].rectTransform.rotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
-                        confirm[0].transform.Find("Price").GetComponent<TextMeshProUGUI>().text = frogBrain.frogSO.logicSO.upgradeDamage.price.ToString();
+                        confirm[0].transform.Find("Price").GetComponent<TextMeshProUGUI>().text = frogBrain.frogSO.logicSO.upgradeDamage.price.ToString() + " <sprite name=BugBits>";
                         confirm[0].transform.Find("Amount").GetComponent<TextMeshProUGUI>().text = frogBrain.frog.damage.ToString() + " --> " + (frogBrain.frogSO.logicSO.upgradeDamage.amount+ frogBrain.frog.damage).ToString();
                         break;
                     case true:
@@ -72,7 +72,7 @@ public class UIUpgradeButton : UIButtonManager
                     case false:
                         confirm[1].gameObject.SetActive(true); confirm[0].gameObject.SetActive(false); confirm[2].gameObject.SetActive(false); confirm[3].gameObject.SetActive(false);
                         confirm[1].rectTransform.rotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
-                        confirm[1].transform.Find("Price").GetComponent<TextMeshProUGUI>().text = frogBrain.frogSO.logicSO.upgradeAttackSpeed.price.ToString();
+                        confirm[1].transform.Find("Price").GetComponent<TextMeshProUGUI>().text = frogBrain.frogSO.logicSO.upgradeAttackSpeed.price.ToString() + " <sprite name=BugBits>";
                         confirm[1].transform.Find("Amount").GetComponent<TextMeshProUGUI>().text = frogBrain.frog.attackSpeed.ToString() + " --> " + (frogBrain.frogSO.logicSO.upgradeAttackSpeed.amount+ frogBrain.frog.attackSpeed).ToString();
                         break;
                     case true:
@@ -98,7 +98,7 @@ public class UIUpgradeButton : UIButtonManager
                     case false:
                         confirm[3].gameObject.SetActive(true); confirm[1].gameObject.SetActive(false); confirm[2].gameObject.SetActive(false); confirm[0].gameObject.SetActive(false);
                         confirm[3].rectTransform.rotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
-                        confirm[3].transform.Find("Price").GetComponent<TextMeshProUGUI>().text = frogBrain.frogSO.logicSO.upgradeDiscipline.price.ToString();
+                        confirm[3].transform.Find("Price").GetComponent<TextMeshProUGUI>().text = frogBrain.frogSO.logicSO.upgradeDiscipline.price.ToString() + " <sprite name=BugBits>";
                         confirm[3].transform.Find("Amount").GetComponent<TextMeshProUGUI>().text = frogBrain.frog.discipline.ToString() + " --> " + (frogBrain.frogSO.logicSO.upgradeDiscipline.amount + frogBrain.frog.discipline).ToString();
                         break;
                     case true:
@@ -124,7 +124,7 @@ public class UIUpgradeButton : UIButtonManager
                     case false:
                         confirm[2].gameObject.SetActive(true); confirm[1].gameObject.SetActive(false); confirm[0].gameObject.SetActive(false); confirm[3].gameObject.SetActive(false);
                         confirm[2].rectTransform.rotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
-                        confirm[2].transform.Find("Price").GetComponent<TextMeshProUGUI>().text = frogBrain.frogSO.logicSO.upgradeRange.price.ToString();
+                        confirm[2].transform.Find("Price").GetComponent<TextMeshProUGUI>().text = frogBrain.frogSO.logicSO.upgradeRange.price.ToString() + " <sprite name=BugBits>";
                         confirm[2].transform.Find("Amount").GetComponent<TextMeshProUGUI>().text = $"{frogBrain.frog.range} -->  {frogBrain.frogSO.logicSO.upgradeRange.amount+ frogBrain.frog.range}";
                         break;
                     case true:
