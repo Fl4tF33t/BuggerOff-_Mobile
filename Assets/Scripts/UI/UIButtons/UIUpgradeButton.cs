@@ -26,24 +26,7 @@ public class UIUpgradeButton : UIButtonManager
         if (this.gameObject.name=="Discipline")
         {
             frogBrain.frogUpgrade.disciplineLevel = frogBrain.frog.discipline;
-            switch (frogBrain.frogUpgrade.disciplineLevel)
-            {
-                case 1:
-                    upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.disciplineLevel];
-                    break;
-                case 2:
-                    upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.disciplineLevel];
-                    break;
-                case 3:
-                    upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.disciplineLevel];
-                    break;
-                case 4:
-                    upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.disciplineLevel];
-                    break;
-                case 5:
-                    upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.disciplineLevel];
-                    break;
-            }
+            upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.disciplineLevel];
             if (frogBrain.frogUpgrade.disciplineLevel == 5)
             {
                 //can also make the button itself non-interactable..if using button, dont need the onpointer click interface
@@ -60,7 +43,7 @@ public class UIUpgradeButton : UIButtonManager
                 switch (confirm[0].gameObject.activeSelf)
                 {
                     case false:
-                        confirm[0].gameObject.SetActive(true);
+                        confirm[0].gameObject.SetActive(true); confirm[1].gameObject.SetActive(false); confirm[2].gameObject.SetActive(false); confirm[3].gameObject.SetActive(false);
                         confirm[0].rectTransform.rotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
                         confirm[0].transform.Find("Price").GetComponent<TextMeshProUGUI>().text = frogBrain.frogSO.logicSO.upgradeDamage.price.ToString();
                         confirm[0].transform.Find("Amount").GetComponent<TextMeshProUGUI>().text = frogBrain.frog.damage.ToString() + " --> " + (frogBrain.frogSO.logicSO.upgradeDamage.amount+ frogBrain.frog.damage).ToString();
@@ -71,26 +54,8 @@ public class UIUpgradeButton : UIButtonManager
                         {
                             GameManager.Instance.BugBitsChange?.Invoke(-frogBrain.frogSO.logicSO.upgradeDamage.price);
                             frogBrain.frogUpgrade.damageLevel++;
-                            switch (frogBrain.frogUpgrade.damageLevel)
-                            {
-                                case 0:
-                                    break;
-                                case 1:
-                                    upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.damageLevel];
-                                    break;
-                                case 2:
-                                    upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.damageLevel];
-                                    break;
-                                case 3:
-                                    upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.damageLevel];
-                                    break;
-                                case 4:
-                                    upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.damageLevel];
-                                    break;
-                                case 5:
-                                    upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.damageLevel];
-                                    break;
-                            }
+                            upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.damageLevel];
+
                             frogBrain.frog.damage += frogBrain.frogSO.logicSO.upgradeDamage.amount;
                             if (frogBrain.frogUpgrade.damageLevel == 5)
                             {
@@ -105,7 +70,7 @@ public class UIUpgradeButton : UIButtonManager
                 switch (confirm[1].gameObject.activeSelf)
                 {
                     case false:
-                        confirm[1].gameObject.SetActive(true);
+                        confirm[1].gameObject.SetActive(true); confirm[0].gameObject.SetActive(false); confirm[2].gameObject.SetActive(false); confirm[3].gameObject.SetActive(false);
                         confirm[1].rectTransform.rotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
                         confirm[1].transform.Find("Price").GetComponent<TextMeshProUGUI>().text = frogBrain.frogSO.logicSO.upgradeAttackSpeed.price.ToString();
                         confirm[1].transform.Find("Amount").GetComponent<TextMeshProUGUI>().text = frogBrain.frog.attackSpeed.ToString() + " --> " + (frogBrain.frogSO.logicSO.upgradeAttackSpeed.amount+ frogBrain.frog.attackSpeed).ToString();
@@ -116,24 +81,7 @@ public class UIUpgradeButton : UIButtonManager
                         {
                             GameManager.Instance.BugBitsChange?.Invoke(-frogBrain.frogSO.logicSO.upgradeAttackSpeed.price);
                             frogBrain.frogUpgrade.attackSpeedLevel++;
-                            switch (frogBrain.frogUpgrade.attackSpeedLevel)
-                            {
-                                case 1:
-                                    upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.attackSpeedLevel];
-                                    break;
-                                case 2:
-                                    upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.attackSpeedLevel];
-                                    break;
-                                case 3:
-                                    upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.attackSpeedLevel];
-                                    break;
-                                case 4:
-                                    upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.attackSpeedLevel];
-                                    break;
-                                case 5:
-                                    upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.attackSpeedLevel];
-                                    break;
-                            }
+                            upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.attackSpeedLevel];
                             frogBrain.frog.attackSpeed += frogBrain.frogSO.logicSO.upgradeAttackSpeed.amount;
                             if (frogBrain.frogUpgrade.attackSpeedLevel == 5)
                             {
@@ -148,7 +96,7 @@ public class UIUpgradeButton : UIButtonManager
                 switch (confirm[3].gameObject.activeSelf)
                 {
                     case false:
-                        confirm[3].gameObject.SetActive(true);
+                        confirm[3].gameObject.SetActive(true); confirm[1].gameObject.SetActive(false); confirm[2].gameObject.SetActive(false); confirm[0].gameObject.SetActive(false);
                         confirm[3].rectTransform.rotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
                         confirm[3].transform.Find("Price").GetComponent<TextMeshProUGUI>().text = frogBrain.frogSO.logicSO.upgradeDiscipline.price.ToString();
                         confirm[3].transform.Find("Amount").GetComponent<TextMeshProUGUI>().text = frogBrain.frog.discipline.ToString() + " --> " + (frogBrain.frogSO.logicSO.upgradeDiscipline.amount + frogBrain.frog.discipline).ToString();
@@ -159,24 +107,7 @@ public class UIUpgradeButton : UIButtonManager
                         {
                             GameManager.Instance.BugBitsChange?.Invoke(-frogBrain.frogSO.logicSO.upgradeDiscipline.price);
                             frogBrain.frogUpgrade.disciplineLevel++;
-                            switch (frogBrain.frogUpgrade.disciplineLevel)
-                            {
-                                case 1:
-                                    upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.disciplineLevel];
-                                    break;
-                                case 2:
-                                    upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.disciplineLevel];
-                                    break;
-                                case 3:
-                                    upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.disciplineLevel];
-                                    break;
-                                case 4:
-                                    upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.disciplineLevel];
-                                    break;
-                                case 5:
-                                    upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.disciplineLevel];
-                                    break;
-                            }
+                            upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.disciplineLevel];
                             frogBrain.frog.discipline += frogBrain.frogSO.logicSO.upgradeDiscipline.amount;
                             if (frogBrain.frogUpgrade.disciplineLevel == 5)
                             {
@@ -191,7 +122,7 @@ public class UIUpgradeButton : UIButtonManager
                 switch (confirm[2].gameObject.activeSelf)
                 {
                     case false:
-                        confirm[2].gameObject.SetActive(true);
+                        confirm[2].gameObject.SetActive(true); confirm[1].gameObject.SetActive(false); confirm[0].gameObject.SetActive(false); confirm[3].gameObject.SetActive(false);
                         confirm[2].rectTransform.rotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
                         confirm[2].transform.Find("Price").GetComponent<TextMeshProUGUI>().text = frogBrain.frogSO.logicSO.upgradeRange.price.ToString();
                         confirm[2].transform.Find("Amount").GetComponent<TextMeshProUGUI>().text = $"{frogBrain.frog.range} -->  {frogBrain.frogSO.logicSO.upgradeRange.amount+ frogBrain.frog.range}";
@@ -202,24 +133,7 @@ public class UIUpgradeButton : UIButtonManager
                         {
                             GameManager.Instance.BugBitsChange?.Invoke(-frogBrain.frogSO.logicSO.upgradeRange.price);
                             frogBrain.frogUpgrade.rangeLevel++;
-                            switch (frogBrain.frogUpgrade.rangeLevel)
-                            {
-                                case 1:
-                                    upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.rangeLevel];
-                                    break;
-                                case 2:
-                                    upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.rangeLevel];
-                                    break;
-                                case 3:
-                                    upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.rangeLevel];
-                                    break;
-                                case 4:
-                                    upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.rangeLevel];
-                                    break;
-                                case 5:
-                                    upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.rangeLevel];
-                                    break;
-                            }
+                            upgradeSprite.sprite = sprites[frogBrain.frogUpgrade.rangeLevel];
                             frogBrain.frog.range += frogBrain.frogSO.logicSO.upgradeRange.amount;
                             if (frogBrain.frogUpgrade.rangeLevel == 5)
                             {
