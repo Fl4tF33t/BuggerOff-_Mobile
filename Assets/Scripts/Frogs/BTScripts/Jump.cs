@@ -23,16 +23,16 @@ public class Jump : ActionNode
         context.agent.enabled = true;
     }
 
-    private void Track(Vector3 position)
+    private void Track(Vector3 target)
     {
-        Vector3 targetDirection = position - context.transform.position;
+        Vector3 targetDirection = target - context.transform.position;
         targetDirection.y = 0; // Restrict rotation to the XZ plane
 
         // Calculate the desired rotation based on the direction
         Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
 
         // Apply the rotation only on the Y-axis
-        context.transform.rotation = Quaternion.RotateTowards(context.transform.rotation, targetRotation, rotationThreshold);
+        context.transform.rotation = Quaternion.RotateTowards(context.transform.rotation, targetRotation, 200f * Time.deltaTime);
 
         // Check if the rotation is correct
         float angleDifference = Quaternion.Angle(context.transform.rotation, targetRotation);

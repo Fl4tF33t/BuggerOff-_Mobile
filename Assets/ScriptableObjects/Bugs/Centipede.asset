@@ -15,7 +15,7 @@ MonoBehaviour:
   bugName: Centipede
   health: 1200
   sheild: 0
-  moneyDrop: 70
+  moneyDrop: 100
   damageToPlayer: 3
   speed: 0.2
   angularSpeed: 1000

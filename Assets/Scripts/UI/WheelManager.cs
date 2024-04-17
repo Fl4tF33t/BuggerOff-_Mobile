@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -54,7 +52,7 @@ public class WheelManager : Singleton<WheelManager>, IBeginDragHandler, IEndDrag
         List<RaycastResult> results = new List<RaycastResult>();
         eventSystem.RaycastAll(eventData, results);
         bool animatorStateShopUP = animator.GetCurrentAnimatorStateInfo(0).IsTag("Open");
-        Debug.Log("Animator state: " + animatorStateShopUP);
+
         if (!animatorStateShopUP)
         {
             switch (results.Count)
@@ -93,9 +91,9 @@ public class WheelManager : Singleton<WheelManager>, IBeginDragHandler, IEndDrag
                 OnWheelAnim?.Invoke("Up", frogPoolIndex);
 
                 frogPoolIndex = (frogPoolIndex + 1) % frogPool.Length;
-                SetPriceText(frogPoolIndex);
                 SetFrogShopData();
-                
+                SetPriceText(frogPoolIndex);
+
             }
             else
             {
@@ -106,8 +104,8 @@ public class WheelManager : Singleton<WheelManager>, IBeginDragHandler, IEndDrag
                 {
                     frogPoolIndex = frogPool.Length - 1;                    
                 }
-                SetPriceText(frogPoolIndex);
                 SetFrogShopData();
+                SetPriceText(frogPoolIndex);
             }
         }
     }
@@ -125,8 +123,10 @@ public class WheelManager : Singleton<WheelManager>, IBeginDragHandler, IEndDrag
 
     private void SetPriceText(int index)
     {
-        int priceTextIndex = ++index % frogShopData.Length;
-        priceText.text = (frogPool[priceTextIndex].logicSO.cost * NumberOfFrogs(priceTextIndex)).ToString();
+        index = (index + 1) % frogPool.Length;
+        
+        priceText.text = (frogPool[index].logicSO.cost * NumberOfFrogs(index)).ToString();
+        Debug.Log(index);
     }
     private int NumberOfFrogs(int index)
     {
@@ -135,7 +135,7 @@ public class WheelManager : Singleton<WheelManager>, IBeginDragHandler, IEndDrag
 
         foreach (FrogBrain obj in objects)
         {
-            if (obj.frogSO.name == frogPool[index].name)
+            if (obj.frogSO.name.Contains(frogPool[index].name)) 
             {
                 num++;
             }
@@ -149,9 +149,9 @@ public class WheelManager : Singleton<WheelManager>, IBeginDragHandler, IEndDrag
         OnWheelAnim?.Invoke("Up", frogPoolIndex);
 
         frogPoolIndex = (frogPoolIndex + 1) % frogPool.Length;
-
-        SetPriceText(frogPoolIndex);
+        
         SetFrogShopData();
+        SetPriceText(frogPoolIndex);
     }
 
     public void OnScrollDown()
@@ -164,9 +164,8 @@ public class WheelManager : Singleton<WheelManager>, IBeginDragHandler, IEndDrag
         {
             frogPoolIndex = frogPool.Length - 1;
         }
-
-        SetPriceText(frogPoolIndex);
         SetFrogShopData();
+        SetPriceText(frogPoolIndex);
     }
 
 }

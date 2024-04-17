@@ -10,18 +10,16 @@ public class FindJumpLocation : ActionNode
 
     private Vector3 jumpLocation;
     protected override void OnStart() {
-        jumpLocation = RandomPointOnCircleEdge(context.transform.position, 4f);
-
-        while (!IsValidLocation(jumpLocation))
+        do
         {
             jumpLocation = RandomPointOnCircleEdge(context.transform.position, 4f);
-            if (IsValidLocation(jumpLocation))
-            {
-                blackboard.jumpLocation = jumpLocation;
-            }
-        }
+        } while (!IsValidLocation(jumpLocation));
+
+        // Once a valid location is found, assign it to blackboard.jumpLocation
+        blackboard.jumpLocation = jumpLocation;
     }
     protected override void OnStop() {
+        blackboard.jumpLocation = jumpLocation;
     }
 
     private Vector3 RandomPointOnCircleEdge(Vector3 center, float radius)

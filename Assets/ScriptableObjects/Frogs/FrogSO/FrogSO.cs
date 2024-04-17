@@ -23,6 +23,7 @@ public class FrogSO : ScriptableObject
         //set all of the relevant data for each of the frogs to have its current damage, range, etc.
         //Call this in the beginning of the main controller that uses the frog SO to initialise any of the needed data
         //additionally this can also be done in the class controller itself.
+        Debug.Log("Now init");
         frog.frogName = logicSO.frogName;
         frog.discipline = logicSO.discipline;
         frog.damage = logicSO.damage;

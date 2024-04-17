@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26edbd5c9da1059458ca2ae32fef5b40, type: 3}
   m_Name: SamuraiFrog
   m_EditorClassIdentifier: 
-  frogName: Samurai frog
-  cost: 500
+  frogName: Samurai
+  cost: 450
   discipline: 5
   damage: 10
-  range: 1
+  range: 1.3
   attackSpeed: 1.5
   targetLayer:
     serializedVersion: 2

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26edbd5c9da1059458ca2ae32fef5b40, type: 3}
   m_Name: DiverFrog
   m_EditorClassIdentifier: 
-  frogName: DiverFrog
+  frogName: Diver
   cost: 175
   discipline: 2
-  damage: 15
-  range: 2
+  damage: 20
+  range: 3
   attackSpeed: 0.5
   targetLayer:
     serializedVersion: 2

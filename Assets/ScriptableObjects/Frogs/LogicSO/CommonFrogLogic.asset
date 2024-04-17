@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26edbd5c9da1059458ca2ae32fef5b40, type: 3}
   m_Name: CommonFrogLogic
   m_EditorClassIdentifier: 
-  frogName: Common Frog
+  frogName: Common
   cost: 100
   discipline: 1
-  damage: 10
-  range: 1.5
+  damage: 15
+  range: 2
   attackSpeed: 1
   targetLayer:
     serializedVersion: 2

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hornet
   m_EditorClassIdentifier: 
   bugName: Hornet
-  health: 100
+  health: 150
   sheild: 0
   moneyDrop: 30
   damageToPlayer: 1

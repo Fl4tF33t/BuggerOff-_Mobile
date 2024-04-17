@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26edbd5c9da1059458ca2ae32fef5b40, type: 3}
   m_Name: SunglassesFrog
   m_EditorClassIdentifier: 
-  frogName: Sunglasses frog
-  cost: 200
+  frogName: Sunglasses
+  cost: 250
   discipline: 2
   damage: 15
-  range: 4
+  range: 3
   attackSpeed: 15
   targetLayer:
     serializedVersion: 2

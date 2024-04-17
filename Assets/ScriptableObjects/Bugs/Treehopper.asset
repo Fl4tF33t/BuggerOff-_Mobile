@@ -15,7 +15,7 @@ MonoBehaviour:
   bugName: Treehopper
   health: 300
   sheild: 0
-  moneyDrop: 40
+  moneyDrop: 50
   damageToPlayer: 3
   speed: 0.5
   angularSpeed: 1000
