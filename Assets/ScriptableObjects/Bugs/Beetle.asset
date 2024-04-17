@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Beetle
   m_EditorClassIdentifier: 
   bugName: Beetle
-  health: 200
+  health: 130
   sheild: 20
-  moneyDrop: 20
+  moneyDrop: 40
   damageToPlayer: 0
   speed: 0.5
   angularSpeed: 1000

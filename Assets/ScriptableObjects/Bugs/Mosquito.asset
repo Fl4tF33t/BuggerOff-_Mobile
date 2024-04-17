@@ -15,7 +15,7 @@ MonoBehaviour:
   bugName: Mosquito
   health: 10
   sheild: 0
-  moneyDrop: 10
+  moneyDrop: 15
   damageToPlayer: 1
   speed: 1.3
   angularSpeed: 1000
