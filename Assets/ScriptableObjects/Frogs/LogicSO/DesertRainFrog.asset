@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: DesertRainFrog
   m_EditorClassIdentifier: 
   frogName: Desert Rain Frog
-  cost: 200
+  cost: 150
   discipline: 1
   damage: 5
-  range: 1
+  range: 1.5
   attackSpeed: 1
   targetLayer:
     serializedVersion: 2
@@ -29,7 +29,7 @@ MonoBehaviour:
     amount: 2
     price: 80
   upgradeRange:
-    amount: 0.3
+    amount: 0.4
     price: 90
   upgradeAttackSpeed:
     amount: 0.2

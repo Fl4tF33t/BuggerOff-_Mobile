@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: SamuraiFrog
   m_EditorClassIdentifier: 
   frogName: Samurai frog
-  cost: 500
+  cost: 450
   discipline: 5
-  damage: 10
-  range: 1
+  damage: 15
+  range: 1.5
   attackSpeed: 1.5
   targetLayer:
     serializedVersion: 2

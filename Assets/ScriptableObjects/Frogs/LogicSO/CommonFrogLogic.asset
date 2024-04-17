@@ -15,8 +15,8 @@ MonoBehaviour:
   frogName: Common Frog
   cost: 100
   discipline: 1
-  damage: 10
-  range: 1.5
+  damage: 15
+  range: 2
   attackSpeed: 1
   targetLayer:
     serializedVersion: 2

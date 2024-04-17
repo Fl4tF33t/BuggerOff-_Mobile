@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: ForgFrog
   m_EditorClassIdentifier: 
   frogName: Forg
-  cost: 50
+  cost: 69
   discipline: 1
   damage: 5
-  range: 1
+  range: 1.5
   attackSpeed: 2
   targetLayer:
     serializedVersion: 2
@@ -29,7 +29,7 @@ MonoBehaviour:
     amount: 2
     price: 100
   upgradeRange:
-    amount: 0.2
+    amount: 0.3
     price: 85
   upgradeAttackSpeed:
     amount: 0.2

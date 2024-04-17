@@ -15,8 +15,8 @@ MonoBehaviour:
   frogName: Cannon frog
   cost: 250
   discipline: 2
-  damage: 10
-  range: 1.5
+  damage: 20
+  range: 2
   attackSpeed: 0.5
   targetLayer:
     serializedVersion: 2

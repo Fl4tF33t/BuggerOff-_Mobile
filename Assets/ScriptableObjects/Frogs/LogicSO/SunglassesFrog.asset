@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: SunglassesFrog
   m_EditorClassIdentifier: 
   frogName: Sunglasses frog
-  cost: 200
+  cost: 250
   discipline: 2
   damage: 15
-  range: 4
+  range: 3
   attackSpeed: 15
   targetLayer:
     serializedVersion: 2
