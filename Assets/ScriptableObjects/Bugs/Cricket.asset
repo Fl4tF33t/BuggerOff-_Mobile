@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Cricket
   m_EditorClassIdentifier: 
   bugName: Cricket
-  health: 60
+  health: 50
   sheild: 0
-  moneyDrop: 10
+  moneyDrop: 25
   damageToPlayer: 1
   speed: 0.7
   angularSpeed: 1000

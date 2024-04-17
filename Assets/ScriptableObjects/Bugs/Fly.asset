@@ -15,7 +15,7 @@ MonoBehaviour:
   bugName: Fly
   health: 20
   sheild: 0
-  moneyDrop: 5
+  moneyDrop: 10
   damageToPlayer: 1
   speed: 0.9
   angularSpeed: 1000
