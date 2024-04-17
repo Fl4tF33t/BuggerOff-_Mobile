@@ -14,6 +14,8 @@ public class WorldMapUIManager : MonoBehaviour
     [SerializeField] private Button _kyotoButton;
     [SerializeField] private Button _confirmButton;
 
+    [SerializeField] private Button _changeFrogs;
+
     [SerializeField] private Image _popUpCityInfo;
     [SerializeField] private WorldMapSO[] _citiesSO;
 
@@ -47,13 +49,14 @@ public class WorldMapUIManager : MonoBehaviour
         else
         {
             //SceneManager.LoadScene(_levelSelected);
-            SceneManager.LoadScene("CairoLvl1");
+            //SceneManager.LoadScene("CairoLvl1");
+            SceneLoadingManager.Instance.LoadSceneByString(_levelSelected);
         }
     }
 
     private void OnClosePopUp()
     {
-        UnselectCities();
+        UnSelectCities();
         _levelSelected = "";
         DisableButtons(true);
 
@@ -93,7 +96,7 @@ public class WorldMapUIManager : MonoBehaviour
 
     private void OnClickedLevel(WorldMapSO cityInfo, int levelSelected)
     {
-        UnselectCities();
+        UnSelectCities();
 
         _citiesSelected[levelSelected - 1].SetActive(true);
         _levelSelected = cityInfo.GetLevel(levelSelected);
@@ -119,7 +122,7 @@ public class WorldMapUIManager : MonoBehaviour
         }        
     }
 
-    private void UnselectCities()
+    private void UnSelectCities()
     {
         foreach (GameObject city in _citiesSelected)
         {
@@ -132,5 +135,6 @@ public class WorldMapUIManager : MonoBehaviour
         _londonButton.interactable = dissableButton;
         _cairoButton.interactable = dissableButton;
         _kyotoButton.interactable = dissableButton;
+        _changeFrogs.interactable = dissableButton;
     }
 }
