@@ -24,7 +24,7 @@ public class FrogBrain : MonoBehaviour
     public FrogUpgrade frogUpgrade = new FrogUpgrade();
     public BuffValue buffValue = new BuffValue();
     [Serializable]
-    public struct Frog
+    public class Frog
     {
         public string frogName;
         public int discipline;
@@ -34,7 +34,7 @@ public class FrogBrain : MonoBehaviour
         public LogicSO.Target target;
     }
     [Serializable]
-    public struct FrogUpgrade
+    public class FrogUpgrade
     {
         public int disciplineLevel;
         public int damageLevel;
@@ -42,7 +42,7 @@ public class FrogBrain : MonoBehaviour
         public int attackSpeedLevel;
     }
     [Serializable]
-    public struct BuffValue
+    public class BuffValue
     {
         public int damage;
         public float range;
@@ -68,6 +68,7 @@ public class FrogBrain : MonoBehaviour
     private void Awake()
     {
         frogSO.InitGameObject(frog);
+        Debug.Log("Now init");
         for(int i = 0; i < transform.childCount; i++)
         {
             if(transform.GetChild(i).gameObject.name == "UpgradeCanvas")
