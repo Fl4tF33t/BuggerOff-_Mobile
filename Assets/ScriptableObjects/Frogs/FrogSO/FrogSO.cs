@@ -29,7 +29,7 @@ public class FrogSO : ScriptableObject
         frog.damage = logicSO.damage;
         frog.range = logicSO.range;
         frog.attackSpeed = logicSO.attackSpeed;
-
     }
 
+    
 }
