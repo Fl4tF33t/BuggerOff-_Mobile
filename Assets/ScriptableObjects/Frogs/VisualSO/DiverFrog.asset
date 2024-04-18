@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   userInterface:
     UIShopSprite: {fileID: 21300000, guid: cb7ae8a0e7ff0414fa90b6afe976d1f9, type: 3}
-    UIShopTextInfo: This frog is lit
+    UIShopTextInfo: Loves fishing
     UIUpgradeButtons:
     - {fileID: 21300000, guid: 654c00b69fddb5a4ea90ac6a2e611dd1, type: 3}
     - {fileID: 21300000, guid: e0e6f7b92fcab9743a70d90c09f81f4f, type: 3}

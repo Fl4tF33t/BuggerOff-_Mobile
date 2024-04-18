@@ -15,7 +15,7 @@ MonoBehaviour:
   userInterface:
     UIShopSprite: {fileID: -4400477124287183033, guid: 4ead8978f58fffa4981229d88f39929a,
       type: 3}
-    UIShopTextInfo: This frog is lit
+    UIShopTextInfo: Now you see me, no w you dont
     UIUpgradeButtons:
     - {fileID: 21300000, guid: 654c00b69fddb5a4ea90ac6a2e611dd1, type: 3}
     - {fileID: 21300000, guid: e0e6f7b92fcab9743a70d90c09f81f4f, type: 3}
