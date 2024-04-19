@@ -14,7 +14,6 @@ public class ChangeFrogUIManager : MonoBehaviour
     private Image[] _frogSprites;
     private GameObject _frogWheel;
 
-    private GameObject[] _testing;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,8 +57,13 @@ public class ChangeFrogUIManager : MonoBehaviour
            _frogSprites[i] = _frogContainer.transform.GetChild(i).GetChild(0).GetChild(1).GetComponent<Image>();
 
             _frogSprites[i].AddComponent<FrogSelectionUI>();
-            _frogSprites[i].GetComponent<FrogSelectionUI>().SetFrogSO(_frogSOs[i]);
-            _frogSprites[i].GetComponent<FrogSelectionUI>().SetFrogWheel(_frogWheel);
+            FrogSelectionUI frogSelectionUI = _frogSprites[i].GetComponent<FrogSelectionUI>();
+
+            frogSelectionUI.SetFrogSO(_frogSOs[i]);
+            frogSelectionUI.SetFrogWheel(_frogWheel);
+
+            //_frogSprites[i].GetComponent<FrogSelectionUI>().SetFrogSO(_frogSOs[i]);
+            //_frogSprites[i].GetComponent<FrogSelectionUI>().SetFrogWheel(_frogWheel);
         }
     }
 

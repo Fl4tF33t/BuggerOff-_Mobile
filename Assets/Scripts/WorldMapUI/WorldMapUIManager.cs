@@ -29,7 +29,6 @@ public class WorldMapUIManager : MonoBehaviour
     private GameObject[] _citiesSelected;
 
 
-
     private void Start()
     {
         _cancelButton.onClick.AddListener(() => OnClosePopUp());
@@ -50,6 +49,9 @@ public class WorldMapUIManager : MonoBehaviour
         {
             //SceneManager.LoadScene(_levelSelected);
             //SceneManager.LoadScene("CairoLvl1");
+
+            _levelSelected = "CairoLvl1";
+
             SceneLoadingManager.Instance.LoadSceneByString(_levelSelected);
         }
     }

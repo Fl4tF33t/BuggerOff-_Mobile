@@ -11,14 +11,20 @@ public class FrogSelectionUI : MonoBehaviour, IPointerDownHandler
     private FrogSO _frogSO;
     private GameObject _frogWheel;
     private GameObject _description;
-    
 
+    FrogChangeSelection _frogChangeSelection;
+
+    private void Start()
+    {
+        _frogChangeSelection = transform.parent.parent.parent.GetComponent<FrogChangeSelection>();
+    }
     public void OnPointerDown(PointerEventData eventData)
     {
         SetFrogTitle();
         SetFrogPrice();
         SetFrogStats();
         SetFrogDescription();
+        _frogChangeSelection.OnFrogSelected(gameObject);
     }
 
     private void SetFrogDescription()
@@ -55,12 +61,12 @@ public class FrogSelectionUI : MonoBehaviour, IPointerDownHandler
     {
         _frogWheel = frogWheel;
         _description = frogWheel.transform.GetChild(0).GetChild(1).gameObject;
-        Debug.Log("2Name is: " + _frogWheel.name);
+        //Debug.Log("2Name is: " + _frogWheel.name);
     }
 
     private void SetFrogTitle()
     {
-        Debug.Log("Name is: " + _frogWheel.name);
+        //Debug.Log("Name is: " + _frogWheel.name);
         _frogWheel.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = _frogSO.logicSO.frogName;
     }
 }
