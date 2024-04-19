@@ -13,10 +13,8 @@ public class FrogChangeSelection : MonoBehaviour
 
     private void Start()
     {
-        _selectionBackground = transform.GetChild(0).GetChild(0).GetComponent<Image>();
-        _currentSelection = _selectionBackground;
-        Debug.Log("Current selection: " + _currentSelection.transform.parent.parent.name);
-
+        _currentSelection = transform.GetChild(0).GetChild(0).GetComponent<Image>();
+        //Debug.Log("Current selection: " + _currentSelection.transform.parent.parent.name);
     }
 
     public void OnFrogSelected(GameObject selectedFrog)
@@ -24,7 +22,7 @@ public class FrogChangeSelection : MonoBehaviour
         _currentSelection.sprite = _unselectedSprite;
 
         _currentSelection = selectedFrog.transform.parent.GetComponent<Image>();
-        Debug.Log("Current selection !!2:!! " + _currentSelection.name);
+        //Debug.Log("Current selection !!2:!! " + _currentSelection.name);
 
         _currentSelection.sprite = _selectedSprite;
     }
