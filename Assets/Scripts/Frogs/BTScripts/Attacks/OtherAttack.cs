@@ -26,6 +26,7 @@ public class OtherAttack : ActionNode
                     break;
                 case float when dist >= closeRange:
                     context.animationEvents.OnEndAnim += AnimationEvents_OnEndAnimRange;
+                    context.animationEvents.OnDamageLogic += AnimationEvents_OnDamageLogic1;
                     context.animator.SetTrigger("OnRangeAttack");
                     break;
                 default:
@@ -33,6 +34,12 @@ public class OtherAttack : ActionNode
                     break;
             } 
         }
+    }
+
+    private void AnimationEvents_OnDamageLogic1()
+    {
+        GameObject prefab = Instantiate(context.frogBrain.projectile, context.frogBrain.projectilePos.position, context.transform.rotation);
+        prefab.GetComponent<ProjectileLogic>().damage = context.frogBrain.frog.damage;
     }
 
     private void AnimationEvents_OnDamageLogic()
@@ -50,8 +57,7 @@ public class OtherAttack : ActionNode
     private void AnimationEvents_OnEndAnimRange()
     {
         
-        GameObject prefab = Instantiate(context.frogBrain.projectile, context.frogBrain.projectilePos.position, context.transform.rotation);
-        prefab.GetComponent<ProjectileLogic>().damage = context.frogBrain.frog.damage;
+        
         endAnim = true;
     }
 
@@ -61,6 +67,7 @@ public class OtherAttack : ActionNode
             context.animationEvents.OnEndAnim -= AnimationEvents_OnEndAnimRange;
             context.animationEvents.OnEndAnim -= AnimationEvents_OnEndAnimClose;
             context.animationEvents.OnDamageLogic -= AnimationEvents_OnDamageLogic;
+            context.animationEvents.OnDamageLogic -= AnimationEvents_OnDamageLogic1;
 
         }
     }
