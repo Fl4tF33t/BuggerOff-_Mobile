@@ -89,6 +89,9 @@ TagManager:
   - name: Frog_Samurai
     uniqueID: 2222209127
     locked: 0
+  - name: Frog_Mummy
+    uniqueID: 863381099
+    locked: 0
   - name: Frog_Sunglasses
     uniqueID: 383690811
     locked: 0
