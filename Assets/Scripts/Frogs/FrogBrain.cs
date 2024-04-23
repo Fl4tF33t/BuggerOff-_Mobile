@@ -45,7 +45,6 @@ public class FrogBrain : MonoBehaviour
     public class BuffValue
     {
         public int damage;
-        public float range;
         public float attackSpeed;
     } 
 
@@ -66,6 +65,10 @@ public class FrogBrain : MonoBehaviour
     public bool isBuffed;
     private bool setBuff;
     private bool setDebuff;
+
+    float damageIncrease;
+    float attackSpeedIncrease;
+
     private void Awake()
     {
         frogSO.InitGameObject(frog);
@@ -113,9 +116,14 @@ public class FrogBrain : MonoBehaviour
         if(isBuffed && !setBuff)
         {
             ChangeColor(Color.magenta);
-            frog.damage = frog.damage + buffValue.damage;
-            frog.range = frog.range + buffValue.range;
-            frog.attackSpeed = frog.attackSpeed + buffValue.attackSpeed;
+            damageIncrease = (float)frog.damage / 100f * (float)buffValue.damage;
+            attackSpeedIncrease = (float)frog.attackSpeed / 100f * (float)buffValue.attackSpeed;
+
+            // Round damageIncrease to the nearest integer
+            int roundedDamageIncrease = (int)Math.Round(damageIncrease);
+
+            frog.damage += roundedDamageIncrease;
+            frog.attackSpeed += attackSpeedIncrease;
 
             setBuff = true;
 
@@ -124,10 +132,9 @@ public class FrogBrain : MonoBehaviour
         if(!isBuffed && !setDebuff)
         {
             ChangeColor(Color.white);
-
-            frog.damage = frog.damage - buffValue.damage;
-            frog.range = frog.range - buffValue.range;
-            frog.attackSpeed = frog.attackSpeed - buffValue.attackSpeed;
+            int roundedDamageIncrease = (int)Math.Round(damageIncrease);
+            frog.damage -= roundedDamageIncrease;
+            frog.attackSpeed -= attackSpeedIncrease;
 
             setDebuff = true;
 

@@ -12,12 +12,7 @@ public class TrackEnemy : ActionNode
         //the timer should be set to the time it takes to shoot a target
         if(blackboard.attackTimer <= 0)
         {
-            if (context.frogBrain.isBuffed)
-            {
-                float time = context.frogBrain.frog.attackSpeed + context.frogBrain.buffValue.attackSpeed;
-                blackboard.attackTimer = time;
-            }
-            else blackboard.attackTimer = 1f /context.frogBrain.frogSO.logicSO.attackSpeed;
+            blackboard.attackTimer = 1f /context.frogBrain.frog.attackSpeed;
         }
         if (!context.animator.GetCurrentAnimatorStateInfo(0).IsName("OnTracking"))
         {

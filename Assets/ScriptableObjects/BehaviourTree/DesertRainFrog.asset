@@ -278,6 +278,33 @@ MonoBehaviour:
   - {fileID: -3737940388298789610}
   - {fileID: -4310596956678784257}
   - {fileID: -1990485935633568387}
+  - {fileID: -2225728383567526266}
+--- !u!114 &-2225728383567526266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d40aa69ad480d4840a98f1cb07664b1b, type: 3}
+  m_Name: OtherAttack
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: d4d57e71681988a4abfcae376346a0a4
+  position: {x: -790.6666, y: 577.3334}
+  blackboard:
+    collidersInArea: []
+    collidersInLOS: []
+    attackTimer: 0
+    jumpTimer: 10
+    jumpLocation: {x: 0, y: 0, z: 0}
+    timer: 10
+    selectedTarget: {fileID: 0}
+  description: 
+  drawGizmos: 0
 --- !u!114 &-1990485935633568387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,6 +456,7 @@ MonoBehaviour:
   - {fileID: 999833849418474437}
   - {fileID: 3416730919604307544}
   - {fileID: 6155733473852121517}
+  - {fileID: -2225728383567526266}
   blackboard:
     collidersInArea: []
     collidersInLOS: []

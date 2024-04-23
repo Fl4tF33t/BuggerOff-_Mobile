@@ -68,7 +68,6 @@ public class BuffFrog : ActionNode
                 FrogBrain frog = collider.GetComponent<FrogBrain>();
                 frog.isBuffed = true;
                 frog.buffValue.damage = context.frogBrain.frogSO.logicSO.damage;
-                frog.buffValue.range = context.frogBrain.frogSO.logicSO.range;
                 frog.buffValue.attackSpeed = context.frogBrain.frogSO.logicSO.attackSpeed;
 
             }
