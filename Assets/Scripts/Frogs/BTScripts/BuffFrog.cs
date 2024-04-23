@@ -13,6 +13,7 @@ public class BuffFrog : ActionNode
 
     protected override void OnStart() {
 
+
         foreach (var collider in blackboard.collidersInArea)
         {
             if (!collider.gameObject.name.Contains("Sunglasses"))
@@ -50,6 +51,7 @@ public class BuffFrog : ActionNode
                 oldColliderList.RemoveAt(i);
             }
         }
+        
 
     }
 
@@ -69,6 +71,10 @@ public class BuffFrog : ActionNode
                 frog.buffValue.range = context.frogBrain.frogSO.logicSO.range;
                 frog.buffValue.attackSpeed = context.frogBrain.frogSO.logicSO.attackSpeed;
 
+            }
+            if (!context.animator.GetCurrentAnimatorStateInfo(0).IsName("OnTracking"))
+            {
+                context.animator.SetTrigger("OnTracking");
             }
             return State.Success;
         }
