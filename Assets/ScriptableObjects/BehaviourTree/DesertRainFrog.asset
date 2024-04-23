@@ -152,7 +152,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 72a5ac45ea19a3942ba55c395f51d7d4
-  position: {x: -1084, y: 650}
+  position: {x: -1321.6667, y: 811.3333}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
@@ -178,7 +178,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 45e9c1372fcbc344a9e5d5828b039c9e
-  position: {x: -1234, y: 651}
+  position: {x: -1432.6667, y: 811.3333}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
@@ -263,7 +263,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 1769a306a828a6247a86c02ef1f734a6
-  position: {x: -1133, y: 506}
+  position: {x: -1246.6666, y: 674.6666}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
@@ -294,7 +294,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: d4d57e71681988a4abfcae376346a0a4
-  position: {x: -790.6666, y: 577.3334}
+  position: {x: -1014.4298, y: 843.99976}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
@@ -320,7 +320,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 8d3938f3ba9a47d459e5c1906e74a878
-  position: {x: -918.6666, y: 651.3333}
+  position: {x: -1190, y: 811.33325}
   blackboard:
     collidersInArea: []
     collidersInLOS: []
