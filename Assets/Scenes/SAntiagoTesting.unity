@@ -2309,7 +2309,6 @@ MonoBehaviour:
     attackSpeedLevel: 0
   buffValue:
     damage: 0
-    range: 0
     attackSpeed: 0
   attackType: 2
   projectilePos: {fileID: 0}
@@ -8571,6 +8570,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.17421515
+      objectReference: {fileID: 0}
+    - target: {fileID: 177573927236952023, guid: cb6f32afcfc20ce4f91b8fc9ab939334,
+        type: 3}
+      propertyPath: m_SolverEditorData.Array.data[3].color.g
+      value: 0.13333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 177573927236952023, guid: cb6f32afcfc20ce4f91b8fc9ab939334,
+        type: 3}
+      propertyPath: m_SolverEditorData.Array.data[3].color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 757835499575464552, guid: cb6f32afcfc20ce4f91b8fc9ab939334,
         type: 3}
