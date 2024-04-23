@@ -64,7 +64,8 @@ public class FrogBrain : MonoBehaviour
     public Transform singleAttack;
     [HideInInspector]
     public bool isBuffed;
-    
+    private bool setBuff;
+    private bool setDebuff;
     private void Awake()
     {
         frogSO.InitGameObject(frog);
@@ -109,13 +110,28 @@ public class FrogBrain : MonoBehaviour
 
     private void Update()
     {
-        if(isBuffed)
+        if(isBuffed && !setBuff)
         {
             ChangeColor(Color.magenta);
-            //frog.damage = frog.damage + buffValue.damage;
-            //frog.range = frog.range + buffValue.range;
-            //frog.attackSpeed = frog.attackSpeed + buffValue.attackSpeed;
+            frog.damage = frog.damage + buffValue.damage;
+            frog.range = frog.range + buffValue.range;
+            frog.attackSpeed = frog.attackSpeed + buffValue.attackSpeed;
+
+            setBuff = true;
+
+            setDebuff = false;
         }
-        else ChangeColor(Color.white);
+        if(!isBuffed && !setDebuff)
+        {
+            ChangeColor(Color.white);
+
+            frog.damage = frog.damage - buffValue.damage;
+            frog.range = frog.range - buffValue.range;
+            frog.attackSpeed = frog.attackSpeed - buffValue.attackSpeed;
+
+            setDebuff = true;
+
+            setBuff = false;
+        }
     }
 }

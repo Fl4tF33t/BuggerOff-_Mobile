@@ -15,7 +15,7 @@ MonoBehaviour:
   bugName: Cricket
   health: 45
   sheild: 0
-  moneyDrop: 25
+  moneyDrop: 18
   damageToPlayer: 1
   speed: 0.7
   angularSpeed: 1000

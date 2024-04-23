@@ -8,7 +8,11 @@ public class BuffFrog : ActionNode
 {
     List<Collider> oldColliderList = new List<Collider>();
     List<Collider> newColliderList = new List<Collider>();
+
+
+
     protected override void OnStart() {
+
 
         foreach (var collider in blackboard.collidersInArea)
         {
@@ -47,6 +51,7 @@ public class BuffFrog : ActionNode
                 oldColliderList.RemoveAt(i);
             }
         }
+        
 
     }
 
@@ -54,6 +59,8 @@ public class BuffFrog : ActionNode
     }
 
     protected override State OnUpdate() {
+
+
         if (newColliderList.Count > 0)
         {
             foreach (var collider in newColliderList)
@@ -65,7 +72,12 @@ public class BuffFrog : ActionNode
                 frog.buffValue.attackSpeed = context.frogBrain.frogSO.logicSO.attackSpeed;
 
             }
+            if (!context.animator.GetCurrentAnimatorStateInfo(0).IsName("OnTracking"))
+            {
+                context.animator.SetTrigger("OnTracking");
+            }
+            return State.Success;
         }
-        return State.Success;
+        return State.Failure;
     }
 }
