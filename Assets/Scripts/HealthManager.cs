@@ -13,6 +13,7 @@ public class HealthManager : MonoBehaviour
     private int bugShield;
     private float perPercentageHealth;
     private float perPercentageShield;
+    public Canvas UI;
 
     void Start()
     {
@@ -33,6 +34,7 @@ public class HealthManager : MonoBehaviour
         bugShield = info.shield;
         healthBar.fillAmount = (bugHealth / perPercentageHealth) / 100f;
         shieldBar.fillAmount = (bugShield / perPercentageShield) / 100f;
+        UI.GetComponent<RectTransform>().rotation = Quaternion.Euler(new Vector3(90f, 0, 0f));
     }
 
 
