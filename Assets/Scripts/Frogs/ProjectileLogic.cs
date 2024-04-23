@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class ProjectileLogic : MonoBehaviour
 {
+
     public float speed = 5f;
     private Rigidbody rb;
     private Animator animator;
@@ -38,6 +39,7 @@ public class ProjectileLogic : MonoBehaviour
      
     private void Start()
     {       
+        
         rb.AddForce(transform.forward * speed, ForceMode.Impulse);
     }
 
