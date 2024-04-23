@@ -22,12 +22,12 @@ public class ProjectileAttack : ActionNode
     private void AnimationEvents_OnDamageLogic()
     {
         GameObject prefab = Instantiate(context.frogBrain.projectile, context.frogBrain.projectilePos.position, context.transform.rotation);
-        if (context.frogBrain.isBuffed)
+        /*if (context.frogBrain.isBuffed)
         {
             int damage = context.frogBrain.frog.damage + context.frogBrain.buffValue.damage;
             prefab.GetComponent<ProjectileLogic>().damage = damage;
         }
-        else prefab.GetComponent<ProjectileLogic>().damage = context.frogBrain.frog.damage;
+        else*/ prefab.GetComponent<ProjectileLogic>().damage = context.frogBrain.frog.damage;
     }
 
     private void AnimationEvents_OnEndAnim()

@@ -278,6 +278,7 @@ MonoBehaviour:
   - {fileID: -3737940388298789610}
   - {fileID: -4310596956678784257}
   - {fileID: -1990485935633568387}
+  - {fileID: -2225728383567526266}
 --- !u!114 &-2225728383567526266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,7 +294,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: d4d57e71681988a4abfcae376346a0a4
-  position: {x: 0, y: 0}
+  position: {x: -790.6666, y: 577.3334}
   blackboard:
     collidersInArea: []
     collidersInLOS: []

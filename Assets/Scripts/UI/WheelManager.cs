@@ -126,7 +126,6 @@ public class WheelManager : Singleton<WheelManager>, IBeginDragHandler, IEndDrag
         index = (index + 1) % frogPool.Length;
         
         priceText.text = (frogPool[index].logicSO.cost * NumberOfFrogs(index)).ToString();
-        Debug.Log(index);
     }
     private int NumberOfFrogs(int index)
     {

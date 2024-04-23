@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c84c1618c4472b4a944efc90296d6e7, type: 3}
   m_Name: NinjaFrog
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7529113000352471415, guid: 8c715cebb573aca4291a00dbdff9b138, type: 3}
+  prefab: {fileID: 5030550128953497178, guid: d9fb5e9e57f5abb448f67df2a9d2f7be, type: 3}
   logicSO: {fileID: 11400000, guid: d9a261704cb9c104d95524b92cf6b3d0, type: 2}
   visualSO: {fileID: 11400000, guid: 830835e324a01544c95ec73b32dfebdd, type: 2}
   audioSO: {fileID: 11400000, guid: aeaaccc71dc98784b8e7a2e9e4b3c36b, type: 2}

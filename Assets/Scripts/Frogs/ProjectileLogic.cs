@@ -15,6 +15,7 @@ public class ProjectileLogic : MonoBehaviour
     {
         Harpoon,
         Cannon,
+        Kunai,
     }
 
     private void Awake()
@@ -24,8 +25,15 @@ public class ProjectileLogic : MonoBehaviour
         {
             projectileType = Projectile.Cannon;
             animator = GetComponent<Animator>();
-        }else projectileType = Projectile.Harpoon;
-        
+        } else if (this.gameObject.name.Contains("Harpoon")) 
+        {
+            projectileType = Projectile.Harpoon; 
+        }
+        else if (this.gameObject.name.Contains("Kunai"))
+        {
+            projectileType = Projectile.Kunai;
+        }
+
     }
      
     private void Start()
@@ -54,6 +62,13 @@ public class ProjectileLogic : MonoBehaviour
                     }
                 }
                 animator.SetTrigger("OnExplode");
+                break;
+            case Projectile.Kunai:
+                if (collision.gameObject.TryGetComponent(out IBugTakeDamage kunaiDamage))
+                {
+                    kunaiDamage.BugTakeDamage(damage);
+                }
+                Destroy(gameObject);
                 break;
         }
         // Destroy the projectile upon collision
