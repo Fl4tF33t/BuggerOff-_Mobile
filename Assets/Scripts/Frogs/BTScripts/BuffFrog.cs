@@ -8,6 +8,9 @@ public class BuffFrog : ActionNode
 {
     List<Collider> oldColliderList = new List<Collider>();
     List<Collider> newColliderList = new List<Collider>();
+
+
+
     protected override void OnStart() {
 
         foreach (var collider in blackboard.collidersInArea)
@@ -54,6 +57,8 @@ public class BuffFrog : ActionNode
     }
 
     protected override State OnUpdate() {
+
+
         if (newColliderList.Count > 0)
         {
             foreach (var collider in newColliderList)
@@ -65,7 +70,8 @@ public class BuffFrog : ActionNode
                 frog.buffValue.attackSpeed = context.frogBrain.frogSO.logicSO.attackSpeed;
 
             }
+            return State.Success;
         }
-        return State.Success;
+        return State.Failure;
     }
 }
