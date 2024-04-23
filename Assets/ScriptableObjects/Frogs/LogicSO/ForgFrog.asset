@@ -29,7 +29,7 @@ MonoBehaviour:
     amount: 2
     price: 100
   upgradeRange:
-    amount: 0.3
+    amount: 0.2
     price: 85
   upgradeAttackSpeed:
     amount: 0.2
