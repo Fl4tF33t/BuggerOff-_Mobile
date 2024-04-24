@@ -10,6 +10,9 @@ public class MainMenu : MonoBehaviour
     public Button load;
     public Button options;
     public Button quit;
+    private JSONSaving saving;
+    private PlayerData playerData;
+
     private void Awake()
     {
         //Screen.SetResolution((Screen.height / 9 * 16), Screen.height, true);
@@ -35,9 +38,11 @@ public class MainMenu : MonoBehaviour
         {
             canvas.GetComponent<CanvasScaler>().referenceResolution = new Vector2(Screen.width, Screen.height);
         }
+        saving = transform.Find("JSONSave").GetComponent<JSONSaving>();
     }
     private void Start()
     {
+        saving.LoadData();
         //float scale = (float)Screen.height / 1080f;
         //play.GetComponent<RectTransform>().localScale = new Vector3(scale, scale, scale);
         //load.GetComponent<RectTransform>().localScale = new Vector3(scale, scale, scale);

@@ -28,6 +28,8 @@ public class WorldMapUIManager : MonoBehaviour
 
     private GameObject[] _citiesSelected;
 
+    private JSONSaving saving;
+    private PlayerData playerData;
 
     private void Start()
     {
@@ -37,6 +39,60 @@ public class WorldMapUIManager : MonoBehaviour
         _kyotoButton.onClick.AddListener(() => OnClickedCity(_kyotoButton, _citiesSO[2]));
 
         _confirmButton.onClick.AddListener(() => OnConfirmButton());
+
+        saving = transform.Find("JSONSave").GetComponent<JSONSaving>();
+
+        switch (playerData.stars)
+        {
+            case 0:
+                _cairoButton.gameObject.SetActive(false);
+                _kyotoButton.gameObject.SetActive(false);
+                break;
+            case  1:
+                _cairoButton.gameObject.SetActive(false);
+                _kyotoButton.gameObject.SetActive(false);
+                break;
+            case 2:
+                _cairoButton.gameObject.SetActive(false);
+                _kyotoButton.gameObject.SetActive(false);
+                break;
+            case 3:
+                _cairoButton.gameObject.SetActive(false);
+                _kyotoButton.gameObject.SetActive(false);
+                break;
+            case 4:
+                _cairoButton.gameObject.SetActive(true);
+                _kyotoButton.gameObject.SetActive(false);
+                break;
+            case 5:
+                _cairoButton.gameObject.SetActive(true);
+                _kyotoButton.gameObject.SetActive(false);
+                break;
+            case 6:
+                _cairoButton.gameObject.SetActive(true);
+                _kyotoButton.gameObject.SetActive(false);
+                break;
+            case 7:
+                _cairoButton.gameObject.SetActive(true);
+                _kyotoButton.gameObject.SetActive(false);
+                break;
+            case 8:
+                _cairoButton.gameObject.SetActive(true);
+                _kyotoButton.gameObject.SetActive(false);
+                break;
+            case 9:
+                _cairoButton.gameObject.SetActive(true);
+                _kyotoButton.gameObject.SetActive(false);
+                break;
+            case 10:
+                _cairoButton.gameObject.SetActive(true);
+                _kyotoButton.gameObject.SetActive(false);
+                break;
+            case 11:
+                _cairoButton.gameObject.SetActive(true);
+                _kyotoButton.gameObject.SetActive(true);
+                break;
+        }
     }
 
     private void OnConfirmButton()
