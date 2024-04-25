@@ -1,30 +1,52 @@
 using System.IO;
 using UnityEngine;
 
-public class JSONSaving : MonoBehaviour
+public class JSONSaving : Singleton<JSONSaving>
 {
-    private PlayerData playerData;
+    [SerializeField]
+    public PlayerData playerData;
 
     private string path = "";
-    private string persistentPath = "";
+    public string persistentPath = "";
 
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Awake()
     {
-        CreatePlayerData();
+        base.Awake();
         SetPaths();
-        DontDestroyOnLoad(this.gameObject);
+        CreatePlayerData();
     }
 
     private void CreatePlayerData()
     {
-        int[] numberOfLevels = new int[6];
-        for (int i = 0; i < numberOfLevels.Length; i++)
+        if (playerData.level == 0)
         {
-            numberOfLevels[i] = 0;
+            int[] numberOfLevels = new int[6];
+            for (int i = 0; i < numberOfLevels.Length; i++)
+            {
+                numberOfLevels[i] = 0;
+            }
+            playerData = new PlayerData(1, numberOfLevels, 0);
+            Debug.Log("My dick is big   " + playerData);
+            SaveData(playerData);
         }
-        playerData = new PlayerData(1,numberOfLevels, 0);
+        
+        //if (playerData != null)
+        //{
+        //    Debug.Log("there is a file already");
+        //    //return;
+        //}
+        //else
+        //{
+        //    int[] numberOfLevels = new int[6];
+        //    for (int i = 0; i < numberOfLevels.Length; i++)
+        //    {
+        //        numberOfLevels[i] = 0;
+        //    }
+        //    playerData = new PlayerData(1, numberOfLevels, 0);
+        //    Debug.Log("My dick is big   " + playerData);
+        //}   
     }
     
     private void SetPaths()
@@ -40,12 +62,12 @@ public class JSONSaving : MonoBehaviour
         
     }
 
-    public void SaveData()
+    public void SaveData(PlayerData playerDataPlease)
     {
         string savePath = persistentPath;
 
         Debug.Log("Saving Data at " + savePath);
-        string json = JsonUtility.ToJson(playerData);
+        string json = JsonUtility.ToJson(playerDataPlease);
         Debug.Log(json);
 
         using StreamWriter writer = new StreamWriter(savePath);
@@ -57,8 +79,13 @@ public class JSONSaving : MonoBehaviour
         using StreamReader reader = new StreamReader(persistentPath);
         string json = reader.ReadToEnd();
 
-        PlayerData data = JsonUtility.FromJson<PlayerData>(json);
-        Debug.Log(data.ToString());
+        playerData = JsonUtility.FromJson<PlayerData>(json);
+        //Debug.Log(data.ToString());
+    }
+
+    public PlayerData ReturnPlayerData()
+    {
+        return playerData;
     }
 
     

@@ -14,7 +14,7 @@ public class GameManager : Singleton<GameManager>
     private int bugBits;
 
     //Santiago
-    [SerializeField] private GameObject _levelEnd;
+    //[SerializeField] private GameObject _levelEnd;
     
 
     public Action<int> HealthChange;
@@ -32,6 +32,10 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
+
+        saving = JSONSaving.Instance;
+        saving.LoadData();
+
         bugBits = 9000;
 
         WaveSystem.Instance.OnLevelCompleted += () => OnLevelCompleted(); 
@@ -42,76 +46,84 @@ public class GameManager : Singleton<GameManager>
         };
         BugBitsChange = (amount) => { bugBits += amount; OnUIChange?.Invoke(); };
 
-        if (SceneManager.GetActiveScene().name == "London1")
+        string sceneName = SceneManager.GetActiveScene().name;
+        switch (sceneName)
         {
-            currentlyPlayingLevel = 1;
+            case "London1":
+                currentlyPlayingLevel = 1;
+                break;
+            case "London2":
+                currentlyPlayingLevel = 2;
+                break;
+            case "Cairo1":
+                currentlyPlayingLevel = 3;
+                break;
+            case "Cairo2":
+                currentlyPlayingLevel = 4;
+                break;
+            case "Kyoto1":
+                currentlyPlayingLevel = 5;
+                break;
+            case "Rio1":
+                currentlyPlayingLevel = 6;
+                break;
+            default:
+                currentlyPlayingLevel = 0; // Default level or handle if necessary
+                break;
         }
-        if (SceneManager.GetActiveScene().name == "London2")
-        {
-            currentlyPlayingLevel = 2;
-        }
-        if (SceneManager.GetActiveScene().name == "Cairo1")
-        {
-            currentlyPlayingLevel = 3;
-        }
-        if (SceneManager.GetActiveScene().name == "Cairo2")
-        {
-            currentlyPlayingLevel = 4;
-        }
-        if (SceneManager.GetActiveScene().name == "Kyoto1")
-        {
-            currentlyPlayingLevel = 5;
-        }
-        if (SceneManager.GetActiveScene().name == "Rio1")
-        {
-            currentlyPlayingLevel = 6;
-        }
-        saving = transform.Find("JSONSave").GetComponent<JSONSaving>();
+
     }
 
     public void OnLevelCompleted()
     {
-        _levelEnd.SetActive(true);
-        LevelCompletion.Instance.Victory(GetAmountOfStars());
+        Debug.Log("Superdicks");
+        //LevelCompletion.Instance.Victory(GetAmountOfStars());
 
-        if (currentlyPlayingLevel == playerData.level)
+        if (currentlyPlayingLevel == saving.playerData.level)
         {
             int[] saveStar = new int[6];
             for (int i = 0; i < saveStar.Length; i++)
             {
-                if (i == (playerData.level - 1))
+                if (i == (saving.playerData.level - 1))
                 {
                     saveStar[i] = GetAmountOfStars();
+                    Debug.Log("This dick");
                 }
                 else
                 {
-                    saveStar[i] = playerData.starsEachLevel[i];
+                    saveStar[i] = saving.playerData.starsEachLevel[i];
+                    Debug.Log("Not the dick");
                 }
+                Debug.Log(saveStar[i]);
             }
-            playerData = new PlayerData(playerData.level + 1, saveStar, playerData.stars + GetAmountOfStars());
+
+            playerData = new PlayerData(saving.playerData.level + 1, saveStar, saving.playerData.stars + GetAmountOfStars());
+            Debug.Log("dicks are great " + playerData + "        "+ saving.playerData);
+            saving.SaveData(playerData);
+            saving.LoadData();
             
-            saving.SaveData();
         }
-        else if (currentlyPlayingLevel < playerData.level)
+        else if (currentlyPlayingLevel < saving.playerData.level)
         {
             int[] saveStar = new int[6];
             int adding = 0;
             for (int i = 0; i < saveStar.Length; i++)
             {
-                if (i == (currentlyPlayingLevel - 1) && playerData.starsEachLevel[currentlyPlayingLevel-1] < GetAmountOfStars())
+                if (i == (currentlyPlayingLevel - 1) && saving.playerData.starsEachLevel[currentlyPlayingLevel-1] < GetAmountOfStars())
                 {
                     saveStar[i] = GetAmountOfStars();
                 }
                 else
                 {
-                    saveStar[i] = playerData.starsEachLevel[i];
+                    saveStar[i] = saving.playerData.starsEachLevel[i];
                 }
                 adding += saveStar[i];
             }
 
-            playerData = new PlayerData(playerData.level, saveStar, adding);
-            
-            saving.SaveData();
+            playerData = new PlayerData(saving.playerData.level, saveStar, adding);
+            Debug.Log("dicks are great number 2 " + playerData + "        " + saving.playerData);
+            saving.SaveData(playerData);
+            saving.LoadData();
         }
     }
 

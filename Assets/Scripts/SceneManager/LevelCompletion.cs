@@ -33,7 +33,7 @@ public class LevelCompletion : Singleton<LevelCompletion>
     {
         _loseImage.SetActive(false);
         _victoryImage.SetActive(true);
-
+        GameManager.Instance.OnLevelCompleted();
         StartCoroutine(ShowStars(fullStarAmount));
 
     }

@@ -2,19 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class PlayerData 
 {
     public int level;
-    public int[] starsEachLevel;
+    public int[] starsEachLevel = new int[6];
     public int stars;
 
     public PlayerData(int level, int[] starsEachlevel, int stars)
     {
         this.level = level;
-        for (int i = 0; i < starsEachLevel.Length; i++)
-        {
-            this.starsEachLevel[i] = starsEachLevel[i];
-        }
+        this.starsEachLevel = starsEachlevel;
         this.stars = stars;
     }
 
