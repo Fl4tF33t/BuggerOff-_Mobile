@@ -436,8 +436,8 @@ ScriptedImporter:
     spritePosition: {x: 420, y: 776}
   - name: Mummy_Bandage_Right
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.4413906, y: 0.49617785}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -743,8 +743,8 @@ ScriptedImporter:
     spritePosition: {x: 783, y: 151}
   - name: Mummy_Bandage_Left
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5000003, y: 1.0026366}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2

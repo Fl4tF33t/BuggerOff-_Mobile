@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c84c1618c4472b4a944efc90296d6e7, type: 3}
+  m_Name: MummyFrog
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1896803873002964479, guid: bc84186e5817cd141837ec0e8872b816, type: 3}
+  logicSO: {fileID: 11400000, guid: 2603e26577c84fe499635834a8ca5245, type: 2}
+  visualSO: {fileID: 11400000, guid: 0256641cc97850645b6b82ba7cfbda52, type: 2}
+  audioSO: {fileID: 11400000, guid: aeaaccc71dc98784b8e7a2e9e4b3c36b, type: 2}
