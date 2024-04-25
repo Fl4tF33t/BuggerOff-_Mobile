@@ -92,6 +92,9 @@ TagManager:
   - name: Frog_Mummy
     uniqueID: 863381099
     locked: 0
+  - name: Frog_Bubbles
+    uniqueID: 1832084125
+    locked: 0
   - name: Frog_Sunglasses
     uniqueID: 383690811
     locked: 0
