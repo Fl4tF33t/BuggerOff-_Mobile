@@ -45,24 +45,23 @@ public class WorldMapUIManager : MonoBehaviour
         _confirmButton.onClick.AddListener(() => OnConfirmButton());
 
         //saving.SaveData();
-        saving.LoadData();
-       
-        Debug.Log("Dickeroo  " + saving.playerData);
-        switch (saving.playerData.stars)
+        //saving.LoadData();
+        Debug.Log(saving.PlayerData.stars);
+        switch (saving.PlayerData.stars)
         {
-            case int when saving.playerData.stars < 4 && saving.playerData.level < 3 :
+            case int when saving.PlayerData.stars < 4 && saving.PlayerData.level < 3 :
                 _cairoButton.gameObject.SetActive(false);
                 _kyotoButton.gameObject.SetActive(false);
                 break;
-            case int when saving.playerData.stars > 3 && saving.playerData.stars < 9 && saving.playerData.level < 5:
+            case int when saving.PlayerData.stars > 3 && saving.PlayerData.stars < 9 && saving.PlayerData.level < 5:
                 _cairoButton.gameObject.SetActive(true);
                 _kyotoButton.gameObject.SetActive(false);
                 break;
-            case int when saving.playerData.stars > 8 && saving.playerData.stars < 11 && saving.playerData.level == 5:
+            case int when saving.PlayerData.stars > 8 && saving.PlayerData.stars < 11 && saving.PlayerData.level == 5:
                 _cairoButton.gameObject.SetActive(true);
                 _kyotoButton.gameObject.SetActive(true);
                 break;
-            case int when saving.playerData.stars == 11 && saving.playerData.level == 6:
+            case int when saving.PlayerData.stars == 11 && saving.PlayerData.level == 6:
                 _cairoButton.gameObject.SetActive(true);
                 _kyotoButton.gameObject.SetActive(true);
                 break;
@@ -118,194 +117,67 @@ public class WorldMapUIManager : MonoBehaviour
         {
             case "London":
 
-                if (saving.playerData.level ==1)
+                if (saving.PlayerData.level == 1)
                 {
                     _cityLevelTwoButton.interactable = false;
-                    switch (saving.playerData.starsEachLevel[0])
-                    {
-                        case 0:
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = emptyStar;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = emptyStar;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = emptyStar;
-                            break;
-                        case 1:
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = emptyStar;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = emptyStar;
-                            break;
-                        case 2:
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = emptyStar;
-                            break;
-                        case 3:
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = starGolden;
-                            break;
-                    }
+                    SwitchCase(saving.PlayerData.starsEachLevel[0]);                    
                 }
                 else
                 {
                     _cityLevelTwoButton.interactable = true;
-                    switch (saving.playerData.starsEachLevel[0])
-                    {
-                        case 0:
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = emptyStar;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = emptyStar;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = emptyStar;
-                            break;
-                        case 1:
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = emptyStar;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = emptyStar;
-                            break;
-                        case 2:
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = emptyStar;
-                            break;
-                        case 3:
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = starGolden;
-                            break;
-                    }
-                    switch (saving.playerData.starsEachLevel[1])
-                    {
-                        case 0:
-                            _cityLevelTwoButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = emptyStar;
-                            _cityLevelTwoButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = emptyStar;
-                            _cityLevelTwoButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = emptyStar;
-                            break;
-                        case 1:
-                            _cityLevelTwoButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelTwoButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = emptyStar;
-                            _cityLevelTwoButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = emptyStar;
-                            break;
-                        case 2:
-                            _cityLevelTwoButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelTwoButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelTwoButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = emptyStar;
-                            break;
-                        case 3:
-                            _cityLevelTwoButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelTwoButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelTwoButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = starGolden;
-                            break;
-                    }
+                    SwitchCase(saving.PlayerData.starsEachLevel[0]);
+                    SwitchCase(saving.PlayerData.starsEachLevel[1]);
+                    
                 }
             break;
             case "Cairo":
 
-                if (saving.playerData.level == 3)
+                if (saving.PlayerData.level == 3)
                 {
                     _cityLevelTwoButton.interactable = false;
-                    switch (saving.playerData.starsEachLevel[2])
-                    {
-                        case 0:
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = emptyStar;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = emptyStar;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = emptyStar;
-                            break;
-                        case 1:
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = emptyStar;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = emptyStar;
-                            break;
-                        case 2:
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = emptyStar;
-                            break;
-                        case 3:
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = starGolden;
-                            break;
-                    }
+                    SwitchCase(saving.PlayerData.starsEachLevel[2]);                    
                 }
                 else
                 {
                     _cityLevelTwoButton.interactable = true;
-                    switch (saving.playerData.starsEachLevel[2])
-                    {
-                        case 0:
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = emptyStar;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = emptyStar;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = emptyStar;
-                            break;
-                        case 1:
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = emptyStar;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = emptyStar;
-                            break;
-                        case 2:
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = emptyStar;
-                            break;
-                        case 3:
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = starGolden;
-                            break;
-                    }
-                    switch (saving.playerData.starsEachLevel[3])
-                    {
-                        case 0:
-                            _cityLevelTwoButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = emptyStar;
-                            _cityLevelTwoButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = emptyStar;
-                            _cityLevelTwoButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = emptyStar;
-                            break;
-                        case 1:
-                            _cityLevelTwoButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelTwoButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = emptyStar;
-                            _cityLevelTwoButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = emptyStar;
-                            break;
-                        case 2:
-                            _cityLevelTwoButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelTwoButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelTwoButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = emptyStar;
-                            break;
-                        case 3:
-                            _cityLevelTwoButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelTwoButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelTwoButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = starGolden;
-                            break;
-                    }
+                    SwitchCase(saving.PlayerData.starsEachLevel[2]);
+                    SwitchCase(saving.PlayerData.starsEachLevel[3]);                    
                 }
                 break;
             case "Kyoto":
 
-                if (saving.playerData.level == 5)
+                if (saving.PlayerData.level == 5)
                 {
                     _cityLevelTwoButton.gameObject.SetActive(false);
-                    switch (saving.playerData.starsEachLevel[0])
-                    {
-                        case 0:
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = emptyStar;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = emptyStar;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = emptyStar;
-                            break;
-                        case 1:
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = emptyStar;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = emptyStar;
-                            break;
-                        case 2:
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = emptyStar;
-                            break;
-                        case 3:
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = starGolden;
-                            _cityLevelOneButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = starGolden;
-                            break;
-                    }
-                }
-                
+                    SwitchCase(saving.PlayerData.starsEachLevel[0]);
+                }                
+                break;
+        }
+    }
+
+    private void SwitchCase(int num)
+    {
+        switch (num)
+        {
+            case 0:
+                _cityLevelOneButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = emptyStar;
+                _cityLevelOneButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = emptyStar;
+                _cityLevelOneButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = emptyStar;
+                break;
+            case 1:
+                _cityLevelOneButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = starGolden;
+                _cityLevelOneButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = emptyStar;
+                _cityLevelOneButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = emptyStar;
+                break;
+            case 2:
+                _cityLevelOneButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = starGolden;
+                _cityLevelOneButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = starGolden;
+                _cityLevelOneButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = emptyStar;
+                break;
+            case 3:
+                _cityLevelOneButton.transform.GetChild(1).GetChild(0).GetComponent<Image>().sprite = starGolden;
+                _cityLevelOneButton.transform.GetChild(1).GetChild(1).GetComponent<Image>().sprite = starGolden;
+                _cityLevelOneButton.transform.GetChild(1).GetChild(2).GetComponent<Image>().sprite = starGolden;
                 break;
         }
     }

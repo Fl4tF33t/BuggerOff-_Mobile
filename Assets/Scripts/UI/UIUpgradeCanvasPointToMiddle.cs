@@ -93,4 +93,10 @@ public class UIUpgradeCanvasPointToMiddle : MonoBehaviour
 
         Targeting.text = frogBrain.frog.target.ToString();
     }
+
+    public void SellButton() 
+    {
+        Debug.Log("Testing");
+       //GameManager.Instance
+    }
 }
