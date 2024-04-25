@@ -386,6 +386,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShopCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 9071711674606379729, guid: 76823026be0a6a94ba9c50965933d117,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9179764866028041074, guid: 76823026be0a6a94ba9c50965933d117,
         type: 3}
       propertyPath: frogPool.Array.data[7]
@@ -412,7 +417,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &195226462
 Transform:
   m_ObjectHideFlags: 0
@@ -602,7 +607,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 1
   m_VoxelSize: 0.04
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: f5fca9bb4a4994445821a24abccfbfdf, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: a8e214f348fc4b74496baa961a1ef764, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &217934715
 Transform:
@@ -914,7 +919,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 1
   m_VoxelSize: 0.0438
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: bb49915328a331142aa59e75de5467c8, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: af5fc5ee401da2549a609d8cdc955adc, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &488576633
 Transform:
@@ -1200,7 +1205,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 1
   m_VoxelSize: 0.0438
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 3384f209145d4c04b800c928457269fe, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 8b775beccda224c4bafc29e31b03ad85, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &542189592
 Transform:
@@ -1211,7 +1216,7 @@ Transform:
   m_GameObject: {fileID: 542189590}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1263,7 +1268,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 1
   m_VoxelSize: 0.04
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 9c83e5703c1659b4f90a4c112ec11c73, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 0c2cc755bb2adca4b80ae824553cfaea, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &562541173
 Transform:
@@ -4193,6 +4198,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BordersCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3627876709669298032, guid: a30f355317602d64f9fd00416033ee50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4236197584803732660, guid: a30f355317602d64f9fd00416033ee50,
         type: 3}
       propertyPath: m_Camera
@@ -4839,7 +4849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_OverrideArea: 1
-  m_Area: 4
+  m_Area: 1
   m_OverrideGenerateLinks: 0
   m_GenerateLinks: 0
   m_IgnoreFromBuild: 0
@@ -4997,79 +5007,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1980963599}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &1981589367
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 882113963040308914, guid: d9fb5e9e57f5abb448f67df2a9d2f7be,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 882113963040308914, guid: d9fb5e9e57f5abb448f67df2a9d2f7be,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 882113963040308914, guid: d9fb5e9e57f5abb448f67df2a9d2f7be,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 882113963040308914, guid: d9fb5e9e57f5abb448f67df2a9d2f7be,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 882113963040308914, guid: d9fb5e9e57f5abb448f67df2a9d2f7be,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 882113963040308914, guid: d9fb5e9e57f5abb448f67df2a9d2f7be,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 882113963040308914, guid: d9fb5e9e57f5abb448f67df2a9d2f7be,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 882113963040308914, guid: d9fb5e9e57f5abb448f67df2a9d2f7be,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 882113963040308914, guid: d9fb5e9e57f5abb448f67df2a9d2f7be,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 882113963040308914, guid: d9fb5e9e57f5abb448f67df2a9d2f7be,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5030550128953497178, guid: d9fb5e9e57f5abb448f67df2a9d2f7be,
-        type: 3}
-      propertyPath: m_Name
-      value: NinjaFrog
-      objectReference: {fileID: 0}
-    - target: {fileID: 5030550128953497178, guid: d9fb5e9e57f5abb448f67df2a9d2f7be,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d9fb5e9e57f5abb448f67df2a9d2f7be, type: 3}
 --- !u!1 &2022645764
 GameObject:
   m_ObjectHideFlags: 0
@@ -5113,6 +5050,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameUICanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236198579474651130, guid: 992dcbe61cb5d5a47bfcf7725c9dc3c1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4310889767710550123, guid: 992dcbe61cb5d5a47bfcf7725c9dc3c1,
         type: 3}
@@ -5967,4 +5909,3 @@ SceneRoots:
   - {fileID: 1791063788}
   - {fileID: 2031961816}
   - {fileID: 506211886}
-  - {fileID: 1981589367}
