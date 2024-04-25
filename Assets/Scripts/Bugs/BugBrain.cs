@@ -19,6 +19,8 @@ public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
     private Coroutine colorDamage;
     private Coroutine speedDamage;
 
+    public bool isAttackable;
+
     private void Awake()
     {
         sprites = GetComponentsInChildren<SpriteRenderer>();
@@ -27,6 +29,8 @@ public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
 
     private void OnEnable()
     {
+        isAttackable = true;
+        agent.enabled = true;
         InitializeBugLogic(bugSO);
         StopAllCoroutines();
         ChangeColor(Color.white);   

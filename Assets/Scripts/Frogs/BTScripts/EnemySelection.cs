@@ -6,14 +6,18 @@ using TheKiwiCoder;
 public class EnemySelection : ActionNode
 {
     protected override void OnStart() {
-        blackboard.selectedTarget = SelectTarget();
+        do
+        {
+            blackboard.selectedTarget = SelectTarget();
+        }
+        while(!blackboard.selectedTarget.GetComponent<BugBrain>().isAttackable);
     }
 
     protected override void OnStop() {
     }
 
     protected override State OnUpdate() {
-        if(blackboard.selectedTarget != null)
+        if(blackboard.selectedTarget.activeSelf)
         {
             return State.Success;
         }

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoadingManager : Singleton<SceneLoadingManager>
 {
-    private const string WORLD_MAP_LEVEL = "WorldLevel";
+    private const string WORLD_MAP_LEVEL = "WorldMenu";
 
     public void LoadSceneByInteger(int sceneIndex)
     {

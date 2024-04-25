@@ -14,7 +14,7 @@ public class GameManager : Singleton<GameManager>
     private int bugBits;
 
     //Santiago
-    [SerializeField] private GameObject _levelEnd;
+    //[SerializeField] private GameObject _levelEnd;
     
 
     public Action<int> HealthChange;
@@ -22,11 +22,20 @@ public class GameManager : Singleton<GameManager>
 
     public event Action OnUIChange;
 
+    private PlayerData playerData;
+
     public int Health { get { return health; } }
     public int BugBits { get {  return bugBits; } }
 
+    public int currentlyPlayingLevel;
+    private JSONSaving saving;
+
     private void Start()
     {
+
+        saving = JSONSaving.Instance;
+        saving.LoadData();
+
         bugBits = 9000;
 
         WaveSystem.Instance.OnLevelCompleted += () => OnLevelCompleted(); 
@@ -36,12 +45,86 @@ public class GameManager : Singleton<GameManager>
             { OnLevelLose(); }
         };
         BugBitsChange = (amount) => { bugBits += amount; OnUIChange?.Invoke(); };
+
+        string sceneName = SceneManager.GetActiveScene().name;
+        switch (sceneName)
+        {
+            case "London1":
+                currentlyPlayingLevel = 1;
+                break;
+            case "London2":
+                currentlyPlayingLevel = 2;
+                break;
+            case "Cairo1":
+                currentlyPlayingLevel = 3;
+                break;
+            case "Cairo2":
+                currentlyPlayingLevel = 4;
+                break;
+            case "Kyoto1":
+                currentlyPlayingLevel = 5;
+                break;
+            case "Rio1":
+                currentlyPlayingLevel = 6;
+                break;
+            default:
+                currentlyPlayingLevel = 0; // Default level or handle if necessary
+                break;
+        }
+
     }
 
     public void OnLevelCompleted()
     {
-        _levelEnd.SetActive(true);
-        LevelCompletion.Instance.Victory(GetAmountOfStars());
+        Debug.Log("Superdicks");
+        //LevelCompletion.Instance.Victory(GetAmountOfStars());
+
+        if (currentlyPlayingLevel == saving.playerData.level)
+        {
+            int[] saveStar = new int[6];
+            for (int i = 0; i < saveStar.Length; i++)
+            {
+                if (i == (saving.playerData.level - 1))
+                {
+                    saveStar[i] = GetAmountOfStars();
+                    Debug.Log("This dick");
+                }
+                else
+                {
+                    saveStar[i] = saving.playerData.starsEachLevel[i];
+                    Debug.Log("Not the dick");
+                }
+                Debug.Log(saveStar[i]);
+            }
+
+            playerData = new PlayerData(saving.playerData.level + 1, saveStar, saving.playerData.stars + GetAmountOfStars());
+            Debug.Log("dicks are great " + playerData + "        "+ saving.playerData);
+            saving.SaveData(playerData);
+            saving.LoadData();
+            
+        }
+        else if (currentlyPlayingLevel < saving.playerData.level)
+        {
+            int[] saveStar = new int[6];
+            int adding = 0;
+            for (int i = 0; i < saveStar.Length; i++)
+            {
+                if (i == (currentlyPlayingLevel - 1) && saving.playerData.starsEachLevel[currentlyPlayingLevel-1] < GetAmountOfStars())
+                {
+                    saveStar[i] = GetAmountOfStars();
+                }
+                else
+                {
+                    saveStar[i] = saving.playerData.starsEachLevel[i];
+                }
+                adding += saveStar[i];
+            }
+
+            playerData = new PlayerData(saving.playerData.level, saveStar, adding);
+            Debug.Log("dicks are great number 2 " + playerData + "        " + saving.playerData);
+            saving.SaveData(playerData);
+            saving.LoadData();
+        }
     }
 
     private int GetAmountOfStars()

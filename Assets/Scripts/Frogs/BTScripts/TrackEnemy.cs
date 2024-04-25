@@ -31,13 +31,12 @@ public class TrackEnemy : ActionNode
             Track(blackboard.selectedTarget);
         }
 
-
         if (blackboard.attackTimer <= 0 && isRotationCorrect)
         {
             return State.Success;
         }
 
-        if(blackboard.selectedTarget == null || blackboard.selectedTarget.activeSelf == false)
+        if(blackboard.selectedTarget == null || !blackboard.selectedTarget.activeSelf || blackboard.selectedTarget.GetComponent<BugBrain>().isAttackable)
         {
             return State.Failure;
         }
