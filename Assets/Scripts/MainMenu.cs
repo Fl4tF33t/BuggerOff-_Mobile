@@ -44,7 +44,14 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         saving = JSONSaving.Instance;
-        //saving.LoadData();
+        if (saving.persistentPath != null)
+        {
+            saving.LoadData();
+        }
+        else
+        {         
+            saving.SaveData(saving.ReturnPlayerData());
+        }
         //float scale = (float)Screen.height / 1080f;
         //play.GetComponent<RectTransform>().localScale = new Vector3(scale, scale, scale);
         //load.GetComponent<RectTransform>().localScale = new Vector3(scale, scale, scale);

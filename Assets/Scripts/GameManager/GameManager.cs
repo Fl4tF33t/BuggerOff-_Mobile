@@ -5,7 +5,6 @@ using System;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Diagnostics.CodeAnalysis;
-using System.Globalization;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -29,18 +28,13 @@ public class GameManager : Singleton<GameManager>
     public int BugBits { get {  return bugBits; } }
 
     public int currentlyPlayingLevel;
-    private string sceneName;
     private JSONSaving saving;
 
     private void Start()
     {
-        saving = JSONSaving.Instance;
-        if(saving != null)
-        {
-            playerData = saving.PlayerData;
 
-        }
-        sceneName = SceneManager.GetActiveScene().name;
+        saving = JSONSaving.Instance;
+        saving.LoadData();
 
         bugBits = 9000;
 
@@ -51,26 +45,85 @@ public class GameManager : Singleton<GameManager>
             { OnLevelLose(); }
         };
         BugBitsChange = (amount) => { bugBits += amount; OnUIChange?.Invoke(); };
+
+        string sceneName = SceneManager.GetActiveScene().name;
+        switch (sceneName)
+        {
+            case "London1":
+                currentlyPlayingLevel = 1;
+                break;
+            case "London2":
+                currentlyPlayingLevel = 2;
+                break;
+            case "Cairo1":
+                currentlyPlayingLevel = 3;
+                break;
+            case "Cairo2":
+                currentlyPlayingLevel = 4;
+                break;
+            case "Kyoto1":
+                currentlyPlayingLevel = 5;
+                break;
+            case "Rio1":
+                currentlyPlayingLevel = 6;
+                break;
+            default:
+                currentlyPlayingLevel = 0; // Default level or handle if necessary
+                break;
+        }
+
     }
 
     public void OnLevelCompleted()
     {
+        Debug.Log("Superdicks");
         //LevelCompletion.Instance.Victory(GetAmountOfStars());
 
-        foreach (var item in playerData.cityList)
+        if (currentlyPlayingLevel == saving.playerData.level)
         {
-            if(item.cityName == sceneName)
+            int[] saveStar = new int[6];
+            for (int i = 0; i < saveStar.Length; i++)
             {
-                item.isCompleted = true;
-
-                if(GetAmountOfStars() >= item.numberOfStars)
+                if (i == (saving.playerData.level - 1))
                 {
-                    item.numberOfStars = GetAmountOfStars();
+                    saveStar[i] = GetAmountOfStars();
+                    Debug.Log("This dick");
                 }
-
-                saving.PlayerData = playerData;
-                break;
+                else
+                {
+                    saveStar[i] = saving.playerData.starsEachLevel[i];
+                    Debug.Log("Not the dick");
+                }
+                Debug.Log(saveStar[i]);
             }
+
+            playerData = new PlayerData(saving.playerData.level + 1, saveStar, saving.playerData.stars + GetAmountOfStars());
+            Debug.Log("dicks are great " + playerData + "        "+ saving.playerData);
+            saving.SaveData(playerData);
+            saving.LoadData();
+            
+        }
+        else if (currentlyPlayingLevel < saving.playerData.level)
+        {
+            int[] saveStar = new int[6];
+            int adding = 0;
+            for (int i = 0; i < saveStar.Length; i++)
+            {
+                if (i == (currentlyPlayingLevel - 1) && saving.playerData.starsEachLevel[currentlyPlayingLevel-1] < GetAmountOfStars())
+                {
+                    saveStar[i] = GetAmountOfStars();
+                }
+                else
+                {
+                    saveStar[i] = saving.playerData.starsEachLevel[i];
+                }
+                adding += saveStar[i];
+            }
+
+            playerData = new PlayerData(saving.playerData.level, saveStar, adding);
+            Debug.Log("dicks are great number 2 " + playerData + "        " + saving.playerData);
+            saving.SaveData(playerData);
+            saving.LoadData();
         }
     }
 
