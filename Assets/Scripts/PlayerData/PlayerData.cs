@@ -17,7 +17,11 @@ public class PlayerData
             for (int i = 0; i < numberOfLevels; i++)
             {
                 City city = new City();
-
+                city.id = i + 1;
+                city.cityName = $"{item}{city.id}";
+                city.isCompleted = false;
+                city.numberOfStars = 0;
+                cityList.Add(city);
             }
         }
     }
@@ -25,8 +29,9 @@ public class PlayerData
     [System.Serializable]
     public class City
     {
-        public string cityName;
         public int id;
+        public string cityName;
+
         public bool isCompleted;
         public int numberOfStars;
     }
