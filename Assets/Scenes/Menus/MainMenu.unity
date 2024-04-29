@@ -662,6 +662,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419844634}
   m_CullTransparentMesh: 1
+--- !u!1 &580708706
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 580708708}
+  - component: {fileID: 580708707}
+  m_Layer: 0
+  m_Name: JSON
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &580708707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580708706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ddca420183554b44adceca141491508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerData:
+    cityList:
+    - id: 1
+      cityName: London1
+      isCompleted: 0
+      numberOfStars: 0
+    - id: 2
+      cityName: London2
+      isCompleted: 0
+      numberOfStars: 0
+    - id: 1
+      cityName: Cairo1
+      isCompleted: 0
+      numberOfStars: 0
+    - id: 2
+      cityName: Cairo2
+      isCompleted: 0
+      numberOfStars: 0
+    - id: 1
+      cityName: Kyoto1
+      isCompleted: 0
+      numberOfStars: 0
+    - id: 2
+      cityName: Kyoto2
+      isCompleted: 0
+      numberOfStars: 0
+    - id: 1
+      cityName: Rio1
+      isCompleted: 0
+      numberOfStars: 0
+    - id: 2
+      cityName: Rio2
+      isCompleted: 0
+      numberOfStars: 0
+--- !u!4 &580708708
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580708706}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &630041536
 GameObject:
   m_ObjectHideFlags: 0
@@ -1980,3 +2058,4 @@ SceneRoots:
   - {fileID: 1192626124}
   - {fileID: 1251418566}
   - {fileID: 1226855725}
+  - {fileID: 580708708}
