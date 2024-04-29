@@ -35,7 +35,11 @@ public class GameManager : Singleton<GameManager>
     private void Start()
     {
         saving = JSONSaving.Instance;
-        playerData = saving.PlayerData;
+        if(saving != null)
+        {
+            playerData = saving.PlayerData;
+
+        }
         sceneName = SceneManager.GetActiveScene().name;
 
         bugBits = 9000;

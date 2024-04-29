@@ -97,6 +97,7 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
         {
             prefabPos = selectedFrogPrefab.transform.position;
             StopCoroutineTarget(placeFrogCoroutine);
+
             if (IsPlacable(selectedFrogPrefab.transform.position))
             {
                 GameManager.Instance.BugBitsChange(-frogSO.logicSO.cost * number);
