@@ -5,39 +5,19 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerData 
 {
-    public List<City> cityList = new List<City>();
+    public int level;
+    public int[] starsEachLevel = new int[6];
+    public int stars;
 
-    private int numberOfLevels = 2;
-    private string[] cityNames = new string[4] { "London", "Cairo", "Kyoto", "Rio" };
-
-    public PlayerData()
+    public PlayerData(int level, int[] starsEachlevel, int stars)
     {
-        foreach (var item in cityNames)
-        {
-            for (int i = 0; i < numberOfLevels; i++)
-            {
-                City city = new City();
-                city.id = i + 1;
-                city.cityName = $"{item}{city.id}";
-                city.isCompleted = false;
-                city.numberOfStars = 0;
-                cityList.Add(city);
-            }
-        }
-    }
-
-    [System.Serializable]
-    public class City
-    {
-        public int id;
-        public string cityName;
-
-        public bool isCompleted;
-        public int numberOfStars;
+        this.level = level;
+        this.starsEachLevel = starsEachlevel;
+        this.stars = stars;
     }
 
     public override string ToString()
     {
-        return $"The player is on level and has all together.";
+        return $"The player is on level {level} and has {stars} all together.";
     }
 }
