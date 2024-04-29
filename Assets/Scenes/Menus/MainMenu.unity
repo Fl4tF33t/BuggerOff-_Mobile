@@ -434,7 +434,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Quit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: be56820cc7a3437419e9224e2aade57a, type: 2}
   m_sharedMaterial: {fileID: -6717747252002910683, guid: be56820cc7a3437419e9224e2aade57a,
@@ -872,18 +872,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 643394630}
   m_CullTransparentMesh: 1
---- !u!114 &800147387 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 444120008186690923, guid: d78d979702a8b4048ab49b87fbe171d7,
-    type: 3}
-  m_PrefabInstance: {fileID: 1511482593933642877}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ddca420183554b44adceca141491508, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &823014949
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,7 +1004,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Play
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: be56820cc7a3437419e9224e2aade57a, type: 2}
   m_sharedMaterial: {fileID: -6717747252002910683, guid: be56820cc7a3437419e9224e2aade57a,
@@ -1555,7 +1543,6 @@ MonoBehaviour:
   load: {fileID: 18243905}
   options: {fileID: 1177062067}
   quit: {fileID: 1017015681}
-  saving: {fileID: 800147387}
 --- !u!4 &1226855725
 Transform:
   m_ObjectHideFlags: 0
@@ -1696,7 +1683,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Options
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: be56820cc7a3437419e9224e2aade57a, type: 2}
   m_sharedMaterial: {fileID: -6717747252002910683, guid: be56820cc7a3437419e9224e2aade57a,
