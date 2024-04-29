@@ -34,6 +34,7 @@ public class GameManager : Singleton<GameManager>
     {
 
         saving = JSONSaving.Instance;
+        saving.LoadData();
 
         bugBits = 9000;
 
@@ -66,57 +67,63 @@ public class GameManager : Singleton<GameManager>
             case "Rio1":
                 currentlyPlayingLevel = 6;
                 break;
+            default:
+                currentlyPlayingLevel = 0; // Default level or handle if necessary
+                break;
         }
 
     }
 
     public void OnLevelCompleted()
     {
+        Debug.Log("Superdicks");
         //LevelCompletion.Instance.Victory(GetAmountOfStars());
 
-        if (currentlyPlayingLevel == saving.PlayerData.level)
+        if (currentlyPlayingLevel == saving.playerData.level)
         {
             int[] saveStar = new int[6];
             for (int i = 0; i < saveStar.Length; i++)
             {
-                if (i == (saving.PlayerData.level - 1))
+                if (i == (saving.playerData.level - 1))
                 {
                     saveStar[i] = GetAmountOfStars();
                     Debug.Log("This dick");
                 }
                 else
                 {
-                    saveStar[i] = saving.PlayerData.starsEachLevel[i];
+                    saveStar[i] = saving.playerData.starsEachLevel[i];
                     Debug.Log("Not the dick");
                 }
                 Debug.Log(saveStar[i]);
             }
 
-            playerData = new PlayerData(saving.PlayerData.level + 1, saveStar, saving.PlayerData.stars + GetAmountOfStars());
-            Debug.Log("dicks are great " + playerData + "        "+ saving.PlayerData);
-            saving.PlayerData = playerData;
+            playerData = new PlayerData(saving.playerData.level + 1, saveStar, saving.playerData.stars + GetAmountOfStars());
+            Debug.Log("dicks are great " + playerData + "        "+ saving.playerData);
+            saving.SaveData(playerData);
+            saving.LoadData();
             
         }
-        else if (currentlyPlayingLevel < saving.PlayerData.level)
+        else if (currentlyPlayingLevel < saving.playerData.level)
         {
             int[] saveStar = new int[6];
             int adding = 0;
             for (int i = 0; i < saveStar.Length; i++)
             {
-                if (i == (currentlyPlayingLevel - 1) && saving.PlayerData.starsEachLevel[currentlyPlayingLevel-1] < GetAmountOfStars())
+                if (i == (currentlyPlayingLevel - 1) && saving.playerData.starsEachLevel[currentlyPlayingLevel-1] < GetAmountOfStars())
                 {
                     saveStar[i] = GetAmountOfStars();
                 }
                 else
                 {
-                    saveStar[i] = saving.PlayerData.starsEachLevel[i];
+                    saveStar[i] = saving.playerData.starsEachLevel[i];
                 }
                 adding += saveStar[i];
             }
 
-            playerData = new PlayerData(saving.PlayerData.level, saveStar, adding);
-            Debug.Log("dicks are great number 2 " + playerData + "        " + saving.PlayerData);
-            saving.PlayerData = playerData;
+            playerData = new PlayerData(saving.playerData.level, saveStar, adding);
+            Debug.Log("dicks are great number 2 " + playerData + "        " + saving.playerData);
+            saving.SaveData(playerData);
+            saving.LoadData();
         }
     }
 
