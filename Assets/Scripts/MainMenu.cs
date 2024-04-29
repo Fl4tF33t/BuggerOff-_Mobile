@@ -11,8 +11,6 @@ public class MainMenu : MonoBehaviour
     public Button load;
     public Button options;
     public Button quit;
-    private JSONSaving saving;
-    private PlayerData playerData;
 
     private void Awake()
     {
@@ -43,15 +41,6 @@ public class MainMenu : MonoBehaviour
     }
     private void Start()
     {
-        saving = JSONSaving.Instance;
-        if (saving.persistentPath != null)
-        {
-            saving.LoadData();
-        }
-        else
-        {         
-            saving.SaveData(saving.ReturnPlayerData());
-        }
         //float scale = (float)Screen.height / 1080f;
         //play.GetComponent<RectTransform>().localScale = new Vector3(scale, scale, scale);
         //load.GetComponent<RectTransform>().localScale = new Vector3(scale, scale, scale);

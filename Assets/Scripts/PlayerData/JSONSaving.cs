@@ -1,92 +1,52 @@
+using System;
 using System.IO;
 using UnityEngine;
 
 public class JSONSaving : Singleton<JSONSaving>
 {
     [SerializeField]
-    public PlayerData playerData;
+    private PlayerData playerData;
 
-    private string path = "";
-    public string persistentPath = "";
+    public PlayerData PlayerData
+    {
+        get { return playerData; }
+        set { playerData = value; SaveData(playerData); Debug.Log("Modify value"); }
+    }
 
+    private string persistentPath;
 
-    // Start is called before the first frame update
     protected override void Awake()
     {
         base.Awake();
-        SetPaths();
-        CreatePlayerData();
-    }
+        DontDestroyOnLoad(this);
 
-    private void CreatePlayerData()
-    {
-        if (playerData.level == 0)
+        //create the path
+        persistentPath = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "SaveData.json";
+
+        if (File.Exists(persistentPath))
         {
-            int[] numberOfLevels = new int[6];
-            for (int i = 0; i < numberOfLevels.Length; i++)
-            {
-                numberOfLevels[i] = 0;
-            }
-            playerData = new PlayerData(1, numberOfLevels, 0);
-            Debug.Log("My dick is big   " + playerData);
-            SaveData(playerData);
+            LoadData();
+            Debug.Log("Load existing file");
         }
-        
-        //if (playerData != null)
-        //{
-        //    Debug.Log("there is a file already");
-        //    //return;
-        //}
-        //else
-        //{
-        //    int[] numberOfLevels = new int[6];
-        //    for (int i = 0; i < numberOfLevels.Length; i++)
-        //    {
-        //        numberOfLevels[i] = 0;
-        //    }
-        //    playerData = new PlayerData(1, numberOfLevels, 0);
-        //    Debug.Log("My dick is big   " + playerData);
-        //}   
-    }
-    
-    private void SetPaths()
-    {
-        path = Application.dataPath + Path.AltDirectorySeparatorChar + "SaveData.jsno";
-        persistentPath = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "SaveData.jsno";
+        else
+        {
+            playerData = new PlayerData();
+            PlayerData = playerData;
+            Debug.Log("Majke new file");
+        }
+
     }
 
-
-    // Update is called once per frame
-    void Update()
+    private void SaveData(PlayerData playerData)
     {
-        
+        string json = JsonUtility.ToJson(playerData);
+        File.WriteAllText(persistentPath, json);
     }
 
-    public void SaveData(PlayerData playerDataPlease)
+    private void LoadData()
     {
-        string savePath = persistentPath;
-
-        Debug.Log("Saving Data at " + savePath);
-        string json = JsonUtility.ToJson(playerDataPlease);
-        Debug.Log(json);
-
-        using StreamWriter writer = new StreamWriter(savePath);
-        writer.Write(json);
-    }
-
-    public void LoadData()
-    {
-        using StreamReader reader = new StreamReader(persistentPath);
-        string json = reader.ReadToEnd();
-
+        string json = File.ReadAllText(persistentPath);
         playerData = JsonUtility.FromJson<PlayerData>(json);
-        //Debug.Log(data.ToString());
     }
 
-    public PlayerData ReturnPlayerData()
-    {
-        return playerData;
-    }
-
-    
 }
