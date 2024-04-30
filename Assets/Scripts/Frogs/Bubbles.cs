@@ -63,7 +63,6 @@ public class Bubbles : MonoBehaviour
         _bubblesAnimator.Play(BUBBLES_RELOADING, 0, 0f);
     }
 
-
     public void PauseAnimator()
     {
         _bubblesAnimator.speed = 0;
