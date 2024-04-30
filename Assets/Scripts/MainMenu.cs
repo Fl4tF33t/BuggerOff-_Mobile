@@ -14,6 +14,12 @@ public class MainMenu : MonoBehaviour
 
     private void Awake()
     {
+        if (!PlayerPrefs.HasKey("MusicVolume") || !PlayerPrefs.HasKey("SFXVolume"))
+        {
+            PlayerPrefs.SetFloat("MusicVolume", 1);
+            PlayerPrefs.SetFloat("SFXVolume", 1);
+        }
+
         //Screen.SetResolution((Screen.height / 9 * 16), Screen.height, true);
         Debug.Log(Screen.height);
         Debug.Log((float)Screen.height / 1080f);
