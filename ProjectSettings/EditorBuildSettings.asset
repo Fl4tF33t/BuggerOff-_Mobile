@@ -6,29 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menus/WorldMenu.unity
-    guid: a25abfae8443f3540a1aa98ae880ba36
-  - enabled: 1
-    path: Assets/Scenes/Cairo/CairoLvl1.unity
-    guid: c7ef348dd0120fe48837d7781fd4f67f
-  - enabled: 1
-    path: Assets/Scenes/DexterSaveTest/Cairo1.unity
-    guid: a1490c328a71e3240812dc1606ede813
-  - enabled: 1
-    path: Assets/Scenes/DexterSaveTest/Cairo2.unity
-    guid: bed4f08735bf8aa499942a42c5300181
-  - enabled: 1
-    path: Assets/Scenes/DexterSaveTest/Kyoto1.unity
-    guid: 2339ad2dc727bcb4bbd16358a0bd90a2
-  - enabled: 1
-    path: Assets/Scenes/DexterSaveTest/London1.unity
-    guid: f0eceaca20359244883dac27cceac248
-  - enabled: 1
-    path: Assets/Scenes/DexterSaveTest/London2.unity
-    guid: 923201be59288534291e5bf4902609ef
-  - enabled: 1
-    path: Assets/Scenes/DexterSaveTest/Rio1.unity
-    guid: b4bef166613d53c4c92e7a5f42802eab
+    path: Assets/Scenes/London/LondonLvl1.unity
+    guid: 8108ce5c84c71de41a39e1b0e5f3e2bc
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000,
       guid: 101f97e1b8cc36a4ab02c05d08701e3a, type: 2}
