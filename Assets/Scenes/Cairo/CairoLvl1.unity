@@ -5704,6 +5704,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4508106152477599897, guid: c2416b263aa7731419a70f55d79b51b7,
         type: 3}
+      propertyPath: bugBits
+      value: 9069
+      objectReference: {fileID: 0}
+    - target: {fileID: 4508106152477599897, guid: c2416b263aa7731419a70f55d79b51b7,
+        type: 3}
       propertyPath: waveButton
       value: 
       objectReference: {fileID: 0}
