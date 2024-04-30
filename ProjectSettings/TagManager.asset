@@ -47,6 +47,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Frog_Diver
+    uniqueID: 3618697819
+    locked: 0
   - name: Bug_Beetle
     uniqueID: 2584200537
     locked: 0
@@ -82,9 +85,6 @@ TagManager:
     locked: 0
   - name: Frog_DesertRain
     uniqueID: 689300027
-    locked: 0
-  - name: Frog_Diver
-    uniqueID: 3618697819
     locked: 0
   - name: Frog_Samurai
     uniqueID: 2222209127

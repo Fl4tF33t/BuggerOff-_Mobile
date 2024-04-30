@@ -100,6 +100,12 @@ public class FrogBrain : MonoBehaviour
         GetComponent<BehaviourTreeRunner>().enabled = true;
         GetComponent<NavMeshAgent>().enabled = true;
         GetComponent<SphereCollider>().enabled = true;
+
+        if (frogSO.logicSO.frogName == "Diver")
+        {
+            gameObject.transform.GetChild(0).gameObject.SetActive(false);
+            gameObject.transform.GetChild(1).gameObject.SetActive(true);
+        }
         ChangeColor(Color.white);
     }
 
