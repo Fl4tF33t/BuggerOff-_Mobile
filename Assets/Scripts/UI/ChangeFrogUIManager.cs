@@ -14,15 +14,73 @@ public class ChangeFrogUIManager : MonoBehaviour
     private Image[] _frogSprites;
     private GameObject _frogWheel;
 
+    private JSONSaving saving;
+    private PlayerData playerData;
+
     // Start is called before the first frame update
     void Start()
     {
+        saving = JSONSaving.Instance;
+        playerData = saving.PlayerData;
+
         GetFrogContainer();
         GetFrogWheel();
 
 
         GetFrogSprites();
         PopulateFrogSprites();
+
+        UnlockWheelSlots();
+    }
+
+    private void UnlockWheelSlots()
+    {
+        GameObject[] slots = new GameObject[8];
+
+        for (int i = 0; i < slots.Length; i++)
+        {
+            slots[i] = _frogWheel.transform.GetChild(1).GetChild(i).gameObject;
+        }
+        for (int i = 3; i < slots.Length; i++)
+        {
+            if (playerData.cityList[i-3].isCompleted)
+            {
+                slots[i].transform.GetChild(1).gameObject.SetActive(true);
+                slots[i].transform.GetChild(3).gameObject.SetActive(false);
+            }
+        }
+    }
+
+    private void UnlockFrogs()
+    {
+        GameObject[] slots = new GameObject[10];
+
+        for (int i = 0; i < slots.Length; i++)
+        {
+            slots[i] = _frogContainer.transform.GetChild(i).gameObject;
+        }
+
+        if (playerData.cityList[0].isCompleted)
+        {
+            slots[3].transform.GetChild(0).GetChild()
+        }
+        if (playerData.cityList[1].isCompleted)
+        {
+
+        }
+        if (playerData.cityList[2].isCompleted)
+        {
+
+        }
+        if (playerData.cityList[3].isCompleted)
+        {
+
+        }
+        if (playerData.cityList[4].isCompleted)
+        {
+
+        }
+
 
     }
 
