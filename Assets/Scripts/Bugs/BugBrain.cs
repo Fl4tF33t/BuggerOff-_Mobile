@@ -1,15 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 [RequireComponent(typeof(BugMovement))]
-[RequireComponent(typeof(NavMeshAgent))]
 
 public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
 {
     public BugSO bugSO;
-    NavMeshAgent agent;
+    BugMovement bugMovement;
 
     public int health;
     public int shield;
@@ -24,17 +22,20 @@ public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
     private void Awake()
     {
         sprites = GetComponentsInChildren<SpriteRenderer>();
-        agent = GetComponent<NavMeshAgent>();
+        bugMovement = GetComponent<BugMovement>();
     }
 
     private void OnEnable()
     {
         isAttackable = true;
-        agent.enabled = true;
+        bugMovement.enabled = true;
         InitializeBugLogic(bugSO);
+    }
+
+    private void OnDisable()
+    {
+        bugMovement.enabled = false;
         StopAllCoroutines();
-        ChangeColor(Color.white);   
-        agent.speed = bugSO.speed;
     }
 
     private void InitializeBugLogic(BugSO bugSO)
@@ -51,8 +52,6 @@ public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
 
         //check if the bug has sheild
         if (shield > 0)
-
-
         {
             //if so, reduce the sheild
             shield -= damage;
@@ -100,14 +99,11 @@ public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
 
     public void BugSlow()
     {
-        CoroutineStarter(speedDamage, "SpeedDamage");
-    }
-
-    private IEnumerator SpeedDamage()
-    {
-        agent.speed *= .5f;
-        yield return new WaitForSeconds(1f);
-        agent.speed = bugSO.speed;
+        if (speedDamage != null)
+        {
+            StopCoroutine(speedDamage);
+        }
+        speedDamage = StartCoroutine(bugMovement.SpeedDamage());
     }
 
     private void CoroutineStarter(Coroutine coroutine, string ieNum)

@@ -9,5 +9,5 @@ AnimatorOverrideController:
   m_Name: Bug_Animator_Centipede_Body_1
   m_Controller: {fileID: 9100000, guid: 5b841d63ea6445345b4bc17c65772a69, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: f36e04cd2f30fb243b9cb97bbf900f2d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e0a1aaa6e9c39ab40a424c94a11d6db1, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: eb96c266fc431dd4093efce109d92e84, type: 2}
