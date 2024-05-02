@@ -10,6 +10,7 @@ public class SingleAttack : ActionNode
     private bool endAnim;
     private float tongueDistance = 9f;
     private float tongueSpeed = 100f;
+    private float mummySpeed = 30f;
 
     protected override void OnStart() {
         endAnim = false;
@@ -17,7 +18,8 @@ public class SingleAttack : ActionNode
         {
             Vector3 direction = blackboard.selectedTarget.transform.position - context.transform.position;
             float distance = direction.magnitude;
-            context.frogBrain.StartCoroutine(Toungue(distance * tongueDistance, tongueSpeed));
+            float speed = context.frogBrain.frogSO.logicSO.frogName == "Mummy" ? mummySpeed : tongueSpeed;
+            context.frogBrain.StartCoroutine(Toungue(distance * tongueDistance, speed));
         }
     }
 
@@ -43,6 +45,7 @@ public class SingleAttack : ActionNode
 
     private IEnumerator Toungue(float maxScale, float scaleSpeed)
     {
+        
         while (maxScale > context.frogBrain.singleAttack.localScale.y && blackboard.selectedTarget.activeSelf)
         {
             context.frogBrain.singleAttack.localScale += Vector3.up * Time.deltaTime * scaleSpeed;
@@ -52,6 +55,7 @@ public class SingleAttack : ActionNode
         {
             blackboard.selectedTarget.GetComponent<BugBrain>().isAttackable = false;
             blackboard.selectedTarget.GetComponent<NavMeshAgent>().enabled = false;
+            blackboard.selectedTarget.GetComponent<BugMovement>().enabled = false;
 
             //context.frogBrain.StartCoroutine(Shrink(scaleSpeed));
         }
@@ -63,6 +67,11 @@ public class SingleAttack : ActionNode
         while (context.frogBrain.singleAttack.localScale.y >= .99)
         {
             context.frogBrain.singleAttack.localScale += Vector3.down * Time.deltaTime * scaleSpeed;
+            if (context.gameObject.name.Contains("Mummy"))
+            {
+                blackboard.selectedTarget.transform.position = Vector3.Lerp(blackboard.selectedTarget.transform.position, context.transform.position, scaleSpeed * Time.deltaTime / 10f);
+                Debug.Log("pull the fucker");
+            }
             yield return null;
         }
         if(blackboard.selectedTarget != null || blackboard.selectedTarget.activeSelf)
