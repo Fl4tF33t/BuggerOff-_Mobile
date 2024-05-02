@@ -93,4 +93,34 @@ public class UIUpgradeCanvasPointToMiddle : MonoBehaviour
 
         Targeting.text = frogBrain.frog.target.ToString();
     }
+
+    public void SellFrog()
+    {
+        string frogName = frogBrain.frogSO.logicSO.frogName;
+        FrogBrain[] arrayOfAllFrogs = FindObjectsOfType<FrogBrain>();
+        int numOfFrogs = 0;
+        foreach (var item in arrayOfAllFrogs)
+        {
+            if (item.name.Contains(frogName))
+            {
+                numOfFrogs++;
+            }
+        }
+
+        int disciplinePrice = (frogBrain.frogUpgrade.disciplineLevel - frogBrain.frogSO.logicSO.discipline) * frogBrain.frogSO.logicSO.upgradeDiscipline.price;
+        int damagePrice = frogBrain.frogUpgrade.damageLevel * frogBrain.frogSO.logicSO.upgradeDamage.price;
+        int rangePrice = frogBrain.frogUpgrade.rangeLevel * frogBrain.frogSO.logicSO.upgradeRange.price;
+        int attackSpeedPrice = frogBrain.frogUpgrade.attackSpeedLevel * frogBrain.frogSO.logicSO.upgradeAttackSpeed.price;
+
+        float upgradePrice = disciplinePrice + damagePrice + rangePrice + attackSpeedPrice;
+
+        float sellPrice = (((float)frogBrain.frogSO.logicSO.cost * numOfFrogs) + upgradePrice) / 2f;
+        int roundedPrice = (int)Math.Round(sellPrice);
+
+        GameManager.Instance.BugBitsChange(roundedPrice);
+
+        Destroy(frogBrain.gameObject);
+
+        
+    }
 }
