@@ -18,6 +18,12 @@ public class MainMenu : MonoBehaviour
         {
             PlayerPrefs.SetFloat("MusicVolume", 1);
             PlayerPrefs.SetFloat("SFXVolume", 1);
+
+
+        }
+        else
+        {
+
         }
 
         //Screen.SetResolution((Screen.height / 9 * 16), Screen.height, true);
