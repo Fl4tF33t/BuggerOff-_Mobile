@@ -68,6 +68,9 @@ TagManager:
   - name: Bug_Hornet
     uniqueID: 4278988743
     locked: 0
+  - name: Bug_Centipede
+    uniqueID: 3427245837
+    locked: 0
   - name: Bug_Boss
     uniqueID: 2023343925
     locked: 0
