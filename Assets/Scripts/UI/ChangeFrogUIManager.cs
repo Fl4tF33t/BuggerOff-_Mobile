@@ -51,6 +51,39 @@ public class ChangeFrogUIManager : MonoBehaviour
         }
     }
 
+    private void UnlockFrogs()
+    {
+        GameObject[] slots = new GameObject[10];
+
+        for (int i = 0; i < slots.Length; i++)
+        {
+            slots[i] = _frogContainer.transform.GetChild(i).gameObject;
+        }
+
+        if (playerData.cityList[0].isCompleted)
+        {
+            slots[3].transform.GetChild(0).GetChild()
+        }
+        if (playerData.cityList[1].isCompleted)
+        {
+
+        }
+        if (playerData.cityList[2].isCompleted)
+        {
+
+        }
+        if (playerData.cityList[3].isCompleted)
+        {
+
+        }
+        if (playerData.cityList[4].isCompleted)
+        {
+
+        }
+
+
+    }
+
     private void GetFrogWheel()
     {
         _frogWheel = _changeFrogs.transform.GetChild(2).gameObject;
