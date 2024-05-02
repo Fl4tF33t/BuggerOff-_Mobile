@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CommonFrogVisual
   m_EditorClassIdentifier: 
   userInterface:
-    UIShopSprite: {fileID: 21300000, guid: 0bb83caf7911b8443b67bba98b8c0cc7, type: 3}
+    UIShopSprite: {fileID: 21300000, guid: dfea14eab3f2ec24594fbfaa4f03f79a, type: 3}
     UIShopTextInfo: Your common frog is here
     UIUpgradeButtons:
     - {fileID: 21300000, guid: 654c00b69fddb5a4ea90ac6a2e611dd1, type: 3}
