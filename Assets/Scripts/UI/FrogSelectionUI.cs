@@ -17,6 +17,7 @@ public class FrogSelectionUI : MonoBehaviour, IPointerDownHandler
     private void Start()
     {
         _frogChangeSelection = transform.parent.parent.parent.GetComponent<FrogChangeSelection>();
+        print(gameObject.name);
     }
     public void OnPointerDown(PointerEventData eventData)
     {

@@ -39,7 +39,11 @@ public class WorldMapUIManager : MonoBehaviour
     private void Start()
     {
         saving = JSONSaving.Instance;
-        playerData = saving.PlayerData;
+        if (saving != null)
+        {
+            playerData = saving.PlayerData;
+
+        }
 
         _cancelButton.onClick.AddListener(() => OnClosePopUp());
         _londonButton.onClick.AddListener(() => OnClickedCity(_londonButton, _citiesSO[0]));

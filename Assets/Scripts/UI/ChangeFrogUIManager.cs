@@ -21,7 +21,11 @@ public class ChangeFrogUIManager : MonoBehaviour
     void Start()
     {
         saving = JSONSaving.Instance;
-        playerData = saving.PlayerData;
+        if (saving != null)
+        {
+            playerData = saving.PlayerData;
+
+        }
 
         GetFrogContainer();
         GetFrogWheel();
@@ -31,7 +35,10 @@ public class ChangeFrogUIManager : MonoBehaviour
         PopulateFrogSprites();
 
         UnlockWheelSlots();
+        UnlockFrogs();
     }
+
+    
 
     private void UnlockWheelSlots()
     {
@@ -62,24 +69,61 @@ public class ChangeFrogUIManager : MonoBehaviour
 
         if (playerData.cityList[0].isCompleted)
         {
-            // Herra Dex this was giving me a compile error. I did not want to touch just in case i break it more.
-            //slots[3].transform.GetChild(0).GetChild();
+            slots[3].transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
+            slots[3].transform.GetChild(0).GetChild(2).gameObject.SetActive(false);
+        }
+        else
+        {
+            slots[3].transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+            slots[3].transform.GetChild(0).GetChild(2).gameObject.SetActive(true);
         }
         if (playerData.cityList[1].isCompleted)
         {
-
+            slots[4].transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
+            slots[4].transform.GetChild(0).GetChild(2).gameObject.SetActive(false);
+        }
+        else
+        {
+            slots[4].transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+            slots[4].transform.GetChild(0).GetChild(2).gameObject.SetActive(true);
         }
         if (playerData.cityList[2].isCompleted)
         {
-
+            slots[5].transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
+            slots[5].transform.GetChild(0).GetChild(2).gameObject.SetActive(false);
+        }
+        else
+        {
+            slots[5].transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+            slots[5].transform.GetChild(0).GetChild(2).gameObject.SetActive(true);
         }
         if (playerData.cityList[3].isCompleted)
         {
-
+            slots[6].transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
+            slots[6].transform.GetChild(0).GetChild(2).gameObject.SetActive(false);
+            slots[8].transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
+            slots[8].transform.GetChild(0).GetChild(2).gameObject.SetActive(false);
+        }
+        else
+        {
+            slots[6].transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+            slots[6].transform.GetChild(0).GetChild(2).gameObject.SetActive(true);
+            slots[8].transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+            slots[8].transform.GetChild(0).GetChild(2).gameObject.SetActive(true);
         }
         if (playerData.cityList[4].isCompleted)
         {
-
+            slots[7].transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
+            slots[7].transform.GetChild(0).GetChild(2).gameObject.SetActive(false);
+            slots[9].transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
+            slots[9].transform.GetChild(0).GetChild(2).gameObject.SetActive(false);
+        }
+        else
+        {
+            slots[7].transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+            slots[7].transform.GetChild(0).GetChild(2).gameObject.SetActive(true);
+            slots[9].transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+            slots[9].transform.GetChild(0).GetChild(2).gameObject.SetActive(true);
         }
 
 
