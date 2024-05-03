@@ -12,6 +12,7 @@ using UnityEngine.AI;
 public class FrogBrain : MonoBehaviour
 {
     public event Action<string> OnAnimationTrigger;
+    public event Action OnFrogSpawned;
 
     public Action<bool> OnUpgradeUI;
     public Action<string> OnTriggerEvent;
@@ -93,10 +94,13 @@ public class FrogBrain : MonoBehaviour
             canvas.transform.Find("DisciplineConfirm").gameObject.SetActive(false);
         };
         OnTriggerEvent = (arg) => { OnAnimationTrigger?.Invoke(arg); };
+        
+        
     }
 
     public void SpawnFrog()
     {
+        Debug.Log("Sup");
         GetComponent<BehaviourTreeRunner>().enabled = true;
         GetComponent<NavMeshAgent>().enabled = true;
         GetComponent<SphereCollider>().enabled = true;
@@ -106,6 +110,12 @@ public class FrogBrain : MonoBehaviour
             gameObject.transform.GetChild(0).gameObject.SetActive(false);
             gameObject.transform.GetChild(1).gameObject.SetActive(true);
         }
+
+        //Santiago
+        OnFrogSpawned?.Invoke();
+        //Santiago
+        //Debug.Log("Frog spawned");
+
         ChangeColor(Color.white);
     }
 

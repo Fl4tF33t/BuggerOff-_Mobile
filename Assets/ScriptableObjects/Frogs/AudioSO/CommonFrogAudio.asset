@@ -12,15 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d7b830ef96fc1e45b96f5c585e5e8ad, type: 3}
   m_Name: CommonFrogAudio
   m_EditorClassIdentifier: 
-  idle:
-    sound: {fileID: 0}
-    volume: 0.602
+  _spawn:
+  - _audioClip: {fileID: 8300000, guid: 91f18dd33f527b841bd7ecbb54ca1867, type: 3}
+    volume: 0.491
   jump:
-    sound: {fileID: 0}
+    _audioClip: {fileID: 8300000, guid: bcc4424450a6dbc4a989b2669d2a8b28, type: 3}
     volume: 0.316
   attack:
-    sound: {fileID: 0}
+    _audioClip: {fileID: 8300000, guid: 40158afa33b5d4a41b7565f3525cc7fe, type: 3}
     volume: 0.367
-  lure:
-    sound: {fileID: 0}
-    volume: 0.627
+  _ninja2ndAttack:
+    _audioClip: {fileID: 0}
+    volume: 0
+  _missingSFX:
+    _audioClip: {fileID: 0}
+    volume: 0

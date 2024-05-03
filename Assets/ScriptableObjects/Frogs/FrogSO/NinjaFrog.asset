@@ -15,4 +15,4 @@ MonoBehaviour:
   prefab: {fileID: 5030550128953497178, guid: d9fb5e9e57f5abb448f67df2a9d2f7be, type: 3}
   logicSO: {fileID: 11400000, guid: d9a261704cb9c104d95524b92cf6b3d0, type: 2}
   visualSO: {fileID: 11400000, guid: 830835e324a01544c95ec73b32dfebdd, type: 2}
-  audioSO: {fileID: 11400000, guid: aeaaccc71dc98784b8e7a2e9e4b3c36b, type: 2}
+  audioSO: {fileID: 11400000, guid: 1c5e0bcdb1b17ef449d5c00994ffdccf, type: 2}

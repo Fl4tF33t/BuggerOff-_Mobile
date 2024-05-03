@@ -94,7 +94,7 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: centipede body5
+  - name: centipede head
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -103,6 +103,153 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
+      width: 165
+      height: 160
+    spriteID: 743d3c1d0da9a654daa666d18f2305dd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 454, y: 799}
+  - name: centipede left horn
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 895
+      width: 120
+      height: 72
+    spriteID: f15aaf48074ce2241ace6168fe604f48
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 895}
+    spritePosition: {x: 394, y: 887}
+  - name: centipede right horn
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 177
+      y: 294
+      width: 120
+      height: 72
+    spriteID: 09ccfb9ac29d9c04ea2af27f413b8139
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 177, y: 294}
+    spritePosition: {x: 559, y: 887}
+  - name: centipede body1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 470
+      width: 159
+      height: 132
+    spriteID: eac97655a27c9d34b8f3bcd9cbcd88a7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 470}
+    spritePosition: {x: 457, y: 714}
+  - name: centipede body2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 754
+      width: 151
+      height: 133
+    spriteID: 3417636463b5fb3429e2a6ee816faa96
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 754}
+    spritePosition: {x: 459, y: 614}
+  - name: centipede body3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 172
+      width: 157
+      height: 141
+    spriteID: b9087e2883e97204286fdf7bf019509c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 172}
+    spritePosition: {x: 456, y: 522}
+  - name: centipede body4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 177
+      y: 4
+      width: 151
+      height: 129
+    spriteID: bf8c045b98d33c94991d11044e086d77
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 177, y: 4}
+    spritePosition: {x: 460, y: 438}
+  - name: centipede body5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 321
       width: 153
       height: 141
     spriteID: c9f2636c92b2dbb4e9c280676d7c6d6a
@@ -419,9 +566,9 @@ ScriptedImporter:
     - {x: 24, y: 25}
     - {x: 25, y: 26}
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: 4, y: 321}
     spritePosition: {x: 460, y: 350}
-  - name: centipede left leg 5
+  - name: centipede body6
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -429,7 +576,133 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 153
+      y: 610
+      width: 151
+      height: 136
+    spriteID: 09f4a9701d78ce748a018b4bb36012d5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 610}
+    spritePosition: {x: 462, y: 271}
+  - name: centipede tail
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 177
+      y: 141
+      width: 133
+      height: 145
+    spriteID: 624c864b5fdd1464f928561b399dfb3c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 177, y: 141}
+    spritePosition: {x: 471, y: 174}
+  - name: centipede left leg 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 177
+      y: 925
+      width: 97
+      height: 64
+    spriteID: 517ee9fc078199a4bb464fe518dab999
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 177, y: 925}
+    spritePosition: {x: 394, y: 774}
+  - name: centipede left leg 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 393
+      y: 4
+      width: 105
+      height: 48
+    spriteID: 4fc3b8a7312a6d04aa31bf195535a3be
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 393, y: 4}
+    spritePosition: {x: 386, y: 705}
+  - name: centipede left leg 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 975
+      width: 107
+      height: 45
+    spriteID: ff941468635f988449d122313decc442
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 975}
+    spritePosition: {x: 382, y: 617}
+  - name: centipede left leg 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 393
+      y: 60
+      width: 105
+      height: 48
+    spriteID: 8e294774b515d5a4cb47084c605acdc1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 393, y: 60}
+    spritePosition: {x: 387, y: 504}
+  - name: centipede left leg 5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 177
+      y: 702
       width: 95
       height: 67
     spriteID: 5403fb8a4c2cb6148991dfdd4b6aa8c0
@@ -702,8 +975,155 @@ ScriptedImporter:
     - {x: 20, y: 21}
     - {x: 21, y: 22}
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 153}
+    uvTransform: {x: 177, y: 702}
     spritePosition: {x: 396, y: 409}
+  - name: centipede left leg 6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 177
+      y: 374
+      width: 90
+      height: 74
+    spriteID: dce75d69564867348923273f2d65a2e1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 177, y: 374}
+    spritePosition: {x: 397, y: 316}
+  - name: centipede left leg 7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 177
+      y: 456
+      width: 90
+      height: 74
+    spriteID: ff0be3446717b644c990e29eaa30977b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 177, y: 456}
+    spritePosition: {x: 427, y: 228}
+  - name: centipede left leg 8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 336
+      y: 4
+      width: 49
+      height: 108
+    spriteID: 7fe3713079db3c74f83fe918e414ffc4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 336, y: 4}
+    spritePosition: {x: 462, y: 118}
+  - name: centipede right leg 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 177
+      y: 852
+      width: 97
+      height: 65
+    spriteID: 784bca25630bb9b449dff29b604dd447
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 177, y: 852}
+    spritePosition: {x: 582, y: 775}
+  - name: centipede right leg 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 393
+      y: 116
+      width: 105
+      height: 48
+    spriteID: 226756b42fbe783418c4afcf383db8c8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 393, y: 116}
+    spritePosition: {x: 578, y: 709}
+  - name: centipede right leg 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 393
+      y: 228
+      width: 107
+      height: 45
+    spriteID: 3f42bc252d2b0b143bbe608575432b9b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 393, y: 228}
+    spritePosition: {x: 580, y: 623}
+  - name: centipede right leg 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 393
+      y: 172
+      width: 105
+      height: 48
+    spriteID: 3ea20abb4779fe64d834e3f37a3e7183
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 393, y: 172}
+    spritePosition: {x: 580, y: 513}
   - name: centipede right leg 5
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -711,8 +1131,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 107
-      y: 153
+      x: 177
+      y: 777
       width: 95
       height: 67
     spriteID: 88fc4929b76d24b40a0ca68a6b1ce692
@@ -996,8 +1416,71 @@ ScriptedImporter:
     - {x: 21, y: 22}
     - {x: 22, y: 23}
     tessellationDetail: 0
-    uvTransform: {x: 107, y: 153}
+    uvTransform: {x: 177, y: 777}
     spritePosition: {x: 583, y: 414}
+  - name: centipede right leg 6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 177
+      y: 538
+      width: 90
+      height: 74
+    spriteID: d2d8d7a21c079514683fc45d1bf6b02d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 177, y: 538}
+    spritePosition: {x: 587, y: 319}
+  - name: centipede right leg 7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 177
+      y: 620
+      width: 90
+      height: 74
+    spriteID: 57e4f5952e87d2d4bae4dd4b01cf7842
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 177, y: 620}
+    spritePosition: {x: 559, y: 233}
+  - name: centipede right leg 8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 336
+      y: 120
+      width: 49
+      height: 107
+    spriteID: 74482bcb092287e40902d012fa04475b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 336, y: 120}
+    spritePosition: {x: 562, y: 119}
   characterData:
     bones:
     - name: Bug_Centipede_Root
@@ -1177,7 +1660,7 @@ ScriptedImporter:
     layerID: 10
     mosaicPosition: {x: 4, y: 4}
     flatten: 0
-    isImported: 0
+    isImported: 1
     isVisible: 1
   - name: centipede left horn
     spriteName: centipede left horn
@@ -1187,7 +1670,7 @@ ScriptedImporter:
     layerID: 12
     mosaicPosition: {x: 4, y: 895}
     flatten: 0
-    isImported: 0
+    isImported: 1
     isVisible: 1
   - name: centipede right horn
     spriteName: centipede right horn
@@ -1197,7 +1680,7 @@ ScriptedImporter:
     layerID: 11
     mosaicPosition: {x: 177, y: 294}
     flatten: 0
-    isImported: 0
+    isImported: 1
     isVisible: 1
   - name: body
     spriteName: 
@@ -1217,7 +1700,7 @@ ScriptedImporter:
     layerID: 9
     mosaicPosition: {x: 4, y: 470}
     flatten: 0
-    isImported: 0
+    isImported: 1
     isVisible: 1
   - name: centipede body2
     spriteName: centipede body2
@@ -1227,7 +1710,7 @@ ScriptedImporter:
     layerID: 8
     mosaicPosition: {x: 4, y: 754}
     flatten: 0
-    isImported: 0
+    isImported: 1
     isVisible: 1
   - name: centipede body3
     spriteName: centipede body3
@@ -1237,7 +1720,7 @@ ScriptedImporter:
     layerID: 7
     mosaicPosition: {x: 4, y: 172}
     flatten: 0
-    isImported: 0
+    isImported: 1
     isVisible: 1
   - name: centipede body4
     spriteName: centipede body4
@@ -1247,7 +1730,7 @@ ScriptedImporter:
     layerID: 6
     mosaicPosition: {x: 177, y: 4}
     flatten: 0
-    isImported: 0
+    isImported: 1
     isVisible: 1
   - name: centipede body5
     spriteName: centipede body5
@@ -1255,7 +1738,7 @@ ScriptedImporter:
     parentIndex: 3
     spriteID: c9f2636c92b2dbb4e9c280676d7c6d6a
     layerID: 4
-    mosaicPosition: {x: 4, y: 4}
+    mosaicPosition: {x: 4, y: 321}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -1267,7 +1750,7 @@ ScriptedImporter:
     layerID: 3
     mosaicPosition: {x: 4, y: 610}
     flatten: 0
-    isImported: 0
+    isImported: 1
     isVisible: 1
   - name: centipede tail
     spriteName: centipede tail
@@ -1277,7 +1760,7 @@ ScriptedImporter:
     layerID: 5
     mosaicPosition: {x: 177, y: 141}
     flatten: 0
-    isImported: 0
+    isImported: 1
     isVisible: 1
   - name: left side legs
     spriteName: 
@@ -1297,7 +1780,7 @@ ScriptedImporter:
     layerID: 30
     mosaicPosition: {x: 177, y: 925}
     flatten: 0
-    isImported: 0
+    isImported: 1
     isVisible: 1
   - name: centipede left leg 2
     spriteName: centipede left leg 2
@@ -1307,7 +1790,7 @@ ScriptedImporter:
     layerID: 31
     mosaicPosition: {x: 393, y: 4}
     flatten: 0
-    isImported: 0
+    isImported: 1
     isVisible: 1
   - name: centipede left leg 3
     spriteName: centipede left leg 3
@@ -1317,7 +1800,7 @@ ScriptedImporter:
     layerID: 32
     mosaicPosition: {x: 4, y: 975}
     flatten: 0
-    isImported: 0
+    isImported: 1
     isVisible: 1
   - name: centipede left leg 4
     spriteName: centipede left leg 4
@@ -1327,7 +1810,7 @@ ScriptedImporter:
     layerID: 33
     mosaicPosition: {x: 393, y: 60}
     flatten: 0
-    isImported: 0
+    isImported: 1
     isVisible: 1
   - name: centipede left leg 5
     spriteName: centipede left leg 5
@@ -1335,7 +1818,7 @@ ScriptedImporter:
     parentIndex: 11
     spriteID: 5403fb8a4c2cb6148991dfdd4b6aa8c0
     layerID: 34
-    mosaicPosition: {x: 4, y: 153}
+    mosaicPosition: {x: 177, y: 702}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -1347,7 +1830,7 @@ ScriptedImporter:
     layerID: 35
     mosaicPosition: {x: 177, y: 374}
     flatten: 0
-    isImported: 0
+    isImported: 1
     isVisible: 1
   - name: centipede left leg 7
     spriteName: centipede left leg 7
@@ -1357,7 +1840,7 @@ ScriptedImporter:
     layerID: 36
     mosaicPosition: {x: 177, y: 456}
     flatten: 0
-    isImported: 0
+    isImported: 1
     isVisible: 1
   - name: centipede left leg 8
     spriteName: centipede left leg 8
@@ -1367,7 +1850,7 @@ ScriptedImporter:
     layerID: 37
     mosaicPosition: {x: 336, y: 4}
     flatten: 0
-    isImported: 0
+    isImported: 1
     isVisible: 1
   - name: right side legs
     spriteName: 
@@ -1387,7 +1870,7 @@ ScriptedImporter:
     layerID: 15
     mosaicPosition: {x: 177, y: 852}
     flatten: 0
-    isImported: 0
+    isImported: 1
     isVisible: 1
   - name: centipede right leg 2
     spriteName: centipede right leg 2
@@ -1397,7 +1880,7 @@ ScriptedImporter:
     layerID: 16
     mosaicPosition: {x: 393, y: 116}
     flatten: 0
-    isImported: 0
+    isImported: 1
     isVisible: 1
   - name: centipede right leg 3
     spriteName: centipede right leg 3
@@ -1407,7 +1890,7 @@ ScriptedImporter:
     layerID: 17
     mosaicPosition: {x: 393, y: 228}
     flatten: 0
-    isImported: 0
+    isImported: 1
     isVisible: 1
   - name: centipede right leg 4
     spriteName: centipede right leg 4
@@ -1417,7 +1900,7 @@ ScriptedImporter:
     layerID: 18
     mosaicPosition: {x: 393, y: 172}
     flatten: 0
-    isImported: 0
+    isImported: 1
     isVisible: 1
   - name: centipede right leg 5
     spriteName: centipede right leg 5
@@ -1425,7 +1908,7 @@ ScriptedImporter:
     parentIndex: 20
     spriteID: 88fc4929b76d24b40a0ca68a6b1ce692
     layerID: 19
-    mosaicPosition: {x: 107, y: 153}
+    mosaicPosition: {x: 177, y: 777}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -1437,7 +1920,7 @@ ScriptedImporter:
     layerID: 21
     mosaicPosition: {x: 177, y: 538}
     flatten: 0
-    isImported: 0
+    isImported: 1
     isVisible: 1
   - name: centipede right leg 7
     spriteName: centipede right leg 7
@@ -1447,7 +1930,7 @@ ScriptedImporter:
     layerID: 22
     mosaicPosition: {x: 177, y: 620}
     flatten: 0
-    isImported: 0
+    isImported: 1
     isVisible: 1
   - name: centipede right leg 8
     spriteName: centipede right leg 8
@@ -1457,184 +1940,10 @@ ScriptedImporter:
     layerID: 23
     mosaicPosition: {x: 336, y: 120}
     flatten: 0
-    isImported: 0
+    isImported: 1
     isVisible: 1
   sharedRigPSDLayers: []
-  pSDLayerImportSetting:
-  - spriteId: 743d3c1d0da9a654daa666d18f2305dd
-    name: centipede head
-    layerId: 10
-    flatten: 0
-    isGroup: 0
-    importLayer: 0
-  - spriteId: f15aaf48074ce2241ace6168fe604f48
-    name: centipede left horn
-    layerId: 12
-    flatten: 0
-    isGroup: 0
-    importLayer: 0
-  - spriteId: 09ccfb9ac29d9c04ea2af27f413b8139
-    name: centipede right horn
-    layerId: 11
-    flatten: 0
-    isGroup: 0
-    importLayer: 0
-  - spriteId: c24ac6fde741e6840a530fcfe65e0244
-    name: body
-    layerId: 26
-    flatten: 0
-    isGroup: 1
-    importLayer: 1
-  - spriteId: eac97655a27c9d34b8f3bcd9cbcd88a7
-    name: centipede body1
-    layerId: 9
-    flatten: 0
-    isGroup: 0
-    importLayer: 0
-  - spriteId: 3417636463b5fb3429e2a6ee816faa96
-    name: centipede body2
-    layerId: 8
-    flatten: 0
-    isGroup: 0
-    importLayer: 0
-  - spriteId: b9087e2883e97204286fdf7bf019509c
-    name: centipede body3
-    layerId: 7
-    flatten: 0
-    isGroup: 0
-    importLayer: 0
-  - spriteId: bf8c045b98d33c94991d11044e086d77
-    name: centipede body4
-    layerId: 6
-    flatten: 0
-    isGroup: 0
-    importLayer: 0
-  - spriteId: c9f2636c92b2dbb4e9c280676d7c6d6a
-    name: centipede body5
-    layerId: 4
-    flatten: 0
-    isGroup: 0
-    importLayer: 1
-  - spriteId: 09f4a9701d78ce748a018b4bb36012d5
-    name: centipede body6
-    layerId: 3
-    flatten: 0
-    isGroup: 0
-    importLayer: 0
-  - spriteId: 624c864b5fdd1464f928561b399dfb3c
-    name: centipede tail
-    layerId: 5
-    flatten: 0
-    isGroup: 0
-    importLayer: 0
-  - spriteId: e687e55b458491643b5e5eb876cabc6c
-    name: left side legs
-    layerId: 28
-    flatten: 0
-    isGroup: 1
-    importLayer: 1
-  - spriteId: 517ee9fc078199a4bb464fe518dab999
-    name: centipede left leg 1
-    layerId: 30
-    flatten: 0
-    isGroup: 0
-    importLayer: 0
-  - spriteId: 4fc3b8a7312a6d04aa31bf195535a3be
-    name: centipede left leg 2
-    layerId: 31
-    flatten: 0
-    isGroup: 0
-    importLayer: 0
-  - spriteId: ff941468635f988449d122313decc442
-    name: centipede left leg 3
-    layerId: 32
-    flatten: 0
-    isGroup: 0
-    importLayer: 0
-  - spriteId: 8e294774b515d5a4cb47084c605acdc1
-    name: centipede left leg 4
-    layerId: 33
-    flatten: 0
-    isGroup: 0
-    importLayer: 0
-  - spriteId: 5403fb8a4c2cb6148991dfdd4b6aa8c0
-    name: centipede left leg 5
-    layerId: 34
-    flatten: 0
-    isGroup: 0
-    importLayer: 1
-  - spriteId: dce75d69564867348923273f2d65a2e1
-    name: centipede left leg 6
-    layerId: 35
-    flatten: 0
-    isGroup: 0
-    importLayer: 0
-  - spriteId: ff0be3446717b644c990e29eaa30977b
-    name: centipede left leg 7
-    layerId: 36
-    flatten: 0
-    isGroup: 0
-    importLayer: 0
-  - spriteId: 7fe3713079db3c74f83fe918e414ffc4
-    name: centipede left leg 8
-    layerId: 37
-    flatten: 0
-    isGroup: 0
-    importLayer: 0
-  - spriteId: 796c1ab3b4b27ed4b95d9d940602cd21
-    name: right side legs
-    layerId: 24
-    flatten: 0
-    isGroup: 1
-    importLayer: 1
-  - spriteId: 784bca25630bb9b449dff29b604dd447
-    name: centipede right leg 1
-    layerId: 15
-    flatten: 0
-    isGroup: 0
-    importLayer: 0
-  - spriteId: 226756b42fbe783418c4afcf383db8c8
-    name: centipede right leg 2
-    layerId: 16
-    flatten: 0
-    isGroup: 0
-    importLayer: 0
-  - spriteId: 3f42bc252d2b0b143bbe608575432b9b
-    name: centipede right leg 3
-    layerId: 17
-    flatten: 0
-    isGroup: 0
-    importLayer: 0
-  - spriteId: 3ea20abb4779fe64d834e3f37a3e7183
-    name: centipede right leg 4
-    layerId: 18
-    flatten: 0
-    isGroup: 0
-    importLayer: 0
-  - spriteId: 88fc4929b76d24b40a0ca68a6b1ce692
-    name: centipede right leg 5
-    layerId: 19
-    flatten: 0
-    isGroup: 0
-    importLayer: 1
-  - spriteId: d2d8d7a21c079514683fc45d1bf6b02d
-    name: centipede right leg 6
-    layerId: 21
-    flatten: 0
-    isGroup: 0
-    importLayer: 0
-  - spriteId: 57e4f5952e87d2d4bae4dd4b01cf7842
-    name: centipede right leg 7
-    layerId: 22
-    flatten: 0
-    isGroup: 0
-    importLayer: 0
-  - spriteId: 74482bcb092287e40902d012fa04475b
-    name: centipede right leg 8
-    layerId: 23
-    flatten: 0
-    isGroup: 0
-    importLayer: 0
+  pSDLayerImportSetting: []
   importFileNodeState: 1
   platformSettingsDirtyTick: 0
   spriteSizeExpandChanged: 0
