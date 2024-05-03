@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(BugMovement))]
 
-public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
+public class BugBrain : BugMethods, IBugTakeDamage, IPlayerTakeDamage
 {
     public BugSO bugSO;
     BugMovement bugMovement;
@@ -14,8 +15,8 @@ public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
 
     private SpriteRenderer[] sprites;
 
-    private Coroutine colorDamage;
-    private Coroutine speedDamage;
+    private Coroutine colorDamageCoroutine;
+    private Coroutine slowDownCoroutine;
 
     private bool isAttackable;
 
@@ -27,8 +28,6 @@ public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
 
     private void OnEnable()
     {
-        isAttackable = true;
-        bugMovement.enabled = true;
         InitializeBugLogic(bugSO);
     }
 
@@ -41,15 +40,16 @@ public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
     private void InitializeBugLogic(BugSO bugSO)
     {
         //set the original values from the SO
-        ChangeColor(Color.white);
+        ChangeColor(Color.white, sprites);
         health = bugSO.health;
         shield = bugSO.sheild;
+
+        bugMovement.enabled = true;
+        isAttackable = true;
     }
 
     public void BugTakeDamage(int damage)
     {
-        CoroutineStarter(colorDamage, "TakeDamage");
-
         //check if the bug has sheild
         if (shield > 0)
         {
@@ -75,44 +75,22 @@ public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
             GameManager.Instance.BugBitsChange(bugSO.moneyDrop);
             gameObject.SetActive(false);
         }
-    }
 
-    private IEnumerator TakeDamage()
-    {
-        ChangeColor(Color.red);
-        yield return new WaitForSeconds(1);
-        ChangeColor(Color.white);
-    }
-
-    private void ChangeColor(Color color)
-    {
-        foreach (SpriteRenderer sprite in sprites)
+        //check if it active before starting coroutine
+        if (gameObject.activeSelf)
         {
-            sprite.color = color;
+            CoroutineStarter(colorDamageCoroutine, DamageColorChange(sprites));
         }
     }
 
-    public void PlayerTakeDamage(int damage)
-    {
-        GameManager.Instance.HealthChange(-bugSO.damageToPlayer);
-    }
+    public void PlayerTakeDamage(int damage) => GameManager.Instance.HealthChange(-bugSO.damageToPlayer);
 
     public void BugSlow()
     {
-        if (speedDamage != null)
+        if (gameObject.activeSelf)
         {
-            StopCoroutine(speedDamage);
+            CoroutineStarter(slowDownCoroutine, bugMovement.SpeedDamage());
         }
-        speedDamage = StartCoroutine(bugMovement.SpeedDamage());
-    }
-
-    private void CoroutineStarter(Coroutine coroutine, string ieNum)
-    {
-        if (coroutine != null)
-        {
-            StopCoroutine(coroutine);
-        }
-        coroutine = StartCoroutine(ieNum);
     }
 
     public bool GetIsAttackable()
