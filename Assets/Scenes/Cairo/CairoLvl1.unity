@@ -432,23 +432,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4501657675430658177, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: be56820cc7a3437419e9224e2aade57a,
-        type: 2}
-    - target: {fileID: 4501657675430658177, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -6717747252002910683, guid: be56820cc7a3437419e9224e2aade57a,
-        type: 2}
-    - target: {fileID: 4501657675430658177, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5270859610080187132, guid: 76823026be0a6a94ba9c50965933d117,
         type: 3}
       propertyPath: m_Camera
@@ -459,17 +442,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShopCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 9071711674606379729, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9179764866028041074, guid: 76823026be0a6a94ba9c50965933d117,
-        type: 3}
-      propertyPath: frogPool.Array.data[7]
-      value: 
-      objectReference: {fileID: 11400000, guid: 489ba1bd6482e714ab0d5824b00cb475,
-        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
