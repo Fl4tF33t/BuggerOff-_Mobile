@@ -72,7 +72,6 @@ public class FrogBrain : MonoBehaviour
     private void Awake()
     {
         frogSO.InitGameObject(frog);
-        Debug.Log("Now init");
         for(int i = 0; i < transform.childCount; i++)
         {
             if(transform.GetChild(i).gameObject.name == "UpgradeCanvas")
