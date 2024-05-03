@@ -6,7 +6,7 @@ using UnityEngine.AI;
 using static UnityEngine.Rendering.DebugUI;
 
 [RequireComponent(typeof(BugMovement))]
-public class CentipedeBrain : MonoBehaviour, IBugTakeDamage
+public class CentipedeBrain : BugMethods, IBugTakeDamage
 {
     public event Action OnSlow;
 
@@ -16,8 +16,8 @@ public class CentipedeBrain : MonoBehaviour, IBugTakeDamage
     public int health;
     public int shield;
 
-    private Coroutine colorDamage;
-    private Coroutine speedDamage;
+    private Coroutine colorDamageCoroutine;
+    private Coroutine slowDownCoroutine;
 
     private bool isAttackable = true;
 
@@ -30,7 +30,6 @@ public class CentipedeBrain : MonoBehaviour, IBugTakeDamage
 
     private void OnEnable()
     {
-        bugMovement.enabled = true;
         InitializeBugLogic(bugSO);
     }
     private void OnDisable()
@@ -42,18 +41,16 @@ public class CentipedeBrain : MonoBehaviour, IBugTakeDamage
     private void InitializeBugLogic(BugSO bugSO)
     {
         //set the original values from the SO
-        ChangeColor(Color.white);
+        ChangeColor(Color.white, sprites);
         health = bugSO.health;
         shield = bugSO.sheild;
+
+        isAttackable = true;
+        bugMovement.enabled = true;
     }
 
     public void BugTakeDamage(int damage)
     {
-        if (this.gameObject.activeSelf)
-        {
-            CoroutineStarter(colorDamage, "TakeDamage"); 
-        }
-
         //check if the bug has sheild
         if (shield > 0)
         {
@@ -79,40 +76,21 @@ public class CentipedeBrain : MonoBehaviour, IBugTakeDamage
             GameManager.Instance.BugBitsChange(bugSO.moneyDrop);
             transform.parent.gameObject.SetActive(false);
         }
-    }
 
-    private void ChangeColor(Color color)
-    {
-        foreach (SpriteRenderer sprite in sprites)
+        if (this.gameObject.activeSelf)
         {
-            sprite.color = color;
+            CoroutineStarter(colorDamageCoroutine, DamageColorChange(sprites));
         }
-    }
-
-    private IEnumerator TakeDamage()
-    {
-        ChangeColor(Color.red);
-        yield return new WaitForSeconds(1);
-        ChangeColor(Color.white);
-    }
-
-    private void CoroutineStarter(Coroutine coroutine, string ieNum)
-    {
-        if (coroutine != null)
-        {
-            StopCoroutine(coroutine);
-        }
-        coroutine = StartCoroutine(ieNum);
     }
 
     public void BugSlow()
     {
-        if (speedDamage != null)
+        if (gameObject.activeSelf)
         {
-            StopCoroutine(speedDamage);
+            CoroutineStarter(slowDownCoroutine, bugMovement.SpeedDamage());
+            OnSlow?.Invoke();
         }
-        speedDamage = StartCoroutine(bugMovement.SpeedDamage());
-        OnSlow?.Invoke();
+        
     }
 
     public bool GetIsAttackable()

@@ -13,7 +13,7 @@ public class CentipedeBody : MonoBehaviour, IBugTakeDamage
     public CentipedeBrain brain;
     public Transform target;
     BugSO bugSO;
-    private Coroutine speedDamage;
+    private Coroutine slowDownCoroutine;
 
     private void Awake()
     {
@@ -27,11 +27,11 @@ public class CentipedeBody : MonoBehaviour, IBugTakeDamage
         brain.OnSlow += () => {
             if (this.gameObject.activeSelf)
             {
-                if (speedDamage != null)
+                if (slowDownCoroutine != null)
                 {
-                    StopCoroutine(speedDamage);
+                    StopCoroutine(slowDownCoroutine);
                 }
-                speedDamage = StartCoroutine(SpeedDamage()); 
+                slowDownCoroutine = StartCoroutine(SpeedDamage()); 
             }
         };
     }
