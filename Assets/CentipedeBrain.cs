@@ -5,7 +5,7 @@ using UnityEngine.AI;
 using static UnityEngine.Rendering.DebugUI;
 
 [RequireComponent(typeof(BugMovement))]
-public class CentipedeBrain : MonoBehaviour
+public class CentipedeBrain : MonoBehaviour, IBugTakeDamage
 {
     public BugSO bugSO;
     BugMovement bugMovement;
@@ -13,11 +13,13 @@ public class CentipedeBrain : MonoBehaviour
     public int health;
     public int shield;
 
-    private SpriteRenderer[] sprites;
+    private Coroutine colorDamage;
+    private Coroutine speedDamage;
+
+    public SpriteRenderer[] sprites;
     // Start is called before the first frame update
     private void Awake()
     {
-        sprites = GetComponentsInChildren<SpriteRenderer>();
         bugMovement = GetComponent<BugMovement>();
     }
 
@@ -40,11 +42,60 @@ public class CentipedeBrain : MonoBehaviour
         shield = bugSO.sheild;
     }
 
+    public void BugTakeDamage(int damage)
+    {
+        CoroutineStarter(colorDamage, "TakeDamage");
+
+        //check if the bug has sheild
+        if (shield > 0)
+        {
+            //if so, reduce the sheild
+            shield -= damage;
+            //if the sheild is less than 0, set it to 0
+            if (shield < 0)
+                shield = 0;
+        }
+        else
+        {
+            //if not, reduce the health
+            health -= damage;
+            //if the health is less than 0, set it to 0
+            if (health < 0)
+                health = 0;
+        }
+
+        //check if the bug is dead
+        if (health <= 0)
+        {
+            //if so, destroy the bug
+            GameManager.Instance.BugBitsChange(bugSO.moneyDrop);
+            gameObject.SetActive(false);
+        }
+    }
+
     private void ChangeColor(Color color)
     {
         foreach (SpriteRenderer sprite in sprites)
         {
             sprite.color = color;
         }
+    }
+
+    private void CoroutineStarter(Coroutine coroutine, string ieNum)
+    {
+        if (coroutine != null)
+        {
+            StopCoroutine(coroutine);
+        }
+        coroutine = StartCoroutine(ieNum);
+    }
+
+    public void BugSlow()
+    {
+        if (speedDamage != null)
+        {
+            StopCoroutine(speedDamage);
+        }
+        speedDamage = StartCoroutine(bugMovement.SpeedDamage());
     }
 }

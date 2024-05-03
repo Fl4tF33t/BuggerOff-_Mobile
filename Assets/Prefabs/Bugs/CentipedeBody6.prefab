@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 3432762006489907123}
   - component: {fileID: 9155979291275631511}
   m_Layer: 0
-  m_Name: CentipedeBody1
+  m_Name: CentipedeBody6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +64,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6413414944025555142}
-  - {fileID: 5764856569897728537}
+  - {fileID: 1352104550523753594}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &3391231094281218799
@@ -124,7 +124,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1001 &876487497744397829
+--- !u!1001 &5835613322571714897
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -132,79 +132,69 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6627416792480971785}
     m_Modifications:
-    - target: {fileID: 5539730908770194559, guid: f09daf593e46c8846ae83ca3cbc103f6,
-        type: 3}
-      propertyPath: m_Name
-      value: Bug_Centipede_Sprite_Body_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6640850386887674908, guid: f09daf593e46c8846ae83ca3cbc103f6,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.40000004
-      objectReference: {fileID: 0}
-    - target: {fileID: 6640850386887674908, guid: f09daf593e46c8846ae83ca3cbc103f6,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.40000004
-      objectReference: {fileID: 0}
-    - target: {fileID: 6640850386887674908, guid: f09daf593e46c8846ae83ca3cbc103f6,
+    - target: {fileID: 4773781016756405547, guid: 5d93b973ee6980a43aecf7b53e9ffbd7,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6640850386887674908, guid: f09daf593e46c8846ae83ca3cbc103f6,
+    - target: {fileID: 4773781016756405547, guid: 5d93b973ee6980a43aecf7b53e9ffbd7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 6640850386887674908, guid: f09daf593e46c8846ae83ca3cbc103f6,
+    - target: {fileID: 4773781016756405547, guid: 5d93b973ee6980a43aecf7b53e9ffbd7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.1
+      value: -1.35
       objectReference: {fileID: 0}
-    - target: {fileID: 6640850386887674908, guid: f09daf593e46c8846ae83ca3cbc103f6,
+    - target: {fileID: 4773781016756405547, guid: 5d93b973ee6980a43aecf7b53e9ffbd7,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: 6640850386887674908, guid: f09daf593e46c8846ae83ca3cbc103f6,
+    - target: {fileID: 4773781016756405547, guid: 5d93b973ee6980a43aecf7b53e9ffbd7,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: 6640850386887674908, guid: f09daf593e46c8846ae83ca3cbc103f6,
+    - target: {fileID: 4773781016756405547, guid: 5d93b973ee6980a43aecf7b53e9ffbd7,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6640850386887674908, guid: f09daf593e46c8846ae83ca3cbc103f6,
+    - target: {fileID: 4773781016756405547, guid: 5d93b973ee6980a43aecf7b53e9ffbd7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6640850386887674908, guid: f09daf593e46c8846ae83ca3cbc103f6,
+    - target: {fileID: 4773781016756405547, guid: 5d93b973ee6980a43aecf7b53e9ffbd7,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 6640850386887674908, guid: f09daf593e46c8846ae83ca3cbc103f6,
+    - target: {fileID: 4773781016756405547, guid: 5d93b973ee6980a43aecf7b53e9ffbd7,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6640850386887674908, guid: f09daf593e46c8846ae83ca3cbc103f6,
+    - target: {fileID: 4773781016756405547, guid: 5d93b973ee6980a43aecf7b53e9ffbd7,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5978521213013564744, guid: 5d93b973ee6980a43aecf7b53e9ffbd7,
+        type: 3}
+      propertyPath: m_Name
+      value: Bug_Centipede_Sprite_Body_6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f09daf593e46c8846ae83ca3cbc103f6, type: 3}
---- !u!4 &5764856569897728537 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: 5d93b973ee6980a43aecf7b53e9ffbd7, type: 3}
+--- !u!4 &1352104550523753594 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 6640850386887674908, guid: f09daf593e46c8846ae83ca3cbc103f6,
+  m_CorrespondingSourceObject: {fileID: 4773781016756405547, guid: 5d93b973ee6980a43aecf7b53e9ffbd7,
     type: 3}
-  m_PrefabInstance: {fileID: 876487497744397829}
+  m_PrefabInstance: {fileID: 5835613322571714897}
   m_PrefabAsset: {fileID: 0}

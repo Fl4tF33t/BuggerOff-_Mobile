@@ -5,11 +5,10 @@ using UnityEngine.AI;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class CentipedeBody : MonoBehaviour
+public class CentipedeBody : MonoBehaviour, IBugTakeDamage
 {
     // Start is called before the first frame update
     NavMeshAgent agent;
-    public float bufferSpace;
 
     public CentipedeBrain brain;
     public Transform target;
@@ -49,5 +48,15 @@ public class CentipedeBody : MonoBehaviour
     { // Adjust this value as needed for the buffer space
 
         agent.destination = target.position;
+    }
+
+    public void BugTakeDamage(int damage)
+    {
+        brain.BugTakeDamage(damage);
+    }
+
+    public void BugSlow()
+    {
+        brain.BugSlow();
     }
 }
