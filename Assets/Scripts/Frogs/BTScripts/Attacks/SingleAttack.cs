@@ -53,7 +53,7 @@ public class SingleAttack : ActionNode
         }
         if (context.gameObject.name.Contains("Mummy"))
         {
-            blackboard.selectedTarget.GetComponent<BugBrain>().isAttackable = false;
+            blackboard.selectedTarget.GetComponent<IBugTakeDamage>().SetIsAttackable(false);
             blackboard.selectedTarget.GetComponent<NavMeshAgent>().enabled = false;
             blackboard.selectedTarget.GetComponent<BugMovement>().enabled = false;
 

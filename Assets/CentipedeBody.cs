@@ -13,12 +13,27 @@ public class CentipedeBody : MonoBehaviour, IBugTakeDamage
     public CentipedeBrain brain;
     public Transform target;
     BugSO bugSO;
+    private Coroutine speedDamage;
 
     private void Awake()
     {
         bugSO = brain.bugSO;
 
         agent = GetComponent<NavMeshAgent>();
+    }
+
+    private void Start()
+    {
+        brain.OnSlow += () => {
+            if (this.gameObject.activeSelf)
+            {
+                if (speedDamage != null)
+                {
+                    StopCoroutine(speedDamage);
+                }
+                speedDamage = StartCoroutine(SpeedDamage()); 
+            }
+        };
     }
     private void OnEnable()
     {
@@ -52,11 +67,39 @@ public class CentipedeBody : MonoBehaviour, IBugTakeDamage
 
     public void BugTakeDamage(int damage)
     {
-        brain.BugTakeDamage(damage);
+        if (this.gameObject.activeSelf)
+        {
+            brain.BugTakeDamage(damage); 
+        }
     }
 
     public void BugSlow()
     {
-        brain.BugSlow();
+        if (this.gameObject.activeSelf)
+        {
+            brain.BugSlow(); 
+        }
+    }
+
+    public bool GetIsAttackable()
+    {
+        return brain.GetIsAttackable();
+    }
+
+    public void SetIsAttackable(bool isAttackable)
+    {
+        brain.SetIsAttackable(isAttackable);
+    }
+
+    public IEnumerator SpeedDamage()
+    {
+        agent.speed *= .5f;
+        yield return new WaitForSeconds(1f);
+        agent.speed = bugSO.speed;
+    }
+
+    public int GetHealth()
+    {
+        return brain.GetHealth();
     }
 }

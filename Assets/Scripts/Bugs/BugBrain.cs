@@ -17,7 +17,7 @@ public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
     private Coroutine colorDamage;
     private Coroutine speedDamage;
 
-    public bool isAttackable;
+    private bool isAttackable;
 
     private void Awake()
     {
@@ -113,5 +113,20 @@ public class BugBrain : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
             StopCoroutine(coroutine);
         }
         coroutine = StartCoroutine(ieNum);
+    }
+
+    public bool GetIsAttackable()
+    {
+        return isAttackable;
+    }
+
+    public void SetIsAttackable(bool isAttackable)
+    {
+        this.isAttackable = isAttackable;
+    }
+
+    public int GetHealth()
+    {
+        return health;  
     }
 }

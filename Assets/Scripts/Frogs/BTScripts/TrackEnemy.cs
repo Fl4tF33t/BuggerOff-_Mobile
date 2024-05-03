@@ -36,7 +36,7 @@ public class TrackEnemy : ActionNode
             return State.Success;
         }
 
-        if(blackboard.selectedTarget == null || !blackboard.selectedTarget.activeSelf || blackboard.selectedTarget.GetComponent<BugBrain>().isAttackable)
+        if(blackboard.selectedTarget == null || !blackboard.selectedTarget.activeSelf || blackboard.selectedTarget.GetComponent<IBugTakeDamage>().GetIsAttackable())
         {
             return State.Failure;
         }

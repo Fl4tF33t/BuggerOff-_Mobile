@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,8 @@ using static UnityEngine.Rendering.DebugUI;
 [RequireComponent(typeof(BugMovement))]
 public class CentipedeBrain : MonoBehaviour, IBugTakeDamage
 {
+    public event Action OnSlow;
+
     public BugSO bugSO;
     BugMovement bugMovement;
 
@@ -15,6 +18,8 @@ public class CentipedeBrain : MonoBehaviour, IBugTakeDamage
 
     private Coroutine colorDamage;
     private Coroutine speedDamage;
+
+    private bool isAttackable = true;
 
     public SpriteRenderer[] sprites;
     // Start is called before the first frame update
@@ -44,7 +49,10 @@ public class CentipedeBrain : MonoBehaviour, IBugTakeDamage
 
     public void BugTakeDamage(int damage)
     {
-        CoroutineStarter(colorDamage, "TakeDamage");
+        if (this.gameObject.activeSelf)
+        {
+            CoroutineStarter(colorDamage, "TakeDamage"); 
+        }
 
         //check if the bug has sheild
         if (shield > 0)
@@ -69,7 +77,7 @@ public class CentipedeBrain : MonoBehaviour, IBugTakeDamage
         {
             //if so, destroy the bug
             GameManager.Instance.BugBitsChange(bugSO.moneyDrop);
-            gameObject.SetActive(false);
+            transform.parent.gameObject.SetActive(false);
         }
     }
 
@@ -79,6 +87,13 @@ public class CentipedeBrain : MonoBehaviour, IBugTakeDamage
         {
             sprite.color = color;
         }
+    }
+
+    private IEnumerator TakeDamage()
+    {
+        ChangeColor(Color.red);
+        yield return new WaitForSeconds(1);
+        ChangeColor(Color.white);
     }
 
     private void CoroutineStarter(Coroutine coroutine, string ieNum)
@@ -97,5 +112,21 @@ public class CentipedeBrain : MonoBehaviour, IBugTakeDamage
             StopCoroutine(speedDamage);
         }
         speedDamage = StartCoroutine(bugMovement.SpeedDamage());
+        OnSlow?.Invoke();
+    }
+
+    public bool GetIsAttackable()
+    {
+        return isAttackable;
+    }
+
+    public void SetIsAttackable(bool isAttackable)
+    {
+        this.isAttackable = isAttackable;
+    }
+
+    public int GetHealth()
+    {
+        return health;
     }
 }

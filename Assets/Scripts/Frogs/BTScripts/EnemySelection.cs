@@ -10,7 +10,7 @@ public class EnemySelection : ActionNode
         {
             blackboard.selectedTarget = SelectTarget();
         }
-        while(!blackboard.selectedTarget.GetComponent<BugBrain>().isAttackable);
+        while(!blackboard.selectedTarget.GetComponent<IBugTakeDamage>().GetIsAttackable());
     }
 
     protected override void OnStop() {
