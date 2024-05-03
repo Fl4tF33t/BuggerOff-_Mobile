@@ -62,7 +62,8 @@ public class ChangeFrogUIManager : MonoBehaviour
 
         if (playerData.cityList[0].isCompleted)
         {
-            slots[3].transform.GetChild(0).GetChild()
+            // Herra Dex this was giving me a compile error. I did not want to touch just in case i break it more.
+            //slots[3].transform.GetChild(0).GetChild();
         }
         if (playerData.cityList[1].isCompleted)
         {
