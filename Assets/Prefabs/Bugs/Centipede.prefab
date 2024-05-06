@@ -112,6 +112,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CentipedeBody6
       objectReference: {fileID: 0}
+    - target: {fileID: 8331166296177488695, guid: bab739a78b4f28a46963060535edbbd3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -159,6 +164,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CentipedeBrain
+      objectReference: {fileID: 0}
+    - target: {fileID: 459782068838896603, guid: f3fe854a1774fca49a4ea43a828dac52,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1895821824433755935, guid: f3fe854a1774fca49a4ea43a828dac52,
         type: 3}
@@ -465,6 +475,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CentipedeTail
       objectReference: {fileID: 0}
+    - target: {fileID: 8331166296177488695, guid: ea42038d01764bc499d56a23c3298c4c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -579,6 +594,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CentipedeBody3
       objectReference: {fileID: 0}
+    - target: {fileID: 8331166296177488695, guid: 5b614dc02b866cf4c88deb12f91cb8c0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -686,6 +706,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CentipedeBody2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8331166296177488695, guid: 0635744c1ff2f4e4aaae1a954e6f9408,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -795,6 +820,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CentipedeBody5
       objectReference: {fileID: 0}
+    - target: {fileID: 8331166296177488695, guid: 2c2133527b088544eaad6c819a29a307,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -903,6 +933,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CentipedeBody4
       objectReference: {fileID: 0}
+    - target: {fileID: 8331166296177488695, guid: 57eb83e832d679549ab4c0732406e91f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1010,6 +1045,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CentipedeBody1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8331166296177488695, guid: 6c4930fac486ae34a87fc9f7de6eb5b1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

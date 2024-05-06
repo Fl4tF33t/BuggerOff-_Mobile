@@ -66,7 +66,7 @@ public class CentipedeBody : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
     private void Update()
     { // Adjust this value as needed for the buffer space
 
-        if (target.position != null)
+        if (target.gameObject.activeSelf && target.parent.gameObject.activeSelf)
         {
             agent.destination = target.position;
         }
