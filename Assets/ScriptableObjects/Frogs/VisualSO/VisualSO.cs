@@ -20,7 +20,9 @@ public class VisualSO : ScriptableObject
         [TextArea(3, 4)]
         public string UIShopTextInfo;
 
-        public Sprite[] UIUpgradeButtons; 
+        public Sprite[] UIUpgradeButtons;
+
+        public RuntimeAnimatorController _diverFrogOriginalAnimator;
     }
     
 }

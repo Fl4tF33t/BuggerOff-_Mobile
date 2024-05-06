@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: MummyAudio
   m_EditorClassIdentifier: 
   _spawn:
-  - sound: {fileID: 8300000, guid: 5be00fa28ebad5f448f2f933fece196f, type: 3}
-    volume: 0.491
+  - _audioClip: {fileID: 8300000, guid: 5be00fa28ebad5f448f2f933fece196f, type: 3}
+    volume: 1
   jump:
-    sound: {fileID: 8300000, guid: bcc4424450a6dbc4a989b2669d2a8b28, type: 3}
-    volume: 0.316
+    _audioClip: {fileID: 8300000, guid: bcc4424450a6dbc4a989b2669d2a8b28, type: 3}
+    volume: 1
   attack:
-    sound: {fileID: 0}
-    volume: 0.367
+    _audioClip: {fileID: 0}
+    volume: 1
   _ninja2ndAttack:
-    sound: {fileID: 0}
-    volume: 0
-  _MissingSFX:
-    sound: {fileID: 8300000, guid: 604d8fdffbb4b1649a5954456bda3006, type: 3}
-    volume: 0
+    _audioClip: {fileID: 0}
+    volume: 1
+  _missingSFX:
+    _audioClip: {fileID: 8300000, guid: 604d8fdffbb4b1649a5954456bda3006, type: 3}
+    volume: 1

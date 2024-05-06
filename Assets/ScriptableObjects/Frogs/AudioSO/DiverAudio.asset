@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: DiverAudio
   m_EditorClassIdentifier: 
   _spawn:
-  - sound: {fileID: 8300000, guid: dbbea3dc2442a4640977ff98dbb8c779, type: 3}
-    volume: 0.491
+  - _audioClip: {fileID: 8300000, guid: 6aeaa3ab140f8344ea0231e3a862968a, type: 3}
+    volume: 1
   jump:
-    sound: {fileID: 8300000, guid: 795784d8f38173c46aa9c2784292c0e6, type: 3}
-    volume: 0.316
+    _audioClip: {fileID: 8300000, guid: 795784d8f38173c46aa9c2784292c0e6, type: 3}
+    volume: 1
   attack:
-    sound: {fileID: 8300000, guid: dbbea3dc2442a4640977ff98dbb8c779, type: 3}
-    volume: 0.367
+    _audioClip: {fileID: 8300000, guid: dbbea3dc2442a4640977ff98dbb8c779, type: 3}
+    volume: 1
   _ninja2ndAttack:
-    sound: {fileID: 0}
-    volume: 0
-  _MissingSFX:
-    sound: {fileID: 8300000, guid: 604d8fdffbb4b1649a5954456bda3006, type: 3}
-    volume: 0
+    _audioClip: {fileID: 0}
+    volume: 1
+  _missingSFX:
+    _audioClip: {fileID: 8300000, guid: 604d8fdffbb4b1649a5954456bda3006, type: 3}
+    volume: 1

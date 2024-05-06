@@ -106,14 +106,14 @@ public class FrogBrain : MonoBehaviour
 
         if (frogSO.logicSO.frogName == "Diver")
         {
-            gameObject.transform.GetChild(0).gameObject.SetActive(false);
-            gameObject.transform.GetChild(1).gameObject.SetActive(true);
+           Animator diverFrogAnimator = gameObject.transform.GetChild(0).GetComponent<Animator>();
+            diverFrogAnimator.runtimeAnimatorController = frogSO.visualSO.userInterface._diverFrogOriginalAnimator;
+            OnFrogSpawned?.Invoke();
         }
-
-        //Santiago
-        OnFrogSpawned?.Invoke();
-        //Santiago
-        //Debug.Log("Frog spawned");
+        else
+        {
+            OnFrogSpawned?.Invoke();            
+        }
 
         ChangeColor(Color.white);
     }

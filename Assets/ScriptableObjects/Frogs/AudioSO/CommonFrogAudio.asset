@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawn:
   - _audioClip: {fileID: 8300000, guid: 91f18dd33f527b841bd7ecbb54ca1867, type: 3}
-    volume: 0.491
+    volume: 1
   jump:
     _audioClip: {fileID: 8300000, guid: bcc4424450a6dbc4a989b2669d2a8b28, type: 3}
-    volume: 0.316
+    volume: 1
   attack:
     _audioClip: {fileID: 8300000, guid: 40158afa33b5d4a41b7565f3525cc7fe, type: 3}
-    volume: 0.367
+    volume: 1
   _ninja2ndAttack:
     _audioClip: {fileID: 0}
-    volume: 0
+    volume: 1
   _missingSFX:
-    _audioClip: {fileID: 0}
-    volume: 0
+    _audioClip: {fileID: 8300000, guid: 604d8fdffbb4b1649a5954456bda3006, type: 3}
+    volume: 1

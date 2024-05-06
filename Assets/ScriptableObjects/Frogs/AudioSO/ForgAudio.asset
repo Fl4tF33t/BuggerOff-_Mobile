@@ -13,23 +13,23 @@ MonoBehaviour:
   m_Name: ForgAudio
   m_EditorClassIdentifier: 
   _spawn:
-  - sound: {fileID: 8300000, guid: 867814c3f37e6af4dbcf4579183e45f6, type: 3}
-    volume: 0.491
-  - sound: {fileID: 8300000, guid: 1733d4e151537994bbb0abcbb3df032d, type: 3}
-    volume: 0.491
-  - sound: {fileID: 8300000, guid: 45c4c49f6a9baa14a8ca57b3ab84aa23, type: 3}
-    volume: 0.491
-  - sound: {fileID: 8300000, guid: a4b0f81072f570a4387689340c3d3fe2, type: 3}
-    volume: 0.491
+  - _audioClip: {fileID: 8300000, guid: 867814c3f37e6af4dbcf4579183e45f6, type: 3}
+    volume: 1
+  - _audioClip: {fileID: 8300000, guid: 1733d4e151537994bbb0abcbb3df032d, type: 3}
+    volume: 1
+  - _audioClip: {fileID: 8300000, guid: 45c4c49f6a9baa14a8ca57b3ab84aa23, type: 3}
+    volume: 1
+  - _audioClip: {fileID: 8300000, guid: a4b0f81072f570a4387689340c3d3fe2, type: 3}
+    volume: 1
   jump:
-    sound: {fileID: 8300000, guid: bcc4424450a6dbc4a989b2669d2a8b28, type: 3}
-    volume: 0.316
+    _audioClip: {fileID: 8300000, guid: bcc4424450a6dbc4a989b2669d2a8b28, type: 3}
+    volume: 1
   attack:
-    sound: {fileID: 8300000, guid: 54362a2625d61ec45ab0de99f941ddd5, type: 3}
-    volume: 0.367
+    _audioClip: {fileID: 8300000, guid: 54362a2625d61ec45ab0de99f941ddd5, type: 3}
+    volume: 1
   _ninja2ndAttack:
-    sound: {fileID: 0}
-    volume: 0
-  _MissingSFX:
-    sound: {fileID: 8300000, guid: 604d8fdffbb4b1649a5954456bda3006, type: 3}
-    volume: 0
+    _audioClip: {fileID: 0}
+    volume: 1
+  _missingSFX:
+    _audioClip: {fileID: 8300000, guid: 604d8fdffbb4b1649a5954456bda3006, type: 3}
+    volume: 1

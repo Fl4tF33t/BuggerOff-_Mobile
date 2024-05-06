@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: NinjaAudio
   m_EditorClassIdentifier: 
   _spawn:
-  - sound: {fileID: 8300000, guid: aa8bf061a3dd8eb4ba6f1702eaa4cd9a, type: 3}
-    volume: 0.491
+  - _audioClip: {fileID: 8300000, guid: aa8bf061a3dd8eb4ba6f1702eaa4cd9a, type: 3}
+    volume: 1
   jump:
-    sound: {fileID: 8300000, guid: 4e4fc97cedf13e6418d56f8495b284db, type: 3}
-    volume: 0.316
+    _audioClip: {fileID: 8300000, guid: 4e4fc97cedf13e6418d56f8495b284db, type: 3}
+    volume: 1
   attack:
-    sound: {fileID: 8300000, guid: 4b102e875fa8dc043a4908294fc119e3, type: 3}
-    volume: 0.367
+    _audioClip: {fileID: 8300000, guid: 4b102e875fa8dc043a4908294fc119e3, type: 3}
+    volume: 1
   _ninja2ndAttack:
-    sound: {fileID: 8300000, guid: 1e45a27bdd216cd4d80c1689963966f0, type: 3}
-    volume: 0.548
-  _MissingSFX:
-    sound: {fileID: 8300000, guid: 604d8fdffbb4b1649a5954456bda3006, type: 3}
-    volume: 0
+    _audioClip: {fileID: 8300000, guid: 1e45a27bdd216cd4d80c1689963966f0, type: 3}
+    volume: 1
+  _missingSFX:
+    _audioClip: {fileID: 8300000, guid: 604d8fdffbb4b1649a5954456bda3006, type: 3}
+    volume: 1
