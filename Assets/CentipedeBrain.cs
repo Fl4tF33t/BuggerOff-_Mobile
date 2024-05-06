@@ -22,7 +22,8 @@ public class CentipedeBrain : BugMethods, IBugTakeDamage
     private bool isAttackable = true;
 
     public SpriteRenderer[] sprites;
-    // Start is called before the first frame update
+
+
     private void Awake()
     {
         bugMovement = GetComponent<BugMovement>();

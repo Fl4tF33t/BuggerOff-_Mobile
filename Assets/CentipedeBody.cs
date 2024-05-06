@@ -5,7 +5,7 @@ using UnityEngine.AI;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class CentipedeBody : MonoBehaviour, IBugTakeDamage
+public class CentipedeBody : MonoBehaviour, IBugTakeDamage, IPlayerTakeDamage
 {
     // Start is called before the first frame update
     NavMeshAgent agent;
@@ -14,6 +14,8 @@ public class CentipedeBody : MonoBehaviour, IBugTakeDamage
     public Transform target;
     BugSO bugSO;
     private Coroutine slowDownCoroutine;
+
+    Transform ultTarget;
 
     private void Awake()
     {
@@ -34,6 +36,8 @@ public class CentipedeBody : MonoBehaviour, IBugTakeDamage
                 slowDownCoroutine = StartCoroutine(SpeedDamage()); 
             }
         };
+
+        ultTarget = GameObject.FindGameObjectWithTag("EndPoint").transform;
     }
     private void OnEnable()
     {
@@ -62,7 +66,14 @@ public class CentipedeBody : MonoBehaviour, IBugTakeDamage
     private void Update()
     { // Adjust this value as needed for the buffer space
 
-        agent.destination = target.position;
+        if (target.position != null)
+        {
+            agent.destination = target.position;
+        }
+        else
+        {
+            agent.destination = ultTarget.position;
+        }
     }
 
     public void BugTakeDamage(int damage)
@@ -101,5 +112,13 @@ public class CentipedeBody : MonoBehaviour, IBugTakeDamage
     public int GetHealth()
     {
         return brain.GetHealth();
+    }
+
+    public void PlayerTakeDamage(int damage)
+    {
+        if (this.gameObject.name.Contains("Tail"))
+        {
+            GameManager.Instance.HealthChange(-bugSO.damageToPlayer);
+        }
     }
 }
