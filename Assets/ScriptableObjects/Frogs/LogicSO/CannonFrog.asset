@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frogName: Cannon
   cost: 250
-  discipline: 2
+  discipline: 0
   damage: 20
   range: 2
   attackSpeed: 0.5
