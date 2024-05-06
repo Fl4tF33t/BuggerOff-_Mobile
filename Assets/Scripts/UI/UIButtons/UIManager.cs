@@ -43,8 +43,8 @@ public class UIManager : MonoBehaviour
 
     private void FasterTimeScale()
     {
-        _currentTimeScale++;
-        if (_currentTimeScale > 2)
+        _currentTimeScale += 10;
+        if (_currentTimeScale > 12)
         {
             _currentTimeScale = 1;
         }
