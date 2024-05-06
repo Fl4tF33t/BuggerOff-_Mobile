@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class ChangeFrogUIManager : MonoBehaviour
 {
+    private GameObject selectedFrog;
+    public GameObject SelectedFrog{get; set;}
+
     [SerializeField] private GameObject _changeFrogs;
     [SerializeField] private FrogSO[] _frogSOs;
     
@@ -34,8 +37,8 @@ public class ChangeFrogUIManager : MonoBehaviour
         GetFrogSprites();
         PopulateFrogSprites();
 
-        UnlockWheelSlots();
         UnlockFrogs();
+        UnlockWheelSlots();
     }
 
     
@@ -54,6 +57,7 @@ public class ChangeFrogUIManager : MonoBehaviour
             {
                 slots[i].transform.GetChild(1).gameObject.SetActive(true);
                 slots[i].transform.GetChild(3).gameObject.SetActive(false);
+                slots[i].transform.GetChild(1).GetComponent<Image>().sprite = _frogContainer.transform.GetChild(i).GetChild(0).GetChild(1).gameObject.GetComponent<Image>().sprite;
             }
         }
     }
