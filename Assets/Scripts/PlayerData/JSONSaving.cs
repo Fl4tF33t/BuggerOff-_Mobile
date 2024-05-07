@@ -29,6 +29,10 @@ public class JSONSaving : Singleton<JSONSaving>
         {
             LoadData();
             Debug.Log("Load existing file");
+            if(playerData.frogList.Count == 0)
+            {
+                playerData.frogList = frogSOList;
+            }
         }
         else
         {
