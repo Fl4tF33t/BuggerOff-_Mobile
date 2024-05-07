@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frogName: DesertRain
   cost: 150
-  discipline: 0
+  discipline: 1
   damage: 5
   range: 1.5
   attackSpeed: 1

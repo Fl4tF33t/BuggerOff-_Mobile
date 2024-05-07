@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frogName: Samurai
   cost: 450
-  discipline: 0
+  discipline: 4
   damage: 10
   range: 1.3
   attackSpeed: 1.5

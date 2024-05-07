@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frogName: Ninja
   cost: 250
-  discipline: 0
+  discipline: 4
   damage: 15
   range: 2
   attackSpeed: 1.5
