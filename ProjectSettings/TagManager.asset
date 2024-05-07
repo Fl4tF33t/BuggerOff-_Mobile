@@ -11,6 +11,8 @@ TagManager:
   - Waypoint
   - Waypoint3
   - EndPoint
+  - Projectile
+  - AudioManager
   layers:
   - Default
   - TransparentFX

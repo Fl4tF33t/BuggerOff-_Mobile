@@ -367,6 +367,11 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6027057943690498934, guid: c386b9d5870e393479ad960825d61ac0,
+        type: 3}
+      propertyPath: m_TagString
+      value: AudioManager
+      objectReference: {fileID: 0}
     - target: {fileID: 8010323326357462801, guid: c386b9d5870e393479ad960825d61ac0,
         type: 3}
       propertyPath: m_Name
@@ -5317,18 +5322,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1413948602}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1602977519 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4638298519634102577, guid: 992dcbe61cb5d5a47bfcf7725c9dc3c1,
-    type: 3}
-  m_PrefabInstance: {fileID: 2031961816}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fe13b7bcbf5c7948af54fba2ca7d287, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1619305797
 GameObject:
   m_ObjectHideFlags: 0
@@ -6698,20 +6691,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3803059101246004057, guid: 992dcbe61cb5d5a47bfcf7725c9dc3c1,
-        type: 3}
-      propertyPath: m_PresetInfoIsWorld
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4236198579474651130, guid: 992dcbe61cb5d5a47bfcf7725c9dc3c1,
         type: 3}
       propertyPath: m_Name
       value: GameUICanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 4236198579474651130, guid: 992dcbe61cb5d5a47bfcf7725c9dc3c1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4310889767710550123, guid: 992dcbe61cb5d5a47bfcf7725c9dc3c1,
         type: 3}
@@ -6811,46 +6794,6 @@ PrefabInstance:
     - target: {fileID: 4310889767710550123, guid: 992dcbe61cb5d5a47bfcf7725c9dc3c1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4683266987689420796, guid: 992dcbe61cb5d5a47bfcf7725c9dc3c1,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1602977519}
-    - target: {fileID: 4683266987689420796, guid: 992dcbe61cb5d5a47bfcf7725c9dc3c1,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GameOver
-      objectReference: {fileID: 0}
-    - target: {fileID: 4683266987689420796, guid: 992dcbe61cb5d5a47bfcf7725c9dc3c1,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LevelCompletion, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4855661012538989075, guid: 992dcbe61cb5d5a47bfcf7725c9dc3c1,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4855661012538989075, guid: 992dcbe61cb5d5a47bfcf7725c9dc3c1,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1602977519}
-    - target: {fileID: 4855661012538989075, guid: 992dcbe61cb5d5a47bfcf7725c9dc3c1,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Victory
-      objectReference: {fileID: 0}
-    - target: {fileID: 4855661012538989075, guid: 992dcbe61cb5d5a47bfcf7725c9dc3c1,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LevelCompletion, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4930487867127591292, guid: 992dcbe61cb5d5a47bfcf7725c9dc3c1,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
