@@ -42,7 +42,7 @@ public class GameManager : Singleton<GameManager>
         }
         sceneName = SceneManager.GetActiveScene().name;
 
-        bugBits = 9000;
+        bugBits = 500;
 
         WaveSystem.Instance.OnLevelCompleted += () => OnLevelCompleted();
 
