@@ -13,6 +13,11 @@ public class FrogShopData : MonoBehaviour
     {
         image = GetComponent<Image>();
 
+    }
+
+    private void Start()
+    {
+
         OnSetFrogSO = SetFrogSO;
     }
     private void SetFrogSO(FrogSO data)
