@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
 guid: 27ea13d41778d27458d88720f3119bd2
-=======
-guid: 0b56bf6cc4314e244993214b846be07e
->>>>>>> Stashed changes
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -57,11 +53,7 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-<<<<<<< Updated upstream
-  spriteTessellationDetail: 0.29
-=======
   spriteTessellationDetail: -1
->>>>>>> Stashed changes
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -71,16 +63,16 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   swizzle: 50462976
-  cookieLightType: 0
+  cookieLightType: 2
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -93,7 +85,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -105,12 +97,12 @@ TextureImporter:
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 50
-    textureCompression: 1
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 1
+    overridden: 0
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -119,7 +111,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -132,7 +124,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -144,73 +136,10 @@ TextureImporter:
     serializedVersion: 2
     sprites: []
     outline: []
-<<<<<<< Updated upstream
-    physicsShape:
-    - - {x: -30, y: -18.5}
-      - {x: 30, y: -19.5}
-      - {x: 56, y: -18.5}
-      - {x: 61, y: -13.5}
-      - {x: 62, y: 47.5}
-      - {x: 78, y: 78.5}
-      - {x: 100, y: 77.5}
-      - {x: 118, y: 78.5}
-      - {x: 124, y: 83.5}
-      - {x: 127, y: 95.5}
-      - {x: 127, y: 131.5}
-      - {x: 132, y: 142.5}
-      - {x: 132, y: 159.5}
-      - {x: 131, y: 166.5}
-      - {x: 112, y: 190.5}
-      - {x: 100, y: 204.5}
-      - {x: 90, y: 223.5}
-      - {x: 78, y: 240.5}
-      - {x: 40, y: 294.5}
-      - {x: 29, y: 308.5}
-      - {x: 10, y: 304.5}
-      - {x: 8, y: 302.5}
-      - {x: 1, y: 306.5}
-      - {x: -14, y: 313.5}
-      - {x: -23, y: 314.5}
-      - {x: -28, y: 312.5}
-      - {x: -48, y: 321.5}
-      - {x: -55, y: 328.5}
-      - {x: -56, y: 328.5}
-      - {x: -58, y: 326.5}
-      - {x: -58, y: 322.5}
-      - {x: -54, y: 312.5}
-      - {x: -53, y: 295.5}
-      - {x: -58, y: 292.5}
-      - {x: -59, y: 279.5}
-      - {x: -56, y: 269.5}
-      - {x: -50, y: 263.5}
-      - {x: -53, y: 250.5}
-      - {x: -70, y: 241.5}
-      - {x: -68, y: 237.5}
-      - {x: -87, y: 244.5}
-      - {x: -90, y: 237.5}
-      - {x: -101, y: 246.5}
-      - {x: -112, y: 242.5}
-      - {x: -121, y: 245.5}
-      - {x: -133, y: 258.5}
-      - {x: -153, y: 286.5}
-      - {x: -162, y: 283.5}
-      - {x: -170, y: 277.5}
-      - {x: -172, y: 275.5}
-      - {x: -172, y: 249.5}
-      - {x: -169, y: 244.5}
-      - {x: -172, y: 241.5}
-      - {x: -172, y: -17.5}
-      - {x: -170, y: -19.5}
-      - {x: -30, y: -19.5}
-    bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
-=======
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
->>>>>>> Stashed changes
     vertices: []
     indices: 
     edges: []
