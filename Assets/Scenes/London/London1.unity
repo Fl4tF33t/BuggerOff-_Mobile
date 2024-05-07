@@ -306,7 +306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &43137729
 Transform:
   m_ObjectHideFlags: 0
@@ -885,7 +885,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 1
   m_VoxelSize: 0.04
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: ac83e8005a4f7f44691a2fc59d3218fe, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 136a2b496e2240d4c8652d42f0a39e03, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &217934715
 Transform:
@@ -1863,7 +1863,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 1
   m_VoxelSize: 0.05
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: da8710ba58ca6cd4aa8c17dab2d2d754, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 53516e9386f69034ba4c925ec8a01081, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &488576633
 Transform:
@@ -2360,7 +2360,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 1
   m_VoxelSize: 0.0438
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 35ead6dc21bb61c458383cf5869953af, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: d6e625dba755b1c488fe48366f90c0db, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &542189592
 Transform:
@@ -2371,7 +2371,7 @@ Transform:
   m_GameObject: {fileID: 542189590}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2423,7 +2423,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 1
   m_VoxelSize: 0.04
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 9826e721762962c4f9e7c498e68f6641, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 568e3b61bb4c302429bc8d9272c783c5, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &562541173
 Transform:
@@ -3253,7 +3253,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: bf0313e4d77e34c4092e47aa880a34b1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4204,6 +4204,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010323326357462801, guid: c386b9d5870e393479ad960825d61ac0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5252,7 +5257,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1377923485
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5332,8 +5337,8 @@ Transform:
   m_GameObject: {fileID: 1377923484}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 3.73}
-  m_LocalScale: {x: 5, y: 3, z: 3}
+  m_LocalPosition: {x: -4.544, y: -0, z: 1.5895}
+  m_LocalScale: {x: 2.3716695, y: 3, z: 0.8222133}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -6897,7 +6902,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 62383a1a568e75d488686c630d836889, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -8973,7 +8978,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2101788148}
-  m_Mesh: {fileID: 4300000, guid: e42d1d94135b7b9459224d57e6ef127d, type: 2}
+  m_Mesh: {fileID: 4300000, guid: 77237073feed33b4a8d1d24d5fdae66b, type: 2}
 --- !u!4 &2109039754 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3822220379983556670, guid: 25c4f195e530cea48b7c91349952e042,
