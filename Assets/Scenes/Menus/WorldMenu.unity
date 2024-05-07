@@ -474,89 +474,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &147367370
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 147367372}
-  - component: {fileID: 147367371}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &147367371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 147367370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ddca420183554b44adceca141491508, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerData:
-    frogList: []
-    cityList:
-    - id: 1
-      cityName: London1
-      isCompleted: 0
-      numberOfStars: 0
-    - id: 2
-      cityName: London2
-      isCompleted: 0
-      numberOfStars: 0
-    - id: 1
-      cityName: Cairo1
-      isCompleted: 0
-      numberOfStars: 0
-    - id: 2
-      cityName: Cairo2
-      isCompleted: 0
-      numberOfStars: 0
-    - id: 1
-      cityName: Kyoto1
-      isCompleted: 0
-      numberOfStars: 0
-    - id: 2
-      cityName: Kyoto2
-      isCompleted: 0
-      numberOfStars: 0
-    - id: 1
-      cityName: Rio1
-      isCompleted: 0
-      numberOfStars: 0
-    - id: 2
-      cityName: Rio2
-      isCompleted: 0
-      numberOfStars: 0
-  frogSOList:
-  - {fileID: 11400000, guid: f084229400f1b4843b7d8748150ac242, type: 2}
-  - {fileID: 11400000, guid: 30979b85c26a4684297b09cdc9d55a92, type: 2}
-  - {fileID: 11400000, guid: cee48bd8f77dae245bcc039c77518fe3, type: 2}
---- !u!4 &147367372
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 147367370}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.09295844, y: -528.4616, z: -2.726123}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &184672967
 GameObject:
   m_ObjectHideFlags: 0
@@ -3521,7 +3438,7 @@ PrefabInstance:
     - target: {fileID: 8010323326357462801, guid: c386b9d5870e393479ad960825d61ac0,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6801,7 +6718,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 081168af78c57cd4a96f6cedaaddfaec,
+      objectReference: {fileID: 21300000, guid: 6e5da05d6b244ab4ab6503a4815e3039,
         type: 3}
     - target: {fileID: 605506949372691375, guid: c323f45de09037d4d94c256b974b9975,
         type: 3}
@@ -7535,4 +7452,3 @@ SceneRoots:
   - {fileID: 9140240998396831571}
   - {fileID: 137079090}
   - {fileID: 1166726495}
-  - {fileID: 147367372}

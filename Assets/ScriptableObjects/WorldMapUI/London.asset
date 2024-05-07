@@ -18,5 +18,5 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ac45d8214edeeb44a52a97122857f8b, type: 3}
   - {fileID: 21300000, guid: e45cc063dfe49964c9394cbe9096d1bb, type: 3}
   _LevelOne: London1
-  _LevelTwo: London2
+  _LevelTwo: Cairo1
   _LevelThree: London_Level_3
