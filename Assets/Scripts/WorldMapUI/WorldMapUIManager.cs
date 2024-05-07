@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms;
 
 public class WorldMapUIManager : MonoBehaviour
 {
@@ -142,6 +143,11 @@ public class WorldMapUIManager : MonoBehaviour
 
     private void OnClickedCity(Button city, WorldMapSO cityInfo)
     {
+        if (Time.timeScale == 0)
+        {
+            Debug.Log("Time scale is 0");
+            Time.timeScale = 1;
+        }
         DisableButtons(false);
         Debug.Log("City clicked: " + city.name);
         _citySelected = city.transform.parent.gameObject.transform.GetChild(0).gameObject;
