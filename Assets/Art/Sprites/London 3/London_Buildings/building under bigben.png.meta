@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: 1b7f694d2002eda4a8ccd62188c97abf
+=======
+guid: b7ce81ea8ca49084a9a2b6dd7b901692
+>>>>>>> Stashed changes
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -53,7 +57,11 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
+<<<<<<< Updated upstream
   spriteTessellationDetail: 0.19
+=======
+  spriteTessellationDetail: -1
+>>>>>>> Stashed changes
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -136,6 +144,7 @@ TextureImporter:
     serializedVersion: 2
     sprites: []
     outline: []
+<<<<<<< Updated upstream
     physicsShape:
     - - {x: -129, y: -284.5}
       - {x: -105, y: -331.5}
@@ -247,6 +256,12 @@ TextureImporter:
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
     internalID: 1537655665
+=======
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+>>>>>>> Stashed changes
     vertices: []
     indices: 
     edges: []
