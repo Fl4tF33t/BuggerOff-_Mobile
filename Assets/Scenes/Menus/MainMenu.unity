@@ -395,7 +395,10 @@ MonoBehaviour:
       cityName: Rio2
       isCompleted: 0
       numberOfStars: 0
-  frogSOList: []
+  frogSOList:
+  - {fileID: 11400000, guid: bcfcc51544396e846b4e974dec1e6b6b, type: 2}
+  - {fileID: 11400000, guid: cee48bd8f77dae245bcc039c77518fe3, type: 2}
+  - {fileID: 11400000, guid: 30979b85c26a4684297b09cdc9d55a92, type: 2}
 --- !u!4 &580708708
 Transform:
   m_ObjectHideFlags: 0

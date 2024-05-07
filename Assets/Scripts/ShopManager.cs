@@ -25,10 +25,19 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
     private int number;
 
     public GameObject CancelPlaceingButton;
+    private PlayerData playerData;
 
     private void Start()
     {
         //base.Awake();
+        playerData = JSONSaving.Instance.PlayerData;
+        int j = 0;
+        for (int i = 0; i < frogPool.Length; i++)
+        {
+            frogPool[i] = playerData.frogList[j];
+            j = (j + 1) % playerData.frogList.Count;
+        }
+
         animator = GetComponentInParent<Animator>();
 
         cam = Camera.main;
