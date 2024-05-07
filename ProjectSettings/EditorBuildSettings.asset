@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/London/London1.unity
     guid: 8108ce5c84c71de41a39e1b0e5f3e2bc
   - enabled: 1
+    path: Assets/Scenes/London/London2.unity
+    guid: dca59af3031c62446915337bb15109e3
+  - enabled: 1
     path: Assets/Scenes/Cairo/Cairo1.unity
     guid: c7ef348dd0120fe48837d7781fd4f67f
   m_configObjects:

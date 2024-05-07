@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SamuraiAudio
   m_EditorClassIdentifier: 
   _spawn:
-  - _audioClip: {fileID: 0}
+  - _audioClip: {fileID: 8300000, guid: 254a6f57ba10b014a981e03d89949b31, type: 3}
     volume: 1
   jump:
     _audioClip: {fileID: 8300000, guid: bcc4424450a6dbc4a989b2669d2a8b28, type: 3}

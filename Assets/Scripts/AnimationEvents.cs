@@ -40,6 +40,11 @@ public class AnimationEvents : MonoBehaviour
 
     public void PlayAttackSFX()
     {
+        if (_frogBrain.frogSO.logicSO.frogName == "Cannon")
+        {
+            Debug.Log("Cannon attack");
+            _audiosource.Stop();
+        }
         AudioClip frogAttack = _frogBrain.frogSO.audioSO.attack._audioClip;
 
         if (frogAttack == null)
@@ -49,6 +54,7 @@ public class AnimationEvents : MonoBehaviour
         }
 
         _audiosource.PlayOneShot(frogAttack);
+        Debug.Log("Suppppp");
     }
 
     public void PlayJumpSFX()
@@ -105,6 +111,14 @@ public class AnimationEvents : MonoBehaviour
     {
         AudioClip frogNinjaClose = _frogBrain.frogSO.audioSO.attack._audioClip;
         _audiosource.PlayOneShot(frogNinjaClose);
+    }
+
+    public void CannonFuse() 
+    { 
+        Debug.Log("Cannon Fuse");
+        AudioClip frogCannonFuse = _frogBrain.frogSO.audioSO._ninja2ndAttack._audioClip;
+        _audiosource.clip = frogCannonFuse;
+        _audiosource.Play();
     }
 
 

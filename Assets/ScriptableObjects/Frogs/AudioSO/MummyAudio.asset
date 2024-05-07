@@ -19,7 +19,7 @@ MonoBehaviour:
     _audioClip: {fileID: 8300000, guid: bcc4424450a6dbc4a989b2669d2a8b28, type: 3}
     volume: 1
   attack:
-    _audioClip: {fileID: 0}
+    _audioClip: {fileID: 8300000, guid: 78fe8aa5395c6ad43a498c3822e76b4b, type: 3}
     volume: 1
   _ninja2ndAttack:
     _audioClip: {fileID: 0}

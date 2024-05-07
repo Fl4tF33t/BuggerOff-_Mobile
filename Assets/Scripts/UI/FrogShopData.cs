@@ -2,20 +2,20 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-
+[DefaultExecutionOrder(-1)]
 public class FrogShopData : MonoBehaviour
 {
     //Initializtion of the frog information
     private Image image;
-    public Action<FrogSO> OnSetFrogSO;
+    //public Action<FrogSO> OnSetFrogSO;
 
-    private void Awake()
+    private void Start()
     {
         image = GetComponent<Image>();
 
-        OnSetFrogSO = SetFrogSO;
+        //OnSetFrogSO = SetFrogSO;
     }
-    private void SetFrogSO(FrogSO data)
+    public void SetFrogSO(FrogSO data)
     {
         image.sprite = data.visualSO.userInterface.UIShopSprite;
     }

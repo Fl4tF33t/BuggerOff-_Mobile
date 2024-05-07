@@ -40,7 +40,7 @@ public class WheelManager : Singleton<WheelManager>, IBeginDragHandler, IEndDrag
         frogPool = ShopManager.Instance.frogPool;
         for (int i = 0; i < frogShopData.Length; i++)
         {
-            frogShopData[i].OnSetFrogSO(frogPool[i]);
+            frogShopData[i].SetFrogSO(frogPool[i]);
         }
 
         SetPriceText(frogPoolIndex);
@@ -115,7 +115,7 @@ public class WheelManager : Singleton<WheelManager>, IBeginDragHandler, IEndDrag
         int currentIndex = frogPoolIndex;
         for (int i = 0; i < frogShopData.Length; i++)
         {
-            frogShopData[i].OnSetFrogSO(frogPool[currentIndex]);
+            frogShopData[i].SetFrogSO(frogPool[currentIndex]);
             currentIndex++;
             currentIndex = currentIndex % frogPool.Length;
         }

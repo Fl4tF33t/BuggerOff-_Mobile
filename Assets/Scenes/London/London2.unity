@@ -2202,6 +2202,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9acbf13b6bec66d41834482d3e396cb3, type: 3}
+--- !u!114 &506211887 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6441225495412869367, guid: 9acbf13b6bec66d41834482d3e396cb3,
+    type: 3}
+  m_PrefabInstance: {fileID: 506211886}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfb7c1fba64c1142af05db1fdfd415a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &525735787
 GameObject:
   m_ObjectHideFlags: 0
@@ -8173,6 +8185,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2994644122948681008, guid: 992dcbe61cb5d5a47bfcf7725c9dc3c1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 506211887}
+    - target: {fileID: 2994644122948681008, guid: 992dcbe61cb5d5a47bfcf7725c9dc3c1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadWorldMapScene
+      objectReference: {fileID: 0}
     - target: {fileID: 3803059101246004057, guid: 992dcbe61cb5d5a47bfcf7725c9dc3c1,
         type: 3}
       propertyPath: m_PresetInfoIsWorld

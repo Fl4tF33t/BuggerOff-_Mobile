@@ -36,7 +36,7 @@ public class WheelAnimation : MonoBehaviour
         }
         for (int i = 0; i < frogShopData.Length; i++)
         {
-            frogShopData[i].OnSetFrogSO(ShopManager.Instance.frogPool[currentIndex]);
+            frogShopData[i].SetFrogSO(ShopManager.Instance.frogPool[currentIndex]);
             currentIndex = (currentIndex + 1) % ShopManager.Instance.frogPool.Length;
         }
         if (obj == "Down")

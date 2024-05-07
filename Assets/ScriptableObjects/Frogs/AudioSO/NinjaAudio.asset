@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NinjaAudio
   m_EditorClassIdentifier: 
   _spawn:
-  - _audioClip: {fileID: 8300000, guid: aa8bf061a3dd8eb4ba6f1702eaa4cd9a, type: 3}
+  - _audioClip: {fileID: 8300000, guid: 1c9d899c7d110f14abdfb6e6da0add29, type: 3}
     volume: 1
   jump:
     _audioClip: {fileID: 8300000, guid: 4e4fc97cedf13e6418d56f8495b284db, type: 3}
