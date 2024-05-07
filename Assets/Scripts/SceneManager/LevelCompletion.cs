@@ -37,12 +37,19 @@ public class LevelCompletion : Singleton<LevelCompletion>
 
     public void Victory(int fullStarAmount)
     {
+        if (_audioSource == null)
+        {
+            _audioSource = GameObject.FindGameObjectWithTag("AudioSource").GetComponent<AudioSource>();
+        }
         _loseImage.SetActive(false);
         _victoryImage.SetActive(true);
         //GameManager.Instance.OnLevelCompleted();
 
         Time.timeScale = 0;
-
+        if (_audioSource == null)
+        {
+            _audioSource = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioSource>();
+        }
         _audioSource.Stop();
         _audioSource.loop = false;
         _audioSource.PlayOneShot(_victorySound);
@@ -64,6 +71,10 @@ public class LevelCompletion : Singleton<LevelCompletion>
 
     public void GameOver()
     {
+        if (_audioSource == null)
+        {
+            _audioSource = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioSource>();
+        }
         Time.timeScale = 0;
         _audioSource.Stop();
         _audioSource.loop = false;

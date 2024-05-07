@@ -859,9 +859,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: OnLevelLose
+      - m_Target: {fileID: 4638298519634102577}
+        m_TargetAssemblyTypeName: LevelCompletion, Assembly-CSharp
+        m_MethodName: GameOver
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1983,7 +1983,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f38d501809437614d91e6de41c3e8edb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ac92b9cdc51bab04b8b7c2befc49357f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2965,10 +2965,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: OnLevelCompleted
-        m_Mode: 1
+      - m_Target: {fileID: 4638298519634102577}
+        m_TargetAssemblyTypeName: LevelCompletion, Assembly-CSharp
+        m_MethodName: Victory
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
