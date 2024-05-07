@@ -56,7 +56,7 @@ public class GameManager : Singleton<GameManager>
 
     public void OnLevelCompleted()
     {
-        //LevelCompletion.Instance.Victory(GetAmountOfStars());
+        LevelCompletion.Instance.Victory(GetAmountOfStars());
 
         foreach (var item in playerData.cityList)
         {

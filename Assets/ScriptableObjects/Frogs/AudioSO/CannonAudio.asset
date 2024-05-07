@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: CannonAudio
   m_EditorClassIdentifier: 
   _spawn:
-  - _audioClip: {fileID: 0}
+  - _audioClip: {fileID: 8300000, guid: 2d26b1e8367f6bc4f8146c6c5a1940ee, type: 3}
     volume: 1
   jump:
     _audioClip: {fileID: 8300000, guid: bcc4424450a6dbc4a989b2669d2a8b28, type: 3}
     volume: 1
   attack:
-    _audioClip: {fileID: 0}
+    _audioClip: {fileID: 8300000, guid: f3d9a5a31a68e4042af1c1ecdd03d6bf, type: 3}
     volume: 1
   _ninja2ndAttack:
     _audioClip: {fileID: 0}

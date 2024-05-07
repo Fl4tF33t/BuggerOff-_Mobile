@@ -12,12 +12,18 @@ public class LevelCompletion : Singleton<LevelCompletion>
     [SerializeField] private Button[] _homeButtons;
     [SerializeField] private Button _retryButton;
 
+    [SerializeField] AudioClip _victorySound;
+    [SerializeField] AudioClip _loseSound;
+
+    [SerializeField] private AudioSource _audioSource;
+
     [Header("Full Stars")]
     [SerializeField] private GameObject[] _fullStars;
     //[SerializeField] private GameObject _defeatImage;
 
     private void Start()
     {
+
         _victoryImage = transform.GetChild(0).gameObject;
         _loseImage = transform.GetChild(1).gameObject;
 
@@ -33,7 +39,14 @@ public class LevelCompletion : Singleton<LevelCompletion>
     {
         _loseImage.SetActive(false);
         _victoryImage.SetActive(true);
-        GameManager.Instance.OnLevelCompleted();
+        //GameManager.Instance.OnLevelCompleted();
+
+        Time.timeScale = 0;
+
+        _audioSource.Stop();
+        _audioSource.loop = false;
+        _audioSource.PlayOneShot(_victorySound);
+
         StartCoroutine(ShowStars(fullStarAmount));
 
     }
@@ -51,6 +64,11 @@ public class LevelCompletion : Singleton<LevelCompletion>
 
     public void GameOver()
     {
+        Time.timeScale = 0;
+        _audioSource.Stop();
+        _audioSource.loop = false;
+        _audioSource.PlayOneShot(_loseSound);
+
         Debug.Log("Game Over");
         _victoryImage.SetActive(false);
         _loseImage.SetActive(true);

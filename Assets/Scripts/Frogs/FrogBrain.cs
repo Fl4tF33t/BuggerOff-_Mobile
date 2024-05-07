@@ -115,7 +115,14 @@ public class FrogBrain : MonoBehaviour
             OnFrogSpawned?.Invoke();            
         }
 
-        ChangeColor(Color.white);
+        if(frogSO.logicSO.frogName == "Common")
+        {
+            Color commonFrogColor = new Color(0.4784314f, 0.7490196f, 0.4745098f, 1);
+            ChangeColor(commonFrogColor);
+        }
+        else { ChangeColor(Color.white); }
+
+        
     }
 
     public void ChangeColor(Color color)

@@ -13,12 +13,16 @@ public class AnimationEvents : MonoBehaviour
 
     private const string FORG = "Forg";
     private const string SUNGLASSES = "Sunglasses";
+    private const string PROJECTILE_TAG = "Projectile";
     private void Awake()
     {
         _audiosource = GetComponent<AudioSource>();        
     }
     private void Start()
     {
+        if(gameObject.tag == PROJECTILE_TAG)
+            return;
+
         _frogBrain = transform.parent.GetComponentInParent<FrogBrain>();
 
         _frogBrain.OnFrogSpawned += PlaySpawnSFX;
@@ -84,6 +88,23 @@ public class AnimationEvents : MonoBehaviour
         _audiosource.PlayOneShot(frogSpawnSFX);
 
         _frogBrain.OnFrogSpawned -= PlaySpawnSFX;
+    }
+
+    public void BoomSfx()
+    {
+        _audiosource.Play();
+    }
+
+    public void NinjaRange()
+    {
+        AudioClip frogNinjaRange = _frogBrain.frogSO.audioSO._ninja2ndAttack._audioClip;
+        _audiosource.PlayOneShot(frogNinjaRange);
+    }
+
+    public void NinjaClose()
+    {
+        AudioClip frogNinjaClose = _frogBrain.frogSO.audioSO.attack._audioClip;
+        _audiosource.PlayOneShot(frogNinjaClose);
     }
 
 
