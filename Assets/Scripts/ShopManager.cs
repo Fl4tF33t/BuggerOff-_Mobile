@@ -34,7 +34,8 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
         int j = 0;
         for (int i = 0; i < frogPool.Length; i++)
         {
-            frogPool[i] = playerData.frogList[i];
+            frogPool[i] = playerData.frogList[j];
+            j = (j + 1) % (playerData.frogList.Count - 1);
         }
 
         animator = GetComponentInParent<Animator>();
