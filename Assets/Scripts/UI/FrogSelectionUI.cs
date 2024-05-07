@@ -21,6 +21,11 @@ public class FrogSelectionUI : MonoBehaviour, IPointerDownHandler
     }
     public void OnPointerDown(PointerEventData eventData)
     {
+        if(ChangeFrogUIManager.Instance.frogWheelSelection != null)
+        {
+            ChangeFrogUIManager.Instance.frogWheelSelection.frogSO = _frogSO;
+            ChangeFrogUIManager.Instance.frogWheelSelection.ChangeInfo?.Invoke();
+        }
         SetFrogTitle();
         SetFrogPrice();
         SetFrogStats();

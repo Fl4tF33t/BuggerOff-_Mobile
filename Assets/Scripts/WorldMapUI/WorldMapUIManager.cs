@@ -12,6 +12,7 @@ public class WorldMapUIManager : MonoBehaviour
     [SerializeField] private Button _londonButton;
     [SerializeField] private Button _cairoButton;
     [SerializeField] private Button _kyotoButton;
+    [SerializeField] private Button _rioButton;
     [SerializeField] private Button _confirmButton;
 
     [SerializeField] private Button _changeFrogs;
@@ -49,6 +50,8 @@ public class WorldMapUIManager : MonoBehaviour
         _londonButton.onClick.AddListener(() => OnClickedCity(_londonButton, _citiesSO[0]));
         _cairoButton.onClick.AddListener(() => OnClickedCity(_cairoButton, _citiesSO[1]));
         _kyotoButton.onClick.AddListener(() => OnClickedCity(_kyotoButton, _citiesSO[2]));
+        _rioButton.onClick.AddListener(() => OnClickedCity(_rioButton, _citiesSO[3]));
+
 
         _confirmButton.onClick.AddListener(() => OnConfirmButton());
 
@@ -99,9 +102,9 @@ public class WorldMapUIManager : MonoBehaviour
                 {
                     if (city.cityName.Contains("Kyoto"))
                     {
-                        if (city.id == 2 && city.isCompleted)
+                        if (city.id == 1 && city.isCompleted)
                         {
-                            //_rioButton.transform.parent.gameObject.SetActive(true);
+                            _rioButton.transform.parent.gameObject.SetActive(true);
                         }
                     }
                 }
