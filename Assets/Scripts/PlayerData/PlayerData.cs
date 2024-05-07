@@ -5,12 +5,14 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerData
 {
+    public List<FrogSO> frogList = new List<FrogSO>();
+
     public List<City> cityList = new List<City>();
 
     private int numberOfLevels = 2;
     private string[] cityNames = new string[4] { "London", "Cairo", "Kyoto", "Rio" };
 
-    public PlayerData()
+    public PlayerData(List<FrogSO> frogSOList)
     {
         foreach (var item in cityNames)
         {
@@ -24,6 +26,8 @@ public class PlayerData
                 cityList.Add(city);
             }
         }
+
+        frogList = frogSOList;
     }
 
     [System.Serializable]

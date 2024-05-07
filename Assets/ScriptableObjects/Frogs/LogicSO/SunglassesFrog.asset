@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frogName: Sunglasses
   cost: 250
-  discipline: 0
+  discipline: 2
   damage: 15
   range: 3
   attackSpeed: 15

@@ -27,28 +27,28 @@ public class MainMenu : MonoBehaviour
         }
 
         //Screen.SetResolution((Screen.height / 9 * 16), Screen.height, true);
-        Debug.Log(Screen.height);
-        Debug.Log((float)Screen.height / 1080f);
-        if (Screen.height < 1080 )
-        {
-            float res = Screen.width / Screen.height;
-            if (res==16/9)
-            {
-                canvas.GetComponent<CanvasScaler>().referenceResolution = new Vector2(1920, 1080);
-            }
-            else if (res < 16/9)
-            {
-                canvas.GetComponent<CanvasScaler>().referenceResolution = new Vector2(1920, 1920/res);
-            }
-            else if (res > 16/9)
-            {
-                canvas.GetComponent<CanvasScaler>().referenceResolution = new Vector2(1080*res, 1080);
-            }
-        }
-        else if (Screen.height >= 1080)
-        {
-            canvas.GetComponent<CanvasScaler>().referenceResolution = new Vector2(Screen.width, Screen.height);
-        }
+        //Debug.Log(Screen.height);
+        //Debug.Log((float)Screen.height / 1080f);
+        //if (Screen.height < 1080 )
+        //{
+        //    float res = Screen.width / Screen.height;
+        //    if (res==16/9)
+        //    {
+        //        canvas.GetComponent<CanvasScaler>().referenceResolution = new Vector2(1920, 1080);
+        //    }
+        //    else if (res < 16/9)
+        //    {
+        //        canvas.GetComponent<CanvasScaler>().referenceResolution = new Vector2(1920, 1920/res);
+        //    }
+        //    else if (res > 16/9)
+        //    {
+        //        canvas.GetComponent<CanvasScaler>().referenceResolution = new Vector2(1080*res, 1080);
+        //    }
+        //}
+        //else if (Screen.height >= 1080)
+        //{
+        //    canvas.GetComponent<CanvasScaler>().referenceResolution = new Vector2(Screen.width, Screen.height);
+        //}
         //saving = transform.Find("JSONSave").GetComponent<JSONSaving>();
     }
     private void Start()

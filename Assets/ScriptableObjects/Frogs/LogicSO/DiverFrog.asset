@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frogName: Diver
   cost: 175
-  discipline: 0
+  discipline: 2
   damage: 20
   range: 3
   attackSpeed: 0.5

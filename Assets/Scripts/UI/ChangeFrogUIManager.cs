@@ -5,9 +5,10 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ChangeFrogUIManager : MonoBehaviour
+public class ChangeFrogUIManager : Singleton<ChangeFrogUIManager>
 {
-    private GameObject selectedFrog;
+    public ClickFrogWheel frogWheelSelection;
+
     public GameObject SelectedFrog{get; set;}
 
     [SerializeField] private GameObject _changeFrogs;
@@ -182,5 +183,26 @@ public class ChangeFrogUIManager : MonoBehaviour
     public void OpenChangeFrogs()
     {
         _changeFrogs.SetActive(true);
+    }
+
+    public void ConfirmFrogButton()
+    {
+        ClickFrogWheel[] frogsArray = _frogWheel.GetComponentsInChildren<ClickFrogWheel>();
+        List<FrogSO> frogList = new List<FrogSO>();
+
+        foreach (var item in frogsArray)
+        {
+            if(item.frogSO != null)
+            {
+                frogList.Add(item.frogSO);
+            }
+        }
+
+        if (frogList.Count > 0)
+        {
+            playerData.frogList = frogList;
+
+            saving.PlayerData = playerData; 
+        }
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ public class JSONSaving : Singleton<JSONSaving>
 {
     [SerializeField]
     private PlayerData playerData;
+    public List<FrogSO> frogSOList;
 
     public PlayerData PlayerData
     {
@@ -30,7 +32,7 @@ public class JSONSaving : Singleton<JSONSaving>
         }
         else
         {
-            playerData = new PlayerData();
+            playerData = new PlayerData(frogSOList);
             PlayerData = playerData;
             Debug.Log("Majke new file");
         }
