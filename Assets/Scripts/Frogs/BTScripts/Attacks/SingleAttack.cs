@@ -19,7 +19,10 @@ public class SingleAttack : ActionNode
             Vector3 direction = blackboard.selectedTarget.transform.position - context.transform.position;
             float distance = direction.magnitude;
             float speed = context.frogBrain.frogSO.logicSO.frogName == "Mummy" ? mummySpeed : tongueSpeed;
+            context.animationEvents.PlayAttackSFX();
             context.frogBrain.StartCoroutine(Toungue(distance * tongueDistance, speed));
+            
+            
         }
     }
 
