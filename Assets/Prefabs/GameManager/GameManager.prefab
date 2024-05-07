@@ -95,9 +95,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76444bf777b2a9a42bd4d9ed6ee1e6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveButton: {fileID: 0}
-  health: 0
-  bugBits: 0
+  health: 10
+  bugBits: 500
+  currentlyPlayingLevel: 0
 --- !u!114 &2336250670745263039
 MonoBehaviour:
   m_ObjectHideFlags: 0
