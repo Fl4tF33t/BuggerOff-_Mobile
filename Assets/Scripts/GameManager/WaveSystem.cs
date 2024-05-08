@@ -86,7 +86,16 @@ public class WaveSystem : Singleton<WaveSystem>
                 path = (path + i) % spawnablePositions.Length;
                 bug.transform.position = spawnablePositions[path].position; // Set bug position
                 bug.transform.rotation = Quaternion.identity; // Reset bug rotation
-                bug.GetComponent<BugMovement>().pathIndex = path;
+                if(bug.TryGetComponent(out BugMovement bugMovement))
+                {
+                    bugMovement.pathIndex = path;
+                }
+                if (!bug.TryGetComponent(out BugMovement bm))
+                {
+                    
+                    bug.transform.GetChild(0).GetComponent<BugMovement>().pathIndex = path;
+                }
+
                 bug.SetActive(true); // Activate the bug
             }
         }

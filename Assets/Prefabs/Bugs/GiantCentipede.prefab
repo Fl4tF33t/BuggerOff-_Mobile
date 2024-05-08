@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1980222611508701797}
   m_Layer: 0
-  m_Name: Centipede
+  m_Name: GiantCentipede
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,8 +26,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2883741111814051406}
   - {fileID: 2709649774730739250}
@@ -220,6 +220,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7024907155555908133, guid: f3fe854a1774fca49a4ea43a828dac52,
+        type: 3}
+      propertyPath: bugSO
+      value: 
+      objectReference: {fileID: 11400000, guid: ee09043fb4f26db448e5ee6719012413,
+        type: 2}
     - target: {fileID: 7024907155555908133, guid: f3fe854a1774fca49a4ea43a828dac52,
         type: 3}
       propertyPath: sprites.Array.size

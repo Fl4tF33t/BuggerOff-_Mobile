@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Centipede
   m_EditorClassIdentifier: 
   bugName: Centipede
-  health: 1200
+  health: 900
   sheild: 0
   moneyDrop: 100
   damageToPlayer: 3
-  speed: 0.2
+  speed: 0.4
   angularSpeed: 1000
   acceleration: 20
   stoppingDistance: 0
