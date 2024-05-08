@@ -34,6 +34,7 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
+        Time.timeScale = 1;
         saving = JSONSaving.Instance;
         if (saving != null)
         {

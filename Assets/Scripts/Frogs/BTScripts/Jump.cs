@@ -41,7 +41,9 @@ public class Jump : ActionNode
 
     protected override State OnUpdate() {
         // Calculate the direction to the target
-        if(!isRotationCorrect)
+        Debug.Log("Jump 6");
+
+        if (!isRotationCorrect)
         {
             Track(blackboard.jumpLocation);
         }

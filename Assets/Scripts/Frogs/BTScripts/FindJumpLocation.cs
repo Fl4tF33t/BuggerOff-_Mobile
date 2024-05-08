@@ -7,16 +7,21 @@ using UnityEngine.AI;
 
 public class FindJumpLocation : ActionNode
 {
-
+    int times = 0;
     private Vector3 jumpLocation;
     protected override void OnStart() {
+        Debug.Log("Jump 4");
+        times = 0;
         do
         {
-            jumpLocation = RandomPointOnCircleEdge(context.transform.position, 4f);
-        } while (!IsValidLocation(jumpLocation));
+            times++;
+            jumpLocation = RandomPointOnCircleEdge(context.transform.position, 3f);
+        } while (!IsValidLocation(jumpLocation) && times < 50);
 
         // Once a valid location is found, assign it to blackboard.jumpLocation
         blackboard.jumpLocation = jumpLocation;
+        Debug.Log("Jump 5");
+
     }
     protected override void OnStop() {
         blackboard.jumpLocation = jumpLocation;
@@ -41,7 +46,7 @@ public class FindJumpLocation : ActionNode
     private bool IsValidLocation(Vector3 pos)
     {
         NavMeshHit navHit;
-        if (NavMesh.SamplePosition(pos, out navHit, 0.01f, NavMesh.AllAreas))
+        if (NavMesh.SamplePosition(pos, out navHit, 0.5f, NavMesh.AllAreas))
         {
             //check if there are other game objects that would collide withion the same area
             Collider[] colliders = Physics.OverlapSphere(navHit.position, 0.2f);
@@ -68,6 +73,10 @@ public class FindJumpLocation : ActionNode
     }
 
     protected override State OnUpdate() {
+        if(times > 45)
+        {
+            return State.Failure;
+        }
         return State.Success;
     }
 }
