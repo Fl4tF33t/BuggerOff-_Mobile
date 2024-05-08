@@ -20,6 +20,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cairo/Cairo1.unity
     guid: c7ef348dd0120fe48837d7781fd4f67f
+  - enabled: 1
+    path: Assets/Scenes/London1_Sunny.unity
+    guid: d165c28fa1803c54090bb0de67b501d1
+  - enabled: 1
+    path: Assets/Scenes/London1_Rainy.unity
+    guid: acc55a8bce506e1408e0173fe6e45797
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000,
       guid: 101f97e1b8cc36a4ab02c05d08701e3a, type: 2}

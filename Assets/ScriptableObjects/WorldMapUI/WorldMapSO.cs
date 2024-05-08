@@ -7,7 +7,7 @@ public class WorldMapSO : ScriptableObject
 {
 
     [SerializeField] private string _cityTitle;
-    [SerializeField] private Sprite[] _levelSprites;
+    [SerializeField] public Sprite[] _levelSprites;
     [SerializeField] private string _LevelOne;
     [SerializeField] private string _LevelTwo;
     [SerializeField] private string _LevelThree;
