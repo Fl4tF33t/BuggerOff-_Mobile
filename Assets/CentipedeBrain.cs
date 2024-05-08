@@ -43,7 +43,11 @@ public class CentipedeBrain : BugMethods, IBugTakeDamage
     {
         //set the original values from the SO
         ChangeColor(Color.white, sprites);
-        health = bugSO.health;
+
+        float amount = (float)bugSO.health / 100f * LoadStats.Instance.bugHealth;
+        int rounded = (int)Math.Round(amount);
+
+        health = bugSO.health + rounded;
         shield = bugSO.sheild;
 
         isAttackable = true;
