@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -41,7 +42,10 @@ public class BugBrain : BugMethods, IBugTakeDamage, IPlayerTakeDamage
     {
         //set the original values from the SO
         ChangeColor(Color.white, sprites);
-        health = bugSO.health;
+        float amount = (float)bugSO.health / 100f * LoadStats.Instance.bugHealth;
+        int rounded = (int)Math.Round(amount);
+
+        health = bugSO.health + rounded;
         shield = bugSO.sheild;
 
         bugMovement.enabled = true;

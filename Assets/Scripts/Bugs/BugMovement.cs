@@ -47,8 +47,19 @@ public class BugMovement : MonoBehaviour
 
         agent.enabled = true;
 
+        float weatherStat = LoadStats.Instance.bugSpeed;
+
         //add all the other movement sutup here (steering)
-        agent.speed = bugSO.speed;
+
+        if (bugSO.speed + weatherStat > 0)
+        {
+            agent.speed = bugSO.speed + weatherStat;
+        }
+        else if (bugSO.speed + weatherStat < 0)
+        {
+
+            agent.speed = bugSO.speed;
+        }
         agent.angularSpeed = bugSO.angularSpeed;
         agent.acceleration = bugSO.acceleration;
         agent.stoppingDistance = bugSO.stoppingDistance;

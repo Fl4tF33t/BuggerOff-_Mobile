@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Cockchafer
   m_EditorClassIdentifier: 
   bugName: Cockchafer
-  health: 5000
-  sheild: 50
+  health: 3000
+  sheild: 100
   moneyDrop: 1000
   damageToPlayer: 10
   speed: 0.2

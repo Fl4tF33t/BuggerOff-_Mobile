@@ -1,16 +1,16 @@
 Time;BugType;Amount;Path
-1;Beetle;1;
-4;Circket;2;
-7;Fly;2;
-8;Fly;2;
-9;Fly;2;
-10;Fly;2;
-13;Hornet;1;
-15;Hornet ;1;
-19;Beetle;1;
-22;Cricket;2;
-25;Cricket;2;
-28;Hornet;1;
-30;Hornet;1;
-33;Fly;3;
-35;Mosquito;3;
+1;Beetle;1;1
+4;Circket;2;1
+7;Fly;2;1
+8;Fly;2;1
+9;Fly;2;1
+10;Fly;2;1
+13;Hornet;1;1
+15;Hornet ;1;1
+19;Beetle;1;1
+22;Cricket;2;1
+25;Cricket;2;1
+28;Hornet;1;1
+30;Hornet;1;1
+33;Fly;3;1
+35;Mosquito;3;1

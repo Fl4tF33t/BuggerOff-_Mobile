@@ -48,6 +48,7 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
             }
         }
 
+
         animator = GetComponentInParent<Animator>();
 
         cam = Camera.main;
@@ -72,7 +73,6 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
             CancelPlaceingButton.SetActive(false);
         });
     }
-    
 
     private void ShopManager_OnPlaceFrog(FrogSO obj, int num)
     {

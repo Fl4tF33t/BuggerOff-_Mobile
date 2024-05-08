@@ -48,20 +48,21 @@ public class SingleAttack : ActionNode
 
     private IEnumerator Toungue(float maxScale, float scaleSpeed)
     {
-        
+
         while (maxScale > context.frogBrain.singleAttack.localScale.y && blackboard.selectedTarget.activeSelf)
         {
             context.frogBrain.singleAttack.localScale += Vector3.up * Time.deltaTime * scaleSpeed;
             yield return null;
         }
-        if (context.gameObject.name.Contains("Mummy"))
-        {
-            blackboard.selectedTarget.GetComponent<IBugTakeDamage>().SetIsAttackable(false);
-            blackboard.selectedTarget.GetComponent<NavMeshAgent>().enabled = false;
-            blackboard.selectedTarget.GetComponent<BugMovement>().enabled = false;
+        //}
+        //if (context.gameObject.name.Contains("Mummy"))
+        //{
+        //    blackboard.selectedTarget.GetComponent<IBugTakeDamage>().SetIsAttackable(false);
+        //    blackboard.selectedTarget.GetComponent<NavMeshAgent>().enabled = false;
+        //    blackboard.selectedTarget.GetComponent<BugMovement>().enabled = false;
 
-            //context.frogBrain.StartCoroutine(Shrink(scaleSpeed));
-        }
+        //    //context.frogBrain.StartCoroutine(Shrink(scaleSpeed));
+        //}
         context.frogBrain.StartCoroutine(Shrink(scaleSpeed));
     }
 
@@ -70,10 +71,10 @@ public class SingleAttack : ActionNode
         while (context.frogBrain.singleAttack.localScale.y >= .99)
         {
             context.frogBrain.singleAttack.localScale += Vector3.down * Time.deltaTime * scaleSpeed;
-            if (context.gameObject.name.Contains("Mummy"))
-            {
-                blackboard.selectedTarget.transform.position = Vector3.Lerp(blackboard.selectedTarget.transform.position, context.transform.position, scaleSpeed * Time.deltaTime / 10f);
-            }
+            //if (context.gameObject.name.Contains("Mummy"))
+            //{
+            //    blackboard.selectedTarget.transform.position = Vector3.Lerp(blackboard.selectedTarget.transform.position, context.transform.position, scaleSpeed * Time.deltaTime / 10f);
+            //}
             yield return null;
         }
         if(blackboard.selectedTarget != null || blackboard.selectedTarget.activeSelf)

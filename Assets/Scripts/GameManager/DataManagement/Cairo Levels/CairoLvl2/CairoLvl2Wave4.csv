@@ -1,0 +1,17 @@
+Time;BugType;Amount;Path
+1;Cricket;1;1
+4;Fly;2;1
+5;Fly;1;1
+8;Cricket;1;1
+10;Fly;1;1
+12;Fly;2;1
+15;Mosquito;1;1
+18;Fly;2;1
+20;Cricket;1;1
+24;Beetle;1;1
+27;Fly;2;1
+29;Fly;2;1
+31;Cricket;1;1
+35;Beetle;1;1
+39;Beetle;1;1
+42;Fly;2;1

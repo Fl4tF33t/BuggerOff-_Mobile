@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: DungBeetle
   m_EditorClassIdentifier: 
   bugName: Dung Beetle
-  health: 1000
-  sheild: 5000
+  health: 900
+  sheild: 4000
   moneyDrop: 1000
   damageToPlayer: 10
   speed: 0.1

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fly
   m_EditorClassIdentifier: 
   bugName: Fly
-  health: 15
+  health: 10
   sheild: 0
   moneyDrop: 7
   damageToPlayer: 1
