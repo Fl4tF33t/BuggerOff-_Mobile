@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
 {
-    public FrogSO[] frogPool = new FrogSO[8];
+    public FrogSO[] frogPool;
 
     public Action<bool> OnSetShopOnOff;
     public event Action OnShopOnOff;
@@ -29,13 +29,23 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
 
     private void Start()
     {
+        frogPool = new FrogSO[8];
         //base.Awake();
         playerData = JSONSaving.Instance.PlayerData;
         int j = 0;
-        for (int i = 0; i < frogPool.Length; i++)
+        if (playerData.frogList.Count == 0)
         {
-            frogPool[i] = playerData.frogList[j];
-            j = (j + 1) % playerData.frogList.Count;
+            Debug.Log("No hay nada");
+        }
+        else
+        {
+            Debug.Log("Si hay algo");
+            for (int i = 0; i < frogPool.Length; i++)
+            {
+                Debug.Log("K pasa: " + playerData.frogList[j].name);
+                frogPool[i] = playerData.frogList[j];
+                j = (j + 1) % playerData.frogList.Count;
+            }
         }
 
         animator = GetComponentInParent<Animator>();
