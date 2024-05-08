@@ -21,7 +21,10 @@ public class CheckJumpTimer : ActionNode
 
     protected override State OnUpdate()
     {
+        Debug.Log("Jump 3");
+
         randomNum = Random.Range(0, 6);
+      
         if (randomNum > context.frogBrain.frog.discipline)
         {
             return State.Success;

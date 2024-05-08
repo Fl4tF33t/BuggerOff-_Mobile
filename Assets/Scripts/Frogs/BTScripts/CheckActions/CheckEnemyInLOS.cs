@@ -13,6 +13,7 @@ public class CheckEnemyInLOS : ActionNode
     }
 
     protected override State OnUpdate() {
+        Debug.Log("Jump 1");
         foreach (Collider item in blackboard.collidersInArea)
         {
             if (Physics.Linecast(context.transform.position, item.transform.position, LayerMask.GetMask("BlockLOS")))

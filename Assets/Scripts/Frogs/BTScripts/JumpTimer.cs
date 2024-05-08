@@ -13,6 +13,8 @@ public class JumpTimer : ActionNode
     }
 
     protected override State OnUpdate() {
+        Debug.Log("Jump 2");
+
         blackboard.jumpTimer -= Time.deltaTime;
         if(blackboard.jumpTimer < 0)
         {
