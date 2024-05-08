@@ -5,12 +5,12 @@ Time;BugType;Amount;Path
 8;Fly;1;1
 9;Fly;1;1
 10;Beetle;1;1
-12;Fly;3;1
+12;Fly;2;1
 15;Mosquito;3;1
 19;Beetle;1;1
 21;Beetle;1;1
-24;Fly;3;1
-25;Fly;3;1
+24;Fly;2;1
+25;Fly;2;1
 29;Beetle;1;1
 30;Cricket ;1;1
 32;Cricket ;1;1
