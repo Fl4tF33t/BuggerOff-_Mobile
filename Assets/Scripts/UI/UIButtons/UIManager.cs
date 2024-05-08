@@ -26,15 +26,15 @@ public class UIManager : MonoBehaviour
     {
         //wave button logic
         nextWaveButton.interactable = true;
-        nextWaveButton.onClick.AddListener(() => 
-        { 
+        nextWaveButton.onClick.AddListener(() =>
+        {
             StartCoroutine(WaveSystem.Instance.Waves());
             SetUI();
             nextWaveButton.interactable = false;
         });
 
         _fasterButton.onClick.AddListener(() => FasterTimeScale());
-        WaveSystem.Instance.OnWaveCompleted += () => nextWaveButton.interactable = true;
+        WaveSystem.Instance.OnWaveCompleted += () => { nextWaveButton.interactable = true; GameManager.Instance.BugBitsChange(150); };
 
         SetUI();
 
