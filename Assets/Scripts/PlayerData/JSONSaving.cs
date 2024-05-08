@@ -25,21 +25,25 @@ public class JSONSaving : Singleton<JSONSaving>
         //create the path
         persistentPath = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "SaveData.json";
 
-        if (File.Exists(persistentPath))
-        {
-            LoadData();
-            Debug.Log("Load existing file");
-            if(playerData.frogList.Count == 0)
-            {
-                playerData.frogList = frogSOList;
-            }
-        }
-        else
-        {
-            playerData = new PlayerData(frogSOList);
-            PlayerData = playerData;
-            Debug.Log("Majke new file");
-        }
+        //if (File.Exists(persistentPath))
+        //{
+        //    LoadData();
+        //    Debug.Log("Load existing file");
+        //    if(playerData.frogList.Count == 0)
+        //    {
+        //        playerData.frogList = frogSOList;
+        //    }
+        //}
+        //else
+        //{
+        //    playerData = new PlayerData(frogSOList);
+        //    PlayerData = playerData;
+        //    Debug.Log("Majke new file");
+        //}
+
+        playerData = new PlayerData(frogSOList);
+        PlayerData = playerData;
+        Debug.Log("Majke new file");
 
 
 

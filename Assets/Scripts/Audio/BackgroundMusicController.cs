@@ -30,18 +30,40 @@ public class BackgroundMusicController : MonoBehaviour
     // Remember to put the audio controller prefab!!
     private AudioClip GetSceneBackgroundMusic()
     {
-        int scene = SceneManager.GetActiveScene().buildIndex;
-        Debug.Log("Scene name int: " + scene);
+        string sceneName = SceneManager.GetActiveScene().name;
+        Debug.Log("Scene name int: " + sceneName);
+
+        int scene = 0;
+        if (sceneName.Contains("London"))
+        {
+            scene = 1;
+        }
+        else if (sceneName.Contains("Cairo"))
+        {
+            scene = 2;
+        }
+        else if (sceneName.Contains("Kyoto"))
+        {
+            scene = 3;
+        }
+        else if (sceneName.Contains("World"))
+        {
+            scene = 4;
+        }
+        
+        
         switch (scene)
         {
             case 0:
                 return _backgroundMusic[0];
             case 1:
-                return _backgroundMusic[0];
-            case 2:
                 return _backgroundMusic[1];
-            case 3:
+            case 2:
                 return _backgroundMusic[2];
+            case 3:
+                return _backgroundMusic[3];
+            case 4:
+                return _backgroundMusic[4];
             default:
                 return _backgroundMusic[_backgroundMusic.Length - 1];               
         }
