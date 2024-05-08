@@ -57,8 +57,8 @@ public class GameManager : Singleton<GameManager>
 
     public void OnLevelCompleted()
     {
-        LevelCompletion.Instance.Victory(GetAmountOfStars());
 
+        Debug.Log("heo");
         foreach (var item in playerData.cityList)
         {
             if (item.cityName == sceneName)
@@ -74,6 +74,7 @@ public class GameManager : Singleton<GameManager>
                 break;
             }
         }
+        LevelCompletion.Instance.Victory(GetAmountOfStars());
     }
 
     private int GetAmountOfStars()

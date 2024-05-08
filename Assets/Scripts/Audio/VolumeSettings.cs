@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-public class VolumeSettings : MonoBehaviour
+public class VolumeSettings : Singleton<VolumeSettings>
 {
-    [SerializeField] private AudioMixer _audioMixer;
+    [SerializeField] public AudioMixer _audioMixer;
     [SerializeField] private Slider _backgroundMusicVolumeSlider;
     [SerializeField] private Slider _sfxVolumeSlider;
 
@@ -19,13 +19,34 @@ public class VolumeSettings : MonoBehaviour
 
     public void SetBackgroundMusicVolume()
     {
-        float volume = _backgroundMusicVolumeSlider.value;
-        _audioMixer.SetFloat("BackgroundMusic", Mathf.Log10(volume) * 20);
+        if (_backgroundMusicVolumeSlider != null)
+        {
+            PlayerPrefs.SetFloat("BackgroundMusic", _backgroundMusicVolumeSlider.value);
+            float volume = PlayerPrefs.GetFloat("BackgroundMusic");
+            _audioMixer.SetFloat("BackgroundMusic", Mathf.Log10(volume) * 20);
+        }
+        else
+        {
+            float volume = PlayerPrefs.GetFloat("BackgroundMusic");
+            _audioMixer.SetFloat("BackgroundMusic", Mathf.Log10(volume) * 20);
+        }
     }
 
     public void SetSFXVolume()
     {
-        float volume = _sfxVolumeSlider.value;
-        _audioMixer.SetFloat("Sfx", Mathf.Log10(volume) * 20);
+        if (_sfxVolumeSlider != null)
+        {
+            PlayerPrefs.SetFloat("Sfx", _sfxVolumeSlider.value);
+            float volume = PlayerPrefs.GetFloat("Sfx");
+            _audioMixer.SetFloat("Sfx", Mathf.Log10(volume) * 20);
+        }
+        else
+        {
+            float volume = PlayerPrefs.GetFloat("Sfx");
+            _audioMixer.SetFloat("Sfx", Mathf.Log10(volume) * 20);
+        }
+        //float volume = PlayerPrefs.GetFloat("Sfx");
+        //_audioMixer.SetFloat("Sfx", Mathf.Log10(volume) * 20);
+
     }
 }
