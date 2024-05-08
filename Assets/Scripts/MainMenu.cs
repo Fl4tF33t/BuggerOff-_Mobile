@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class MainMenu : MonoBehaviour
 {
@@ -11,20 +12,20 @@ public class MainMenu : MonoBehaviour
     public Button load;
     public Button options;
     public Button quit;
+    [SerializeField] public AudioMixer _audioMixer;
 
     private void Awake()
     {
         if (!PlayerPrefs.HasKey("MusicVolume") || !PlayerPrefs.HasKey("SFXVolume"))
         {
-            PlayerPrefs.SetFloat("MusicVolume", 1);
-            PlayerPrefs.SetFloat("SFXVolume", 1);
+            PlayerPrefs.SetFloat("BackgroundMusic", 1);
+            PlayerPrefs.SetFloat("Sfx", 1);
 
 
         }
-        else
-        {
 
-        }
+        _audioMixer.SetFloat("BackgroundMusic", Mathf.Log10(PlayerPrefs.GetFloat("BackgroundMusic")) * 20);
+        _audioMixer.SetFloat("Sfx", Mathf.Log10(PlayerPrefs.GetFloat("Sfx")) * 20);
 
         //Screen.SetResolution((Screen.height / 9 * 16), Screen.height, true);
         //Debug.Log(Screen.height);

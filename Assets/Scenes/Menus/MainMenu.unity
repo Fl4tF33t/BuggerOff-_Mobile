@@ -824,6 +824,7 @@ MonoBehaviour:
   load: {fileID: 0}
   options: {fileID: 1177062067}
   quit: {fileID: 0}
+  _audioMixer: {fileID: 24100000, guid: f6d1e45b5fcf5b048a4bee3fd58b8090, type: 2}
 --- !u!4 &1226855725
 Transform:
   m_ObjectHideFlags: 0
@@ -1673,6 +1674,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8340219937978536250, guid: c386b9d5870e393479ad960825d61ac0,
+        type: 3}
+      propertyPath: _audioMixer
+      value: 
+      objectReference: {fileID: 24100000, guid: f6d1e45b5fcf5b048a4bee3fd58b8090,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
