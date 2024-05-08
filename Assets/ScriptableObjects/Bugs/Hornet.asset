@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Hornet
   m_EditorClassIdentifier: 
   bugName: Hornet
-  health: 150
+  health: 120
   sheild: 0
   moneyDrop: 30
   damageToPlayer: 1
-  speed: 1
+  speed: 0.9
   angularSpeed: 1000
   acceleration: 20
   stoppingDistance: 0
