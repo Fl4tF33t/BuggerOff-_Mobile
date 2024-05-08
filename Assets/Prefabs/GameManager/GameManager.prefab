@@ -138,3 +138,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12567b6dd37f49d40912e8310518b995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bugHealth: 0
+  bugSpeed: 0
+  frogDamage: 0
+  frogAttackSpeed: 0
+  frogRange: 0
+  jumpCoolDown: 0
+  fullScreenRenderer: {fileID: 530825025577300783, guid: c460e84d85b9226408fe891b76e25710,
+    type: 2}

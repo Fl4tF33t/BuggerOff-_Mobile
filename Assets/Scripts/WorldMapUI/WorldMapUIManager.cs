@@ -244,12 +244,19 @@ public class WorldMapUIManager : MonoBehaviour
         }
         _weatherScreen.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(() => _currentWeather.sprite = _weatherScreen.transform.GetChild(3).GetComponent<Image>().sprite);
         _weatherScreen.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(() => currentWeather = "_Sunny");
+
+        
         _weatherScreen.transform.GetChild(4).GetComponent<Button>().onClick.AddListener(() => _currentWeather.sprite = _weatherScreen.transform.GetChild(4).GetComponent<Image>().sprite);
-        _weatherScreen.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(() => currentWeather = "_Foggy");
+        _weatherScreen.transform.GetChild(4).GetComponent<Button>().onClick.AddListener(() => currentWeather = "_Foggy");
+
+      
         _weatherScreen.transform.GetChild(5).GetComponent<Button>().onClick.AddListener(() => _currentWeather.sprite = _weatherScreen.transform.GetChild(5).GetComponent<Image>().sprite);
-        _weatherScreen.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(() => currentWeather = "_Snowy");
+        _weatherScreen.transform.GetChild(5).GetComponent<Button>().onClick.AddListener(() => currentWeather = "_Snowy");
+
+
         _weatherScreen.transform.GetChild(6).GetComponent<Button>().onClick.AddListener(() => _currentWeather.sprite = _weatherScreen.transform.GetChild(6).GetComponent<Image>().sprite);
-        _weatherScreen.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(() => currentWeather = "_Rainy");
+        _weatherScreen.transform.GetChild(6).GetComponent<Button>().onClick.AddListener(() => currentWeather = "_Rainy");
+       
 
         _weatherScreen.transform.GetChild(7).GetComponent<Button>().onClick.AddListener(() => SceneManager.LoadScene(currentCity + currentWeather));
     }

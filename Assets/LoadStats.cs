@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class LoadStats : Singleton<LoadStats>
 {
@@ -14,8 +16,15 @@ public class LoadStats : Singleton<LoadStats>
     public float frogRange;
     public float jumpCoolDown;
 
+    [SerializeField] private ScriptableRendererFeature fullScreenRenderer;
+
     private void Start()
     {
+        if (fullScreenRenderer == null)
+        {
+            fullScreenRenderer = GetComponent<ScriptableRendererFeature>();
+            Debug.Log("No full screen renderer found");
+        }
         if(SceneManager.GetActiveScene().name.Contains("Sunny"))
         {
             bugHealth = 10f;
@@ -24,24 +33,30 @@ public class LoadStats : Singleton<LoadStats>
             frogDamage = -5;
             frogAttackSpeed = -0.1f;
         }
-        if (SceneManager.GetActiveScene().name.Contains("Rainy"))
+         else if (SceneManager.GetActiveScene().name.Contains("Rainy"))
         {
             bugSpeed = -0.1f;
 
             frogDamage = 5f;
         }
-        if (SceneManager.GetActiveScene().name.Contains("Foggy"))
+        else if (SceneManager.GetActiveScene().name.Contains("Foggy"))
         {
             bugSpeed = 0.1f;
 
             frogRange = -0.3f;
         }
-        if (SceneManager.GetActiveScene().name.Contains("Snowy"))
+        else if (SceneManager.GetActiveScene().name.Contains("Snowy"))
         {
             bugHealth = -5;
             bugSpeed = -0.1f;
 
             frogAttackSpeed = -0.5f;
+            fullScreenRenderer.SetActive(true);
+
+        }
+        else
+        {
+            fullScreenRenderer.SetActive(false);
         }
     }
 }

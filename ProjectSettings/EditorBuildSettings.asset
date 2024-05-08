@@ -15,17 +15,23 @@ EditorBuildSettings:
     path: Assets/Scenes/London/London1.unity
     guid: 8108ce5c84c71de41a39e1b0e5f3e2bc
   - enabled: 1
+    path: Assets/Scenes/London/London1_Foggy.unity
+    guid: 071e7c962f0fd304e8ecbd451bfc98e8
+  - enabled: 1
+    path: Assets/Scenes/London/London1_Rainy.unity
+    guid: ccfbc2303e41ed743adc19cc053618f4
+  - enabled: 1
+    path: Assets/Scenes/London/London1_Snowy.unity
+    guid: 61c0261ff8520a249be5fb61bee39830
+  - enabled: 1
+    path: Assets/Scenes/London/London1_Sunny.unity
+    guid: 763facd276f6b64449f0e5527cd8c944
+  - enabled: 1
     path: Assets/Scenes/London/London2.unity
     guid: dca59af3031c62446915337bb15109e3
   - enabled: 1
     path: Assets/Scenes/Cairo/Cairo1.unity
     guid: c7ef348dd0120fe48837d7781fd4f67f
-  - enabled: 1
-    path: Assets/Scenes/London1_Sunny.unity
-    guid: d165c28fa1803c54090bb0de67b501d1
-  - enabled: 1
-    path: Assets/Scenes/London1_Rainy.unity
-    guid: acc55a8bce506e1408e0173fe6e45797
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000,
       guid: 101f97e1b8cc36a4ab02c05d08701e3a, type: 2}
