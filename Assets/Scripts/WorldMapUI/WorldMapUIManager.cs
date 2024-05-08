@@ -172,17 +172,47 @@ public class WorldMapUIManager : MonoBehaviour
             {
                 Debug.Log("I have the city name");
 
-                if (item.id == 1)
+                if (cityInfo.CityTitle == "Kyoto" || cityInfo.CityTitle == "Rio")
                 {
-                    Debug.Log("is completed");
-                    SwitchCase(item.numberOfStars, _cityLevelOneButton);
-                    _cityLevelTwoButton.interactable = item.isCompleted;
+                    _cityLevelTwoButton.interactable = false;
+                    _cityLevelTwoButton.transform.GetChild(1).gameObject.SetActive(false);
+                    _cityLevelTwoButton.transform.GetChild(2).gameObject.SetActive(false);
                 }
-                if (item.id == 2)
+                else
                 {
-                    SwitchCase(item.numberOfStars, _cityLevelTwoButton);
-                }
+                    _cityLevelTwoButton.transform.GetChild(1).gameObject.SetActive(true);
+                    _cityLevelTwoButton.transform.GetChild(2).gameObject.SetActive(true);
+                    if (item.id == 1)
+                    {
+                        Debug.Log("is completed");
+                        SwitchCase(item.numberOfStars, _cityLevelOneButton);
+                        _cityLevelTwoButton.interactable = item.isCompleted;
+                    }
+                    if (item.id == 2)
+                    {
+                        SwitchCase(item.numberOfStars, _cityLevelTwoButton);
+                    }
+                }             
             }
+
+            //if (item.cityName.Contains(cityInfo.CityTitle) || item.cityName.Contains(cityInfo.CityTitle))
+            //{
+            //    Debug.Log("heo");
+            //    if (item.id == 2)
+            //    {
+                    
+            //    }
+            //}
+            //else
+            //{
+            //    Debug.Log("vau");
+            //    if (item.id == 2)
+            //    {
+            //        _cityLevelTwoButton.interactable = true;
+            //        _cityLevelTwoButton.transform.GetChild(1).gameObject.SetActive(true);
+            //        _cityLevelTwoButton.transform.GetChild(2).gameObject.SetActive(true);
+            //    }
+            //}
         }
     }
 
