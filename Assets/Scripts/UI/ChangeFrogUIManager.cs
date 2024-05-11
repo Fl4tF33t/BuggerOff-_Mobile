@@ -204,5 +204,7 @@ public class ChangeFrogUIManager : Singleton<ChangeFrogUIManager>
 
             saving.PlayerData = playerData; 
         }
+
+        CloseChangeFrogs();
     }
 }

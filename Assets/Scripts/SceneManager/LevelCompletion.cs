@@ -45,7 +45,7 @@ public class LevelCompletion : Singleton<LevelCompletion>
         _victoryImage.SetActive(true);
         //GameManager.Instance.OnLevelCompleted();
 
-        Time.timeScale = 0;
+       // Time.timeScale = 0;
         if (_audioSource == null)
         {
             _audioSource = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioSource>();
@@ -67,6 +67,8 @@ public class LevelCompletion : Singleton<LevelCompletion>
             _fullStars[i].SetActive(true);
             yield return new WaitForSeconds(0.5f);
         }
+
+        Time.timeScale = 0;
     }
 
     public void GameOver()
