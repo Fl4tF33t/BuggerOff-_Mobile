@@ -13,6 +13,8 @@ public class WheelManager : Singleton<WheelManager>, IBeginDragHandler, IEndDrag
     //public event Action OnButtonScroll;
     public event Action<string, int> OnWheelAnim;
 
+    public Action OnInitWheel;
+
     public Action SetPrice;
 
     //Visuals of the buttons
@@ -37,6 +39,12 @@ public class WheelManager : Singleton<WheelManager>, IBeginDragHandler, IEndDrag
     }
     private void Start()
     {
+        OnInitWheel = InitWheel;
+        SetPrice = () => { SetPriceText(frogPoolIndex); };
+    }
+
+    private void InitWheel()
+    {
         frogPool = ShopManager.Instance.frogPool;
         for (int i = 0; i < frogShopData.Length; i++)
         {
@@ -44,7 +52,6 @@ public class WheelManager : Singleton<WheelManager>, IBeginDragHandler, IEndDrag
         }
 
         SetPriceText(frogPoolIndex);
-        SetPrice = () => { SetPriceText(frogPoolIndex); };
     }
 
     public void OnBeginDrag(PointerEventData eventData)

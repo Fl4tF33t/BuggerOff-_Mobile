@@ -27,25 +27,26 @@ public class ShopManager : Singleton<ShopManager>, IPointerClickHandler
     public GameObject CancelPlaceingButton;
     private PlayerData playerData;
 
+
     private void Start()
     {
         frogPool = new FrogSO[8];
         //base.Awake();
         playerData = JSONSaving.Instance.PlayerData;
+
         int j = 0;
-        if (playerData.frogList.Count == 0)
+        if (playerData.frogList.Count > 0)
         {
-            Debug.Log("No hay nada");
-        }
-        else
-        {
-            Debug.Log("Si hay algo");
             for (int i = 0; i < frogPool.Length; i++)
             {
-                Debug.Log("K pasa: " + playerData.frogList[j].name);
                 frogPool[i] = playerData.frogList[j];
                 j = (j + 1) % playerData.frogList.Count;
             }
+            WheelManager.Instance.OnInitWheel?.Invoke();
+        }
+        else
+        {
+            Debug.Log("doesnts has");
         }
 
 
