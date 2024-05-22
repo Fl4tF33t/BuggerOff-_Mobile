@@ -51,6 +51,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ad2aef90f5bcc0944958de4140cefae0, type: 3}
   - {fileID: 8300000, guid: 6604cd60ef9d54747b1b19c25bcb3478, type: 3}
   - {fileID: 8300000, guid: 702c816435d95ce4281b0d7b07c83316, type: 3}
+  _audioMixer: {fileID: 0}
 --- !u!82 &5905001213553991176
 AudioSource:
   m_ObjectHideFlags: 0
@@ -159,7 +160,7 @@ GameObject:
   - component: {fileID: 3834312386574471349}
   m_Layer: 0
   m_Name: AudioManager
-  m_TagString: Untagged
+  m_TagString: AudioManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

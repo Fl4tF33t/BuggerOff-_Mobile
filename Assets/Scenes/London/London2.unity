@@ -4673,6 +4673,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8010323326357462801, guid: c386b9d5870e393479ad960825d61ac0,
+        type: 3}
+      propertyPath: m_TagString
+      value: AudioManager
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7135,6 +7140,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &1715987119 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5905001213553991176, guid: c386b9d5870e393479ad960825d61ac0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1075717877}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1763745574
 GameObject:
   m_ObjectHideFlags: 0
@@ -8405,6 +8416,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4638298519634102577, guid: 992dcbe61cb5d5a47bfcf7725c9dc3c1,
+        type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 1715987119}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
