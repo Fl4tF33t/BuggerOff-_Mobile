@@ -15,7 +15,7 @@ MonoBehaviour:
   _cityTitle: London
   _levelSprites:
   - {fileID: 21300000, guid: 1fab3493b9cb51f4b9f91664f2de7bd1, type: 3}
-  - {fileID: 21300000, guid: affd6ef1a1e462640b2d05de5f7ac8c2, type: 3}
+  - {fileID: 21300000, guid: f754dc92a82b5d54092446f903f9c80e, type: 3}
   - {fileID: 21300000, guid: e45cc063dfe49964c9394cbe9096d1bb, type: 3}
   _LevelOne: London1
   _LevelTwo: London2

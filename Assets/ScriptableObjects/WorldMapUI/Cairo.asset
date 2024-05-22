@@ -15,7 +15,7 @@ MonoBehaviour:
   _cityTitle: Cairo
   _levelSprites:
   - {fileID: 21300000, guid: 3e333067869eb8541891bb8816af23be, type: 3}
-  - {fileID: 21300000, guid: 1e7bfdda912584846aedafe65dcaeb2c, type: 3}
+  - {fileID: 21300000, guid: f099afa669524a34b87dd6142e5710cf, type: 3}
   - {fileID: 21300000, guid: 00bbf4d319d7c0f4f881d76185d254d3, type: 3}
   _LevelOne: Cairo1
   _LevelTwo: Cairo2
