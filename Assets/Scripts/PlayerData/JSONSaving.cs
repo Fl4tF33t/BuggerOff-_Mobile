@@ -41,11 +41,6 @@ public class JSONSaving : Singleton<JSONSaving>
             Debug.Log("Majke new file");
         }
 
-        //playerData = new PlayerData(frogSOList);
-        //PlayerData = playerData;
-        //Debug.Log("Majke new file");
-
-
 
     }
 
