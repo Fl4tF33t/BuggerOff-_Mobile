@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cityTitle: Kyoto
   _levelSprites:
-  - {fileID: 21300000, guid: 2e1e21cd6cf7ba7449f1505a4b0d3fd9, type: 3}
+  - {fileID: 21300000, guid: 21dab330171707944b797af392ce451e, type: 3}
   - {fileID: 21300000, guid: ad829b163d230f34998cb1bf471690b0, type: 3}
   - {fileID: 21300000, guid: d7343f643d78dd54ba0f9e1fd22cbcd2, type: 3}
   _LevelOne: Kyoto1
