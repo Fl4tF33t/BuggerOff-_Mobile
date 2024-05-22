@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cityTitle: London
   _levelSprites:
-  - {fileID: 21300000, guid: 974cd5602ec485449a272254b21d5f22, type: 3}
-  - {fileID: 21300000, guid: f2936e1f7a5269d44b87e97f5e66efa0, type: 3}
+  - {fileID: 21300000, guid: 215ba56fdc894524aaa742d43d28cbff, type: 3}
+  - {fileID: 21300000, guid: affd6ef1a1e462640b2d05de5f7ac8c2, type: 3}
   - {fileID: 21300000, guid: e45cc063dfe49964c9394cbe9096d1bb, type: 3}
   _LevelOne: London1
   _LevelTwo: London2
