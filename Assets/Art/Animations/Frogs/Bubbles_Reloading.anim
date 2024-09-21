@@ -40,7 +40,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Frog_Bubbles_Root/Frog_Bubbles_Bubble_1
+    path: Frog_Bubbles_ONLY_Bubbles_Sprite/Frog_Bubbles_Root/Frog_Bubbles_Bubble_1
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -65,7 +65,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Frog_Bubbles_Root/Frog_Bubbles_Bubble_2
+    path: Frog_Bubbles_ONLY_Bubbles_Sprite/Frog_Bubbles_Root/Frog_Bubbles_Bubble_2
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -90,7 +90,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Frog_Bubbles_Root/Frog_Bubbles_Bubble_3
+    path: Frog_Bubbles_ONLY_Bubbles_Sprite/Frog_Bubbles_Root/Frog_Bubbles_Bubble_3
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -115,7 +115,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Frog_Bubbles_Root/Frog_Bubbles_Bubble_4
+    path: Frog_Bubbles_ONLY_Bubbles_Sprite/Frog_Bubbles_Root/Frog_Bubbles_Bubble_4
   m_FloatCurves: []
   m_PPtrCurves: []
   m_SampleRate: 60
@@ -126,7 +126,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 1080005845
+      path: 1611976662
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -135,7 +135,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3646342511
+      path: 4179467884
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -144,7 +144,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2924606969
+      path: 2384113402
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -153,7 +153,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 808804442
+      path: 276708185
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -209,7 +209,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: Frog_Bubbles_Root/Frog_Bubbles_Bubble_1
+    path: Frog_Bubbles_ONLY_Bubbles_Sprite/Frog_Bubbles_Root/Frog_Bubbles_Bubble_1
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -239,7 +239,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: Frog_Bubbles_Root/Frog_Bubbles_Bubble_1
+    path: Frog_Bubbles_ONLY_Bubbles_Sprite/Frog_Bubbles_Root/Frog_Bubbles_Bubble_1
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -269,7 +269,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: Frog_Bubbles_Root/Frog_Bubbles_Bubble_1
+    path: Frog_Bubbles_ONLY_Bubbles_Sprite/Frog_Bubbles_Root/Frog_Bubbles_Bubble_1
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -299,7 +299,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: Frog_Bubbles_Root/Frog_Bubbles_Bubble_2
+    path: Frog_Bubbles_ONLY_Bubbles_Sprite/Frog_Bubbles_Root/Frog_Bubbles_Bubble_2
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -329,7 +329,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: Frog_Bubbles_Root/Frog_Bubbles_Bubble_2
+    path: Frog_Bubbles_ONLY_Bubbles_Sprite/Frog_Bubbles_Root/Frog_Bubbles_Bubble_2
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -359,7 +359,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: Frog_Bubbles_Root/Frog_Bubbles_Bubble_2
+    path: Frog_Bubbles_ONLY_Bubbles_Sprite/Frog_Bubbles_Root/Frog_Bubbles_Bubble_2
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -389,7 +389,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: Frog_Bubbles_Root/Frog_Bubbles_Bubble_3
+    path: Frog_Bubbles_ONLY_Bubbles_Sprite/Frog_Bubbles_Root/Frog_Bubbles_Bubble_3
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -419,7 +419,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: Frog_Bubbles_Root/Frog_Bubbles_Bubble_3
+    path: Frog_Bubbles_ONLY_Bubbles_Sprite/Frog_Bubbles_Root/Frog_Bubbles_Bubble_3
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -449,7 +449,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: Frog_Bubbles_Root/Frog_Bubbles_Bubble_3
+    path: Frog_Bubbles_ONLY_Bubbles_Sprite/Frog_Bubbles_Root/Frog_Bubbles_Bubble_3
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -479,7 +479,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: Frog_Bubbles_Root/Frog_Bubbles_Bubble_4
+    path: Frog_Bubbles_ONLY_Bubbles_Sprite/Frog_Bubbles_Root/Frog_Bubbles_Bubble_4
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -509,7 +509,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: Frog_Bubbles_Root/Frog_Bubbles_Bubble_4
+    path: Frog_Bubbles_ONLY_Bubbles_Sprite/Frog_Bubbles_Root/Frog_Bubbles_Bubble_4
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -539,7 +539,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: Frog_Bubbles_Root/Frog_Bubbles_Bubble_4
+    path: Frog_Bubbles_ONLY_Bubbles_Sprite/Frog_Bubbles_Root/Frog_Bubbles_Bubble_4
     classID: 4
     script: {fileID: 0}
     flags: 0
